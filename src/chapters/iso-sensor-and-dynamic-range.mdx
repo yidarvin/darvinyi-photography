@@ -1,0 +1,102 @@
+import { IsoSensorAndDynamicRangeFigure } from "./_figures/IsoSensorAndDynamicRangeFigure";
+import { IsoSensorAndDynamicRangeWidget } from "./_widgets/IsoSensorAndDynamicRangeWidget";
+
+Aperture and shutter change the light the sensor collects. ISO changes none of it. You met that crack in [the exposure triangle](/the-exposure-triangle): the third dial is gain, an amplifier applied to a signal the sensor has already recorded, the way turning up a quiet recording makes it louder without adding any music. So the ISO dial is a poor place to look for image quality. The real story is one level down, in the sensor itself: how much light a photosite can hold, how much noise rides underneath, and the span between the brightest highlight the sensor keeps and the darkest shadow it can still pull out of the noise. That span is the dynamic range, it is widest at base ISO, and every stop of ISO you add spends a stop of it.
+
+## The dial that adds no light
+
+Start with what ISO does and does not do. When you raise it, the camera amplifies the signal read off the sensor. Cambridge in Colour puts the mechanism plainly: a higher ISO amplifies the image signal, and because it lifts the whole signal it lifts the noise riding on it too, so higher ISO speeds produce progressively more noise. Nothing about the light has changed. The photons that were going to land on the sensor still land on it. The dial only decides how hard to push what was caught.
+
+Base ISO is where that push is gentlest. It is the sensor's native setting, the one where a photosite fills all the way to the top before the output reads white, and it gives the cleanest file and the widest range. On the Leica Q3 base is ISO 100. The medium-format Hasselblad X2D II sits a stop lower at ISO 50. Every setting above base is the same capture amplified harder.
+
+This makes the ISO dial really a question about the other two. A brighter shadow can come from turning up the gain, or from giving the sensor more light in the first place, by opening the aperture, slowing the shutter, or adding a lamp. The two roads reach the same brightness and part ways on quality, and telling them apart is the rest of this chapter.
+
+## Where the noise comes from
+
+Noise has two main sources, and the larger one is not the camera's fault. It is the light. Photons do not arrive in a smooth stream. They land at random, and over any exposure the count wobbles. This is shot noise, and it follows a fixed law: for a patch that collects N photons, the random spread is the square root of N. The signal is N and the noise is the square root of N, so the signal-to-noise ratio is N over its square root, which is the square root of N again. That one fact runs the whole chapter. Collect more light and the ratio climbs, but only as a square root, so you have to quadruple the photons to halve the relative grain, a full two stops of light for each halving.
+
+The second source is read noise, the small electronic hiss the sensor and its circuitry add when they measure each photosite. It is a nearly fixed floor. In the bright parts of a frame the signal towers over it and it does not matter. In the shadows, where few photons landed, the signal is small and the read noise is the thing you see, which is why noise shows up in the dark parts of a picture first.
+
+Put the two together and the lesson is blunt: a clean file is bought with light, not with ISO. More photons mean a higher signal-to-noise ratio, and nothing else does. This is also the deep reason a bigger sensor looks cleaner. At the same aperture and shutter it gathers light over a larger area, so it collects more total photons for the same picture. The Hasselblad's larger 44 by 33mm sensor is worth about two-thirds of a stop of extra light at a matched exposure, by the same crop-factor accounting from [aperture and depth of field](/aperture-and-depth-of-field) read for light instead of for depth, and its base ISO 50 sits a stop below the Q3's 100, leaving still more room to collect light before anything gets amplified. That is medium format's quiet advantage.
+
+<Photo
+  src="/photos/iso-sensor-and-dynamic-range/high-iso-grain-turtle.jpg"
+  alt="A close view of a mounted turtle on a pale museum wall, the smooth wall and the shadowed shell both dusted with fine speckled grain."
+  id="4.1"
+  caption="High ISO, seen up close. This museum frame was shot at ISO 6400 in dim indoor light, and at this magnification the price is visible: the smooth wall is dusted with luminance and color speckle, and the shell's shadows crawl with it. The grain lives where few photons landed, which is why it reads worst in the flat wall and the dark shell rather than in anything bright. Noise is a pixel-level thing, so it fades when an image is shrunk for the web and returns the moment you look at the file up close."
+  meta="Fujifilm X-T1 - 27.7mm - f/11 - 1/20s - ISO 6400"
+  credit="Benoit Brummer (Trougnouf) / Wikimedia Commons (CC BY 4.0)"
+  href="https://commons.wikimedia.org/wiki/File:NIND_MuseeL-turtle_ISO6400.jpg"
+/>
+
+## Two ways to a brighter shadow
+
+The widget puts the two roads side by side. It starts from one dim capture, a shadow that caught a fixed handful of photons, and lets you brighten it either way. Turn up the ISO and the shadow gets brighter, but the grain rides up with it and the signal-to-noise ratio never moves, because amplifying a capture cannot add photons it did not have. Give it light instead and the same brightness arrives clean, because now there really are more photons underneath. Watch the two readouts: the grain, which only the light road improves, and the usable range, which the gain road spends a stop of for every stop of push, for a reason the next section draws.
+
+<Widget name="gain_vs_light" hint="Set how many stops to lift the shadow, then flip between ISO gain and more light. Same brightness either way, but only light clears the grain.">
+  <IsoSensorAndDynamicRangeWidget />
+</Widget>
+
+## The range the sensor holds
+
+Every sensor works between two hard limits. At the top, a photosite holds only so much charge before it is full, and anything brighter clips to featureless white. At the bottom sits the read-noise floor, below which a shadow cannot be told from the sensor's own hiss. The distance between those two, the brightest highlight it keeps and the darkest shadow it can still separate from noise, is the dynamic range. Like everything else in this book it is counted in stops, each stop a doubling of light, so a range of fourteen stops means the brightest tone the sensor holds is two to the fourteenth, about sixteen thousand times, brighter than the faintest it can record.
+
+<Figure id="4.2" caption="At base ISO 100 the sensor records its full span, drawn here as a round fourteen stops from the noise floor up to where the highlights clip. Raise the ISO and the gain drives the output to white one stop sooner for every stop of push, so ISO 800 loses three stops off the top and ISO 6400 loses six. The floor holds still. The range is always spent from the highlight end, never the shadow end.">
+  <IsoSensorAndDynamicRangeFigure />
+</Figure>
+
+Two honest numbers describe that range, and they disagree, so it is worth knowing which one you are being sold. The engineering dynamic range counts all the way down to where the signal merely equals the noise. It is the bigger number, and it is the one on the box: Leica quotes up to fourteen stops for the Q3, and Hasselblad quotes 15.3 stops for the X2D II. The photographic dynamic range counts only down to a shadow clean enough to actually use, a far stricter floor, and normalizes for print size the way Bill Claff's measurements do. It is the smaller and more useful number. By that measure Jim Kasson and Claff both put the X2D II near 12.5 stops at base ISO, not 15. Neither figure is a lie. They stop counting at different places, and the gap between them is the band of shadow that is technically recorded but too noisy to keep.
+
+<Photo
+  src="/photos/iso-sensor-and-dynamic-range/base-iso-high-dr-sunrise.jpg"
+  alt="A river at sunrise, with pink-lit clouds and a bright sky above and shadowed stilt houses, palms, and foreground foliage along the banks, all holding detail."
+  id="4.3"
+  caption="The whole range in one frame, at base ISO. Shot at ISO 100, this sunrise holds the bright pink cloud and the pale sky without blowing them to white, and at the same time keeps the shadowed stilt houses, palms, and the foliage along the near bank out of the black. That reach from lit sky to dark bank is dynamic range doing its job, and it is widest exactly here, at the bottom of the ISO dial where nothing is amplified yet."
+  meta="Canon EOS 5D Mark IV - 24mm - f/9 - 0.4s - ISO 100"
+  credit="Basile Morin / Wikimedia Commons (CC BY-SA 4.0)"
+  href="https://commons.wikimedia.org/wiki/File:Dwellings_and_pirogues_on_the_Mekong_bank_of_Don_Det_Laos_at_sunrise_with_pink_clouds.jpg"
+/>
+
+## Why base ISO holds the most
+
+Here is the reason each stop of ISO costs a stop of range, the thing the figure draws. Raising the ISO a stop tells the camera to treat a scene one stop darker as maximum white. The amplifier drives the output to clipping one stop sooner, so one more stop of highlight is pushed past the top and lost. Emil Martinec states it exactly: each doubling of ISO pushes one more stop of input past the saturation point of the converter, so each stop of ISO removes one stop of highlight. Meanwhile the shadow floor barely moves. The range does not shrink evenly from both ends. It is cut off the top, from the highlights, one stop at a time. That is why base ISO is where a sensor holds the most, and why a landscape photographer who wants every stop of range shoots there and finds the light elsewhere.
+
+## Bit depth is not the range
+
+A spec sheet also lists the bit depth, and it is easy to mistake for dynamic range. They are different things. Bit depth is how finely the range is sliced, not how wide it is. The Q3 writes 14-bit raw DNG files, which cut the tonal range into two to the fourteenth, or 16,384, levels per channel. The Hasselblad writes 16-bit files, 65,536 levels. Those extra bits do not buy more range. A sensor that holds twelve stops holds twelve stops whether you describe it with fourteen bits or sixteen. What the finer slicing buys is smoother gradations and more room to push tones in editing, lifting a shadow or bending a curve without the steps between levels opening into visible bands. And it helps only above the noise floor. Bits spent describing tones already buried in noise just record the noise more precisely. This is why a camera's usable range, around twelve to fourteen stops, comes to fewer stops than its file has bits.
+
+## The second base ISO
+
+One more property decides how you should actually use the dial. On many modern sensors, once you are past a certain ISO, raising it in the camera and shooting at base ISO then brightening the raw later give almost the same result. Spencer Cox calls such a sensor ISO invariant: above its invariance point there is no noise penalty for lifting the file in processing instead of turning up the ISO, because the read noise has stopped falling and the in-camera gain is no longer buying anything the raw developer cannot. The property hinges entirely on read noise, the shadow floor from before.
+
+Your Hasselblad has a sharp version of it. Measuring the X2D and the newer X2D II, Jim Kasson found both essentially ISO-less from ISO 200 upward, the signature of a dual-conversion-gain sensor that switches into a cleaner, higher-gain mode at ISO 200. In effect the camera gains a second base ISO there, a second clean starting point partway up the dial. Below it, at ISO 100, the deepest shadows are very slightly better. From 200 on, raising the ISO and lifting in post are near enough to identical that the choice stops being about noise and becomes about protecting highlights.
+
+That inverts the beginner's habit of setting ISO first. Kasson's rule is to choose the aperture for depth of field and the shutter for motion, both from the picture rather than the light, and only then set the ISO, keeping it as low as the highlights allow. If you can, expose to the right at base ISO, giving the sensor the most light the highlights will take without clipping, then bring the brightness down in processing. Since shot noise is the floor and the signal-to-noise ratio grows as the square root of the light, the brightest unclipped exposure is also the cleanest one, a point Michael Reichmann named exposing to the right. On an ISO-invariant body you can hold near base ISO, expose for the highlights, and lift the shadows several stops later almost as cleanly as raising the ISO would have, and you keep the highlight range that raising the ISO would have thrown away.
+
+<Callout>
+Both of these ideas come back in Part III. An exposed-to-the-right file looks too bright on the back of the camera and is meant to be pulled down later, so it only pays off if you actually process the raw. Lifting those protected shadows without banding is what [the digital negative](/the-digital-negative) and [tone and the curve](/tone-and-the-curve) are about.
+</Callout>
+
+## Exercises
+
+<ExerciseCard n="01" title="Push a shadow, meet the floor">
+At base ISO, photograph a scene with deep shadows and expose it a touch dark, then raise the shadows hard in your raw editor, three or four stops. The grain that surfaces is the read-noise floor, the exact thing that sets the bottom of the range. Now shoot the same scene at ISO 3200 and compare the lifted shadow to the noisy one. On an ISO-invariant body they look surprisingly alike, which tells you the gain was never the thing cleaning them up.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Buy the same brightness twice">
+Find a dim scene. Make one frame clean with light, opening the aperture or slowing the shutter until the exposure is generous at base ISO, and another at the brightness you first metered but reached by raising the ISO. View both at full magnification. The light frame is cleaner, and the difference is every photon the gain frame never collected.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Watch the highlights clip">
+Photograph a high-contrast scene at base ISO, then three stops higher, exposing each so the histogram just touches the right edge. Compare how much bright detail survives. The higher-ISO frame clips its highlights sooner, and the missing detail is the dynamic range you spent to brighten the capture inside the camera instead of with light.
+</ExerciseCard>
+
+## Sources
+
+- [Cambridge in Colour, Image Noise](https://www.cambridgeincolour.com/tutorials/image-noise.htm), for ISO as amplification of the whole signal, and for shadows and high ISO showing noise first; and [Understanding Dynamic Range](https://www.cambridgeincolour.com/tutorials/dynamic-range.htm), for the range as the span from pixel saturation to the read-noise floor, measured in stops, and for bit depth as tonal precision rather than range.
+- [Shot noise](https://en.wikipedia.org/wiki/Shot_noise) and [Exposing to the right](https://en.wikipedia.org/wiki/Exposing_to_the_right), Wikipedia, for the Poisson square-root law and SNR equal to the square root of N, and for exposing to the right as a way to maximize signal-to-noise, with the term traced to Michael Reichmann around 2003.
+- Emil Martinec, [Noise, Dynamic Range and Bit Depth in Digital SLRs](https://photonstophotos.net/Emil%20Martinec/noise-p3a.html), hosted at PhotonsToPhotos, for each stop of ISO removing one stop of highlight past the converter's saturation point, and for a sensor's engineering range running a couple of stops above the range a camera actually delivers.
+- Bill Claff, [Sensor Analysis Primer: Engineering and Photographic Dynamic Range](https://www.photonstophotos.net/GeneralTopics/Sensors_&_Raw/Sensor_Analysis_Primer/Engineering_and_Photographic_Dynamic_Range.htm), PhotonsToPhotos, for the difference between engineering dynamic range, measured to an SNR of one, and the stricter print-normalized photographic dynamic range.
+- Jim Kasson, [Hasselblad X2D II engineering dynamic range](https://blog.kasson.com/x2dii/hasselblad-x2d-ii-edr/) and [X2D exposure strategy](https://blog.kasson.com/x2d/hasselblad-x2d-exposure-strategy-m-and-a-modes/), for both X2D bodies measuring essentially ISO-less above ISO 200 via dual conversion gain, a photographic range near 12.5 stops at base ISO, and the rule to set aperture and shutter first and then expose to the right at the lowest ISO the highlights allow.
+- Spencer Cox, [ISO Invariance Explained](https://photographylife.com/iso-invariance-explained), Photography Life, for the definition of an ISO-invariant sensor and why brightening in post can match raising ISO once read noise stops falling.
+- [Leica Q3 technical specifications](https://leica-camera.com/en-US/photography/cameras/q/q3-black/technical-specification) for the 60-megapixel full-frame BSI sensor, base ISO 100, and 14-bit DNG raw; the [Hasselblad X2D II 100C](https://www.hasselblad.com/x-system/x2d-ii-100c/) page and [press release](https://www.hasselblad.com/press/press-releases/2025/hasselblad-introduces-the-x2d-ii-100c-and-xcd-35-100e/) for the 100-megapixel 44 by 33mm sensor, native ISO 50, 16-bit color depth, and the claimed 15.3 stops of dynamic range.
