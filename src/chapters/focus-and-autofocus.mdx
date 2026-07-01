@@ -1,0 +1,92 @@
+import { FocusAndAutofocusFigure } from "./_figures/FocusAndAutofocusFigure";
+import { FocusAndAutofocusWidget } from "./_widgets/FocusAndAutofocusWidget";
+
+Focus is not a point. It is a plane, a flat sheet standing in the scene parallel to the sensor, and only what falls on that sheet is truly sharp. Everything nearer or farther softens with distance from it. So focusing is two decisions stacked together. First you choose where to stand that plane, which is a decision about the picture and follows the depth of field you met in [aperture and depth of field](/aperture-and-depth-of-field). Then you get the camera to actually put the plane there, which is a decision about the machine. Modern cameras have become very good at the second part, good enough that it is easy to forget there is a mechanism at all. This chapter is mostly about that mechanism, because knowing how the camera finds focus is what tells you when to trust it and when to take the ring yourself.
+
+## The plane you place
+
+At any one focus setting there is exactly one distance that is critically sharp, the plane your lens is focused on. Depth of field is not a second, wider zone of equal sharpness. It is the band around that plane where the softening is still small enough to read as sharp, and the edge of that band is a judgment call, set by how large a blurred point has to grow before the eye calls it blurred. Cambridge in Colour draws it this way: sharpness does not switch off at the edge of the depth of field, it falls off gradually in both directions from the one plane of focus. Stopping down widens the band. It never moves the fact that a single plane sits at its center.
+
+That is why, wide open, focus becomes a game of centimeters. On a fast portrait lens the sharp band can be only a few centimeters deep, thin enough that the near eye is sharp while the far eye has already gone soft. Put the plane on the eye closest to the camera and let the rest fall away.
+
+<Photo
+  src="/photos/focus-and-autofocus/focus-plane-on-the-eyes.jpg"
+  alt="A close portrait of a woman, her eyes and lashes crisply sharp while her hair and the background dissolve into smooth blur."
+  id="5.1"
+  caption="One thin plane, placed on the eyes. Shot on an 85mm lens wide open at f/1.6, the depth of field here is only a few centimeters deep, so the sharp band lands on the eyes and lashes and everything nearer or farther drops off. This is the plane you choose. The whole job of autofocus is to move the lens until that band sits exactly where you meant it to."
+  meta="Sony A7 IV - 85mm - f/1.6 - 1/160s - ISO 3200"
+  credit="Rudhra Varma / Wikimedia Commons (CC BY-SA 4.0)"
+  href="https://commons.wikimedia.org/wiki/File:Payal_Radhakrishna_by_Rudhra_Varma.jpg"
+/>
+
+## Two ways to measure focus
+
+A camera cannot see the scene the way you do. To focus it has to turn "is this sharp?" into a number it can chase, and there are two ways to get that number. They behave so differently that knowing which one is running explains most of what autofocus does.
+
+The older way is contrast detection. Sharp edges have high contrast, the intensity jumping quickly from one pixel to the next, and blur smears that jump into a gradient. So the camera reads the contrast at the focus point and drives the lens to make it as high as it can. The catch, as Cambridge in Colour and the Wikipedia article on autofocus both note, is that a single contrast reading tells the camera nothing about which way to go or how far. A blurry reading looks the same whether the lens is focused too near or too far. So the system has to sample, nudge the lens, sample again, and keep going while the number climbs. It only knows it has found the peak after it steps past and the number drops, which forces it to overshoot and come back. That back and forth is the hunt, and it gets worse in dim light or on low-contrast subjects, where the readings are too faint or too flat to tell apart. Contrast detection is accurate, because it measures sharpness on the actual sensor, but it is slow and it can fail to lock at all.
+
+The faster way is phase detection. It splits the incoming light into two views, gathered from opposite sides of the lens, and compares them. When the lens is focused, the two views line up. When it is off, they land apart, and the crucial part is that the gap carries the whole answer: its size says how far off the focus is, and which view sits on which side says which direction to move. One measurement gives direction and distance, so the lens can move once, the right way, by the right amount, with no hunting. Older DSLRs did this in a dedicated sensor fed by a secondary mirror. Mirrorless cameras build the phase-detecting pixels into the imaging sensor itself, and in Canon's dual-pixel design every pixel is split into two halves that serve both as image and as a phase pair.
+
+<Figure id="5.2" caption="Two ways to find the same focus. Left, contrast detection climbs a hill it cannot see: it reads how much fine detail the lens is projecting, steps, and reads again, and it cannot know it reached the top until it steps past and the reading falls, so it overshoots and backs up. Right, phase detection splits the light into two views from opposite edges of the lens. When focus is off, the two views land apart on the sensor, and the size of that split gives the distance while the side gives the direction, so the lens moves once. One method gropes for the peak, the other reads the answer.">
+  <FocusAndAutofocusFigure />
+</Figure>
+
+The widget lets you run each method on the same out-of-focus subject and watch the difference in motion. Press focus and contrast detection climbs, overshoots, and settles, while phase detection jumps once and locks. Turn on low light and the contrast method wanders further and takes more moves, because its readings have gone noisy, while the phase method still moves decisively. This is the difference you feel every time a camera snaps to focus instead of racking back and forth.
+
+<Widget name="hunt_vs_lock" hint="Pick a method and a light level, then press focus. Same subject, same plane to find. Watch how many moves each one takes to get there.">
+  <FocusAndAutofocusWidget />
+</Widget>
+
+## Hybrid, and what your cameras do
+
+No serious camera picks just one method now. The common design is hybrid: on-sensor phase detection does the fast, coarse work of getting the lens close in one move, and contrast detection does the fine confirmation at the end, checking the sharpness on the real sensor. Panasonic added a third trick called depth from defocus, which reads the specific way a known lens blurs an out-of-focus subject to estimate how far off it is, so even its contrast-based system can guess direction. The point of hybrid autofocus is to spend phase detection's speed and contrast detection's accuracy on the same shot.
+
+Your two cameras sit at interesting ends of this. The Leica Q3 runs a hybrid system its own spec sheet describes as a combination of contrast metering, depth mapping, and phase comparison with autofocus metering points in the sensor, spread across 315 fields. That last clause matters: the Q3 has real on-sensor phase detection, which is why it focuses so much faster than the contrast-only Q2 it replaced.
+
+The Hasselblad tells the clearest version of the story, because you can watch the generations change. The old X1D focused by contrast alone and was famously slow. The X2D 100C brought phase detection to the X system for the first time, with 294 phase-detect zones covering most of the frame. The X2D II 100C you shoot widens that to 425 zones and adds a continuous autofocus mode Hasselblad says is powered by deep learning to track moving subjects, along with LiDAR-assisted focusing and a dedicated autofocus illuminator. The LiDAR is worth a note, because it is a different kind of measurement again: instead of reading the image, it times a light pulse out to the subject and back to measure distance directly, an active method that helps exactly where the passive ones struggle, in the dark and on flat surfaces.
+
+## Where to focus, and how you tell it
+
+Finding focus is one problem. Deciding what to focus on is another, and the camera solves them with separate machinery. Subject detection is a recognition system, trained to find a face, an eye, an animal, or a vehicle in the frame and place the focus point on it. It decides where to focus. The phase and contrast systems still do the how. Keeping these straight is useful, because when eye detection locks onto the wrong person that is a recognition failure, not a focus failure, and the fix is a different button.
+
+You steer the rest with a few controls worth setting deliberately. The autofocus area mode decides how much of the frame the camera is allowed to consider, from a single point you place yourself, through a small zone, out to a wide mode that picks for you. A single point puts you in charge of the plane; a wide mode trades that control for speed and is happy to grab the nearest thing. The focus mode decides whether focus locks or keeps working: single or one-shot autofocus locks once and holds, which suits a still subject, while continuous or servo autofocus keeps adjusting and predicting as the subject moves. And back-button focus, which assigns focusing to a thumb button instead of the shutter release, lets you separate the two acts. You focus when you press the back button and shoot when you press the shutter, so a half-press no longer refocuses on whatever is under the point. Photography Life treats it as the standard fix for cameras that refocus at the wrong moment.
+
+## Focus and recompose, and what it costs
+
+There is one old habit that quietly fights the thin plane. You put the center point on the subject's eye because the center point is the best one, lock focus, then swing the camera to compose with the subject off to the side. The problem is that locking focus fixes the lens for a certain distance, and swinging the camera moves the plane. Bob Atkins works out the geometry: after you rotate by an angle, the subject you focused on ends up slightly in front of the plane of sharp focus, and the size of that miss grows with the cosine of the recompose angle, so it is nothing at a few degrees and real once you have swung the camera well off center. It also grows with wider apertures and closer subjects, which is to say it is worst in exactly the situation that made you focus carefully in the first place, a portrait wide open.
+
+The fix is to stop moving the plane. Move the focus point to where the eye already is instead of recomposing, or let eye detection follow the eye into the corner. On cameras with focus points spread across the frame, and both of yours have them, focus and recompose is a habit worth breaking for anything with shallow depth of field.
+
+## When to take the ring
+
+Autofocus earns its keep, but it has blind spots, and a camera with a great manual focus experience is worth using by hand when it does. Contrast is the common failure: a blank wall, a clear sky, a subject behind glass or rain, a scene too dark to read. When the camera hunts and will not settle, the answer is often to focus yourself.
+
+Mirrorless bodies make this easier than the old ground glass ever did. Focus peaking paints a bright outline over the edges that are currently in sharp focus, so you turn the ring until the peaking blooms on the part you care about. Magnified live view zooms into the frame so you can confirm the plane on fine detail. And for street and documentary work there is zone focusing, where you set the lens to a distance by hand and let a stopped-down depth of field cover a range, so there is no focusing to do when the moment comes. That technique belongs to the way you carry the [Leica Q3 through a street](/street-and-documentary), and the distance math behind it, the hyperfocal setting, comes back with [lenses and optics](/lenses-optics-and-perspective). The point here is smaller and older: the ring is always there, and knowing when to reach for it is part of knowing how the camera finds focus.
+
+## Exercises
+
+<ExerciseCard n="01" title="Make it hunt, then make it snap">
+Point the camera at a smooth, evenly lit wall in dim light and half-press. Watch it hunt, racking back and forth without a firm lock, because there is no contrast to climb. Now tilt to include a hard edge, the corner of a picture frame or a light switch, and half-press again. It snaps. You have just felt the one thing every autofocus system needs, an edge to measure, and seen what happens when the scene does not give it one.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Move the point, do not swing the camera">
+Shoot a portrait wide open twice. First focus with the center point on the near eye, then swing the camera to compose off center, and shoot. Then reset, move the focus point itself onto the eye without moving the camera, and shoot the same frame. View both at full magnification on the eye. On a fast lens up close the recomposed frame is usually a touch soft, and the difference is the plane sliding forward when you swung the camera. This is cosine error, and moving the point is the cure.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Let detection do the aiming">
+Turn on eye or subject detection and continuous autofocus, and have someone walk slowly toward you while you hold the frame. Watch the focus box find the eye and ride it as the distance changes. Notice that the camera is doing two separate jobs at once, deciding where to look and keeping that point sharp, and that when it grabs the wrong face the problem is where it aimed, not whether it focused.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Focus by hand with peaking">
+Switch to manual focus on a still subject with clear texture. Turn the ring until focus peaking lights up the part you want sharp, then magnify the live view and fine-tune until the fine detail is crisp. Take the shot. Doing this once teaches you what the peaking colors actually mean and gives you a reliable move for the moments autofocus cannot handle.
+</ExerciseCard>
+
+## Sources
+
+- [Cambridge in Colour, Understanding Camera Autofocus](https://www.cambridgeincolour.com/tutorials/camera-autofocus.htm), for contrast detection as an iterative search that maximizes contrast and can hunt or fail in low light and low contrast; and [Understanding Depth of Field](https://www.cambridgeincolour.com/tutorials/depth-of-field.htm), for the single plane of focus and the gradual falloff around it defined by the circle of confusion.
+- [Autofocus](https://en.wikipedia.org/wiki/Autofocus), Wikipedia, for contrast detection giving no direction or distance and so requiring overshoot, and for phase detection reading the separation of two sub-images to recover both direction and amount of defocus.
+- Canon, [Dual Pixel CMOS AF](https://global.canon/en/technology/dpcaf.html), for on-sensor phase detection in which each pixel is split into two photodiodes used for both imaging and focus.
+- Bob Atkins, [Focus and Recompose, Focus Accuracy and DoF](https://www.bobatkins.com/photography/technical/focus_recompose.html), for the cosine error of focus and recompose and how it scales with recompose angle, aperture, and subject distance.
+- [Back-Button Focus Explained](https://photographylife.com/what-is-back-button-focus), Photography Life, for decoupling autofocus from the shutter release, and its treatment of single versus continuous autofocus and area modes.
+- [Leica Q3 technical specifications](https://leica-camera.com/en-US/photography/cameras/q/q3-black/technical-specification) for the hybrid autofocus combining contrast metering, depth mapping, and on-sensor phase comparison across 315 fields; and the [Leica Q3 overview](https://en.wikipedia.org/wiki/Leica_Q3) confirming its phase-detection autofocus.
+- Hasselblad, [X2D 100C](https://www.hasselblad.com/x-system/x2d-100c/) for the 294 phase-detect zones that first brought phase detection to the X system, and the [X2D II 100C press release](https://www.hasselblad.com/press/press-releases/2025/hasselblad-introduces-the-x2d-ii-100c-and-xcd-35-100e/) for the expansion to 425 zones, the deep-learning continuous autofocus, LiDAR-assisted focusing, and the new autofocus illuminator.
