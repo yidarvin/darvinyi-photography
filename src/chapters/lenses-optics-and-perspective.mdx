@@ -1,0 +1,88 @@
+import { LensesOpticsAndPerspectiveFigure } from "./_figures/LensesOpticsAndPerspectiveFigure";
+import { LensesOpticsAndPerspectiveWidget } from "./_widgets/LensesOpticsAndPerspectiveWidget";
+
+A lens gets credit for things it does not do. People say a wide lens stretches a face and a long lens squeezes a mountain, as if the glass reached into the scene and rearranged it. It did not. A lens does two jobs. It chooses how much of the world falls on the sensor, its angle of view, and it renders that view with a sharpness that is poor wide open, best a few stops down, and poor again at the bottom. Everything else laid at the lens's feet, above all perspective, the way near and far sizes relate, comes from where you stand. This chapter pulls apart the three things a "lens look" quietly bundles: your distance to the subject, the slice of the scene the focal length keeps, and the aperture where the glass renders best. Separate them and each turns into a control you can use on purpose.
+
+## The focal length picks a slice
+
+Focal length is a distance inside the lens: from its rear principal point to the sensor, with the lens focused at infinity. What that distance buys you is an angle of view. On a full-frame sensor the Q3's 28mm takes in about 75 degrees measured across the diagonal. A 50mm sees 47 degrees, close to the angle the eye reads as natural, which is why it is called a normal lens. A 90mm keeps 27 degrees, a narrow cone it magnifies to fill the frame. Longer focal length, narrower slice, bigger magnification. The relationship is exact: the angle is 2·arctan(d / 2f), where d is the sensor diagonal and f the focal length.
+
+Because the angle depends on the sensor as much as the lens, the same lens frames differently on a different format. Put a lens on a sensor larger than full frame and it takes in a wider slice, so its focal-length number understates its reach. The Hasselblad's 44 by 33 sensor, from [aperture and depth of field](/aperture-and-depth-of-field), has a crop factor of 0.79, so multiplying any XCD focal length by 0.79 gives the full-frame framing. The XCD 55mm f/2.5 frames like a 43mm, the normal lens of the system. The 90mm f/2.5 frames like a 71mm portrait lens, and the 25mm like a 20mm wide. The number on the barrel is the true focal length; the framing is that number times the format. [Choosing a lens](/choosing-a-lens) walks the whole range in practice.
+
+## Perspective is your feet
+
+Here is the part the lens gets wrong credit for. Perspective, how large a near thing looks against a far thing, is set by one quantity, and it is not focal length. It is your distance to the subject. Stand close and the near object is far nearer than the background, so it fills a much larger angle and looms; the ratio of the far distance to the near distance is large, and perspective runs steep. Step back and that ratio falls toward one. From far enough away the subject and the background are almost the same distance from you, their sizes settle toward their true proportions, and the scene flattens. The references are blunt about it. Wikipedia's entry on perspective distortion states that linear perspective changes are caused by distance, not by the lens; Cambridge in Colour puts it that perspective only changes with your location relative to the subject.
+
+So the looming nose of a wide-angle portrait and the stacked ridgelines of a telephoto landscape are effects of distance, not of glass. They travel with focal length only because you reach for a wide lens when you are working close and a long lens when you are shooting far. Choosing the lens chooses the distance, the distance sets the perspective, and the lens takes the bow. The proof is a crop. Stand in one place, shoot the scene with a wide lens and then a long one without moving your feet, and crop the wide frame down to the long lens's field of view. The two match. Nothing about the near-to-far proportions differs, because you never moved. Only the pixel count does.
+
+<Photo
+  src="/photos/lenses-optics-and-perspective/wide-angle-expansion-dog.jpg"
+  alt="A dog photographed from a few centimeters away with an ultra-wide phone lens, its nose ballooning toward the camera while its body and the room behind fall away small."
+  id="10.1"
+  caption="The wide-and-close end. The lens sat centimeters from the nose, so the nose was a fraction of the distance to the ears and a tiny fraction of the distance to the wall. That lopsided ratio is what balloons the nose and throws the background far off. A wide lens did not distort the dog; standing this close did, and the wide lens was only what let the whole animal still fit the frame."
+  meta="Phone ultra-wide (0.5x), lens very close to the subject"
+  credit="Jsw618 / Wikimedia Commons (CC0)"
+  href="https://commons.wikimedia.org/wiki/File:Dog_pictured_from_very_close_with_a_0.5x_lens.jpg"
+/>
+
+<Photo
+  src="/photos/lenses-optics-and-perspective/telephoto-compression-palouse-hills.jpg"
+  alt="Rolling Palouse hills at evening seen from a distant butte, the ridges stacking up in flattened layers of light and shadow with little sense of depth."
+  id="10.2"
+  caption="The long-and-far end. Shot at 163mm from a butte hundreds of meters off, every hill sits at nearly the same great distance from the camera, so their near-to-far ratio is close to one and the ridges compress into stacked, flattened layers. The long lens did not press the hills together; the distance did, and the lens only cropped to the slice worth keeping."
+  meta="Canon EOS 6D - 163mm - Palouse Hills, Washington"
+  credit="Caleb Riston / Wikimedia Commons (CC BY 4.0)"
+  href="https://commons.wikimedia.org/wiki/File:PalouseHillsFromSteptoeButteMay2017-10.jpg"
+/>
+
+## Cropping picks the slice later
+
+If focal length only chooses a slice, you can choose that slice after the shutter, by cropping. The Q3 builds this in. Its 35, 50, 75, and 90mm framelines are not extra lenses; they are crops of the one 28mm frame. Select 90mm and the camera keeps the central 27 degrees and discards the rest, and the file falls from 60 megapixels to about 6. The perspective does not shift by a hair, because you did not move, and the depth of field stays that of the wide 28mm lens. You are spending pixels for reach, and the trade is honest as long as you have pixels to spend: the full 60-megapixel raw is written every time, uncropped, so nothing is thrown away. The 100-megapixel X2D leaves even more room to crop into. Cropping changes the framing. It never changes the perspective, which is why a crop can stand in for a longer lens but never for a step backward.
+
+## Soft wide open, sharp in the middle
+
+The lens's second job is to render the slice, and no lens renders it perfectly. A flawless lens would bend every ray to a single point. Real glass cannot. Wide open, the rays through the edge of the big opening focus a little short of the rays through the center, and the point smears. These are the aberrations, spherical aberration, coma, and astigmatism, and they are worst at the margins of the aperture. So a lens is softest wide open, right where you opened it for the light or the shallow depth. Close it a stop or two and the diaphragm masks those unruly edge rays, leaving the well-behaved center, and sharpness climbs quickly.
+
+Stopping down cannot pay forever, because a second flaw waits at the small end. Squeeze the opening small enough and light bends around its rim, spreading every point into a tiny disc, the Airy disc, whose width grows straight with the f-number. At f/8 a point of green light spreads to about eleven thousandths of a millimeter, and by f/16 it has doubled. Once that disc outgrows the detail the sensor can resolve, the whole frame goes soft, evenly, everywhere. The two flaws pull in opposite directions, and sharpness peaks where they cross. That peak is the sweet spot, usually two to three stops down from wide open, around f/5.6 to f/8 on full frame.
+
+<Figure id="10.3" caption="Two flaws pulling opposite ways. Wide open, aberrations at the edge of the big opening keep the frame soft, and stopping down cuts them, so the aberration ceiling (the upper dashed line) rises to the right. Stop down far enough and diffraction spreads every point into a growing Airy disc, so the diffraction ceiling (the lower dashed line) falls to the right. Real sharpness is capped by whichever flaw is worse, so it follows the lower of the two and peaks where they cross: the sweet spot, about two to three stops down. On the 60- and 100-megapixel sensors in this book, the fine pixels pull the diffraction wall inward, so softening from stopping down shows by roughly f/8.">
+  <LensesOpticsAndPerspectiveFigure />
+</Figure>
+
+The fine sensors in this book move that right-hand wall inward. With photosites near 3.8 thousandths of a millimeter, the 60-megapixel Q3 and the 100-megapixel X2D begin showing diffraction as early as f/5.6 to f/8, where a 24-megapixel body would hold out to about f/11. That is the same fact [aperture and depth of field](/aperture-and-depth-of-field) raised for stopping down: the sweet spot sits a little wider on these cameras, and there is less room past it before softening shows. In practice, open up for the light and the separation and accept a touch of softness, settle near f/4 to f/5.6 when you want the lens at its very best, and stop to f/8 or f/11 only when the picture needs the depth and can spend the sharpness to buy it.
+
+## Feel it
+
+The widget stands a subject in front of you and holds it the same size in the frame no matter where you are. All you do is walk: closer, then farther. To keep the subject framed the same, the focal length follows your feet, wide when you are close and long when you are far, exactly as it would in the field. Watch the background. Up close it shrinks away behind the subject and the scene feels deep; far off it swells and stacks up until it crowds the subject, flattened. You never touched a compression dial, because there is no compression dial. You changed your distance, and the lens only came along to keep the frame.
+
+<Widget name="zoom_with_your_feet" hint="Drag your distance from the subject. The subject stays the same size because the focal length follows you, wide up close, long far away. Only the background changes: small and deep up close, big and stacked far off. That is perspective, and it is your feet, not the lens.">
+  <LensesOpticsAndPerspectiveWidget />
+</Widget>
+
+<Callout>
+A lens has no "look" of its own. It does two things: it sets the angle of view, the slice of the scene that lands on the sensor, and it renders that slice with a sharpness that is worst wide open, best two to three stops down, and worst again once diffraction takes over. Perspective, the relation of near sizes to far sizes, is not one of them. Perspective is set entirely by how far you stand from the subject. Wide-angle expansion and telephoto compression ride along with focal length only because a wide lens is used close and a long lens from far. Change the lens without moving and you have only re-cropped, which is exactly what the Q3's frameline modes do. To change the perspective you have to change the distance.
+</Callout>
+
+## Exercises
+
+<ExerciseCard n="01" title="Crop the wide onto the long">
+Plant your feet and, without moving them, take one frame at your widest framing and one at your longest. On the Q3, shoot 28mm and then the 90mm crop from the same spot. On a computer, crop the wide frame down to the long one's coverage and lay them side by side. The near-to-far proportions match exactly; only the resolution differs. You have just watched focal length do its one job, choose a slice, and leave perspective untouched.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Walk a face through its perspectives">
+Frame a willing friend head-and-shoulders from about a step away with a wide setting, then back up to three or four meters and reframe them the same size with a longer one. Compare the two faces. The close frame broadens the nose and pushes the ears back; the far frame flatters and settles the proportions. Nothing changed but your distance. This is why portraits are shot from a few paces back, not because a longer lens is kinder but because standing there is.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Stack a background with your feet">
+Put a subject in front of something big and far: a building, a ridge, a rising moon. Shoot it from close with a wide framing, then from well back with a long framing that keeps the subject the same size. In the far shot the distant thing balloons and crowds in behind the subject, the compressed look you cannot get any other way. You bought it with distance, and the long lens only cropped to hold the frame.
+</ExerciseCard>
+
+## Sources
+
+- [Perspective distortion, Wikipedia](https://en.wikipedia.org/wiki/Perspective_distortion), for the rule that linear perspective is set by camera-to-subject distance rather than the lens, and the crop proof that a wide frame cut to a telephoto's coverage shows identical perspective.
+- [Understanding Camera Lenses, Cambridge in Colour](https://www.cambridgeincolour.com/tutorials/camera-lenses.htm) and [Wide Angle Lenses](https://www.cambridgeincolour.com/tutorials/wide-angle-lenses.htm), for perspective changing only with your location, and for wide-angle expansion versus telephoto compression arising from the shooting distance the lens forces on you.
+- [Angle of view (photography), Wikipedia](https://en.wikipedia.org/wiki/Angle_of_view_(photography)), for the formula 2·arctan(d / 2f) and the full-frame diagonal angles of view (about 75 degrees at 28mm, 47 at 50mm, 27 at 90mm), and [Focal length, Wikipedia](https://en.wikipedia.org/wiki/Focal_length) for focal length as the rear-principal-point-to-sensor distance at infinity focus.
+- [Hasselblad X System crop factor and XCD equivalents, Shutter Muse](https://shuttermuse.com/hasselblad-x-system-crop-factor-xcd-lens-full-frame-equivalent-focal-lengths/) and the Hasselblad lens pages for [XCD 55V](https://www.hasselblad.com/x-system/lenses/xcd-55v/) and [XCD 90V](https://www.hasselblad.com/x-system/lenses/xcd-90v/), for the 0.79 crop factor and the 43mm and 71mm full-frame framings of the f/2.5 primes.
+- [Leica Q3 technical specification, Leica](https://leica-camera.com/en-int/photography/cameras/q/q3-black/technical-specification) and [Digital zoom and the Q3 crop debate, Macfilos](https://www.macfilos.com/2023/06/07/digital-zoom-part-ii-the-crop-to-zoom-debate-continues-as-leica-q3-adds-yet-another-telephoto-crop/), for the 60.3-megapixel sensor, the 28/35/50/75/90mm framelines as digital crops of the fixed 28mm lens, the roughly 60/39/19/8/6-megapixel crop resolutions, and the full uncropped raw always being saved.
+- [Optical aberrations, MEETOPTICS Academy](https://www.meetoptics.com/academy/optical-aberrations) and [Diffraction and photography, Cambridge in Colour](https://www.cambridgeincolour.com/tutorials/diffraction-photography.htm), for aberrations being worst at the aperture margins and cut by stopping down, and for the Airy disc growing with f-number and diffraction appearing sooner on fine-pixel sensors.
+- [Airy disk, Wikipedia](https://en.wikipedia.org/wiki/Airy_disk) for the disc diameter of about 2.44·λ·N, and [Jim Kasson, Diffraction and sensors](https://blog.kasson.com/the-last-word/diffraction-and-sensors/) for roughly 3.76-micron pixels on 60-to-100-megapixel sensors showing diffraction by around f/5.6 to f/8. The two-to-three-stop sweet spot around f/5.6 to f/8 on full frame is the standard rule of thumb, e.g. [Photography Icon, Diffraction](https://photographyicon.com/diffraction-photography/).
