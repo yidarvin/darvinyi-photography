@@ -1,0 +1,103 @@
+import { ShutterSpeedAndMotionFigure } from "./_figures/ShutterSpeedAndMotionFigure";
+import { ShutterSpeedAndMotionWidget } from "./_widgets/ShutterSpeedAndMotionWidget";
+
+The shutter is the one control on the camera that is made of time. Aperture is a size and ISO is a gain, but shutter speed is a duration, the length of time the sensor is left uncovered to collect light. You met it in [the exposure triangle](/the-exposure-triangle) as one of the three ways to set brightness. This chapter is about its other job, the one only it can do: because it is a span of time, it decides whether something that moves comes out frozen sharp or smeared into a streak. And the thing that decides which you get is not the shutter speed alone. It is how far the subject's image slides across the sensor while the shutter is open, which turns out to depend as much on the lens and the distance as on the dial.
+
+## The duration dial
+
+Everything the shutter does follows from one fact: it is a length of time, not a rate, despite the word speed. Leave it open longer and the sensor collects more light. Leave it open half as long and it collects half. That clean doubling is why shutter speed moves in the same stops as the other two dials, so a stop faster is a stop darker, and you can hand the light back on the aperture or the ISO without changing the picture's brightness. Chapter one is where that trade lives.
+
+The marked series is the doubling ladder, fastest to slowest: 1/8000, 1/4000, 1/2000, 1/1000, 1/500, 1/250, 1/125, 1/60, 1/30, 1/15, 1/8, 1/4, 1/2, 1s, 2s, on out to 30s and a Bulb setting that holds the shutter open as long as you like. The numbers look like they skip near the top because they are rounded for the display. The camera is really targeting powers of two, so the mark that reads 1/125 is aiming at 1/128, and 1/250 at 1/256. One trap comes free with the notation: a bare 60 on the dial means one sixtieth of a second, while 60 with a quote mark, 60", means sixty whole seconds. They differ by a factor of nine hundred, so misreading the mark ruins the frame.
+
+## What the shutter actually freezes
+
+Point the lens at something moving and the shutter has one job to beat: the smear that moving thing draws across the sensor while the light is coming in. That smear has a simple size. It is how fast the subject's image travels across the sensor multiplied by how long the shutter stays open. Blur equals image speed times time. The consequence worth carrying is that blur is linear in the shutter time, so a shutter ten times faster gives one tenth the streak.
+
+The subtle half is the image speed, because it is not the subject's real speed. What lands on the sensor is a shrunken copy of the scene, scaled by the lens's magnification, and for anything farther away than the lens is long that magnification is close to the focal length divided by the distance, f over u. So the streak is roughly the focal length, over the distance, times the real speed, times the time. Read the levers off that. A faster subject smears more, in direct proportion. A farther subject smears less, because distance is on the bottom: back away to twice the distance and you halve the blur. And a longer lens smears more, because focal length is on top: a telephoto magnifies the motion by exactly as much as it magnifies the subject. This is why the same shutter speed that freezes a friend across the table turns a cyclist on the road to mush. The cyclist is not just faster, they sweep a far larger angle across your frame each second, and it is that angular rate, speed divided by distance and scaled by the lens, that the shutter has to outrun. A freight train a mile off crosses the frame so slowly it freezes at 1/125; the same train ten feet away would tear across it.
+
+Direction is the last term, and it is the one people forget. Only the part of the motion that runs across the frame smears. Motion straight toward the camera or straight away barely moves the image at all, it only changes its size, so it records nearly sharp even at a slow speed. Cambridge in Colour turns this into a working rule: for a subject heading straight at you, you can use a shutter about four times longer than you would for the same subject crossing your view, and about twice as long for one moving at an angle. A runner coming down the lane at you is a far easier freeze than a runner cutting across it.
+
+<Figure id="3.1" caption="One subject at one image speed, shot at three shutter speeds. The streak on the sensor is the image speed times the open time, so its length is proportional to the shutter duration. At 1/1000 s it stays a point inside the sharpness limit and reads frozen; at 1/125 s it smears past the limit; at 1/15 s it runs clean off the frame. The sharpness limit is the circle of confusion, the same tolerance that sets depth of field.">
+  <ShutterSpeedAndMotionFigure />
+</Figure>
+
+Put numbers on it and the freezing speeds sort into a ladder. A still or posed subject holds at 1/125 to 1/250. A walking person wants about 1/250, brisker walking 1/500. Running children and pets, unpredictable and close, ask 1/500 to 1/1000. Cyclists and everyday action sit in the same 1/500 to 1/1000 band. Team sports start at 1/1000 and are happier at 1/2000. Cars and motorsport want 1/2000 to 1/4000, and birds in flight the same, with small fast birds pushing past it. Water flung in the air, caught at the peak instant, needs the top of the dial.
+
+<Photo
+  src="/photos/shutter-speed-and-motion/frozen-wave-splash.jpg"
+  alt="A breaking wave on a sandy shore in warm evening light, its foam and flung droplets caught crisp and motionless in the air."
+  id="3.2"
+  caption="A wave frozen at 1/4000 s. Water thrown off a breaking wave is about as fast and chaotic as subject motion gets, yet at four thousandths of a second the image moves too little to smear, so every droplet hangs sharp in the air. Note the 300 mm lens: a long focal length magnifies the motion as much as the subject, which is exactly why it took a shutter this fast."
+  meta="Nikon D750 - 300mm - f/5.6 - 1/4000s - ISO 720"
+  credit="Chris Combe / Wikimedia Commons (CC BY 2.0)"
+  href="https://commons.wikimedia.org/wiki/File:The_Splash_(19330706893).jpg"
+/>
+
+## Feel it
+
+The widget holds the lens and the sensor fixed, the Q3's 28mm on its 60-megapixel frame, and lets you change the two things that decide the smear: the subject and the shutter. Pick the cyclist and step the shutter up until the streak collapses to a point, then switch to the passing car without touching the dial and watch the streak come back, because the car is faster and its image slides farther in the same slice of time. The readout names the smear in pixels and the slowest shutter that still freezes that subject. Notice how far apart the still portrait and the car sit. Same lens, same framing, and the freezing speed moves by six stops.
+
+<Widget name="freeze_or_streak" hint="Pick a subject, then step the shutter until the streak collapses to a point. Change the subject without touching the dial and watch the freezing speed move.">
+  <ShutterSpeedAndMotionWidget />
+</Widget>
+
+## The other blur is you
+
+Subject motion is only one source of streak. The other is your own hands, and it blurs everything in the frame at once rather than just the thing that moved. The old guideline for holding a camera steady is the reciprocal rule: keep the shutter at least as fast as one over the focal length. A 50mm lens wants 1/50 or faster, a 200mm lens 1/200. The reason is the same magnification that governs subject blur. A long lens magnifies your hand tremor by exactly as much as it magnifies the scene, so the longer the lens, the faster the shutter it takes to hide the shake.
+
+Two corrections bring the rule up to date, and both land on the cameras in this book. First, the rule was written for the coarse sensors of its day. A 60 or 100-megapixel sensor resolves so finely that it shows the tremor the old rule let pass, so the modern floor is closer to one over twice the focal length. On the Q3's 28mm that means about 1/60 handheld for critical work rather than 1/30. Second, stabilization buys the floor back. Image stabilization, whether it shifts the sensor or a lens element, is rated in stops, and each stop lets you hold the shutter open twice as long for the same sharpness. The Q3 stabilizes inside its lens, and the Hasselblad X2D II carries five-axis in-body stabilization that Hasselblad rates at ten stops, which is what lets a medium-format camera hand-hold a slow exposure at all.
+
+Here is the catch that ties the section to the last one. Stabilization fights camera shake and only camera shake. It does nothing for a moving subject, because it has no way to know the subject is moving or which way. Ten stops of stabilization will let you hold the camera rock steady at half a second, and the passing cyclist in that half second will still be a smear. When something in the frame is moving, the shutter speed is set by the subject, and no amount of stabilization changes that.
+
+## The slow end, on purpose
+
+Everything so far treated blur as the enemy. Turn the dial the other way and the streak becomes the picture. Leave the shutter open long enough and anything that moves dissolves while everything still holds sharp, which is how a river becomes a sheet of silk and a night road becomes ribbons of light. The price is light. A long exposure in daylight would blow out, so you answer it the way chapter one showed, by closing the aperture and dropping to base ISO, and when that is not enough you add a neutral density filter, a piece of dark glass that simply cuts the light so the shutter can stay open.
+
+<Photo
+  src="/photos/shutter-speed-and-motion/silky-waterfall-long-exposure.jpg"
+  alt="A woodland cascade over mossy rocks, the moving water rendered as smooth white ribbons while the wet rocks and ferns stay sharp."
+  id="3.3"
+  caption="The same tool aimed the other way. A 20-second exposure smears the falling water into a continuous veil while the rocks, which held still, stay crisp. To survive twenty seconds of daylight the aperture closed to f/16 and the ISO sat at its base of 100, the slow-shutter-answered-by-a-small-aperture trade from the exposure triangle."
+  meta="Canon EOS 70D - 15mm - f/16 - 20s - ISO 100"
+  credit="Dietmar Rabich / Wikimedia Commons (CC BY-SA 4.0)"
+  href="https://commons.wikimedia.org/wiki/File:Waldbillig_(LU),_Schiessent%C3%BCmpel_--_2015_--_6033.jpg"
+/>
+
+The most useful slow-shutter trick keeps the subject sharp and streaks the rest. In panning you swing the camera to follow a moving subject through a slow exposure. Think back to the core law: blur is relative motion between the image and the sensor. By matching the camera's swing to the subject's angular rate, you hold the subject on the same patch of sensor for the whole exposure, so it records sharp, while the background, which was still, now races across the frame relative to the moving camera and smears into streaks. The slow shutter is not incidental, it is what gives the background time to blur. A cyclist pans well around 1/30, a runner near the same, a car anywhere from 1/60 for a gentle blur to 1/250 for a faster subject. Keep the autofocus tracking, swing smoothly from the hips, start before the subject arrives and follow through after the shutter closes like a golf swing, and shoot a burst, because the keeper rate is honestly low.
+
+<Photo
+  src="/photos/shutter-speed-and-motion/panning-cyclist.jpg"
+  alt="A black-and-white photograph of a cyclist riding along a waterfront, the rider and bicycle sharp while the buildings, water, and cobblestones streak horizontally with motion."
+  id="3.4"
+  caption="Panning at 1/30 s. The camera swung to follow the rider, cancelling his motion across the sensor so he stays sharp, while everything the lens swept past, the buildings and the cobbles, streaked into horizontal blur. Panning only works for subjects crossing your view, never for one moving straight at you, because there is no sideways motion to cancel."
+  meta="Fujifilm X-E2 - 18mm - f/8 - 1/30s - ISO 250"
+  credit="Dragan Brankovic / Wikimedia Commons (CC BY 2.0)"
+  href="https://commons.wikimedia.org/wiki/File:No_handed_(panning)_-_Flickr_-_d26b73.jpg"
+/>
+
+<Callout>
+Both of your cameras hit a ceiling on the fast end. The Q3's mechanical leaf shutter stops at 1/2000, and the Hasselblad's in-lens leaf shutters at 1/4000, so freezing very fast motion with the aperture wide open in bright light means switching to the silent electronic shutter, which runs much faster, or reaching for a neutral density filter. Why the shutter sits in the lens on both bodies, and what that buys you when the flash comes out, are the subjects of [how a shutter uncovers the frame](/how-a-shutter-uncovers-the-frame) and [flash sync and the leaf advantage](/flash-sync-and-the-leaf-advantage) later in this part.
+</Callout>
+
+## Exercises
+
+<ExerciseCard n="01" title="Walk the freezing ladder">
+Find someone willing to walk past you at a steady pace, framed the same each time, and photograph them at 1/60, 1/125, 1/250, 1/500, and 1/1000. View the files at full magnification and find the speed where their feet and hands first go crisp. That speed is the freezing point for that subject at that distance and lens. Now have them walk toward you instead of across, and notice it freezes a stop or two slower, because motion along the lens barely smears.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Separate shake from subject">
+Photograph a still object handheld at 1/8, then again braced hard against a wall or on a table. The braced frame is sharper, and the difference is pure camera shake, the blur the reciprocal rule and stabilization address. Then photograph something moving at that same 1/8 from the table. It still smears, no matter how steady the camera, which is the subject-motion blur nothing but a faster shutter can fix.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Make the streak the subject">
+Take one slow-shutter frame on purpose. Find moving water or passing traffic, drop to base ISO, close the aperture toward f/16, and expose for a second or more, steadying the camera on anything solid. Then try a pan: pick a shutter near 1/30, follow a cyclist or a car smoothly through the frame, and fire in the middle of the swing. Compare the two. One holds the camera still and lets the subject blur, the other moves the camera to hold the subject and blur the world.
+</ExerciseCard>
+
+## Sources
+
+- [Cambridge in Colour, Camera Shutter Speed](https://www.cambridgeincolour.com/tutorials/camera-shutter-speed.htm), for the shutter as a duration, the stop relationship, and the rule that blur depends on a subject's speed, direction, and magnification, including the roughly four-times and two-times longer shutters allowable for motion toward the camera or at an angle.
+- Wayne Fulton, [Picture Blur, Subject Motion and Camera Shake](https://www.scantips.com/lights/shake.html), scantips.com, for the blur-equals-image-speed-times-time law, the inverse dependence on distance, the magnification m = f/distance, and the finding that motion straight toward or away from the camera contributes little blur.
+- The thin-lens basis for m approaching f/distance for a distant subject, from [OpenStax, University Physics Vol. 3, Thin Lenses](https://openstax.org/books/university-physics-volume-3/pages/2-4-thin-lenses).
+- [Photography Life, What is the Reciprocal Rule](https://photographylife.com/what-is-reciprocal-rule-in-photography) and [Digital Camera World on the reciprocal rule](https://www.digitalcameraworld.com/photography/photo-technique/want-sharper-photos-i-still-use-the-outdated-reciprocal-rule-to-beat-camera-shake-heres-why), for the 1/focal-length guideline, its scope limit to camera shake, and the high-resolution amendment to about 1/(2x focal length).
+- [Digital Photography School, Panning Photography](https://digital-photography-school.com/showing-speed-using-panning-when-shooting-action/) and [PhotographyPro, Panning](https://photographypro.com/panning/), for the panning technique, its relative-motion explanation, and typical shutter speeds by subject.
+- [Leica Q3 technical specifications](https://leica-camera.com/en-US/photography/cameras/q/q3-black/technical-specification) for the 60-megapixel sensor, 9520 by 6336 pixels, the leaf shutter to 1/2000 and electronic shutter beyond it, and the in-lens stabilization; the [Hasselblad X2D II 100C datasheet](https://www.hasselblad.com/x-system/x2d-ii-100c/) for the 100-megapixel sensor, the XCD leaf shutter to 1/4000, the electronic shutter to 1/6000, and the five-axis ten-stop in-body stabilization.
