@@ -14,7 +14,7 @@ calls for.
 |----|-----------------------------------|-------------------------------------|---------|
 | 00 | preface                           | Preface                             | DONE    |
 | 01 | the-exposure-triangle             | The exposure triangle               | DONE    |
-| 02 | aperture-and-depth-of-field       | Aperture and depth of field         | PENDING |
+| 02 | aperture-and-depth-of-field       | Aperture and depth of field         | DONE    |
 | 03 | shutter-speed-and-motion          | Shutter speed and motion            | PENDING |
 | 04 | iso-sensor-and-dynamic-range      | ISO, the sensor, and dynamic range  | PENDING |
 | 05 | focus-and-autofocus               | Focus and autofocus                 | PENDING |
