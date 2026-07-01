@@ -15,6 +15,7 @@ export default {
         accent: "var(--accent)",
         "accent-dim": "var(--accent-dim)",
         comment: "var(--comment)",
+        danger: "var(--danger)",
       },
       fontFamily: {
         mono: "var(--font-mono)",
