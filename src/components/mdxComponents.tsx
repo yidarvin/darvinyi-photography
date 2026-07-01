@@ -1,6 +1,7 @@
 import type { MDXComponents } from "mdx/types";
 import type { ComponentPropsWithoutRef } from "react";
 import { Figure } from "./Figure";
+import { Photo } from "./Photo";
 import { Widget } from "./Widget";
 import { ExerciseCard } from "./ExerciseCard";
 import { Callout } from "./Callout";
@@ -55,6 +56,7 @@ export const mdxComponents: MDXComponents = {
     />
   ),
   Figure,
+  Photo,
   Widget,
   ExerciseCard,
   Callout,

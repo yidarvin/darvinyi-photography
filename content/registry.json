@@ -1,26 +1,327 @@
 {
-  "title": "refsite",
-  "subtitle": "a queue-built reference site --- replace this with your subject",
+  "title": "The Deliberate Photograph",
+  "subtitle": "a working manual for the Leica Q3 and Hasselblad X2D II 100C",
   "chapters": [
     {
       "num": 0,
-      "slug": "how-this-book-is-built",
-      "title": "How this book is built",
-      "subtitle": "the grammar and the queue",
-      "part": "Part 0 --- The system",
+      "slug": "preface",
+      "title": "Preface",
+      "subtitle": "why this book, and how to read it",
       "routes": [
-        "meta",
-        "workflow"
+        "meta"
       ],
       "status": "done"
     },
     {
       "num": 1,
-      "slug": "the-first-real-chapter",
-      "title": "Your first real chapter",
-      "subtitle": "written by the runner",
-      "part": "Part I --- Begin here",
-      "routes": [],
+      "slug": "the-exposure-triangle",
+      "title": "The exposure triangle",
+      "subtitle": "three dials, one quantity of light",
+      "part": "Part I --- How a camera works",
+      "routes": [
+        "exposure"
+      ],
+      "status": "pending"
+    },
+    {
+      "num": 2,
+      "slug": "aperture-and-depth-of-field",
+      "title": "Aperture and depth of field",
+      "subtitle": "why f/1.7 on full frame is not f/1.7 on medium format",
+      "part": "Part I --- How a camera works",
+      "routes": [
+        "exposure",
+        "optics"
+      ],
+      "status": "pending"
+    },
+    {
+      "num": 3,
+      "slug": "shutter-speed-and-motion",
+      "title": "Shutter speed and motion",
+      "subtitle": "the duration dial and what it freezes",
+      "part": "Part I --- How a camera works",
+      "routes": [
+        "exposure",
+        "shutter"
+      ],
+      "status": "pending"
+    },
+    {
+      "num": 4,
+      "slug": "iso-sensor-and-dynamic-range",
+      "title": "ISO, the sensor, and dynamic range",
+      "subtitle": "gain, bit depth, and how much light the sensor holds",
+      "part": "Part I --- How a camera works",
+      "routes": [
+        "exposure"
+      ],
+      "status": "pending"
+    },
+    {
+      "num": 5,
+      "slug": "focus-and-autofocus",
+      "title": "Focus and autofocus",
+      "subtitle": "the plane you choose and how the camera finds it",
+      "part": "Part I --- How a camera works",
+      "routes": [
+        "focus",
+        "optics"
+      ],
+      "status": "pending"
+    },
+    {
+      "num": 6,
+      "slug": "metering-and-exposure-decisions",
+      "title": "Metering and the exposure decision",
+      "subtitle": "from the meter's guess to your choice",
+      "part": "Part I --- How a camera works",
+      "routes": [
+        "exposure"
+      ],
+      "status": "pending"
+    },
+    {
+      "num": 7,
+      "slug": "how-a-shutter-uncovers-the-frame",
+      "title": "How a shutter uncovers the frame",
+      "subtitle": "focal-plane, leaf, electronic, global",
+      "part": "Part I --- How a camera works",
+      "routes": [
+        "shutter"
+      ],
+      "status": "pending"
+    },
+    {
+      "num": 8,
+      "slug": "rolling-shutter-and-readout",
+      "title": "Rolling shutter and readout speed",
+      "subtitle": "why the electronic shutter bends the world",
+      "part": "Part I --- How a camera works",
+      "routes": [
+        "shutter"
+      ],
+      "status": "pending"
+    },
+    {
+      "num": 9,
+      "slug": "flash-sync-and-the-leaf-advantage",
+      "title": "Flash sync and the leaf advantage",
+      "subtitle": "why your cameras sync flash at any speed",
+      "part": "Part I --- How a camera works",
+      "routes": [
+        "shutter",
+        "light"
+      ],
+      "status": "pending"
+    },
+    {
+      "num": 10,
+      "slug": "lenses-optics-and-perspective",
+      "title": "Lenses, optics, and perspective",
+      "subtitle": "focal length, cropping, diffraction, and the sweet spot",
+      "part": "Part I --- How a camera works",
+      "routes": [
+        "optics"
+      ],
+      "status": "pending"
+    },
+    {
+      "num": 11,
+      "slug": "choosing-a-lens",
+      "title": "Choosing a lens",
+      "subtitle": "the fixed 28 and the XCD range in practice",
+      "part": "Part I --- How a camera works",
+      "routes": [
+        "optics",
+        "gear"
+      ],
+      "status": "pending"
+    },
+    {
+      "num": 12,
+      "slug": "reading-light",
+      "title": "Reading light",
+      "subtitle": "direction, hardness, contrast, and the hour",
+      "part": "Part II --- Shooting aesthetically",
+      "routes": [
+        "light"
+      ],
+      "status": "pending"
+    },
+    {
+      "num": 13,
+      "slug": "composition-fundamentals",
+      "title": "Where the eye lands",
+      "subtitle": "the fundamentals of arranging a frame",
+      "part": "Part II --- Shooting aesthetically",
+      "routes": [
+        "composition"
+      ],
+      "status": "pending"
+    },
+    {
+      "num": 14,
+      "slug": "advanced-composition",
+      "title": "Working the frame",
+      "subtitle": "tension, geometry, gestalt, and depth",
+      "part": "Part II --- Shooting aesthetically",
+      "routes": [
+        "composition"
+      ],
+      "status": "pending"
+    },
+    {
+      "num": 15,
+      "slug": "color-science-for-photographers",
+      "title": "Seeing in color",
+      "subtitle": "hue, harmony, temperature, and perception",
+      "part": "Part II --- Shooting aesthetically",
+      "routes": [
+        "color"
+      ],
+      "status": "pending"
+    },
+    {
+      "num": 16,
+      "slug": "black-and-white-seeing",
+      "title": "Removing color to see",
+      "subtitle": "tonal separation, filters, and previsualization",
+      "part": "Part II --- Shooting aesthetically",
+      "routes": [
+        "mono"
+      ],
+      "status": "pending"
+    },
+    {
+      "num": 17,
+      "slug": "the-digital-negative",
+      "title": "The digital negative",
+      "subtitle": "why raw, what bit depth buys, and DNG vs 3FR",
+      "part": "Part III --- Editing",
+      "routes": [
+        "workflow",
+        "color"
+      ],
+      "status": "pending"
+    },
+    {
+      "num": 18,
+      "slug": "ingest-and-catalog",
+      "title": "Ingest and catalog",
+      "subtitle": "import, cull, keyword, and never lose a frame",
+      "part": "Part III --- Editing",
+      "routes": [
+        "workflow"
+      ],
+      "status": "pending"
+    },
+    {
+      "num": 19,
+      "slug": "order-of-operations",
+      "title": "Order of operations",
+      "subtitle": "a develop workflow that does not fight itself",
+      "part": "Part III --- Editing",
+      "routes": [
+        "workflow"
+      ],
+      "status": "pending"
+    },
+    {
+      "num": 20,
+      "slug": "tone-and-the-curve",
+      "title": "Tone and the curve",
+      "subtitle": "exposure, contrast, and recovering the ends",
+      "part": "Part III --- Editing",
+      "routes": [
+        "workflow"
+      ],
+      "status": "pending"
+    },
+    {
+      "num": 21,
+      "slug": "color-grading",
+      "title": "Color grading",
+      "subtitle": "white balance, HSL, calibration, and matching two color sciences",
+      "part": "Part III --- Editing",
+      "routes": [
+        "color",
+        "workflow"
+      ],
+      "status": "pending"
+    },
+    {
+      "num": 22,
+      "slug": "local-adjustments-and-masking",
+      "title": "Local adjustments and masking",
+      "subtitle": "AI masks, gradients, and dodge and burn",
+      "part": "Part III --- Editing",
+      "routes": [
+        "workflow"
+      ],
+      "status": "pending"
+    },
+    {
+      "num": 23,
+      "slug": "black-and-white-conversion",
+      "title": "Black-and-white conversion",
+      "subtitle": "channel mixing, grain, and split-tone",
+      "part": "Part III --- Editing",
+      "routes": [
+        "mono",
+        "workflow"
+      ],
+      "status": "pending"
+    },
+    {
+      "num": 24,
+      "slug": "output-and-print",
+      "title": "Output and print",
+      "subtitle": "sharpening, export settings, and screen vs paper",
+      "part": "Part III --- Editing",
+      "routes": [
+        "print",
+        "workflow"
+      ],
+      "status": "pending"
+    },
+    {
+      "num": 25,
+      "slug": "portrait-in-practice",
+      "title": "Portrait, end to end",
+      "subtitle": "leaf-shutter fill, shallow depth, and skin tone",
+      "part": "Part IV --- In practice",
+      "routes": [
+        "light",
+        "color",
+        "workflow"
+      ],
+      "status": "pending"
+    },
+    {
+      "num": 26,
+      "slug": "street-and-documentary",
+      "title": "Street and documentary",
+      "subtitle": "the Q3 as a reflex, zone focus, and the decisive frame",
+      "part": "Part IV --- In practice",
+      "routes": [
+        "focus",
+        "composition",
+        "workflow"
+      ],
+      "status": "pending"
+    },
+    {
+      "num": 27,
+      "slug": "landscape-and-architecture",
+      "title": "Landscape and architecture",
+      "subtitle": "100 megapixels, dynamic range, and keeping lines true",
+      "part": "Part IV --- In practice",
+      "routes": [
+        "optics",
+        "print",
+        "workflow"
+      ],
       "status": "pending"
     }
   ]
