@@ -20,7 +20,7 @@ calls for.
 | 05 | focus-and-autofocus               | Focus and autofocus                 | DONE    |
 | 06 | metering-and-exposure-decisions   | Metering and the exposure decision  | DONE    |
 | 07 | how-a-shutter-uncovers-the-frame  | How a shutter uncovers the frame    | DONE    |
-| 08 | rolling-shutter-and-readout       | Rolling shutter and readout speed   | PENDING |
+| 08 | rolling-shutter-and-readout       | Rolling shutter and readout speed   | DONE    |
 | 09 | flash-sync-and-the-leaf-advantage | Flash sync and the leaf advantage   | PENDING |
 | 10 | lenses-optics-and-perspective     | Lenses, optics, and perspective     | PENDING |
 | 11 | choosing-a-lens                   | Choosing a lens                     | PENDING |

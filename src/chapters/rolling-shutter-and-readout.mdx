@@ -1,0 +1,95 @@
+import { RollingShutterAndReadoutFigure } from "./_figures/RollingShutterAndReadoutFigure";
+import { RollingShutterAndReadoutWidget } from "./_widgets/RollingShutterAndReadoutWidget";
+
+Every electronic shutter has a number that no menu shows you: the readout time, how long the sensor takes to scan from its first row to its last. It is not the shutter speed. The shutter speed sets how long each row collects light, and every row gets the same amount. The readout time is the stagger between the rows, the gap between the top of the frame being recorded and the bottom. [The last chapter](/how-a-shutter-uncovers-the-frame) showed that a rolling electronic shutter uncovers the frame as a wave sweeping top to bottom. This chapter is about how long that wave takes, and why that one duration decides whether a moving subject keeps its shape, whether flickering light stripes the picture, and whether a flash lights the whole frame. On the Leica Q3 the wave takes about a tenth of a second. On the Hasselblad X2D II it takes about a sixth. Both are slow enough to bend the world, which is exactly why both cameras keep a mechanical leaf shutter for anything that moves.
+
+## Readout time, not shutter speed
+
+Picture the sensor as a stack of rows. In electronic-shutter mode the camera resets the top row to start it collecting light, then a set interval later reads that row out to stop it. That interval is the shutter speed. Then it does the same for the second row, and the third, marching down the frame. Two waves travel down the sensor, a reset wave that begins each row and a readout wave that ends it, and the fixed gap between them is the shutter speed you dialed. Because the waves travel, the bottom row begins and finishes its exposure later than the top row. How much later, first row to last, is the readout time.
+
+The two numbers are independent, and that independence is the whole point. You can shoot at 1/16000 of a second, so each row is open for an eyeblink, and the readout can still take a tenth of a second, because the eyeblink happens at a different moment in every row. A short shutter speed freezes the light each row sees. It does nothing to close the gap between when the top and the bottom of the frame are recorded. Only faster readout closes that gap.
+
+How fast is fast depends entirely on the sensor. A conventional full-frame CMOS chip reads out in tens of milliseconds: about 62 on the Sony a7 III, about 51 on the Nikon Z6, about 68 on the a7 IV, which is actually a hair slower than the a7 III it replaced. A stacked sensor, with its readout circuitry moved onto a layer behind the pixels, reads out in a few milliseconds: about 3.7 on the Nikon Z9, about 3.9 on the Sony a1. That is fifteen to seventeen times faster, and it is what makes a stacked sensor's electronic shutter usable for sports. The two cameras in this book sit at the slow end. The X2D II's 100-megapixel medium-format sensor is measured at about 165 milliseconds in 14-bit mode, and roughly twice that, around 360, in 16-bit. Leica does not publish the Q3's figure and no one has measured it, but the Q3 uses the same 60-megapixel sensor as the Leica M11, which reads out in about a tenth of a second, so the Q3 is almost certainly close. These are among the slowest readouts in any current camera, and the rest of this chapter is what that slowness costs.
+
+## The lean is a shear
+
+Take the simplest case, a subject crossing the frame sideways while you hold the camera still. Because the bottom of the frame is recorded later than the top, the subject has slid a little further along by the time the lower rows are read. A vertical edge, a lamppost or the corner of a building, comes out tilted. Not blurred, tilted, every edge still crisp, the whole shape leaning as if it were cut from soft wax.
+
+The geometry is clean. The tilt from the top of the frame to the bottom equals the subject's speed across the sensor multiplied by the readout time. Double the readout and the lean doubles. Double the subject's speed and the lean doubles. Because each row's delay is proportional to how far down the frame it sits, the sideways displacement grows in a straight line from top to bottom, so a straight edge stays straight, it just slants. This is a pure shear, the transformation that turns a rectangle into a parallelogram. The figure holds the subject speed and the shutter speed fixed and changes only the readout time.
+
+<Figure id="8.1" caption="One railing, one speed, one shutter speed, captured under three readout times. A leaf or global shutter reads the whole frame at once, so the posts stay upright. A stacked sensor reads in a few milliseconds and they lean a little. A non-stacked sensor of the kind in both cameras here takes 100 to 165 milliseconds, so the bottom of the frame is recorded long after the top and the posts lean hard. The lean is a straight shear, and its size is the subject's speed times the readout time.">
+  <RollingShutterAndReadoutFigure />
+</Figure>
+
+Which way it leans depends on which way things move relative to the readout sweep. Pan with a passing car and the background shears one way, the car another. On a fast pan every vertical in a fence tips the same way and by the same angle, which is the giveaway that you are looking at readout and not at a crooked fence.
+
+The lean is the tidy case, a steady motion in one direction. Let the motion change during the readout and the shear changes with it, row by row, and straight lines stop being straight. Handhold a long lens, or shoot from a moving car or a drone, and the camera's own vibration wobbles faster than the frame can be read. The top of the frame is sheared one way, the middle another, the bottom a third, and the picture ripples as if seen through moving water. In video, where every frame is scanned this way one after another, it has a name: jello. It is the same physics as the lean, driven by shaking instead of a pan, and it is worst on the slow-readout sensors here.
+
+## Blades that come apart
+
+Now spin the subject. A propeller or a fan turning during the readout is caught at a different angle in every row, and the straight blades bow into curves. One side of the disc thickens while the other thins, because on one side the blades turn into the sweep and on the other they turn away from it. Spin fast enough, or read slow enough, and the blades stop touching the hub at all and break into free-floating arcs. The photograph below was a rigid three-blade propeller. A phone's electronic shutter read the frame from top to bottom while the propeller spun through more than a full turn, so every row recorded the blades in a different place. Look closely: each edge is sharp. None of the shapes are real.
+
+<Photo
+  src="/photos/rolling-shutter-and-readout/propeller-rolling-shutter.jpg"
+  alt="A turboprop aircraft's spinning propeller photographed on a phone's electronic shutter, its blades rendered as detached, curving smears instead of straight radial blades."
+  id="8.2"
+  caption="A rigid propeller, torn into curved and disconnected blades by a rolling shutter. The rows were read from top to bottom while the blades swept through more than one rotation, so each row caught them at a different angle. This is not motion blur. Every edge is sharp; the geometry is simply a lie the readout tells."
+  meta="Google Pixel 3 · electronic shutter"
+  credit="Dicklyon / CC BY-SA 4.0"
+  href="https://commons.wikimedia.org/wiki/File:Propellor_with_rolling-shutter_artifact.jpg"
+/>
+
+The size of the warp comes down to one ratio: how much the object turns during a single readout. A fraction of a turn bows the blades. A whole turn or more shreds them. The widget later in this chapter is built on exactly that ratio.
+
+## Bands of light
+
+Motion is not the only thing that can change during a readout. Light can too, and most modern light is not steady. Lamps on mains power dim and brighten twice per cycle, a hundred times a second on 50-hertz mains and a hundred and twenty on 60-hertz. LED and screen lighting, dimmed by switching on and off very fast, can flicker hundreds or thousands of times a second. Your eye smooths all of it into a constant glow. A sensor reading one row at a time does not: each row is exposed at a slightly different instant and catches the light at a different point in its flicker, bright here, dim a few rows down. The frame comes out striped with horizontal bands of brightness or color.
+
+The ways out follow from the mechanism. Set the shutter speed to a whole multiple of the flicker period and every row collects the same number of full flicker cycles, so the bands even out: 1/100 or 1/50 of a second under 50-hertz mains, 1/120 or 1/60 under 60. That tames the steady 100 and 120-hertz flicker of ordinary lamps. It does nothing for LEDs, whose faster and less regular rates need the camera's high-frequency, or variable, shutter mode, where you nudge the speed in fine fractional steps while watching a live preview until the banding drops out. Faster readout helps a little, spreading fewer and wider bands across the frame. The cleanest fix is to stop reading row by row at all.
+
+A flash is flicker taken to the limit, a single burst a few thousandths of a second long. Fire it during a rolling readout and it lights only the band of rows collecting light at that instant, leaving the rest of the frame dark. This is why an electronic shutter will not sync an ordinary flash, for the same reason a focal-plane shutter will not above its sync speed: there is no moment when the whole sensor is gathering light at once. [Flash sync and the leaf advantage](/flash-sync-and-the-leaf-advantage), the next chapter, turns on this exact point.
+
+## What your cameras do about it
+
+Every problem in this chapter comes from one source, the frame being uncovered row by row over a slow readout, so every real fix uncovers it all at once instead. Two shutters do that. A global electronic shutter starts and stops every pixel at the same instant, with no wave and no readout to speak of. It is the clean answer: no skew, no jello, no banding, and flash at any speed. It stays rare because it costs image quality. The Sony a9 III, the first full-frame camera to ship one, has a base ISO of 250 rather than 100 and gives up about a stop of dynamic range to get there. [ISO, the sensor, and dynamic range](/iso-sensor-and-dynamic-range) explains why a higher base ISO costs you at the top of the tonal range.
+
+The other fix is the one both cameras in this book already carry, a mechanical leaf shutter. Its blades open the whole frame together and close it together, sweeping in about four milliseconds rather than the tens or hundreds an electronic readout takes, so a moving subject keeps its shape, flickering light barely registers, and a flash syncs at any speed. The Q3's leaf shutter sits inside its lens and runs to 1/2000. Every XCD lens on the X2D II carries its own, to 1/4000. That is the shutter for anything that moves, any artificial light, and any flash.
+
+The electronic shutter earns its place at the edges. It is silent, it has no shutter shock, and it reaches speeds the blades cannot, 1/16000 on the Q3 and 1/6000 on the X2D II. The decision that matters shows up in bright light. Open the Q3's lens to f/1.7 in full sun and 1/2000 will not hold the exposure, so you switch to the electronic shutter to reach 1/16000 and you take on its readout. Photograph a still scene and you lose nothing. Let a subject move through the frame, or stand under flickering light, and the readout you just accepted will show. That is the trade this chapter is really about: not whether the electronic shutter is good, but when its slow readout is a price worth paying.
+
+## Feel it
+
+The widget spins a fan through an electronic shutter and lets you set the readout time. Start on leaf and global, where the readout is zero and the blades are straight, because every row is read at the same instant. Step through stacked, then full-frame, then the Q3 and the X2D II, and watch the same fan come apart as the readout grows. Keep an eye on the one figure that governs it, how much the fan turns during a single readout. A fraction of a turn bows the blades. Past about three-quarters of a turn they tear off the hub, the propeller in the photograph. Then slow the fan down and even the slowest sensor holds it together, or speed it up and even a fast one begins to bend. The distortion is always the product of the two, how fast the subject moves and how slowly the sensor reads.
+
+<Widget name="bend_the_world" hint="Set the readout to leaf/global and the blades are straight. Step up to the Q3 and X2D II and the fan curls and detaches. Then change the fan speed: distortion is the product of how fast it spins and how slowly the sensor reads.">
+  <RollingShutterAndReadoutWidget />
+</Widget>
+
+<Callout>
+One number, the readout time, sets all of it. A slow readout leans moving subjects, wobbles handheld video, curls spinning blades, stripes flickering light, and refuses a flash, because it uncovers the frame from top to bottom over a long moment instead of all at once. Faster sensors shorten that moment, a global shutter erases it at a cost in image quality, and a leaf shutter sidesteps it by opening the whole frame together. Both cameras here read out slowly and both carry a leaf shutter, so the rule is short. Use the electronic shutter for silence, or for a speed past the leaf ceiling on a subject that holds still. Use the leaf shutter for everything that moves or flickers.
+</Callout>
+
+## Exercises
+
+<ExerciseCard n="01" title="Bend a fan on purpose">
+Point the camera at a running fan or a drone propeller, switch to the electronic shutter, and shoot. The blades will curl and come away from the hub. Slow the fan and they straighten; speed it up and they shatter further. Now switch to the mechanical leaf shutter and shoot the same fan: the blades freeze straight. You have just watched the readout time turn into a shape and then disappear.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Kill the bands two ways">
+Under LED or fluorescent light, shoot on the electronic shutter at a fast speed and find the horizontal bands. Fix them first with the shutter speed: try 1/100 or 1/120 of a second and watch the bands soften or vanish as each row starts collecting whole flicker cycles. Then switch to the leaf shutter and shoot at any speed at all. The bands are gone. Two different cures for one artifact, and knowing which to reach for is knowing what caused it.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Cross the leaf ceiling and look">
+In bright sun, open to your widest aperture and raise the shutter speed until the leaf shutter runs out, 1/2000 on the Q3 or 1/4000 on an XCD lens. To go faster you must switch to the electronic shutter. Do it, then photograph something moving across the frame, a passing cyclist or a hand waved past the lens, and look for the lean. That lean is what the extra speed cost you, and seeing it is how you decide whether this particular scene can afford the electronic shutter.
+</ExerciseCard>
+
+## Sources
+
+- [Rolling shutter, Wikipedia](https://en.wikipedia.org/wiki/Rolling_shutter), for the row-by-row scan, skew as a linear shear, wobble and the jello effect, partial exposure under flash and flicker, and the curved-blade distortion of a rotating propeller.
+- [Rolling-shutter readout measurements, horshack-dpreview](https://horshack-dpreview.github.io/RollingShutter/) and its [full-sensor dataset](https://raw.githubusercontent.com/horshack-dpreview/RollingShutter/main/results/full_sensor.json), for the measured first-row-to-last readout times cited here (Sony a7 III ≈ 62 ms, a7 IV ≈ 68 ms, Nikon Z6 ≈ 51 ms, Nikon Z9 ≈ 3.7 ms, Sony a1 ≈ 3.9 ms, Leica M11 ≈ 102 ms, Hasselblad X2D ≈ 164 ms in 14-bit).
+- [Hasselblad X2D electronic shutter scan time, Jim Kasson](https://blog.kasson.com/x2d/hasselblad-x2d-electronic-shutter-scan-time/), for the independent X2D readout measurement, about 165 ms in 14-bit and roughly 360 ms in 16-bit, matching the same 100-megapixel sensor in the Fujifilm GFX 100.
+- [Leica Q3 in-depth review, Keith Wee](https://keithwee.com/2023/06/10/leica-q3-in-depth-review-five-critical-improvements-to-the-q-system/) and [Leica Q3 review, Macfilos](https://www.macfilos.com/2023/05/26/leica-q3-review-solid-upgrade-for-the-perfect-travel-camera/), for the Q3's 1/16000 electronic and 1/2000 in-lens leaf shutter speeds, its shared 60-megapixel M11 sensor, and the note that its readout is slower than the Q2's.
+- [Hasselblad X2D 100C datasheet](https://cdn.hasselblad.com/f/77891/x/38effba8fe/x2d_100c_datasheet_en.pdf), for the 1/6000 electronic shutter, the XCD leaf shutter to 1/4000 with flash sync at all speeds, and the non-stacked 100-megapixel BSI sensor shared with the X2D II.
+- [Understanding flicker, Sony](https://support.d-imaging.sony.co.jp/support/ilc/flicker/01/en/), [Anti-Flicker Shooting, Canon](https://www.canon.com.hk/cpx/en/technical/pa_Anti-Flicker_Shooting.html), and [Flicker Reduction, Nikon](https://onlinemanual.nikonimglib.com/z7_z6/en/09_menu_guide_03_19.html), for mains lamps flickering at twice the line frequency (100 and 120 Hz), LED and PWM sources flickering at hundreds to thousands of hertz, integer-multiple shutter speeds and high-frequency shutter modes, and why anti-flicker needs a mechanical shutter.
+- [Flash synchronization, Wikipedia](https://en.wikipedia.org/wiki/Flash_synchronization), for why a shutter that never opens the whole frame at once, whether a fast focal-plane curtain or a rolling electronic readout, cannot sync a single flash burst.
+- [Sony a9 III base ISO and the cost of a global shutter, PetaPixel](https://petapixel.com/2023/11/17/the-sony-a9-iiis-base-iso-reflects-the-cost-of-a-global-shutter/) and the [Sony a9 III sensor test, DXOMARK](https://www.dxomark.com/sony-a9-iii-sensor-test/), for the first full-frame global shutter: simultaneous exposure with no rolling readout, flash sync to 1/80000, a base ISO of 250, and roughly a stop less dynamic range than its stacked and conventional peers.
