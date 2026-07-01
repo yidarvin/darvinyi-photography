@@ -23,7 +23,7 @@ calls for.
 | 08 | rolling-shutter-and-readout       | Rolling shutter and readout speed   | DONE    |
 | 09 | flash-sync-and-the-leaf-advantage | Flash sync and the leaf advantage   | DONE    |
 | 10 | lenses-optics-and-perspective     | Lenses, optics, and perspective     | DONE    |
-| 11 | choosing-a-lens                   | Choosing a lens                     | PENDING |
+| 11 | choosing-a-lens                   | Choosing a lens                     | DONE    |
 | 12 | reading-light                     | Reading light                       | PENDING |
 | 13 | composition-fundamentals          | Where the eye lands                 | PENDING |
 | 14 | advanced-composition              | Working the frame                   | PENDING |
