@@ -1,0 +1,99 @@
+import { MeteringAndExposureDecisionsFigure } from "./_figures/MeteringAndExposureDecisionsFigure";
+import { MeteringAndExposureDecisionsWidget } from "./_widgets/MeteringAndExposureDecisionsWidget";
+
+The meter does not measure how bright the scene is. It measures how much light bounces back off it, and then it guesses. [The exposure triangle](/the-exposure-triangle) gave you three dials that set the brightness of a frame; this chapter is about the question underneath them, which is what brightness, and who decides. The meter's answer starts from a single assumption: whatever it is pointed at should come out a middle gray. Point it at a snowfield and it renders the snow gray. Point it at a black cat and it renders the cat gray. That assumption is right often enough to be useful and wrong in exactly the scenes worth photographing. So the number in the finder is a guess, calibrated to an average world. The exposure decision is what you do with the guess: read it, know what it assumes, and place the tones where you want them.
+
+## The meter reads reflection, not light
+
+Every meter built into a camera is a reflected-light meter. It reads the light coming back off the scene, the luminance, and that reading alone cannot tell it what it is looking at. A dim reading might be a dark subject in bright light or a bright subject in shade; the two are identical to the meter. To turn one number into an exposure it has to assume something about the subject, and the assumption it makes is that the subject is middle gray.
+
+Middle gray is the tone halfway between black and white, close to 18 percent reflectance. It is the value printed on a Kodak gray card and the one Ansel Adams called Zone V, the anchor of his zone system. It sits at the middle not because it reflects half the light, which would be 50 percent, but because our eyes respond to light along a curve, and about 18 percent is where a gray looks evenly balanced between the two ends. The meter's whole job is to expose so that whatever it reads lands on that middle tone.
+
+There is a refinement worth knowing, because it explains a lifelong source of confusion. Real meters are not calibrated to a literal 18 percent. The exposure standard sets a calibration constant, and the value most cameras use, shared by Canon, Nikon, and the Sekonic handheld meters, works out to a mid-tone nearer 12 to 13 percent reflectance, about half a stop darker than the 18 percent card everyone is taught. Kodak quietly accounted for the gap on its own gray card, whose instructions tell you to open up half a stop after metering off it. None of this changes the working truth. The meter aims every scene at one fixed middle tone, and knowing which tone is less important than knowing there is only one.
+
+The alternative exists, and naming it sharpens what reflected metering is. A handheld incident meter is held at the subject with a white dome over its cell, pointed back toward the camera, and it measures the light falling on the scene rather than the light coming off it. Because it never sees the subject's surface, the subject's own tone cannot fool it: a face reads the same whether it stands against snow or against a black wall. That tone independence is why studio and portrait photographers reach for one. Your cameras, like all cameras, meter only the reflected way, so the fooling is built in and the fix is yours to supply.
+
+## Why snow comes out gray
+
+Follow the assumption to its consequence. Because the meter drives whatever it reads toward middle gray, a scene made mostly of tones brighter than gray gets pulled down, and a scene made mostly of darker tones gets pushed up. A field of snow is far brighter than middle gray, so the meter, trying to make it gray, closes the exposure down and records the snow as a dull slush. A black cat filling the frame is far darker, so the meter opens up and renders the cat a washed gray with its blacks gone. Cambridge in Colour puts the two failures side by side: a white dove in a snowstorm comes out underexposed, a black dog on charcoal comes out overexposed. Same mistake, opposite directions.
+
+<Figure id="6.1" caption="The meter aims every scene at the same middle gray, so it only exposes a true middle-gray subject correctly. A snowfield, far brighter than gray, is dragged down to gray and comes out too dark; a black cat, far darker, is pushed up to gray and comes out too bright. Exposure compensation is the correction: add light to send the snow back up to white, subtract it to send the cat back down to black. The meter guesses gray, and you place the tone.">
+  <MeteringAndExposureDecisionsFigure />
+</Figure>
+
+This is not a defect in the meter. It is the assumption doing exactly what it says. The meter has one reading and no idea whether the scene in front of it is average, so it bets that it is. On the great majority of ordinary scenes, which really do average out near middle gray, the bet pays and the exposure is right. The chapter is about the rest.
+
+## How much of the frame it reads
+
+Before you override the meter you get one say over its guess, which is how much of the frame it averages. That is what the metering mode sets, and every camera offers a few.
+
+Spot metering reads a tiny patch, roughly one to five percent of the frame, at a single point you place. It ignores everything else, which makes it the most precise and the least forgiving: you decide exactly which tone becomes middle gray, and you live with that choice. Center-weighted metering reads the whole frame but concentrates on the central 60 to 80 percent and feathers off toward the edges, so a bright sky at the top pulls the reading less than the subject in the middle. It is old and predictable. Multi-field metering, which Nikon calls matrix and Canon calls evaluative, divides the frame into many zones, reads each one, and combines them, and modern versions compare the pattern of zones against a stored library of scenes to guess what you are shooting and expose for it.
+
+That last mode has a clear birthday. Nikon introduced it on the FA in 1983 as Automatic Multi-Pattern metering, splitting the frame into five segments and running them through a program its engineers wrote after studying nearly 100,000 photographs by eye. Today's version reads thousands of zones against a database of thousands of scenes, and it is genuinely good, right far more often than the average it replaced. It is the default on your cameras, and it deserves to be.
+
+One more mode is worth knowing because it changes the direction of the bias. Highlight-weighted metering exposes to protect the brightest important tones from clipping, holding a spotlit face or a bright dress off the top of the range and letting the shadows fall where they will. Leica put it on the Q3, whose four exposure metering methods are spot, center-weighted, highlight-weighted, and multi-field. The Hasselblad X2D II offers spot, center-weighted, and center spot, and switches to a smart mode of its own when you turn on its HDR capture. Whatever the mode, remember what has not changed: it is still a reflected meter aiming at middle gray. The mode only decides which part of the scene gets aimed there.
+
+## Taking the wheel: exposure compensation
+
+When you can see the meter is about to be fooled, you tell it by how much, in stops, with the exposure compensation dial. Positive compensation makes the picture brighter than the meter wants, negative makes it darker. It works in the automatic modes and works by moving whichever dial you left to the camera: in aperture priority it changes the shutter speed, in shutter priority it changes the aperture, in program it shifts the pair. In full manual it does nothing at all, because you have already set every dial yourself and there is nothing left for it to move. The one exception is manual with Auto ISO, where compensation nudges the ISO the camera is choosing.
+
+The rules of thumb fall straight out of the figure. Bright fresh snow in sun wants about +1.5 to +2 EV to stay white rather than gray, less on an overcast day, less again in open shade. A dark, low-key scene wants negative compensation to stay dark. Both are the same move seen from opposite ends: pushing the tone off the meter's middle gray and back to where it belongs. The Q3 gives you plus or minus three stops to work with in third-stop steps; the X2D II widens that to plus or minus five. You rarely need the ends, but you need the habit of reaching for the dial before the shot, not after.
+
+The widget puts the dial in your hand. Pick a scene the meter gets wrong and it starts at zero compensation, which is the meter's guess, so the snow starts gray and the cat starts washed. Turn the compensation until the subject sits at its true tone, and watch the rendered scene and its histogram slide with you. Push a bright scene too far and the highlights pile against the right edge and clip, which is the warning the next section is about.
+
+<Widget name="meter_vs_choice" hint="Pick a scene the meter gets wrong, then turn the compensation dial until the subject sits at its true tone. Watch the histogram slide with you, and the highlights clip if you push too far.">
+  <MeteringAndExposureDecisionsWidget />
+</Widget>
+
+## The histogram is the honest witness
+
+The meter's number is a prediction made from an assumption. The histogram is a measurement of what the sensor actually recorded, which makes it the one readout you can trust over the meter. It is a simple graph: tones run from pure black on the left to pure white on the right, and the height at each point is how many pixels landed on that tone. There is no ideal shape to chase. A histogram should look like the scene, bunched left for a dark subject, bunched right for a bright one, and the only thing it is really warning you about lives at the two edges.
+
+When tones pile up hard against an edge, they are clipping. Against the right edge, highlights have blown to featureless white, and in a raw file those are gone for good, because a photosite that filled to the top recorded no detail above it to recover. Against the left edge, shadows have crushed to black. Shadows hold a little more latitude than highlights, so a raw file can lift them some, but the lift comes out of the noise floor you met in [ISO, the sensor, and dynamic range](/iso-sensor-and-dynamic-range), and it costs grain. Between the edges you have freedom. At the edges you have loss, and the whole point of watching the histogram is to keep the tones you care about away from the wrong one.
+
+Most cameras also flash the blown areas on the review image, the warning photographers call the blinkies. There is a subtlety in it worth carrying: both the histogram and the blinkies are computed from the camera's embedded JPEG preview, not from the raw data, so they warn of clipping a little before the raw actually clips, often by half a stop to a stop. Raw shooters learn to trust the right edge and to push a touch past the on-screen alarm, which is the same instinct as exposing to the right from the sensor chapter, done by eye.
+
+You do not have to wait for the review, because a mirrorless finder shows the histogram live. The Q3 offers a live histogram, a zebra overexposure warning, and a preview that reflects the actual brightness among its capture assistants; the X2D II shows a live histogram in its Live View. So the real working loop is short. Let multi-field metering propose, glance at the live histogram, and turn the compensation dial until the tones sit where you want them, all before the frame is taken.
+
+<Photo
+  src="/photos/metering-and-exposure-decisions/snow-held-bright.jpg"
+  alt="A sunlit winter landscape at Kasprowy Wierch in the Tatra Mountains: a broad field of clean white snow and snow-covered ridges under a pale sky, the snow rendered bright rather than gray."
+  id="6.2"
+  caption="Snow, kept where it belongs. A frame this full of bright snow is exactly what fools a reflected meter, which left to its assumption would darken the whole scene until the snow read as a dull middle gray. Exposed instead to hold the snow white, the tones pile toward the right of the histogram without spilling off the edge, which is bright snow recorded as bright snow with its texture intact. The correction is a stop or two of positive compensation, the same move the figure above draws."
+  meta="Sony A7R II - 62mm - f/10 - 1/200s - ISO 100"
+  credit="Radek Kucharski / Wikimedia Commons (CC BY 4.0)"
+  href="https://commons.wikimedia.org/wiki/File:Winter_in_Tatry_Mountains_-_Poland.jpg"
+/>
+
+## The meter proposes, you decide
+
+Put the pieces together and the meter stops being an authority and becomes an assistant. Leave it on multi-field for the ninety scenes in a hundred where the world really is average and it will get them right. Learn the handful that it cannot: a snowfield, a stage lit by one spotlight, a face against a bright window, a black dog on a dark street. In those you already know the direction of its mistake before you raise the camera, so you can dial the correction in advance and confirm it on the live histogram, rather than chase it frame by frame in review. That is the whole shift this chapter asks for. The meter reads a gray world and hands you a guess. Deciding what the picture should actually be, and how bright each tone in it should sit, was always your job, and the histogram is how you check that you got it.
+
+## Exercises
+
+<ExerciseCard n="01" title="Watch the meter render three tones the same">
+Fill the frame with a white sheet of paper and meter it in aperture priority, note the shutter, then do the same filling the frame with a black jacket, then with a gray card or a patch of weathered asphalt. The meter proposes an exposure that renders all three as the same middle gray, so the paper comes out gray and the jacket comes out gray. Seeing the one assumption produce three wrong answers is the fastest way to stop trusting the number blindly.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Rescue the snow, or any bright scene">
+Find a scene dominated by something bright, snow, a white wall in sun, a pale beach. Shoot it once at the meter's reading and once at +1.7 EV of exposure compensation, and compare. The first is a muddy gray, the second is bright and clean. You just corrected for the meter's gray by hand, and the amount, a stop and change, is worth remembering for the next bright scene.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Meter with your eyes on the live histogram">
+Turn on the live histogram in your finder and frame a high-contrast scene with both bright sky and deep shadow. Raise and lower the exposure and watch the tones slide, then set it so the highlights climb close to the right edge without piling against it. Take the shot and open the raw. The highlights you protected are all there, and you exposed the frame by reading the histogram instead of obeying the meter.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Place a face with spot metering">
+Switch to spot metering and put the spot on a person's cheek in even light. The meter will try to make that cheek middle gray, which is too dark for light skin, so add about +1 EV to lift it where it belongs and shoot. Move the spot to a darker or lighter face and find its correction. Spot metering hands you the tone placement directly, one patch at a time, which is the zone system's idea in a single button.
+</ExerciseCard>
+
+## Sources
+
+- [Cambridge in Colour, Understanding Camera Metering and Exposure](https://www.cambridgeincolour.com/tutorials/camera-metering.htm), for in-camera meters being reflected-only and standardized to a fixed middle-gray target, which it places between roughly 10 and 18 percent reflectance since cameras do not strictly follow the 18 percent print standard, the white-dove-in-snow and black-dog-on-charcoal failures, and snow needing roughly a stop or more of positive compensation.
+- [Cambridge in Colour, Understanding Histograms](https://www.cambridgeincolour.com/tutorials/histograms1.htm), for the histogram as a tonal distribution with no ideal shape and for clipping at either edge as lost detail.
+- [Middle gray](https://en.wikipedia.org/wiki/Middle_gray) and [Gray card](https://en.wikipedia.org/wiki/Gray_card), Wikipedia, for 18 percent as the perceptual midpoint embodied in the Kodak gray card and Ansel Adams' Zone V, and for the card instruction to open half a stop after metering off it.
+- [Light meter](https://en.wikipedia.org/wiki/Light_meter), Wikipedia, for the ISO 2720 reflected-light calibration constant K, the K equal to 12.5 used by Canon, Nikon, and Sekonic corresponding to a reflectance nearer 12 to 13 percent, and for incident metering measuring the illuminance falling on the subject and so being immune to subject tone.
+- [Metering mode](https://en.wikipedia.org/wiki/Metering_mode), Wikipedia, for spot metering covering one to five percent of the frame, center-weighted concentrating on the central 60 to 80 percent, and multi-zone metering combining many zones against a stored database of scenes; and [Nikon FA](https://en.wikipedia.org/wiki/Nikon_FA) for Automatic Multi-Pattern metering in 1983, its five segments, and its program written after assessing nearly 100,000 photographs.
+- [Using the Highlight-Weighted Metering Mode](https://www.nikonusa.com/learn-and-explore/c/products-and-innovation/using-the-highlight-weighted-metering-mode), Nikon, for highlight-weighted metering as a mode that biases exposure to protect the brightest tones from clipping.
+- [Exposure compensation](https://en.wikipedia.org/wiki/Exposure_compensation), Wikipedia, for compensation shifting the metered exposure in stops, which dial it moves in each automatic mode, and its lack of effect in manual absent Auto ISO; and [Exposing to the right](https://en.wikipedia.org/wiki/Exposing_to_the_right) for pushing the histogram as far right as the highlights allow.
+- [Leica Q3 technical specifications](https://leica-camera.com/en-int/photography/cameras/q/q3-black/technical-specification) for the spot, center-weighted, highlight-weighted, and multi-field metering methods, the plus or minus three EV compensation in third stops, and the electronic viewfinder, with the live histogram and zebra capture assistants described in the [Amateur Photographer Q3 review](https://amateurphotographer.com/review/leica-q3-in-depth-review/); and the [Hasselblad X2D II 100C datasheet](https://www.hasselblad.com/x-system/x2d-ii-100c/) for its spot, center-weighted, and center-spot metering, plus or minus five EV compensation, and live histogram in Live View.

@@ -18,7 +18,7 @@ calls for.
 | 03 | shutter-speed-and-motion          | Shutter speed and motion            | DONE    |
 | 04 | iso-sensor-and-dynamic-range      | ISO, the sensor, and dynamic range  | DONE    |
 | 05 | focus-and-autofocus               | Focus and autofocus                 | DONE    |
-| 06 | metering-and-exposure-decisions   | Metering and the exposure decision  | PENDING |
+| 06 | metering-and-exposure-decisions   | Metering and the exposure decision  | DONE    |
 | 07 | how-a-shutter-uncovers-the-frame  | How a shutter uncovers the frame    | PENDING |
 | 08 | rolling-shutter-and-readout       | Rolling shutter and readout speed   | PENDING |
 | 09 | flash-sync-and-the-leaf-advantage | Flash sync and the leaf advantage   | PENDING |
