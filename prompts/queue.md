@@ -26,7 +26,7 @@ calls for.
 | 11 | choosing-a-lens                   | Choosing a lens                     | DONE    |
 | 12 | reading-light                     | Reading light                       | DONE    |
 | 13 | composition-fundamentals          | Where the eye lands                 | DONE    |
-| 14 | advanced-composition              | Working the frame                   | PENDING |
+| 14 | advanced-composition              | Working the frame                   | DONE    |
 | 15 | color-science-for-photographers   | Seeing in color                     | PENDING |
 | 16 | black-and-white-seeing            | Removing color to see               | PENDING |
 | 17 | the-digital-negative              | The digital negative                | PENDING |
