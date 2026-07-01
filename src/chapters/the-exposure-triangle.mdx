@@ -1,0 +1,82 @@
+import { TheExposureTriangleFigure } from "./_figures/TheExposureTriangleFigure";
+import { TheExposureTriangleWidget } from "./_widgets/TheExposureTriangleWidget";
+
+Every photograph is a decision about how much light to record, and your camera gives you three ways to make it. You set how wide the lens opens, how long the sensor stays uncovered, and how hard the signal gets amplified afterward: aperture, shutter, and ISO. The exposure triangle names how those three trade against one another. It is worth learning not because it sets the brightness for you, but because every way of reaching the same brightness makes a different picture.
+
+## One quantity, measured in stops
+
+Begin with the thing all three dials share. Aperture and shutter together decide how much light lands on the sensor while the picture is taken. ISO decides how much that captured light is amplified. Two of the dials change the light itself; the third changes what the camera does with it, a difference we will come back to at the end.
+
+What lets the three talk to each other is a single unit: the stop. One stop is a factor of two. One stop more light is twice as much, one stop less is half. This holds on every dial. Double the shutter time and you double the light. Double the ISO number and you double the amplification. Aperture moves in stops too, even though its scale looks strange: f/2, f/2.8, f/4, f/5.6, f/8, f/11. The numbers are odd because a lens opening is a circle, and the f-number is the focal length divided by the width of that opening. What controls the light is the area, not the width, so halving the area means shrinking the diameter by the square root of two, roughly 1.4. That is why the full stops climb by factors of 1.4. The 28mm lens on the Leica Q3 opens to f/1.7, a touch wider than f/2 and about as much glass as its front element allows.
+
+<Figure id="1.1" caption="Three controls, one shared output. Each dial steps in stops, and each pulls a different side effect along with it. The arrows point at the one thing they agree on, image brightness; the labels point at the price each charges.">
+  <TheExposureTriangleFigure />
+</Figure>
+
+## Equivalent exposures
+
+Because every dial speaks in stops, they trade cleanly. Give up one stop on one dial and take it back on another, and the total light is unchanged. Cambridge in Colour makes the point with a table of aperture and shutter pairs and one caption: they all result in the same exposure. Photographers call these equivalent exposures, and they are the whole reason the triangle is a triangle rather than a single slider.
+
+Here is the trade in numbers. Start at f/4, 1/250 second, ISO 400. Say you want the background softer, so you open the aperture from f/4 to f/2. That is two stops more light, and the frame would wash out. To hold the exposure, take two stops back somewhere else: speed the shutter from 1/250 to 1/1000. You now have f/2, 1/1000, ISO 400. The brightness is the same as when you started, but the background is softer and motion is frozen harder. Same exposure, different photograph.
+
+On film this trade had only two moving parts. Once you loaded a roll you were locked to its ISO until it ran out, so the triangle was really a line drawn between aperture and shutter. Digital handed ISO back to you frame by frame and turned the line into the third side.
+
+The widget is that trade made movable. Pick a look on one dial, watch the meter tip out of balance, then buy the stops back on another and watch the brightness return while the look does not.
+
+<Widget name="equivalent_exposure" hint="Open the aperture for more blur and the meter tips over. Buy the stops back on the shutter or the ISO. Same brightness, different frame.">
+  <TheExposureTriangleWidget />
+</Widget>
+
+## The three side effects
+
+If equivalent exposures were interchangeable you would pick any one and move on. They are not, because each dial pays for its light with a different side effect, and that side effect is usually the real decision.
+
+- **Aperture buys depth of field.** A wide aperture, meaning a small f-number, throws the background out of focus and lifts a subject off it. A narrow one holds everything sharp from near to far. This is the subject of the next chapter.
+- **Shutter buys motion.** A fast shutter freezes a hand or a bird in the air. A slow one lets anything that moves smear into a streak, which can be a mistake or the entire point.
+- **ISO buys cleanliness.** A sensor's base ISO gives its cleanest file and its widest tonal range. Raising the ISO drags the picture out of the dark, and pays for it in noise. The Q3's base is ISO 100; the medium-format X2D II sits a stop lower at ISO 50.
+
+<Photo
+  src="/photos/the-exposure-triangle/light-trails.jpg"
+  alt="A freeway at dusk photographed as a long exposure, with the headlights and taillights of moving cars drawn into continuous red and white streaks while the road and overpass stay sharp."
+  id="1.2"
+  caption="The shutter's side effect, made visible. A two-second exposure smears the moving cars into light trails, and to keep two seconds of dusk from blowing out, the aperture is closed all the way to f/13. That pairing, slow shutter answered by a small aperture, is a triangle decision you can read straight off the frame."
+  meta="Canon EOS 5D Mark II - 24mm - f/13 - 2s - ISO 400"
+  credit="Travis Isaacs / Wikimedia Commons (CC BY 2.0)"
+  href="https://commons.wikimedia.org/wiki/File:Commute_-_Flickr_-_Travis_Isaacs.jpg"
+/>
+
+This is why experienced photographers rarely reach for correct exposure first. They decide which side effect the picture needs, set that dial for it, and solve the rest of the triangle around it. A portrait wants a wide aperture, so aperture leads. Moving water wants a slow shutter, so shutter leads. A dim room with a moving subject forces the ISO up, and you take the noise because the alternative is no picture at all.
+
+## The crack in the triangle
+
+The triangle has an honest flaw, and seeing it clearly will save you from a common confusion. Two of its three sides act on the light before it reaches the sensor. The third does not. Aperture and shutter set the exposure, the real quantity of light the sensor collects. ISO changes none of that light. It amplifies the signal afterward, the way turning up a stereo makes a quiet recording louder without adding any music to it. Nando Harmsen puts it plainly: ISO does not control the amount of light in any way. It is gain applied to a picture that has already been taken.
+
+You can measure the point. On the Hasselblad, careful tests by Jim Kasson show the sensor is close to what engineers call ISO-invariant above a gain step near ISO 200, which means raising the ISO in the camera and brightening the raw file later arrive at nearly the same result. The sensor chapter takes that apart. Here the lesson is smaller: the triangle is a fine map of how bright the picture will be and a poor map of where the light came from.
+
+So why keep it? Because as a picture of consequences it still earns its place. Once you have a correct exposure, the triangle tells you what any change will cost: move a stop from one dial to another and it shows you the depth of field, the motion, and the noise you traded to do it. Those are relative effects, which is exactly what the model is good for, and what the widget above rewards.
+
+<Callout>
+Both the Q3 and the X2D II use leaf shutters, which sync flash at any shutter speed. That quietly breaks a rule most cameras live by, and it earns its own chapter later in Part I. For now it is enough to know that the shutter dial does more than meter light.
+</Callout>
+
+## Exercises
+
+<ExerciseCard n="01" title="Walk the equivalents">
+Put the camera in manual and meter a scene you can shoot four times. Note the settings, then make three more frames that match its brightness by trading stops: open the aperture and speed the shutter, or drop the ISO and slow the shutter. Line the four up afterward. The brightness should hold while the background blur and the motion visibly change.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Lead with the side effect">
+Pick a subject that clearly wants one dial: a portrait for aperture, moving water for the shutter, a dim interior for ISO. Set that dial first, purely for the look you want, and only then solve the other two for a correct exposure. Notice which dial you are forced to set last, and by how much.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Find your base ISO">
+Look up your camera's base ISO (100 on the Q3, 50 on the X2D II) and shoot one high-contrast scene there, then the same scene three stops higher. Compare the shadows at full magnification. The grain that appears is the exact price the ISO dial charges, and knowing what it looks like tells you how high you can go before it costs too much.
+</ExerciseCard>
+
+## Sources
+
+- Bryan Peterson, *Understanding Exposure* (Amphoto Books, 1990), which introduced the idea as the "photographic triangle" with aperture, shutter, and film as its three sides.
+- The naming history, including the shift from film to ISO and the phrase "exposure triangle" traced to Jim Miotke's 2005 *BetterPhoto Guide to Digital Photography*, as reported by [Amateur Photographer](https://amateurphotographer.com/latest/photo-news/the-exposure-triangle-issue/).
+- [Cambridge in Colour, Camera Exposure](https://www.cambridgeincolour.com/tutorials/camera-exposure.htm), for the stop as a doubling of light, the f-number series, and equivalent exposures.
+- Nando Harmsen, [The Truth About the Exposure Triangle](https://fstoppers.com/education/truth-about-exposure-triangle-and-should-you-use-it-524399), Fstoppers, for the argument that ISO is amplification rather than exposure, and remains useful for reading relative effects.
+- [Leica Q3 technical specifications](https://leica-camera.com/en-US/photography/cameras/q/q3-black/technical-specification) and the [Hasselblad X2D II 100C](https://www.hasselblad.com/x-system/x2d-ii-100c/) product page for the lens, base ISO, and shutter figures; Jim Kasson's sensor measurements at [blog.kasson.com](https://blog.kasson.com/) for the ISO-invariance behavior of the X2D.
