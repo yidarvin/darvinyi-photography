@@ -1,0 +1,119 @@
+import { BlackAndWhiteSeeingFigure } from "./_figures/BlackAndWhiteSeeingFigure";
+import { BlackAndWhiteSeeingWidget } from "./_widgets/BlackAndWhiteSeeingWidget";
+
+Black and white is not color removed. It is a different medium with its own logic, and the logic is easy to state and hard to see. A black-and-white photograph keeps only the value of each color, the light-or-dark of it, and throws the hue away. In a color frame hue does much of the work of telling one thing from another: a red berry reads instantly against a green leaf because the two hues sit opposite each other, even when they are equally bright. Convert that frame to grey and the hue is gone, so the only thing left to separate the berry from the leaf is a difference in brightness, and there may be almost none. The berry sinks into the leaf. Seeing in black and white means predicting that translation before you press the shutter. It means knowing which colors will hold apart as tones and which will merge, and taking control of the outcome instead of accepting whatever grey the scene hands you.
+
+## The older language
+
+Photography began in black and white because it had no choice, and then kept black and white as a choice. The first commercially practical color process, the Lumière brothers' Autochrome, was patented in 1903 and reached the market in 1907, nearly seven decades after the daguerreotype was announced in 1839. For most of a lifetime, every photograph was monochrome. Even after Kodachrome arrived in the mid-1930s and made color portable, and after color took over the family snapshot, the photographers who cared most about the picture kept working in grey on purpose.
+
+The reason is that removing color is a kind of abstraction. Strip the local color from things and what remains is structure: line, shape, tone, texture, the fall of light, the gesture of a moment. Ansel Adams built his landscapes out of pure tone. Henri Cartier-Bresson caught the decisive moment in grey. Sebastião Salgado and Dorothea Lange told human stories where color would only have been a distraction from the face. Black and white does not show less than color. It shows something else, and it shows it by leaving out the one thing every casual photograph already has.
+
+## The value collapse
+
+The last chapter, [seeing in color](/color-science-for-photographers), said that any color answers three questions: its hue, its saturation, and its value. Black and white keeps only the last one. And value is not spread the way you would guess. The eye is far more sensitive to green than to red, and barely sensitive to blue, so the grey a color becomes is a lopsided weighted sum of its channels, close to 0.21 of the red, 0.72 of the green, and 0.07 of the blue. Those are the Rec. 709 luminance weights that video and image tools use; older systems weighted red and blue a little more heavily, and the exact numbers vary, but green always dominates and blue is always faint. A saturated yellow, which is mostly red and green, comes out nearly white. A saturated blue comes out nearly black. The hue itself never enters the sum.
+
+Two colors of completely different hue can therefore carry the same brightness, and when they do, they become the same grey.
+
+<Figure id="16.1" caption="Throw away hue and only value is left, and value is a single lopsided sum that green dominates. On the left, a vivid red and a vivid green were tuned to the same luminance, so both land on the identical 31 percent grey and merge into one tone: the value collapse. On the right, a yellow and a blue differ in brightness, so they stay cleanly apart, 79 percent against 34 percent. The lesson under the whole chapter is that color contrast is not tonal contrast. A loud color relationship can be a nearly silent tonal one, and only the tone survives the conversion.">
+  <BlackAndWhiteSeeingFigure />
+</Figure>
+
+This is the value collapse, and seeing it coming is the single most useful habit in monochrome. High color contrast is not the same as high tonal contrast. A red flower against green leaves is one of the loudest color relationships there is, opposites on the wheel, and very often it is a nearly silent tonal one, because the red and the green happen to reflect about the same amount of light. In color the subject shouts. Desaturate it and the subject disappears.
+
+<Photo
+  src="/photos/black-and-white-seeing/holly-berries-color.jpg"
+  alt="A cluster of glossy scarlet holly berries nestled among dark green holly leaves in bright autumn light, with pale golden foliage soft behind them."
+  id="16.2"
+  caption="In color, the berries are impossible to miss. Red and green sit opposite each other on the wheel, so the fruit separates from the leaves by hue alone, and the picture organizes itself around that one relationship."
+  meta="Holly in autumn, a red-against-green subject"
+  credit="AnemoneProjectors / Wikimedia Commons (CC BY-SA 2.0)"
+  href="https://commons.wikimedia.org/wiki/File:Holly_(Ilex_aquifolium)_leaves_and_fruits_(8258341164).jpg"
+/>
+
+<Photo
+  src="/photos/black-and-white-seeing/holly-berries-mono.jpg"
+  alt="The same holly photograph converted to plain black and white, in which the berries are now nearly the same grey as the surrounding leaves and are hard to pick out."
+  id="16.3"
+  caption="The identical frame, desaturated with no other change. The red berries and the green leaves reflected almost the same amount of light, so with the hue gone they fall to almost the same grey and the fruit nearly vanishes into the foliage. The subject was never carried by tone. It was carried by a color contrast that the conversion threw away."
+  meta="The same frame, converted straight to grey"
+  credit="AnemoneProjectors / Wikimedia Commons (CC BY-SA 2.0), converted to black and white"
+  href="https://commons.wikimedia.org/wiki/File:Holly_(Ilex_aquifolium)_leaves_and_fruits_(8258341164).jpg"
+/>
+
+## A filter redraws the tones
+
+If the default translation flattens what you wanted to separate, you change the translation. On film the tool was a colored filter screwed onto the lens, and its rule is worth memorizing: a filter lightens its own color and darkens the complement. Put a red filter on and every red in the scene passes freely and records bright, while everything toward cyan and blue is blocked and records dark. The classic case is the sky. A plain blue sky renders as a flat pale grey, close in tone to the white clouds sitting in it, so the clouds go missing. A red filter drives that sky toward black while the clouds, which pass every color, stay white and leap off it.
+
+<Photo
+  src="/photos/black-and-white-seeing/adams-tetons-snake-river.jpg"
+  alt="Ansel Adams's black-and-white photograph of the Teton range under a dark, cloud-filled sky, with the sunlit Snake River winding as a bright ribbon through dark forest in the valley below."
+  id="16.4"
+  caption="Ansel Adams, The Tetons and the Snake River, 1942. The sky is driven down almost to black so the storm clouds stand off it in full relief, while the river holds the brightest tone in the frame and the snow separates from the peaks by value alone. Nothing here is color, and nothing needs to be. The picture is built entirely from where each thing falls on the scale from black to white."
+  meta="Grand Teton National Park, Wyoming, 1942"
+  credit="Ansel Adams / U.S. National Archives (public domain)"
+  href="https://commons.wikimedia.org/wiki/File:Adams_The_Tetons_and_the_Snake_River.jpg"
+/>
+
+The filters make a ladder of strength. A yellow filter is the gentle everyday choice, darkening a blue sky just enough to give the clouds some shape, and it costs about one stop of light. An orange filter goes further and starts to cut haze. A red filter is the dramatic extreme, worth roughly three stops and turning an ordinary summer sky theatrical. A green filter lightens foliage and is kind to leaves, though unkind to warm skin, which it drives dark. A blue filter does the reverse and is used mostly to add the soft haze of distance. Every one of them costs light, because it works by throwing part of the spectrum away, and that cost is the filter factor you open the exposure up to cover.
+
+<Widget name="tonal_translator" hint="The scene on the left never changes color. Drop a filter over it and watch the black-and-white version on the right redraw itself: a red filter drives the blue sky toward black and makes the red barn and white cloud leap out, while a green filter lifts the foliage and darkens the barn. The neutral cloud barely moves. The mono photograph was a decision all along.">
+  <BlackAndWhiteSeeingWidget />
+</Widget>
+
+In digital nothing is thrown away. Your raw file records all three color channels whatever you had in mind, so the filter becomes a set of sliders you move after the fact, the black-and-white mix or channel mixer that raises one color's tones and lowers another's. It is the same idea as the glass filter, done at no cost in light and reversible at any time, and it is the whole subject of [black-and-white conversion](/black-and-white-conversion). Because the color is still in the file, the choice that was permanent on film is now yours to keep changing. What does not change is the seeing. You still have to look at a red barn against a green field and know that, left alone, the two will merge, and that a red filter, or a slider, will throw them apart.
+
+## See the grey before the shutter
+
+This habit of predicting the print has a name and a history. Ansel Adams and Fred Archer worked it out around 1939 and 1940 while teaching at the Art Center School in Los Angeles, and Adams called it the Zone System, a codification, in his words, of the older science of sensitometry rather than an invention of his own. Its center is one discipline he called visualization: seeing the finished tones of the print in your mind before the exposure is made, then working backward to secure them.
+
+Adams divided the whole tonal scale into eleven zones, written in Roman numerals so they would not be confused with anything else, from Zone 0, a pure black with no detail, to Zone X, a pure white with no detail. Zone V is the middle grey that a reflected-light meter is built to assume, which ties this straight back to [metering](/metering-and-exposure-decisions): the meter renders whatever it reads as Zone V, and every other placement is a number of stops away from it. Each zone is one stop from the next. You meter the single value you care about most and place it where you want it, dark skin on V, bright textured snow on VIII, a deep shadow you still want detail in on III, and let every other tone fall where it lands. Adams separated the full dynamic range, roughly Zone I through IX, from the narrower textural range of about II through VIII, where a tone still shows the texture and substance of a real surface. On film he finished the job in development, giving a flat scene more and a harsh one less, under the maxim expose for the shadows and develop for the highlights.
+
+You do not need a darkroom to keep the habit, because the question at the shutter is the same: what grey will this become, and where do I want it. Your two cameras answer it unevenly. The Leica Q3 will show you directly. Set a monochrome Leica Look and the finder and rear screen render the scene in grey while the DNG raw quietly keeps every color channel, so you previsualize in black and white and still convert from full color later. The display button cycles the finder from color to monochrome to monochrome with a live tonal readout. The Hasselblad X2D II has no monochrome preview at all, so there the previsualization stays in your head and the conversion happens afterward in Phocus or Lightroom over the full-color file. Either way the raw is your negative, covered in [the digital negative](/the-digital-negative), and the black-and-white photograph is a decision you make on top of it.
+
+## What is left when the color goes
+
+Reach for black and white when color is carrying nothing, or when it is carrying the wrong thing. A scene lit by three different color temperatures, a warm lamp, a cool window, a green-tinted fixture overhead, is a quarrel in color and can be settled the instant you drop the hue, because now the only thing that varies across the frame is light and shadow, which the mixed sources agreed on all along. A picture that is really about a face, a gesture, a geometry, or a texture usually gets stronger once the color stops competing for the eye.
+
+<Photo
+  src="/photos/black-and-white-seeing/prague-archway-light.jpg"
+  alt="A bright, nearly all-white vaulted passageway with a receding row of arches and a flight of pale stone steps in the foreground, lit so evenly that the image is almost entirely light greys."
+  id="16.5"
+  caption="Here the whole picture lives in the light end of the scale, a high-key frame built from arches, steps, and the soft gradients of curved white plaster. There is nothing to add in color, because the subject is purely form and light. Choosing black and white is only the first decision. The second is the key: whether the frame lives in the lights, as this one does, in the darks, or across the full ladder as Adams's mountains do."
+  meta="A vaulted passage, form and light with the color already gone"
+  credit="Robin Schreiner / Unsplash"
+  href="https://unsplash.com/photos/7y4858E8PfA"
+/>
+
+Choosing black and white is not the end of the choosing. You still decide the key the frame lives in. A high-key image sits in the light tones and feels airy and open, a low-key image sits in the dark and feels heavy and grave, and a full-scale image runs the whole ladder from solid black to clean white for maximum force. Side light, which [reading light](/reading-light) treated as a way to model form, matters even more here, because with color gone, texture and shape are shown almost entirely by how the light rakes across a surface. And film grain, once a limitation of fast emulsions, has become a texture you add on purpose, which the conversion chapter takes up.
+
+<Callout>
+Black and white is a translation, not a subtraction. It keeps the value of every color and discards the hue, and value is a lopsided sum that green dominates, so colors that look vividly different can collapse into the same grey. A colored filter, or its digital echo the channel mix, redraws that translation by lightening its own color and darkening the opposite, which is how a red filter turns a blue sky black. Seeing in black and white is previsualizing that grey before the shutter, placing the one tone you care about most and letting the rest fall, then choosing the key the whole frame lives in. Learn to see tone instead of color and you stop losing the picture in the conversion and start building it there.
+</Callout>
+
+## Exercises
+
+<ExerciseCard n="01" title="Watch it collapse">
+Photograph something vividly colored against a background of a different but similarly bright hue: red berries in green leaves, a red jacket against summer grass, a blue flower in shade. Convert it to plain black and white with no other adjustment. Watch the subject sink into the ground. You did not underexpose it. You removed the only thing that was holding it apart, and now you can see exactly what tone was left underneath the color.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Find the filter">
+Take that same flattened frame and open the black-and-white mix, or the HSL luminance sliders. Drag the subject's color one way and the background's the other, and watch the two tones pull apart. You are doing in software precisely what a colored filter did on the lens, deciding which colors go light and which go dark. Notice that you can push it until the separation looks natural, and then a little past, until it looks false.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Darken a sky">
+On a day with a blue sky and white clouds, previsualize the red-filter look before you shoot: sky near black, clouds bright and sculptural. Then make it, either with a real orange or red filter or by pulling the blue down in conversion. Compare it to the version straight off the sensor, where the sky is a flat grey and the clouds are barely there. Most of the drama was in the part of the sky you usually ignore.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Previsualize a block">
+Walk one block seeing only in grey. On the Q3, set a monochrome Look so the finder shows the scene in black and white while the raw keeps its color. On the X2D, do it in your head: for each scene, name the brightest textured thing, the darkest thing you still want detail in, and where middle grey sits. Convert the frames afterward and check how close your prediction was. The gap between what you expected and what you got is the whole skill, and it closes fast.
+</ExerciseCard>
+
+## Sources
+
+- [Zone System, Wikipedia](https://en.wikipedia.org/wiki/Zone_System) and [Fred R. Archer, Wikipedia](https://en.wikipedia.org/wiki/Fred_R._Archer), for the Zone System formulated by Ansel Adams and Fred Archer at the Art Center School in Los Angeles around 1939 to 1940, Adams's description of it as a codification of sensitometry, the eleven zones 0 through X in Roman numerals with Zone V as middle grey and one stop per zone, the practice of placing a key value and letting others fall, the dynamic range (I to IX) versus the textural range (II to VIII), and the maxim to expose for the shadows and develop for the highlights. Codified in Adams's book The Negative (1948).
+- [Relative luminance, Wikipedia](https://en.wikipedia.org/wiki/Relative_luminance), [Luma (video), Wikipedia](https://en.wikipedia.org/wiki/Luma_(video)), and [Grayscale, Wikipedia](https://en.wikipedia.org/wiki/Grayscale), for the Rec. 709 luminance weights of about 0.2126 red, 0.7152 green, and 0.0722 blue (with the older Rec. 601 weights of 0.299, 0.587, 0.114), green dominating perceived brightness and blue contributing least, and grey being a weighted sum of the channels in which hue plays no part.
+- [Photographic filter, Wikipedia](https://en.wikipedia.org/wiki/Photographic_filter), [Filter factor, Wikipedia](https://en.wikipedia.org/wiki/Filter_factor), and [Ilford black-and-white filters](https://www.ilfordphoto.com/colour-filters/), for a colored contrast filter lightening its own color and darkening its complement, the yellow, orange, and red ladder that darkens a blue sky by increasing amounts, the green and blue filters and their effect on foliage and haze, and the filter factor in stops that each one costs (roughly one stop for yellow up to about three for a deep red).
+- [Orthochromasia, Wikipedia](https://en.wikipedia.org/wiki/Orthochromasia) and [Panchromatic film, Wikipedia](https://en.wikipedia.org/wiki/Panchromatic_film), for the history of film spectral sensitivity, early emulsions being blue-sensitive and effectively color-blind, orthochromatic film adding green but rendering reds dark, and panchromatic film responding across the full visible spectrum.
+- [Autochrome Lumière, Wikipedia](https://en.wikipedia.org/wiki/Autochrome_Lumi%C3%A8re), [Ansel Adams, Wikipedia](https://en.wikipedia.org/wiki/Ansel_Adams), [Henri Cartier-Bresson: The Decisive Moment, Fondation HCB](https://www.henricartierbresson.org/en/publications/henri-cartier-bresson-the-decisive-moment-new-edition/), [Sebastião Salgado, Wikipedia](https://en.wikipedia.org/wiki/Sebasti%C3%A3o_Salgado), and [Dorothea Lange, Migrant Mother, MoMA](https://www.moma.org/collection/works/50989), for photography beginning monochrome by necessity (the Autochrome patented in 1903 and marketed in 1907, decades after the 1839 daguerreotype), black and white persisting as a deliberate choice after color, and its use by Adams, Cartier-Bresson, Salgado, and Lange.
+- [Leica Q3: the perfect menu, Thorsten Overgaard](https://www.overgaard.dk/Leica-Q3-digital-rangefinder-camera-the-perfect-menu.html), [Hasselblad X2D II 100C in-depth review, DPReview](https://www.dpreview.com/reviews/hasselblad-x2d-ii-100c-in-depth-review), and [black-and-white refinements with the color mixer, Scott Davenport](https://scottdavenportphoto.com/blog/black-white-refinements-with-the-color-mixer), for the digital channel mix being the software equivalent of a contrast filter applied non-destructively over a full-color raw, the Leica Q3's monochrome Leica Looks that set the look of the finder and screen while leaving the DNG in full color, and the Hasselblad X2D II having no in-camera monochrome preview, so its black and white is a convert-in-software workflow.

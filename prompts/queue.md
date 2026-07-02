@@ -28,7 +28,7 @@ calls for.
 | 13 | composition-fundamentals          | Where the eye lands                 | DONE    |
 | 14 | advanced-composition              | Working the frame                   | DONE    |
 | 15 | color-science-for-photographers   | Seeing in color                     | DONE    |
-| 16 | black-and-white-seeing            | Removing color to see               | PENDING |
+| 16 | black-and-white-seeing            | Removing color to see               | DONE    |
 | 17 | the-digital-negative              | The digital negative                | PENDING |
 | 18 | ingest-and-catalog                | Ingest and catalog                  | PENDING |
 | 19 | order-of-operations               | Order of operations                 | PENDING |
