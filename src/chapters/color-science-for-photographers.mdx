@@ -1,0 +1,128 @@
+import { ColorScienceForPhotographersFigure } from "./_figures/ColorScienceForPhotographersFigure";
+import { ColorScienceForPhotographersWidget } from "./_widgets/ColorScienceForPhotographersWidget";
+
+Beginners treat color as a fact about the world: the shirt is red, the sky is blue, and the camera's job is to record what was there. Almost none of that is true. Color is not in the light, which carries only wavelength, and it is not fixed in the object, which changes color with the light that falls on it and with whatever sits next to it in the frame. Color is a computation your eye performs, and it is relational to the core. The same grey looks warm against blue and cool against orange. The same dress looks white to one person and blue to the next. Once you stop believing the shirt is simply red, color turns from something you record into something you compose, and a handful of facts about how the eye builds it, and how colors relate, are most of what you need.
+
+## Color is something the eye does
+
+Light has no color. What leaves the sun and bounces off a lemon is a mix of electromagnetic wavelengths, and wavelength is a physical fact with a number attached. Color is what your visual system makes of it, and it makes it with only three measurements. The retina holds three kinds of cone, each tuned to a different band: the S cones peak around 420 nanometers in the blue, the M cones around 530 in the green, and the L cones around 560 in the yellow-green that we call red. Every color you have ever seen is the brain reading the ratio of those three responses. That is the trichromatic theory, proposed by Thomas Young in 1802 and worked out by Hermann von Helmholtz half a century later, and it is why a screen can fake any color you like with just three lights. It is fooling three sensors, so three primaries are enough.
+
+The three are not evenly matched, and the mix is more personal than it feels. Only about two percent of your cones are the blue-sensitive S type, which is why fine blue detail is poor and why blue text on a screen looks soft. The balance of L and M cones varies enormously from person to person, with counts running anywhere from a small majority of L to nearly even, so the "same" red already lands a little differently in two pairs of eyes. Out of six or seven million cones the eye builds a color world that is stable enough to share a language for and yet is never quite identical between any two people.
+
+The eye does not hand those three cone numbers on as they are. It immediately recodes them into oppositions, which is the single most useful fact in this chapter. Ewald Hering noticed in 1892 that colors behave like the ends of seesaws, and Leo Hurvich and Dorothea Jameson confirmed it quantitatively in 1957: the visual system carries a red-versus-green channel, a blue-versus-yellow channel, and a light-versus-dark channel. A color pushes one end of each seesaw. This is why you can easily picture a reddish yellow, which is orange, or a greenish blue, which is teal, but you cannot picture a reddish green or a yellowish blue. Those pairs are the two ends of one channel, and both ends cannot be up at once. It is also why afterimages come out in the complement. Stare at a saturated red until the red side of the channel tires, look at a white wall, and the channel rebounds to cyan. That opponent wiring is the reason the color wheel exists at all, and the reason the word opposite means something precise when we talk about color.
+
+## Three questions name any color
+
+Any color answers three questions. Which color is it, its hue. How pure or grey is it, its saturation, also called chroma. And how light or dark is it, its value or lightness. Albert Munsell built the first careful map of color on exactly these three axes and published it in 1905, arranging every sample by hue, value, and chroma. The revealing part is the shape his solid took: not a tidy sphere or cylinder but a lumpy, lopsided form, because he spaced the samples by equal steps of perception rather than equal steps of number, and perception is not regular. Yellow reaches full strength while it is still light; blue and violet only get saturated once they are quite dark. Equal perceptual distances simply do not map to equal arithmetic.
+
+The hue, saturation, and lightness sliders in your editor are the convenient descendants of those three questions, but they are conveniences, not truth. HSL and HSV are just cylindrical reshufflings of the red, green, and blue in the file, and neither matches your eye. HSV takes value to be the largest of the three channels, so it rates a pure saturated blue as bright as pure white, which your eye flatly denies. This matters because value, the light-dark axis, is doing most of the real work in a picture, and value is not the average of the channels either. Weighted for how the eye actually sees, green carries about seventy percent of perceived brightness, red about twenty, and blue only seven. So a saturated yellow is nearly as bright as white and a saturated blue is genuinely dark, and two colors that feel equally vivid, a red and a green, can collapse into the same murky grey the moment you drop them into black and white. Seeing that trap coming is the whole subject of [the next chapter](/black-and-white-seeing). For now the lesson is to trust your eye over the number, and to remember that when a color picture is not working, the problem is often value, not hue.
+
+## Relationships are angles on a wheel
+
+Isaac Newton bent the spectrum into a circle in his 1704 Opticks, joining the red end to the violet end through a band of purples. Those purples are the honest part. No single wavelength makes purple; it is what the eye reports when long and short wavelengths arrive together, so the very seam of the wheel is a perceptual invention, not a physical color. The wheel is a map of how colors relate in your head, which is exactly why it is useful. On it, a color's complement is the point straight across the circle, the color that pushes the opposite end of both opponent channels, and every named color scheme is just a shape you inscribe.
+
+<Figure id="15.1" caption="Color relationships are geometry on a wheel. Hue is an angle, so a color's complement is the point directly across the circle, marked here as a warm hue against its cool opposite. The row below shows the common schemes as the shapes they are: complementary is a diameter joining two opposites for maximum contrast, analogous is a short arc of neighbors that stays calm, and split-complementary and triadic are triangles that spread the contrast across three hues. The schemes are not rules that make a picture good. They are names for relationships the eye already feels, and naming them lets you build one on purpose or break it on purpose.">
+  <ColorScienceForPhotographersFigure />
+</Figure>
+
+Johannes Itten catalogued these schemes at the Bauhaus, and they are worth knowing by their shapes. Complementary colors, opposite on the wheel, give the loudest contrast and can enrich each other or fight, depending on how much of each you use. Analogous colors, a short run of neighbors, give a calm and unified frame because they share a region of the wheel and no color contradicts another. Split-complementary and triadic schemes spread the tension over three hues instead of two, softer than a straight complement but still charged. None of this is a recipe for a good photograph. It is a vocabulary for what you are already looking at, which lets you notice that a scene has a complementary structure and lean into it, or that it is a muddle of unrelated hues and simplify.
+
+The complementary pair that governs photography is warm against cool. It became a full cliché in cinema as teal and orange, and the reasoning is pure color science: human skin, in almost every tone, sits in the orange-to-yellow band of the wheel, and the complement of orange is teal. Push the shadows and the background toward teal, keep the skin warm, and every face leaps off the frame, because you have placed the subject and its surround at opposite ends of the wheel. The same relationship shows up in nature every time the warm light of a low sun meets the cool blue of the sky and sea.
+
+<Photo
+  src="/photos/color-science-for-photographers/complementary-sunset-sea.jpg"
+  alt="A coastal sunset where the left half of the sky glows warm orange and gold around the sun while the right half and the sea are deep cool blue and teal, with pale boulders in the foreground."
+  id="15.2"
+  caption="A complementary frame the weather built. Warm orange light fills the sky around the low sun on the left; the clouds and sea on the right stay cool blue and teal. The two halves sit across the wheel from each other, so each makes the other stronger, and the frame reads as one taut warm-against-cool relationship rather than a list of colors. This is the teal-and-orange look occurring optically, before anyone touches a grade."
+  meta="Coastal sunrise, warm sun against a cool sea and sky"
+  credit="Lies Thru a Lens / Wikimedia Commons (CC BY 2.0)"
+  href="https://commons.wikimedia.org/wiki/File:Red_Sun_Versus_Blue_Sea_(22565812538).jpg"
+/>
+
+<Photo
+  src="/photos/color-science-for-photographers/analogous-sunset-gradient.jpg"
+  alt="A cloudless sunset sky filling the whole frame with a smooth gradient from golden yellow and orange at the bottom, through soft pink, to lavender-violet at the top."
+  id="15.3"
+  caption="Analogous harmony, handed over for free. The whole frame is a single sweep of neighboring hues, yellow into orange into pink into violet, each one adjacent to the last with no color standing opposite any other. Because nothing on the wheel contradicts anything else, the picture reads as calm and unified, held together by the family of hues rather than by contrast between them."
+  meta="Clear sunset sky, a continuous run of neighboring hues"
+  credit="Dave Hoefler / Unsplash"
+  href="https://unsplash.com/photos/orange-and-yellow-sky-during-sunset-AJXKxuRrUcg"
+/>
+
+## No color is seen alone
+
+The wheel says complements oppose. Set two of them touching and each drives the other brighter, an effect called simultaneous contrast, and it is the clearest proof that color is a relationship rather than a fact. Michel Eugène Chevreul worked out the law in 1839 while running the dye house at the Gobelins manufactory in Paris, where weavers kept complaining that a black yarn looked wrong, when the real problem was the color sitting next to it. A century later Josef Albers built a whole teaching method and his 1963 book Interaction of Color on the same discovery, insisting that color "deceives continually" and that no color is ever seen as it truly is, only as its neighbors allow it to be seen. A single grey looks warm when it is surrounded by blue and cool when it is surrounded by orange, because the surround pushes the opponent channels one way and the eye reads the grey as leaning the other. The grey never changed. Only its company did.
+
+<Widget name="simultaneous_contrast" hint="Both center squares are the exact same neutral grey. Rotate the surrounds, which stay a complementary pair, and watch each grey take on a tint of its ground's opposite. Then hit the button to neutralize the grounds and the two greys snap back to obviously identical. The color you saw was never in the square.">
+  <ColorScienceForPhotographersWidget />
+</Widget>
+
+The consequence for a photographer is exact: you never place a color, you place a relationship. A background is not a neutral backdrop that happens to be a certain color; it tints everything in front of it. A teal wall behind a face is warming that face whether you meant it or not. Green foliage behind a red jacket is making the jacket shout. When a color feels off in a frame, the fix is often not the subject's color but the color it is sitting against, and moving your feet a step to change the background is frequently the whole edit.
+
+## Warm, cool, and the choice of white
+
+Warm and cool are not just a contrast, they are a sense of depth. Warm colors appear to come forward and cool colors to fall back, a push and pull painters have relied on for centuries, and it echoes the aerial perspective from [working the frame](/advanced-composition), where distant things go pale and blue. A warm subject against a cool ground gains separation and reads closer, which is the depth cue the teal-and-orange grade is quietly exploiting.
+
+<Photo
+  src="/photos/color-science-for-photographers/warmcool-depth-tent.jpg"
+  alt="A small tent glowing warm orange from a light inside, pitched in a dark meadow beneath a deep blue twilight sky, with silhouetted pines and a mountain ridge receding behind it."
+  id="15.4"
+  caption="Warm advances, cool recedes. The lit tent is a small patch of orange in a frame that is otherwise deep blue, and it jumps forward while the cool ridge and sky sink back, so the picture feels deep even though it is a flat sheet. Warm against cool is doing double duty here: it is a complementary contrast and a depth cue at the same time."
+  meta="Blue-hour campsite, a warm subject against a cool field"
+  credit="Luca Baggio / Unsplash"
+  href="https://unsplash.com/photos/GKLIsLZxhj0"
+/>
+
+Warm and cool are also the reason white is a decision rather than a given. Your eye runs a process called color constancy: it works out the color of the light and quietly discounts it, so a white shirt looks white in warm lamplight and in cool shade even though the wavelengths reaching you are wildly different. It does this by chromatic adaptation, scaling the gain of the three cone types independently, which is the von Kries rule from the nineteenth century and precisely what a camera imitates when it sets white balance. This is why the orange cast of a lamplit room disappears after a minute in it, and why, when two people's adaptation disagrees, you get the argument of the dress in 2015: one royal-blue-and-black dress that looked white and gold to anyone whose eye discounted a bluish light and blue and black to anyone who discounted a gold one. Not a single pixel differed between them. The whole disagreement lived in the discounting.
+
+Because both of the cameras this book is built around record raw, none of that adaptation is baked in. White balance is a slider in the edit, covered in [the digital negative](/the-digital-negative), so the warmth of a sunset is yours to keep as a memory or neutralize into a document, with no penalty either way. The two bodies also start from different color, by design. Hasselblad's Natural Colour Solution runs its own film curve and color processing to render what it calls true-to-life color with especially smooth skin transitions, while Leica's Maestro processing and its Leica Look profiles give the Q3 a signature of its own. Neither is correct and the other wrong; they are two houses' taste in color. Reconciling them when you shoot both, so a set does not lurch between two color sciences, is the work of [color grading](/color-grading).
+
+## One color, spent well
+
+The strongest color photographs are rarely the most colorful. A frame built on one dominant hue with a single small accent reads as deliberate, while a scatter of saturated colors reads as noise, because when every hue is shouting none of them can be the subject. The most disciplined version is the near-monochrome frame, one hue carried across many values and levels of saturation, which frees shape and light to carry the picture while color holds a single steady mood.
+
+<Photo
+  src="/photos/color-science-for-photographers/monochrome-red-portrait.jpg"
+  alt="A woman in profile lost in thought, lit entirely by a single red light, so her skin, hair, clothing, and the background are all rendered in shades of one red hue at different brightnesses."
+  id="15.5"
+  caption="One hue, doing everything. A single red source floods the whole scene, so there is no second color to compete, only red at many values from the bright rim on her hair to the near-black shadow. Stripped of hue variety, the frame leans on shape, light, and expression, and the one color sets the entire mood. Restraint with color is usually a stronger move than abundance."
+  meta="Single-source red light, a near-monochrome color field"
+  credit="cottonbro studio / Pexels"
+  href="https://www.pexels.com/photo/a-woman-illuminated-by-a-red-light-10385231/"
+/>
+
+This is the same restraint the design of this book practices, one teal accent against a quiet near-black ground. Spend your boldness in one place. Reach for saturation last rather than first, decide what the one color of a picture is, and let the rest support it.
+
+<Callout>
+Color is not a property you record, it is a relationship you compose. The eye builds it from three cone signals and recodes them as oppositions, which is why the wheel exists and why every color has a true opposite. Those relationships are geometry: complements sit across the circle, neighbors sit in an arc, and each color is changed by whatever surrounds it. Warm comes forward and cool falls back, white is a choice your camera makes on your behalf, and the most powerful move is usually one dominant hue held with restraint. Learn to see the relationship rather than the object's color, and you stop taking whatever color the scene hands you and start deciding it.
+</Callout>
+
+## Exercises
+
+<ExerciseCard n="01" title="Hunt the complement">
+Pick a subject with a clear, strong color: a red door, a yellow raincoat, a person with warm skin. Name its hue, find its opposite across the wheel, then move until a background of that opposite hue sits behind it. Shoot it, then shoot the same subject against a background of a similar hue. The complementary version pops and the analogous one goes quiet. You changed nothing but the color the subject sits against.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Prove the surround">
+Put one small neutral or pale object, a grey card, a white cup, on two different colored surfaces in turn, a blue one and an orange one, under the same light. Photograph each the same way and compare. The object takes on a tint of each surround's opposite, though the object itself never changed. Once you have seen it in your own frames you will stop trusting that a background is ever neutral.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="One color only">
+Make a photograph built from a single dominant hue, carried across as many values and saturations as you can find: a foggy blue harbor, a room under one warm lamp, a field of one green. Let shape and light do the work and refuse any second color a place in the frame. It will feel restrictive, and the result will usually be stronger than a more colorful version of the same scene.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Develop one frame three ways">
+Take a single raw file with some warmth in the light and develop it three times, changing only the white balance: as the camera saw it, a few hundred kelvin warmer, and a few hundred cooler. Look at the three side by side. The scene is identical and the story is not, warm reading as memory and nostalgia, cool reading as clinical or cold. White balance is a mood decision, not just a correction, and it is free.
+</ExerciseCard>
+
+## Sources
+
+- [Cone cell, Wikipedia](https://en.wikipedia.org/wiki/Cone_cell) and [Trichromacy, Wikipedia](https://en.wikipedia.org/wiki/Trichromacy), for the three cone types and their approximate peak sensitivities (S around 420 nm, M around 530 nm, L around 560 nm), the S cones being roughly two percent of cones, the wide person-to-person variation in the L-to-M ratio, and the Young-Helmholtz trichromatic theory proposed by Thomas Young in 1802 and developed by Hermann von Helmholtz.
+- [Opponent process, Wikipedia](https://en.wikipedia.org/wiki/Opponent_process), for Ewald Hering's 1892 opponent-color theory, the red-green, blue-yellow, and black-white channels, Leo Hurvich and Dorothea Jameson's 1957 quantitative hue-cancellation validation, the impossibility of a reddish green or yellowish blue, and the complementary color of a negative afterimage (red input producing a cyan afterimage).
+- [Munsell color system, Wikipedia](https://en.wikipedia.org/wiki/Munsell_color_system) and [HSL and HSV, Wikipedia](https://en.wikipedia.org/wiki/HSL_and_HSV), for Albert Munsell's hue, value, and chroma system published in A Color Notation in 1905 and its perceptually uniform, irregular color solid, and for HSL and HSV being simple cylindrical transforms of RGB that are not perceptually uniform (value defined as the maximum channel, rating a pure blue as bright as white).
+- [Relative luminance, Wikipedia](https://en.wikipedia.org/wiki/Relative_luminance), for the Rec. 709 luminance weights of about 0.2126 for red, 0.7152 for green, and 0.0722 for blue, showing green carries most of perceived brightness and blue the least.
+- [Color wheel, Wikipedia](https://en.wikipedia.org/wiki/Color_wheel), for Isaac Newton arranging colors in a circle in his 1704 Opticks, complements sitting directly opposite and mixing toward neutral, and the wheel being a perceptual model that closes its seam with non-spectral purples.
+- [Contrast effect, Wikipedia](https://en.wikipedia.org/wiki/Contrast_effect) and [Josef Albers, Wikipedia](https://en.wikipedia.org/wiki/Josef_Albers), for Michel Eugène Chevreul's 1839 law of the simultaneous contrast of colors, developed at the Gobelins works, and for Josef Albers's 1963 Interaction of Color and its claim that color deceives continually and is never seen as it truly is.
+- [Color constancy, Wikipedia](https://en.wikipedia.org/wiki/Color_constancy), [Chromatic adaptation, Wikipedia](https://en.wikipedia.org/wiki/Chromatic_adaptation), and [The dress, Wikipedia](https://en.wikipedia.org/wiki/The_dress), for the visual system discounting the illuminant, the von Kries model of independently scaling the three cone gains (the basis of white balance), and the 2015 dress as a case of viewers discounting the ambient light differently.
+- [Why you should use orange and teal color grading, Adobe](https://www.adobe.com/creativecloud/video/hub/features/why-use-orange-teal-grading.html) and [What is the Orange and Teal Look, PetaPixel](https://petapixel.com/2017/02/23/orange-teal-look-popular-hollywood/), for skin tones falling in the orange band, teal being their complement, and warm subjects advancing against cool receding backgrounds.
+- [Hasselblad Natural Colour Solution, Hasselblad](https://www.hasselblad.com/learn/hasselblad-natural-colour-solution/) and [Leica Q3 technical specification, Leica Camera](https://leica-camera.com/en-US/photography/cameras/q/q3-black/technical-specification), for Hasselblad's HNCS color pipeline and film curve aimed at true-to-life color, and for the Leica Q3's Maestro processing and Leica Look color profiles.
