@@ -1,0 +1,90 @@
+import { TheDigitalNegativeFigure } from "./_figures/TheDigitalNegativeFigure";
+import { TheDigitalNegativeWidget } from "./_widgets/TheDigitalNegativeWidget";
+
+A raw file is not a photograph. It is the set of numbers the sensor recorded, before anyone decided what they should mean. Point the same camera at the same scene and you can walk away with two very different files. Shoot JPEG and the camera develops the picture itself, sets the white balance, bends the tones, adds color and contrast and sharpening, discards everything it did not use, and hands you a finished eight-bit image. Shoot raw and it hands you the negative instead: the sensor's own measurement, every decision still open, nothing yet spent. This first editing chapter is about why that negative is worth keeping, what its extra bits actually buy, and why your two cameras write it in two different formats. Everything in the rest of Part III is done on top of it.
+
+## The negative and the print
+
+Ansel Adams, a trained pianist before he was a photographer, reached for music to explain the negative. The negative, he said, is the score, and the print is the performance. One score can be performed many ways and many times, each a little different, none of them the last word. The negative was never the picture. It was the latent thing the picture is made from, and the printing was where the photograph was actually decided, in the choice of paper, the dodging and burning, the contrast.
+
+Digital keeps the same split, and it keeps it more cleanly than film ever did. The raw file is the negative. The JPEG, or the exported image at the end of your editing, is the print. When Adobe published an open, documented raw format in 2004 to sit alongside the tangle of proprietary ones, it named the format exactly this: DNG, for Digital Negative. The name is the whole idea. A negative you can print from again and again, on any future software, is worth more than any single print made from it, because the print commits and the negative does not.
+
+## A mosaic before it is a picture
+
+There is a more literal sense in which a raw file is not yet a photograph. It is not even a full-color image. Almost every sensor, including the ones in your Q3 and your X2D II, sees the world in a single channel through a grid of tiny colored filters called a Bayer array, named for Bryce Bayer, who patented it at Kodak in 1976. Each photosite sits under one filter, red or green or blue, and records only that one color. The pattern is half green, a quarter red, a quarter blue, weighted toward green because that is where the eye's daylight sensitivity is strongest.
+
+So the raw file arrives as a mosaic: every pixel knows one of its three colors and is missing the other two. Turning that into a normal red-green-blue image is a reconstruction called demosaicing, where the software estimates each pixel's missing colors from its neighbors. That step, and it is only the first of many, happens in the raw developer, not on the sensor. It is one more decision the negative leaves open and the in-camera JPEG has already made. The numbers underneath are also linear, meaning they track the light directly: twice the light is twice the value, with none of the tonal curve a finished image carries. A raw file opened with no interpretation looks flat, dark, and slightly alien, because it is the measurement, not the rendering.
+
+## What the camera would have decided for you
+
+Between the sensor and a finished image sits a pipeline of interpretive steps, and every one of them is a judgment call. Demosaic the mosaic into color. Set the white balance so white looks white under whatever light you were in. Bend the linear data through a tone curve so it reads like a photograph instead of a flat scan. Add color and saturation to taste. Sharpen, and clean up noise. Then compress the result to an eight-bit JPEG.
+
+Shoot JPEG and the camera runs that whole pipeline in the moment and bakes every choice into the pixels. The white balance is now the pixels. The contrast is now the pixels. Push hard against any of it later and you are fighting a decision that has already been committed. Shoot raw and the pipeline is deferred. The camera still records what it would have done, your white balance setting rides along as a tag, your picture profile is noted, but none of it is applied. It is a suggestion attached to the negative, and you can change the white balance months later with no loss at all, because on a raw file white balance is metadata, not paint.
+
+<Figure id="17.1" caption="One exposure, one pipeline, tapped at two ends. Between the sensor and a finished JPEG sit the interpretive steps: demosaic, white balance, tone curve, color, sharpening and noise reduction. The raw file taps in at the input, saving the sensor's own mosaic at full bit depth with every decision still open and reversible. The JPEG taps in at the output, after the camera has run all of it and flattened the result to eight bits, keeping one print and discarding the rest. Raw keeps the negative; JPEG keeps a performance of it.">
+  <TheDigitalNegativeFigure />
+</Figure>
+
+This is why raw and JPEG are not two quality settings of the same thing. They are two different points in one process. The JPEG is not a worse raw file, it is a rendered image, already developed and already thrown most of its source data away to fit eight bits and a small file. For a frame you will never edit, that is fine, and the camera's rendering is often good. For a frame you care about, the negative is what lets you decide, rather than accept.
+
+## What the extra bits buy
+
+The most concrete thing the negative holds is levels. An eight-bit JPEG stores 256 levels of brightness per color channel, and that is all it will ever have. A raw file is deeper: your Q3 writes fourteen bits, which is 16,384 levels, and your X2D II writes sixteen, which is 65,536. [ISO, the sensor, and dynamic range](/iso-sensor-and-dynamic-range) made the point that this is not more dynamic range, the sensor's span from highlight to shadow is set by physics, not by bits. What the extra bits buy is finer slicing of that span, and finer slicing is editing room.
+
+Here is why it matters. Any real edit stretches the tones. Lift a shadow, add contrast, correct a color cast, and you are pulling a small range of input values across a wider range of output. Do that to an eight-bit file and you are stretching a handful of levels apart until the gaps between them show, and a smooth sky or a gradient of skin breaks into visible steps. That banding has a name, posterization, and it is the sound of a file running out of levels. A raw file has hundreds of times as many, so the same aggressive move stays smooth. The widget makes the two behave side by side: develop one scene from a deep raw negative and from the eight-bit JPEG the camera would have baked, then push.
+
+<Widget name="latitude_lab" hint="Drag the develop push up. Both files hold the same scene, but only the raw kept the levels: watch the JPEG's lifted foreground break into bands and its blown sky pull down to a flat grey, while the raw develops clean and the clipped highlight comes back.">
+  <TheDigitalNegativeWidget />
+</Widget>
+
+Two costs show up at once. The lifted shadow bands, because eight bits left too few levels down there to survive the stretch. And the bright sky, once it clipped to white in the JPEG, stays white, because a clipped value is a single number with nothing above it to recover. The raw kept the readings that overflowed the JPEG's white point, so pulling the exposure down brings the cloud detail back. Neither problem is bad luck. Both are the negative you did not keep.
+
+<Photo
+  src="/photos/the-digital-negative/raw-vs-developed-before-after.jpg"
+  alt="A side-by-side of a stone war-memorial statue against sky. The left half is a flat, dull, slightly dark unprocessed raw file; the right half is the same frame developed, with brighter midtones, recovered detail in the shadowed stone, a held sky, and corrected verticals."
+  id="17.2"
+  caption="The same single exposure, twice. On the left the raw as it opens with no interpretation: flat, dull, the rendering not yet applied. On the right the negative developed, shadows lifted out of the stone, highlights held in the sky, the leaning verticals corrected. Nothing here was a second photograph. It was all latent in one file, waiting for the develop that raw defers and JPEG spends in the camera."
+  meta="Nikon D800 raw, before and after development in Lightroom"
+  credit="Norbert Nagel / Wikimedia Commons (CC BY-SA 3.0)"
+  href="https://commons.wikimedia.org/wiki/File:Comparison_-_RAW_file_and_after_digital_development_in_Lightroom_5.jpg"
+/>
+
+One honest caveat. The dramatic gap is between eight-bit JPEG and any high-bit raw, not between fourteen bits and sixteen. Once you are past the noise floor, sensor noise blurs the finest levels anyway, so twelve, fourteen, and sixteen-bit raws look far more alike than the numbers suggest. Read the bit depth as capacity to push, and know that almost all of the visible benefit is already there the moment you keep the raw instead of the JPEG.
+
+## DNG and 3FR
+
+Your two cameras save the negative in two different containers, and the difference is a small lesson in open versus proprietary. The Leica Q3 writes DNG, Adobe's open Digital Negative, straight out of the camera at fourteen bits. DNG is built on the TIFF/EP standard, it is publicly documented, the Library of Congress lists it among its recommended formats for long-term preservation, and in 2026 it was finally published as an international standard, ISO 12234-4, more than twenty years after Adobe introduced it. A Q3 file is already in a format any competent software should be able to read decades from now.
+
+The Hasselblad X2D II writes 3FR, its own sixteen-bit raw. 3FR is proprietary to Hasselblad, based on TIFF and losslessly compressed, and it is meant to pass through Hasselblad's Phocus software, which converts it and can export a DNG or a sixteen-bit TIFF for the rest of your editing. Proprietary raws are not worse pictures, the X2D II's negative is superb, but they tie you a little more tightly to the vendor: new bodies often need updated software before other tools can read them, and long-term readability leans on the maker continuing to document the format. This is exactly the gap DNG was invented to close, and it is why many photographers convert proprietary raws to DNG for archiving, using the free Adobe DNG Converter or, for Hasselblad, exporting from Phocus. Whichever container it lands in, the point is the same: it is the negative, and the next several chapters are about developing it.
+
+<Callout>
+Raw is the negative, JPEG is the print. The camera's pipeline demosaics the sensor's single-color mosaic, sets white balance, bends the tones, and adds color and sharpening, then flattens the result to eight bits. A JPEG has run that whole pipeline and baked every choice into the pixels. A raw file defers all of it: the decisions ride along as metadata you can change losslessly, and it keeps 16,384 or 65,536 levels per channel instead of 256, which is the editing room that lets you lift shadows and recover highlights without banding. Your Q3 saves that negative as open DNG and your X2D II as proprietary 3FR, but either way it is the thing every later edit is made from. Keep it.
+</Callout>
+
+## Exercises
+
+<ExerciseCard n="01" title="Open a negative with no interpretation">
+Shoot one frame as a raw plus JPEG pair. Open the raw in your editor and, before touching anything, set the profile to a neutral or linear one and the sharpening to zero. Look at how flat, dark, and lifeless it is next to the camera's JPEG. That flatness is not a flaw. It is the measurement before the rendering, the negative before the print, and everything you do next is the printing.
+</ExerciseCard>
+
+<ExerciseCard n="02" title="Change a decision the JPEG baked">
+Take that same pair and set the white balance badly wrong in camera, deep orange or deep blue. Now try to fix each file. On the raw, drag the temperature back and it corrects perfectly, because white balance there was only a tag. On the JPEG, fight the same cast and watch the color never quite come clean and the smooth areas start to break up. You are meeting the difference between a suggestion and a decision that has already been spent.
+</ExerciseCard>
+
+<ExerciseCard n="03" title="Push both until one breaks">
+Find a frame with a smooth gradient, a clear sky or a softly lit wall. Export a JPEG, then take both the JPEG and the raw and lift the shadows three or four stops and add heavy contrast. The raw stays smooth. The JPEG posterizes into visible bands. You just watched 256 levels run out and 16,384 hold, which is the whole argument for editing the negative.
+</ExerciseCard>
+
+<ExerciseCard n="04" title="Make an archive-safe copy">
+If you shoot the X2D II, run one 3FR file through Phocus and export a DNG or a sixteen-bit TIFF, and notice that your edits travel with it. If you shoot the Q3, you already have DNG straight from the camera. Either way, put the original negative somewhere safe and untouched. It is the one file you cannot regenerate, and every version of the picture you will ever make comes out of it.
+</ExerciseCard>
+
+## Sources
+
+- Bruce Fraser for Adobe, [Understanding Digital Raw Capture](https://www.adobe.com/digitalimag/pdfs/understanding_digitalrawcapture.pdf), and Nasim Mansurov, [RAW vs JPEG](https://photographylife.com/raw-vs-jpeg), Photography Life, for raw as minimally processed sensor data that defers the interpretive pipeline, and for a JPEG baking white balance, tone curve, color, saturation, and sharpening into the pixels while a raw records them as changeable metadata, so raw white balance can be reset losslessly after capture.
+- [Bayer filter](https://en.wikipedia.org/wiki/Bayer_filter) and [Demosaicing](https://en.wikipedia.org/wiki/Demosaicing), Wikipedia, for each photosite recording a single color through a color filter array, the pattern being 50 percent green and 25 percent each red and blue, the array named for Bryce Bayer of Kodak (U.S. Patent 3,971,065, 1976), and the full-color image being reconstructed by interpolating each pixel's missing colors.
+- [JPEG](https://en.wikipedia.org/wiki/JPEG), Wikipedia, for standard JPEG being eight bits per channel (256 levels) and using lossy DCT-based compression in which the quantization step always discards information.
+- [Bit depth](https://www.cambridgeincolour.com/tutorials/bit-depth.htm), Cambridge in Colour, for 256 levels at eight bits versus the far larger counts at higher bit depth, and for higher-bit files holding up better under heavy post-processing where eight-bit files posterize into visible bands.
+- Ansel Adams, *The Negative* (1981), for the analogy of the negative as the composer's score and the print as the performance; see also [Ansel Adams](https://en.wikipedia.org/wiki/Ansel_Adams), Wikipedia.
+- [Digital Negative (DNG)](https://en.wikipedia.org/wiki/Digital_Negative), Wikipedia, and PetaPixel, [DNG is now the official raw image standard](https://petapixel.com/2026/03/27/after-over-20-years-of-efforts-dng-is-now-the-official-raw-image-standard/), for Adobe introducing the open, royalty-free DNG format in 2004, its TIFF/EP basis, the free Adobe DNG Converter, its recommendation for archival preservation, and its 2026 publication as ISO 12234-4.
+- [Leica Q3 technical specifications](https://leica-camera.com/en-int/photography/cameras/q/q3-black/technical-specification) for the Q3 recording 14-bit DNG natively; the [Hasselblad X2D II 100C](https://www.hasselblad.com/x-system/x2d-ii-100c/) page and the [Hasselblad 3FR](http://justsolve.archiveteam.org/wiki/Hasselblad_3FR) format notes for the X2D II recording proprietary, losslessly compressed 16-bit 3FR files processed through Phocus, which can export DNG and 16-bit TIFF.

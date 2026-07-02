@@ -29,7 +29,7 @@ calls for.
 | 14 | advanced-composition              | Working the frame                   | DONE    |
 | 15 | color-science-for-photographers   | Seeing in color                     | DONE    |
 | 16 | black-and-white-seeing            | Removing color to see               | DONE    |
-| 17 | the-digital-negative              | The digital negative                | PENDING |
+| 17 | the-digital-negative              | The digital negative                | DONE    |
 | 18 | ingest-and-catalog                | Ingest and catalog                  | PENDING |
 | 19 | order-of-operations               | Order of operations                 | PENDING |
 | 20 | tone-and-the-curve                | Tone and the curve                  | PENDING |
