@@ -41,6 +41,28 @@ There is a quieter reason prints come back darker than the screen promised, and 
 
 You do not have to guess at any of this, because a soft proof previews the smaller box on your screen. Every paper on every printer has an ICC profile, a measured description of exactly which colors that paper, ink, and machine can reproduce, and soft proofing uses it to show, on your calibrated monitor, what the print will actually look like. Turn on Simulate Paper and Ink and the preview stops using screen white and screen black and starts using the paper's real off-white and its true achievable black, which is why a good soft proof looks flatter and duller than the picture did a moment ago. That flatness is not a bug. It is the print, arriving early enough to do something about.
 
+<BeforeAfter
+  before="/photos/output-and-print/neon-gamut-soft-proof.jpg"
+  alt="A Tokyo night street packed with intensely saturated neon signs, wiped between the vivid on-screen version and a soft-proof for matte paper where the colors mute, the blacks lift, and the whole frame flattens."
+  id="24.2"
+  beforeLabel="on screen"
+  afterLabel="soft-proof: matte paper"
+  svgFilter={
+    <>
+      <feColorMatrix type="saturate" values="0.68" />
+      <feComponentTransfer>
+        <feFuncR type="table" tableValues="0.1 0.2 0.31 0.42 0.53 0.63 0.72 0.8 0.87" />
+        <feFuncG type="table" tableValues="0.09 0.19 0.3 0.41 0.52 0.62 0.71 0.79 0.85" />
+        <feFuncB type="table" tableValues="0.08 0.17 0.28 0.39 0.5 0.6 0.69 0.77 0.82" />
+      </feComponentTransfer>
+    </>
+  }
+  caption="What a soft proof shows, on the hardest possible case. Drag the divider. The before side is the neon as the screen throws it, self-luminous reds, magentas, greens, and cyans far outside any print gamut. The after side simulates a matte paper: the vivid colors mute toward what the ink can actually make, the near-black sky lifts to the paper's real black, and the brilliant whites drop to paper white, so the whole frame flattens. That duller preview is not a worse edit. It is the print arriving early, while you can still lift the shadows and add back a little saturation to answer it."
+  meta="Kabukicho neon, screen gamut then soft-proofed to matte paper"
+  credit="Basile Morin / Wikimedia Commons (CC BY-SA 4.0)"
+  href="https://commons.wikimedia.org/wiki/File:Colorful_neon_street_signs_in_Kabukich%C5%8D,_Shinjuku,_Tokyo.jpg"
+/>
+
 The one decision the proof asks you to make is the rendering intent, the rule for how the out-of-gamut colors come in. The ICC defines four, but photographers live on two. Perceptual compresses and shifts the whole gamut inward together, moving even the colors that would have fit, so that the relationships between colors survive and nothing clips hard. Relative colorimetric does the opposite: it leaves every color that already fits exactly where it was and clips only the ones outside the boundary onto the nearest color the paper can make. Perceptual is the safer choice when a lot of the picture is out of gamut, a saturated sunset that would otherwise clip in chunks. Relative is better when only a little is outside, because most of the frame prints untouched, at the risk that several out-of-gamut colors all clip to the same edge and lose their separation. There is no universal winner. You switch between them on the actual image and keep the one that looks better.
 
 <Widget name="soft_proof_bench" hint="Flip between where you are looking, screen and paper, and feel the box get smaller. Then choose a paper, from glossy baryta down to newsprint, and switch the rendering intent: perceptual squeezes the whole picture in and keeps every color separate, while relative colorimetric keeps the fitting colors exact and clips the rest. Turn on the gamut warning to see, before any remap, exactly what the paper cannot print.">
@@ -49,7 +71,7 @@ The one decision the proof asks you to make is the rendering intent, the rule fo
 
 Two more controls finish the proof. Black point compensation, on by default with relative colorimetric, maps the darkest black in your file to the darkest black the paper can print, so the shadows are rescaled to fit rather than crushed into one flat blob, which is usually what you want. And a gamut warning overlays the colors that fall outside, so you can find the trouble before it prints. The working method that follows is simple. Soft proof against the paper, compare the two intents, turn on black point compensation, and then make your print corrections, brightening the shadows and adding back a little contrast and saturation to answer the compressed box, on a proof copy so the [screen master](/ingest-and-catalog) stays exactly as you left it. Then send it, and let a real test print settle the last small argument between the monitor and the paper.
 
-<LightroomPanel title="Basic (proof copy)" id="24.2" caption="The small, deliberate corrections a soft proof asks for, made on a proof copy and never on the master. The flatter, duller preview is telling you the paper cannot reach the shadow the screen showed, so you lift Shadows and Blacks to open them back up, add a little Contrast and Clarity to answer the compressed range, and nudge Vibrance to replace the saturation the smaller gamut swallowed. Small numbers on purpose: you are fitting the picture to the paper, not re-editing it."
+<LightroomPanel title="Basic (proof copy)" id="24.3" caption="The small, deliberate corrections a soft proof asks for, made on a proof copy and never on the master. The flatter, duller preview is telling you the paper cannot reach the shadow the screen showed, so you lift Shadows and Blacks to open them back up, add a little Contrast and Clarity to answer the compressed range, and nudge Vibrance to replace the saturation the smaller gamut swallowed. Small numbers on purpose: you are fitting the picture to the paper, not re-editing it."
   sliders={[
     { label: "Contrast", value: 10 },
     { label: "Shadows", value: 22 },

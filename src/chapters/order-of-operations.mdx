@@ -67,6 +67,28 @@ That is the whole stack. The widget below lets you shuffle it. It opens on a rea
   <OrderOfOperationsWidget />
 </Widget>
 
+<BeforeAfter
+  before="/photos/order-of-operations/develop-stages-valley.jpg"
+  alt="A wide overcast valley with a green meadow, a lone poplar, forested slopes, and low fog under a hazy sky, wiped between the flat unprocessed capture and a developed version with more contrast, warmth, and color."
+  id="19.4"
+  beforeLabel="as the raw opens"
+  afterLabel="developed in order"
+  svgFilter={
+    <>
+      <feColorMatrix type="saturate" values="1.6" />
+      <feComponentTransfer>
+        <feFuncR type="table" tableValues="0 0.06 0.17 0.34 0.53 0.7 0.83 0.93 1" />
+        <feFuncG type="table" tableValues="0 0.06 0.16 0.33 0.52 0.69 0.82 0.92 0.99" />
+        <feFuncB type="table" tableValues="0.01 0.06 0.15 0.31 0.5 0.67 0.8 0.9 0.95" />
+      </feComponentTransfer>
+    </>
+  }
+  caption="The whole stack, run once on one frame. Drag the divider. The before side is the file as the raw opens, flat and cool under the overcast, its color barely there. The after side is the develop worked top to bottom: white balance warmed off the haze, exposure and contrast placed, then color brought up, so the fog lifts off the dark hills and the meadow reads green. Nothing here was a second frame. It is one negative walked down the order this chapter maps."
+  meta="Overcast valley, flat capture then developed in Lightroom order"
+  credit="Wolfgang Hasselmann / Unsplash"
+  href="https://unsplash.com/photos/rolling-hills-covered-in-fog-with-distant-mountains-AjoJvEL4_3E"
+/>
+
 ## When the order is baked in
 
 Everything above assumes a parametric editor that recomputes from the raw. Step outside it, into pixel editing in Photoshop, and the forgiveness ends. There the operations write to the pixels in the literal order you apply them, and some cannot be undone once the file is flattened or resized. The discipline becomes stricter: keep as much reversible for as long as you can, working on Smart Objects and adjustment layers so transforms and filters stay editable, and save the irreversible moves, flatten, resize, and output sharpen, for the very end. It is the same principle with harder enforcement. The parametric order is a strong suggestion. The destructive one is a door that only opens one way.
