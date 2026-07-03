@@ -36,9 +36,9 @@ commit `7be3e85`. Commit per Part, no push (CLAUDE.md no-push rule honored).
 | 22 | local-adjustments-and-masking | editing | 3 | 5+ | 5 | DONE | +2: masked face dodge + subject separation (both afterClip) |
 | 23 | black-and-white-conversion | editing | 2 | 5+ | 5 | DONE | +3: desaturate-collapse, grain, split-tone BAs |
 | 24 | output-and-print | workflow | 1 | 1-3 | 1 | keep | |
-| 25 | portrait-in-practice | practice | 2 | 5+ | | TODO | +3 near-eye / light-pattern / skin-tone |
-| 26 | street-and-documentary | practice | 3 | 5+ | | TODO | +2 decisive-moment / 28mm-context |
-| 27 | landscape-and-architecture | practice | 4 | 5+ | | TODO | +1 high-DR light range |
+| 25 | portrait-in-practice | practice | 2 | 5+ | 5 | DONE | +3: near-eye + light-pattern annotated, skin-tone BA |
+| 26 | street-and-documentary | practice | 3 | 5+ | 5 | DONE | +2: staircase geometry + Baghdad layered depth |
+| 27 | landscape-and-architecture | practice | 4 | 5+ | 5 | DONE | +1: Grand Canyon shadows-lifted BA |
 
 ## Concrete plan (insertion points + ids)
 
@@ -141,11 +141,46 @@ image teaches, overlays canvas-verified, notes, shot-wishes._
   split-tone BA (sunrise ridge, Daniil Silantev/Unsplash; grey + cool shadows/warm
   highlights, pairs with panel 23.8). Renumbered 6 tail ids -> 23.2-23.9.
 
+### Part IV (committed, no push)
+
+- **25 portrait-in-practice 2 -> 5.** +3: 25.4 near-eye AnnotatedPhoto (Rob Ruth/
+  Pexels; eye-AF reticle canvas-verified on the near eye's catchlight ~49,36), 25.5
+  light-pattern AnnotatedPhoto (Marcus Queiroga Silva/Pexels; terminator traced down
+  the nose on the verified lit/shadow boundary ~x45, catchlight circle on the lit
+  eye), 25.7 skin-tone BA (Sam The ShutterSmith/Pexels; small warm/de-green WB move).
+  Renumbered old light-on-face 25.4 -> 25.6.
+- **26 street-and-documentary 3 -> 5.** +2 AnnotatedPhoto in "Fishing, not hunting":
+  26.5 staircase geometry (Nejat Gunduc/Pexels; two figures canvas-verified at the
+  darkest clusters 72,30 and 78,74 and boxed; dropped diagonal guides that ran through
+  bright tile), 26.6 Baghdad layered depth (AMORIE SAM/Pexels; foreground/middle/far
+  labels on the man, the street, the hazed city). Zero renumber.
+- **27 landscape-and-architecture 4 -> 5.** +1 BeforeAfter 27.3 (Gabriel Tovar/Pexels,
+  Grand Canyon sunrise; live feComponentTransfer lifts the shaded walls while the
+  sunlit buttes hold). Renumbered keystone 27.3->27.4, fig 27.4->27.5, verticals
+  27.5->27.6, symmetry 27.6->27.7.
+
+**RUN COMPLETE.** All 12 photography/aesthetics/editing/practice chapters now at 5+
+image objects (reading-light 6, the other 11 at 5); all 15 mechanism/workflow chapters
+untouched at 1-3. End-of-run gates pass: typecheck + build green, 0 em dashes in
+src/chapters, no AI tells in prose, no missing /photos paths, no duplicate ids, no
+stray staging in public, every touched route renders with zero console errors.
+
 
 ## Shot wishes (accumulated)
 
 _Frames the author could shoot on the Q3 / X2D II where no licensable photo teaches
 the point._
+
+- **Color grading (ch21)** -- a matched Leica Q3 vs Hasselblad X2D II pair of the same
+  neutral scene under one light, each set off a shared grey-card white balance, to show
+  the two color sciences diverging at the profile stage as a real photograph rather than
+  the illustrative two-profile filter used in 21.4. Not licensable; only the author's
+  own matched pair exists.
+- **Portrait (ch25)** -- a clean, neutral Rembrandt-triangle portrait on the author's
+  own XCD 90V (a small isolated triangle of light on the shadow-side cheek, high
+  catchlight), to trace the actual triangle rather than the short/split terminator the
+  licensed frame 25.5 shows. Commons/Pexels Rembrandt frames were colored-gel or the
+  same photographer already used in ch12.
 
 ## Staging manifest
 
