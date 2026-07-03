@@ -33,7 +33,7 @@ calls for.
 | 18 | ingest-and-catalog                | Ingest and catalog                  | DONE    |
 | 19 | order-of-operations               | Order of operations                 | DONE    |
 | 20 | tone-and-the-curve                | Tone and the curve                  | DONE    |
-| 21 | color-grading                     | Color grading                       | PENDING |
+| 21 | color-grading                     | Color grading                       | DONE    |
 | 22 | local-adjustments-and-masking     | Local adjustments and masking       | PENDING |
 | 23 | black-and-white-conversion        | Black-and-white conversion          | PENDING |
 | 24 | output-and-print                  | Output and print                    | PENDING |
