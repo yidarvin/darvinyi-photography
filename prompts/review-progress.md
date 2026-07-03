@@ -81,8 +81,8 @@ licensable images._
 | # | chapter | status | words | photos | overlays | notes |
 |---|---------|--------|-------|--------|----------|-------|
 | 25 | portrait-in-practice | DONE | 4550 | 2 | 1/1 | Overlay 25.4 verified: lit cheek 169 > shadow side 68-99, key arrow from warm horizon accurate. 25.2 develop BeforeAfter = global honest edit (warm matrix + tone S), panel 25.3 matches. NOTE: at 2 photos vs genre target 3 - documented +1 gap (a short-tele light-pattern portrait synthesizing near-eye focus + catchlight + skin for the "Put the light..." section); left at 2 (chain figure 25.1 + widget + 2 strong photos already illustrate it well) due to context budget. |
-| 26 | street-and-documentary | TODO | 4460 | 3 | 0/3 | visually-led, target met |
-| 27 | landscape-and-architecture | TODO | 3388 | 4 | 0/3 | visually-led, target met |
+| 26 | street-and-documentary | DONE | 4460 | 3 | 3/3 | All 3 overlays verified: 26.1 walker rect on dark silhouette (42) + cast-shadow ellipse on dark shadow (11) vs bright wall (195); 26.3 deep-focus zone schematic (focus/near/far bars) sensibly placed on the sharp-throughout street; 26.4 vendor rect on central figure (141) with goods around. No fixes needed. Target met. Prose tight (light pass). |
+| 27 | landscape-and-architecture | DONE | 3388 | 4 | 3/3 | All 3 overlays verified: 27.3 keystone lines lie on the converging building edges (sd 27-33 at the upper convergence); 27.5 true-verticals on the facade's vertical edges (consistent lum along x=21/x=51); 27.6 symmetry axis x=50 confirmed by MIRROR match (x18=140 = x82=142), plumb lines on columns. Target met (1 Photo + 3 Annotated). Prose tight (light pass). |
 
 ## Shot wishes (frames the author could shoot on the Q3 / X2D II)
 
