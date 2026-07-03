@@ -38,15 +38,21 @@ restart loses nothing. Resume from the first row not marked DONE.
 | 10 | lenses-optics-and-perspective | DONE | 2529 | 2 | 1/1 | Overlay 10.1 distance-ladder: nose rung y90 (nose) + blinds rung y18 (bg) correct; FIXED eye rung from y42 (on white muzzle, lum202) to y33 (eye level). 10.2 Palouse=plain Photo (compression is global, caption teaches). Pair satisfies photo-notes. Prose tight. |
 | 11 | choosing-a-lens | DONE | 2488 | 1 | 1/1 | Overlay 11.1 (nested crop boxes on the 24mm panel) verified GEOMETRICALLY EXACT: box widths = 24/f x panel (15/12/8.4/5.8), panel content x1-18.5/y5-90 matches overlay bounds (black gaps confirmed at x0,19-20). License verified PD (Patche99z). Focal-length comparison = photo-notes idea, no new photo. Prose tight. |
 
+**CHECKPOINT: Part I (ch 0-11) committed + pushed to main @ 43aa3bf.**
+
 ## Part II --- Shooting aesthetically (ch 12-16)
+
+_All five Part II chapters already meet the >=3 visually-led photo target, so the
+work here is overlay pixel-verification + prose + the two color-science "not just"
+fixes; no new photo sourcing needed._
 
 | # | chapter | status | words | photos | overlays | notes |
 |---|---------|--------|-------|--------|----------|-------|
-| 12 | reading-light | TODO | 3952 | 6 | 0/4 | exemplar; visually-led, target met |
-| 13 | composition-fundamentals | TODO | 3358 | 5 | 0/5 | visually-led, target met |
-| 14 | advanced-composition | TODO | 3455 | 4 | 0/4 | visually-led, target met |
-| 15 | color-science-for-photographers | TODO | 4064 | 5 | 0/4 | visually-led; fix 2 "not just" constructions |
-| 16 | black-and-white-seeing | TODO | 3483 | 4 | 0/1 | visually-led, target met |
+| 12 | reading-light | DONE | 3952 | 6 | 4/4 | REBUILT overlay 12.2 (Rembrandt): old one was inconsistent (key-arrow from left but terminator path meandering to lower-LEFT, labels on wrong side). Canvas showed face lit from viewer's LEFT (L-cheek 168 vs R 47), terminator x42-47, triangle at (56,51) lum154 -> retraced all. 12.3 backlight (sun252/face-shade81/rim153-157), 12.5 hard-light (center split x49, cast shadow), 12.7 golden-hour (warm sky r252/dark ground L19) all verified accurate. Prose exemplar-tight. |
+| 13 | composition-fundamentals | DONE | 3358 | 5 | 5/5 | All 5 overlays verified accurate (first-pass got these right): 13.1 lighthouse on right third (tower x~66) + horizon lower third; 13.2 road VP at convergence (67.5,37.5); 13.3 arch path traces dark opening (lum9-43) around bright sea (139); 13.4 tree=dark point (lum3) in box; 13.6 Taj axis x=50 (dome/finial/pool all centered - canvas "brightest" wrongly picked sky). Prose tight. |
+| 14 | advanced-composition | DONE | 3455 | 4 | 4/4 | 14.2 spiral (center circle on skylight lum252), 14.5 ridges (fg black 0,0,0 / mid blue-grey 95,120,148 / far pale 212,226,229) verified. 14.1 starling oval acceptable (perceived-shape enclosure of the wave-shaped flock). 14.4 wave: recentered surfer circle (28,38)->(30,39) r5 onto the yellow surfer (found at 29.5,33); diagonal+labels ok. Prose tight. |
+| 15 | color-science-for-photographers | DONE | 4064 | 5 | 4/4 | Fixed 2 "not just" AI-tells (warm/cool depth; WB mood decision). Overlays: 15.3 analogous gradient (gold/orange/pink/violet) + 15.5 tent (warm 255,185,0 / cool bg blue) verified. FIXED 15.2 warm circle (was on blown white sun 235,233,234 -> moved center to orange glow 33,31). FIXED 15.4 triad: all 3 circles were on dark rigging/water; repositioned to confirmed red-orange rail (52,68)=176,54,34 / blue cabin (62,60)=58,113,161 / green hull (81,84)=30,55,39. Prose dense+tight. |
+| 16 | black-and-white-seeing | DONE | 3483 | 4 | 1/1 | 16.2 value-collapse BeforeAfter (2 real images) verified HONEST: mono berries (24-81) merge into similarly-toned leaves (14-105). 16.3 dunes = global saturate:0, caption says whole frame greys = honest (no false local claim). REBUILT 16.4 Adams overlay: old river path overshot into peaks (y50) + snow circle was on cloudy SKY (55,24). Retraced river to bright water (150/146/126); snow circle -> left-peak snowfield (18,43) L118; river=brightest tone (219-238) confirmed. Prose tight. |
 
 ## Part III --- Editing (ch 17-24)
 
