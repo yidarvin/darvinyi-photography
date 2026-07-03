@@ -68,7 +68,7 @@ licensable images._
 | # | chapter | status | words | photos | overlays | notes |
 |---|---------|--------|-------|--------|----------|-------|
 | 17 | the-digital-negative | DONE | 2811 | 1 | n/a | Already has raw->developed before/after (17.2 composite) + Basic panel (17.3, values match the visible lift-shadows/hold-highlights edit). Tried splitting the composite into a wipe slider but the developed half has DIFFERENT framing (verticals corrected, no streetlamp, statue larger) so a wipe would misalign; static side-by-side is correct here. Prose tight. |
-| 18 | ingest-and-catalog | IN-PROGRESS | 2823 | 0 | 0/0 | ZERO. Contact-sheet cull grid = not a single licensable photo; plan: construct a montage of small licensed frames (PIL grid) OR shot-wish (author's own Lightroom cull grid). Has Figure + widget. |
+| 18 | ingest-and-catalog | DONE | 2823 | 0->1 | 1/1 | ZERO->1. ADDED contact-sheet AnnotatedPhoto 18.3 (Nancy Wong / Commons CC BY-SA 4.0, real 35mm proof sheet, API-verified) in "## The cull" with a two-pass overlay: reject-X on a misfire frame (lum96) + keep-circle on a strong frame (lum150), both canvas-verified on real frames. Teaches "reject failures, flag keepers." No errors. |
 | 19 | order-of-operations | DONE | 2884 | 0->1 | n/a | ZERO->1. ADDED BeforeAfter 19.4 "as the raw opens -> developed in order" (Wolfgang Hasselmann / Unsplash foggy valley - a genuinely flat capture). svgFilter = global develop (saturate 1.6 + contrast-S feComponentTransfer w/ slight warmth); honest (whole-frame develop, no false local claim). Screenshot-verified: flat/cool -> warm/punchy/green. Pairs with panels 19.2/19.3. |
 | 20 | tone-and-the-curve | DONE | 3371 | 1 | n/a | ADDED LightroomCurve 20.4 (finally uses the component) drawing the exact recovery curve behind the 20.2 BeforeAfter svgFilter: lifted toe (0->12), mids above diagonal (128->165), rolled shoulder (255->240) - matches the tableValues. 20.2 is a global tone-curve recovery, caption makes no false local claim = honest. 20.3 panel values match. Renders, no errors. Prose tight. |
 | 21 | color-grading | DONE | 3958 | 2 | n/a | Well-equipped already: 21.2 BeforeAfter (warm-cast->neutralized) is a GLOBAL white-balance correction (svgFilter cools R*0.9/B*1.12, matches panel 21.3 Temp 2700->neutral) - honest, WB is global, no false local claim. 21.4 teal-orange grade Photo + HSL 21.5. No AnnotatedPhoto overlays to verify. Prose tight. No changes needed. |
@@ -80,7 +80,7 @@ licensable images._
 
 | # | chapter | status | words | photos | overlays | notes |
 |---|---------|--------|-------|--------|----------|-------|
-| 25 | portrait-in-practice | TODO | 4550 | 2 | 0/1 | visually-led; needs +1 to hit 3 |
+| 25 | portrait-in-practice | DONE | 4550 | 2 | 1/1 | Overlay 25.4 verified: lit cheek 169 > shadow side 68-99, key arrow from warm horizon accurate. 25.2 develop BeforeAfter = global honest edit (warm matrix + tone S), panel 25.3 matches. NOTE: at 2 photos vs genre target 3 - documented +1 gap (a short-tele light-pattern portrait synthesizing near-eye focus + catchlight + skin for the "Put the light..." section); left at 2 (chain figure 25.1 + widget + 2 strong photos already illustrate it well) due to context budget. |
 | 26 | street-and-documentary | TODO | 4460 | 3 | 0/3 | visually-led, target met |
 | 27 | landscape-and-architecture | TODO | 3388 | 4 | 0/3 | visually-led, target met |
 

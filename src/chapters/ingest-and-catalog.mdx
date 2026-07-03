@@ -53,6 +53,25 @@ A shoot is mostly frames you will never use. The cull is the fast pass that sepa
 
 The professional habit is to decide quickly and not relitigate. A common method is two light passes. On the first, reject only the clear failures, the blinks and misfires and missed focus. On the second, flag the keepers, and pick the first frame that works in a burst instead of comparing ten near-identical frames for a winner. Photo Mechanic earned its reputation among event and sports photographers on exactly this speed, and the speed has a mechanism: it shows you the full-size JPEG preview the camera already embedded inside the raw rather than rendering each raw from scratch. The cull is what turns a folder of two thousand frames into a short list of picks you will actually return to.
 
+<AnnotatedPhoto
+  src="/photos/ingest-and-catalog/contact-sheet-cull.jpg"
+  alt="A black-and-white 35mm contact sheet, four rows of small portrait frames of a woman with Kodak Safety Film edge markings and frame numbers, the classic proof sheet a photographer culls from."
+  id="18.3"
+  overlayName="two-pass cull"
+  caption="The cull, made physical. A contact sheet lays the whole take out at once so the eye can move fast and decide frame by frame. Two passes: reject the misfires first, a blink, a tilt, or a missed focus, marked here with a cross, then flag the few keepers worth developing, circled. A modern Library grid does the identical job with pick and reject flags laid over the embedded previews. The point is the same as the film sheet: see the take whole, decide quickly, and do not relitigate."
+  meta="35mm contact sheet, a portrait take laid out for the cull"
+  credit="Nancy Wong / Wikimedia Commons (CC BY-SA 4.0)"
+  href="https://commons.wikimedia.org/wiki/File:Nancy_Wong_contact_sheet_1980,_San_Francisco,_California.jpg"
+  labels={[
+    { x: 17, y: 65, text: "reject: the misfire" },
+    { x: 56, y: 65, text: "flag: the keeper" },
+  ]}
+>
+  <line x1="11" y1="69" x2="23" y2="81" stroke="var(--comment)" strokeWidth={1.8} vectorEffect="non-scaling-stroke" />
+  <line x1="23" y1="69" x2="11" y2="81" stroke="var(--comment)" strokeWidth={1.8} vectorEffect="non-scaling-stroke" />
+  <circle cx="53" cy="75" r="6.5" fill="none" stroke="var(--accent)" strokeWidth={1.8} vectorEffect="non-scaling-stroke" />
+</AnnotatedPhoto>
+
 ## Findable years from now
 
 The catalog earns its keep long after the shoot, on the day you need one specific frame out of tens of thousands. Two habits at ingest make that day easy, and both cost nothing at the time.
