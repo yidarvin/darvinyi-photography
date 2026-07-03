@@ -34,7 +34,7 @@ calls for.
 | 19 | order-of-operations               | Order of operations                 | DONE    |
 | 20 | tone-and-the-curve                | Tone and the curve                  | DONE    |
 | 21 | color-grading                     | Color grading                       | DONE    |
-| 22 | local-adjustments-and-masking     | Local adjustments and masking       | PENDING |
+| 22 | local-adjustments-and-masking     | Local adjustments and masking       | DONE    |
 | 23 | black-and-white-conversion        | Black-and-white conversion          | PENDING |
 | 24 | output-and-print                  | Output and print                    | PENDING |
 | 25 | portrait-in-practice              | Portrait, end to end                | PENDING |
