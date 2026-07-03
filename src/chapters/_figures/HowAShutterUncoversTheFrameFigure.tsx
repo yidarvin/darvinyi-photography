@@ -146,10 +146,10 @@ export function HowAShutterUncoversTheFrameFigure() {
 
       {/* row headers, the two answers */}
       <text x={36} y={ROW1 - 8} fontFamily="var(--font-mono)" fontSize="10" fill="var(--accent)">
-        yes — a vertical band, flash at any speed
+        yes: a vertical band, flash at any speed
       </text>
       <text x={36} y={ROW2 - 8} fontFamily="var(--font-mono)" fontSize="10" fill="var(--fg-muted)">
-        no — a slit travels down, flash limited
+        no: a slit travels down, flash limited
       </text>
 
       {PANELS.map((p) => (

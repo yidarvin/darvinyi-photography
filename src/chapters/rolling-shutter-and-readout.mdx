@@ -35,21 +35,18 @@ Now spin the subject. A propeller or a fan turning during the readout is caught 
   id="8.2"
   overlayName="readout sweep and blade curve"
   caption="A rigid propeller, torn into curved and disconnected blades by a rolling shutter. The rows were read from top to bottom while the blades swept through more than one rotation, so each row caught them at a different angle. This is not motion blur. Every edge is sharp; the geometry is simply a lie the readout tells."
-  meta="Google Pixel 3 · electronic shutter"
-  credit="Dicklyon / CC BY-SA 4.0"
+  meta="Google Pixel 3 - electronic shutter"
+  credit="Dicklyon / Wikimedia Commons (CC BY-SA 4.0)"
   href="https://commons.wikimedia.org/wiki/File:Propellor_with_rolling-shutter_artifact.jpg"
   labels={[
-    { x: 8, y: 34, text: "readout sweeps top to bottom" },
-    { x: 33, y: 11, text: "a rigid blade should run straight from the hub" },
-    { x: 20, y: 84, text: "instead it bows into a free-floating arc" },
+    { x: 16, y: 30, text: "readout sweeps top to bottom" },
+    { x: 25, y: 15, text: "one rigid blade, bowed into an arc" },
   ]}
 >
   <line x1="9" y1="20" x2="9" y2="82" stroke="var(--accent)" strokeWidth={1.5} strokeDasharray="4 3" vectorEffect="non-scaling-stroke" />
   <polygon points="9,86 6.5,79 11.5,79" fill="var(--accent)" />
-  <circle cx="47" cy="47" r="1.8" fill="none" stroke="var(--accent)" strokeWidth={1.4} vectorEffect="non-scaling-stroke" />
-  <line x1="47" y1="47" x2="34" y2="9" stroke="var(--accent)" strokeWidth={1.4} strokeDasharray="3 3" vectorEffect="non-scaling-stroke" />
-  <path d="M 47 47 Q 30 34 33 12" fill="none" stroke="var(--accent)" strokeWidth={1.6} vectorEffect="non-scaling-stroke" />
-  <path d="M 47 47 Q 34 72 38 92" fill="none" stroke="var(--accent)" strokeWidth={1.6} vectorEffect="non-scaling-stroke" />
+  <circle cx="50" cy="52" r="2" fill="none" stroke="var(--accent)" strokeWidth={1.4} vectorEffect="non-scaling-stroke" />
+  <path d="M 50 52 Q 34 48 33 42 Q 32 26 40 11" fill="none" stroke="var(--accent)" strokeWidth={1.8} vectorEffect="non-scaling-stroke" />
 </AnnotatedPhoto>
 
 The size of the warp comes down to one ratio: how much the object turns during a single readout. A fraction of a turn bows the blades. A whole turn or more shreds them. The widget later in this chapter is built on exactly that ratio.

@@ -252,7 +252,7 @@ export function ColorGradingWidget() {
 
           <dl className="mt-4 grid grid-cols-[auto_1fr] gap-x-4 gap-y-1 font-mono text-xs">
             <dt className="text-comment">grey card</dt>
-            <dd className={isNeutral ? "text-accent" : "text-fg"}>{isNeutral ? "neutral — grey is grey" : `${cast} cast`}</dd>
+            <dd className={isNeutral ? "text-accent" : "text-fg"}>{isNeutral ? "neutral, grey is grey" : `${cast} cast`}</dd>
             <dt className="text-comment">off neutral</dt>
             <dd className={isNeutral ? "text-accent" : "text-fg"}>{Math.round(Math.min(1, mag / 0.9) * 100)}%</dd>
             <dt className="text-comment">this is</dt>

@@ -182,11 +182,11 @@ export function FocusAndAutofocusWidget() {
         <dt className="text-comment">status</dt>
         <dd className={"text-right " + statusColor}>{status}</dd>
         <dt className="text-comment">moves to lock</dt>
-        <dd className="text-right text-fg">{stats ? stats.moves : "—"}</dd>
+        <dd className="text-right text-fg">{stats ? stats.moves : "·"}</dd>
         <dt className="text-comment">what happened</dt>
         <dd className="text-right text-fg">
           {!stats
-            ? "—"
+            ? "·"
             : stats.method === "phase"
               ? "one read, one move"
               : "sampled, overshot, backed up"}
