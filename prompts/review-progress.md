@@ -76,6 +76,10 @@ licensable images._
 | 23 | black-and-white-conversion | DONE | 4189->4280 | 2 | 1/1 | ADDED LightroomCurve 23.6 (print-contrast S-curve, cross-refs ch20) - fills the under-covered contrast gap + uses the component per spec (+~90 words). FIXED 23.2 triptych "same grey" circles: were on the bright metal DOME (207/229/240); moved to the grey silo BODY where the two mixes give an IDENTICAL grey (74/74) = clean "neutral holds" proof, matching the "middle grey" caption. Renders, no errors. |
 | 24 | output-and-print | DONE | 4120 | 0->1 | n/a | ZERO->1. ADDED BeforeAfter 24.2 "on screen -> soft-proof: matte paper" (Basile Morin / Commons CC BY-SA 4.0, Kabukicho neon - gamut-exceeding). svgFilter = global soft-proof sim (saturate 0.68 + range compressed: blacks lift to paper-black, whites drop to paper-white, warm paper tint); honest (soft-proof is global). Screenshot-verified: vivid neon -> muted/flatter/warm. Renumbered old panel 24.2->24.3. |
 
+**RUN COMPLETE: all 28 items (preface + 27 chapters) reviewed, committed, pushed.
+End-of-run gates all pass (typecheck+build, 0 em dashes in src/chapters, 0 AI-tells,
+no missing photo paths, no duplicate ids). Final commit dd7f65b.**
+
 ## Part IV --- In practice (ch 25-27)
 
 | # | chapter | status | words | photos | overlays | notes |
@@ -102,6 +106,16 @@ the point.
   focused-then-swung vs focus-point-moved-to-the-eye, at 100% on the eye, to show
   cosine error as a real photo. Not licensable as a controlled demo; a Q3 wide-open
   pair would nail it. (The "Focus and recompose" section currently has no photo.)
+- **Portrait in practice (ch25)** --- one more frame to reach the genre target of 3:
+  a short-tele portrait (XCD 90V/80mm) showing a named light pattern (loop or
+  Rembrandt) with the near eye tack-sharp and a high catchlight, i.e. the whole chain
+  in one of the author's own frames, for the "Put the light where it shapes the face"
+  section. Left at 2 (2 strong photos + chain figure + widget) under the context
+  budget; a licensed substitute would overlap reading-light's Rembrandt.
+- **Ingest and catalog (ch18)** --- optional upgrade: the author's own Lightroom
+  Library cull grid, or a contact sheet with real grease-pencil pick/reject marks.
+  The added Nancy Wong film contact sheet (18.3) covers the teaching point; a
+  marked-up sheet would show the grease-pencil detail literally.
 
 ## Photos staged in scratchpad (sourced, awaiting wire-in)
 
