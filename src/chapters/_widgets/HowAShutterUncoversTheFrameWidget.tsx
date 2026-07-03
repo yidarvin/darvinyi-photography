@@ -101,6 +101,16 @@ export function HowAShutterUncoversTheFrameWidget() {
     ? "one instant, all rows"
     : `≈ ${T} ms, top row to bottom`;
 
+  // The flash-sync readout must agree with the yes/no lesson above it. When the exposure
+  // outlasts the readout the whole frame is open at once, so a burst does sync; only when
+  // a slit is ever the widest thing open does sync fail.
+  const syncReadout =
+    kind === "electronic"
+      ? wholeFrameOpen
+        ? `only when longer than ~${T} ms`
+        : "single burst won't sync"
+      : mode.syncLabel;
+
   return (
     <div className="font-sans">
       {/* space-time plot: sensor rows down the side, time across the bottom */}
@@ -162,7 +172,7 @@ export function HowAShutterUncoversTheFrameWidget() {
         <dt className="text-comment">fast motion is</dt>
         <dd className="text-right text-fg">{band ? "caught together" : "read row by row"}</dd>
         <dt className="text-comment">flash sync</dt>
-        <dd className="text-right text-fg">{mode.syncLabel}</dd>
+        <dd className="text-right text-fg">{syncReadout}</dd>
       </dl>
 
       {aboveSync && (

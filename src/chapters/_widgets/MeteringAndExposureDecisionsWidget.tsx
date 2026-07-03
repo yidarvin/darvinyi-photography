@@ -252,7 +252,7 @@ export function MeteringAndExposureDecisionsWidget() {
 
       {/* scene selector */}
       <div className="mt-5">
-        <span className="mb-2 block font-mono text-xs text-comment">pick a scene the meter misjudges</span>
+        <span className="mb-2 block font-mono text-xs text-comment">pick a scene to test (gray street is the control the meter gets right)</span>
         <div className="flex flex-wrap gap-2">
           {SCENES.map((s) => {
             const active = s.key === sceneKey;

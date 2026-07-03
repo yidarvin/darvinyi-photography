@@ -203,7 +203,7 @@ export function TheExposureTriangleWidget() {
           index={iso}
           onStep={(d) => setIso((v) => clip(v + d, 0, LAST))}
           low="clean"
-          high="bright"
+          high="noisy"
         />
       </div>
     </div>

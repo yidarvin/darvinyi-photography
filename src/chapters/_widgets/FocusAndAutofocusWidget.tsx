@@ -112,7 +112,13 @@ export function FocusAndAutofocusWidget() {
   // so the SVG filter never receives a NaN stdDeviation.
   const defocus = Number.isFinite(pos) ? Math.abs(pos - TARGET) : 0;
   const blur = +(defocus * 0.14).toFixed(2);
-  const status = running ? "hunting..." : settled ? "in focus" : "out of focus";
+  const status = running
+    ? method === "phase"
+      ? "moving..."
+      : "hunting..."
+    : settled
+      ? "in focus"
+      : "out of focus";
   const statusColor = settled && !running ? "text-accent" : running ? "text-fg" : "text-comment";
 
   return (

@@ -19,10 +19,10 @@ interface Stage {
 
 // top row, left to right: the shoot
 const SHOOT: Stage[] = [
-  { i: "01", a: "lens &", b: "distance", tag: "perspective" },
-  { i: "02", a: "light &", b: "ratio", tag: "reading light" },
-  { i: "03", a: "leaf-shutter", b: "fill", tag: "leaf advantage" },
-  { i: "04", a: "focus the", b: "near eye", tag: "focus & AF" },
+  { i: "01", a: "distance &", b: "lens", tag: "perspective" },
+  { i: "02", a: "focus the", b: "near eye", tag: "focus & AF" },
+  { i: "03", a: "light &", b: "ratio", tag: "reading light" },
+  { i: "04", a: "leaf-shutter", b: "fill", tag: "leaf advantage" },
 ];
 
 // bottom row, right to left: the develop, ending at the face
@@ -52,7 +52,7 @@ export function PortraitInPracticeFigure() {
       viewBox="0 0 640 384"
       className="w-full min-w-[540px]"
       role="img"
-      aria-label="A portrait drawn as a chain of decisions split into two halves. The top row, before the shutter, runs left to right through four stages at the camera: choosing the lens and working distance for perspective, placing the light and setting the fill ratio, adding leaf-shutter fill, and focusing the near eye. The chain then drops down at the shutter and the bottom row runs right to left through three develop stages in the raw file: landing skin tone with white balance and vibrance, shaping tone and local finish with the curve and masks, and output for its destination. It ends at a node drawn as a small head: the face. The point is that every link serves the face, and changing any link changes the face."
+      aria-label="A portrait drawn as a chain of decisions split into two halves. The top row, before the shutter, runs left to right through four stages at the camera: setting the working distance and lens for perspective, focusing the near eye, placing the light and setting the fill ratio, and adding leaf-shutter fill. The chain then drops down at the shutter and the bottom row runs right to left through three develop stages in the raw file: landing skin tone with white balance and vibrance, shaping tone and local finish with the curve and masks, and output for its destination. It ends at a node drawn as a small head: the face. The point is that every link serves the face, and changing any link changes the face."
       fill="none"
     >
       <text x={16} y={22} fontFamily="var(--font-mono)" fontSize="12" fill="var(--comment)">

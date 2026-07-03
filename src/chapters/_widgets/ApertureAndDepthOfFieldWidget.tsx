@@ -2,7 +2,7 @@ import { useState } from "react";
 
 // ApertureAndDepthOfFieldWidget: the signature widget for "Aperture and depth of field".
 // One focused interaction: hold the framing fixed, then change the f-number and the
-// format. The scene shows the background dissolve as the physical hole (entry pupil =
+// format. The scene shows the background dissolve as the physical hole (entrance pupil =
 // focal length / f-number) grows, and a depth bar shows the in-focus zone thin out.
 // The move that makes the chapter click: set an f-number on full frame, then flip to
 // medium format WITHOUT touching the f-number and watch the depth of field shrink and

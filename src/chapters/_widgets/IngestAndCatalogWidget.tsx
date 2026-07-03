@@ -2,8 +2,8 @@ import { useMemo, useState } from "react";
 
 // IngestAndCatalogWidget: the signature widget for "Ingest and catalog".
 // One focused interaction that makes the second half of the thesis felt: never lose a
-// frame. The reader chooses where the copies of one negative live, then runs three
-// disasters and watches whether the frame survives. Each disaster maps to one leg of the
+// frame. The reader chooses where the copies of one negative live and watches whether the
+// frame survives three disasters that update live. Each disaster maps to one leg of the
 // 3-2-1 rule, so the abstract rule turns into a concrete "what would kill this picture".
 //
 // The card is drawn as the source, not a copy: you reformat and reuse it, so it is never
@@ -176,9 +176,9 @@ export function IngestAndCatalogWidget() {
       <p className="mt-4 font-mono text-[0.7rem] leading-relaxed text-comment">
         {rule321 && allSurvive
           ? "// 3-2-1 met. the negative survives all three disasters. this is what \"never lose a frame\" costs: three copies, two media, one of them offsite."
-          : `// ${survived} of 3 disasters survived · 3-2-1 ${
-              rule321 ? "met" : "not yet met"
-            }. the disaster still marked lost is the frame you would lose today.`}
+          : allSurvive
+          ? `// ${survived} of 3 disasters survived, but with only ${copies} copies there is no spare. 3-2-1's third copy is the margin: it survives all three and still leaves one to rebuild from.`
+          : `// ${survived} of 3 disasters survived · 3-2-1 not yet met. each disaster still marked lost is the frame you would lose today.`}
       </p>
     </div>
   );

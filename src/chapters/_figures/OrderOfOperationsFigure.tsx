@@ -4,7 +4,7 @@
 // bag of independent sliders, it is a STACK. Each step assumes the one above it is
 // settled, so the steps have a natural order, and the order is a dependency chain rather
 // than a preference. The four phase brackets on the left group the eight steps into the
-// moves you actually make: set the base, shape the whole frame, work locally, finish for
+// moves you actually make: set the base, shape the look, work locally, finish for
 // output. The curved arrow on the right is the cost of going backwards: reach back to a
 // settled step (here, exposure) after you have moved on, and every step that stood on it
 // (the shaded band: contrast, color, local) no longer fits and has to be redone. That is
@@ -25,14 +25,14 @@ const STEPS = [
   { n: "4", name: "contrast & curve", note: "assumes: exposure is settled" },
   { n: "5", name: "color & grade", note: "assumes: white balance is neutral" },
   { n: "6", name: "local adjustments", note: "assumes: the global look is settled" },
-  { n: "7", name: "noise reduction", note: "assumes: the final crop and size" },
+  { n: "7", name: "noise reduction", note: "assumes: tone and color are set" },
   { n: "8", name: "sharpen & export", note: "assumes: noise reduced; sized to output" },
 ];
 
 // Left-gutter phase brackets: which contiguous rungs each phase spans.
 const PHASES = [
   { label: "set the base", from: 0, to: 2 },
-  { label: "shape the frame", from: 3, to: 4 },
+  { label: "shape the look", from: 3, to: 4 },
   { label: "work local", from: 5, to: 5 },
   { label: "finish", from: 6, to: 7 },
 ];

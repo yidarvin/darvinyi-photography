@@ -48,7 +48,7 @@ const REGIMES: Regime[] = [
   {
     x: 28 + (PW + GAP) * 2,
     title: "non-stacked (Q3, X2D II)",
-    readout: "readout ≈ 100–165 ms",
+    readout: "readout ≈ 100 to 165 ms",
     shear: 58,
     leanLabel: "heavy lean",
     leanColor: "var(--danger)",

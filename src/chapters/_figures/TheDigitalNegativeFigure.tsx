@@ -41,7 +41,7 @@ export function TheDigitalNegativeFigure() {
         linear mosaic
       </text>
       <text x={83} y={141} textAnchor="middle" fontFamily="var(--font-mono)" fontSize="9.5" fill="var(--comment)">
-        14–16 bit
+        14 to 16 bit
       </text>
 
       {/* sensor -> develop */}

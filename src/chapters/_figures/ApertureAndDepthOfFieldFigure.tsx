@@ -2,7 +2,7 @@
 // Inline SVG, themed with the CSS variables so it matches the house style and stays
 // crisp at any width. The structure it encodes is the chapter's thesis: at the same
 // framing and the SAME f-number, a larger sensor needs a longer lens, and a longer
-// lens at the same f-number opens a physically wider hole (entry pupil = focal length
+// lens at the same f-number opens a physically wider hole (entrance pupil = focal length
 // / f-number). The wider hole sprays a point in the background into a bigger blur
 // disc, so the picture renders shallower. Two rows, same subject and background
 // distances, same f/1.7: full frame on top, medium format below.
@@ -80,7 +80,7 @@ function OpticalRow({ row }: { row: Row }) {
         stroke="var(--border)"
       />
 
-      {/* the lens opening (entry pupil): a physical height, wider on medium format */}
+      {/* the lens opening (entrance pupil): a physical height, wider on medium format */}
       <line
         x1={LENS_X}
         y1={cy - pupilHalf}

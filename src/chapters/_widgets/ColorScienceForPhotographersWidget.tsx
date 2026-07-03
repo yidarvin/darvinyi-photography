@@ -74,7 +74,7 @@ export function ColorScienceForPhotographersWidget() {
         <dt className="text-comment">illusion</dt>
         <dd className="text-muted">
           {reveal
-            ? "grounds gone, the two greys read as the same patch again. the colour was never in the square."
+            ? "grounds gone, the two greys read as the same patch again. the color was never in the square."
             : `each grey drifts toward its ground's complement: the left toward ${hueName(rightHue)}, the right toward ${hueName(leftHue)}.`}
         </dd>
       </dl>
@@ -116,7 +116,7 @@ export function ColorScienceForPhotographersWidget() {
 
       <p className="mt-4 font-mono text-[0.7rem] leading-relaxed text-comment">
         {"// the two center squares never change. what changes is what surrounds them, "}
-        {"and that is enough to change the colour you see."}
+        {"and that is enough to change the color you see."}
       </p>
     </div>
   );

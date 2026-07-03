@@ -16,11 +16,11 @@ interface Dot {
   id: string;
   x: number;
   y: number;
-  fam: 0 | 1; // colour family, for the similarity cue
+  fam: 0 | 1; // color family, for the similarity cue
 }
 
 // Twenty dots at fixed positions, laid out in three loose spatial clumps so proximity
-// has something to group. The colour families, the enclosed set, and the links all cut
+// has something to group. The color families, the enclosed set, and the links all cut
 // ACROSS those clumps on purpose, so each later cue visibly fights the proximity one.
 const DOTS: Dot[] = [
   // clump A (left)
@@ -84,13 +84,13 @@ const CUES: Record<Cue, CueInfo> = {
   },
   similarity: {
     label: "similarity",
-    sees: "two colour families",
-    note: "colour cuts clean across the three clusters. like reads with like, so the eye now sorts the same dots into two families by hue instead of by where they sit. the newer cue takes the field.",
+    sees: "two color families",
+    note: "color cuts clean across the three clusters. like reads with like, so the eye now sorts the same dots into two families by hue instead of by where they sit. the newer cue takes the field.",
   },
   region: {
     label: "common region",
     sees: "one enclosed set",
-    note: "a shared boundary overrides both. the eight dots inside the outline read as one group even though one of them belongs, by nearness, to the cluster below. an enclosure beats nearness and colour.",
+    note: "a shared boundary overrides both. the eight dots inside the outline read as one group even though one of them belongs, by nearness, to the cluster below. an enclosure beats nearness and color.",
   },
   connect: {
     label: "connection",

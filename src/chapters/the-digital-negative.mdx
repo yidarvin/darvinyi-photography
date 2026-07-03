@@ -21,7 +21,7 @@ Between the sensor and a finished image sits a pipeline of interpretive steps, a
 
 Shoot JPEG and the camera runs that whole pipeline in the moment and bakes every choice into the pixels. The white balance is now the pixels. The contrast is now the pixels. Push hard against any of it later and you are fighting a decision that has already been committed. Shoot raw and the pipeline is deferred. The camera still records what it would have done, your white balance setting rides along as a tag, your picture profile is noted, but none of it is applied. It is a suggestion attached to the negative, and you can change the white balance months later with no loss at all, because on a raw file white balance is metadata, not paint.
 
-<Figure id="17.1" caption="One exposure, one pipeline, tapped at two ends. Between the sensor and a finished JPEG sit the interpretive steps: demosaic, white balance, tone curve, color, sharpening and noise reduction. The raw file taps in at the input, saving the sensor's own mosaic at full bit depth with every decision still open and reversible. The JPEG taps in at the output, after the camera has run all of it and flattened the result to eight bits, keeping one print and discarding the rest. Raw keeps the negative; JPEG keeps a performance of it.">
+<Figure id="17.1" caption="One exposure, one pipeline, tapped at two ends. The raw file taps in at the input, saving the sensor's own mosaic at full bit depth with every decision still open. The JPEG taps in at the output, after the camera has run the whole pipeline and flattened the result to eight bits. Raw keeps the negative; JPEG keeps a performance of it.">
   <TheDigitalNegativeFigure />
 </Figure>
 
@@ -31,9 +31,9 @@ This is why raw and JPEG are not two quality settings of the same thing. They ar
 
 The most concrete thing the negative holds is levels. An eight-bit JPEG stores 256 levels of brightness per color channel, and that is all it will ever have. A raw file is deeper: your Q3 writes fourteen bits, which is 16,384 levels, and your X2D II writes sixteen, which is 65,536. [ISO, the sensor, and dynamic range](/iso-sensor-and-dynamic-range) made the point that this is not more dynamic range, the sensor's span from highlight to shadow is set by physics, not by bits. What the extra bits buy is finer slicing of that span, and finer slicing is editing room.
 
-Here is why it matters. Any real edit stretches the tones. Lift a shadow, add contrast, correct a color cast, and you are pulling a small range of input values across a wider range of output. Do that to an eight-bit file and you stretch a handful of levels apart until the gaps between them show, and a smooth sky or a gradient of skin breaks into visible steps. That banding has a name, posterization, and it is the sound of a file running out of levels. A raw file has hundreds of times as many, so the same aggressive move stays smooth. The widget makes the two behave side by side: develop one scene from a deep raw negative and from the eight-bit JPEG the camera would have baked, then push.
+Here is why it matters. Any real edit stretches the tones. Lift a shadow, add contrast, correct a color cast, and you are pulling a small range of input values across a wider range of output. Do that to an eight-bit file and you stretch a handful of levels apart until the gaps between them show, and a smooth sky or a gradient of skin breaks into visible steps. That banding has a name, posterization, and it is the sound of a file running out of levels. A raw file has hundreds of times as many, so the same aggressive move stays smooth. The widget develops the two side by side: one scene from a deep raw negative and from the eight-bit JPEG the camera would have baked, then push.
 
-<Widget name="latitude_lab" hint="Drag the develop push up. Both files hold the same scene, but only the raw kept the levels: watch the JPEG's lifted foreground break into bands and its blown sky pull down to a flat grey, while the raw develops clean and the clipped highlight comes back.">
+<Widget name="latitude_lab" hint="Drag the develop push. Both files hold the same scene, but only the raw kept the levels: watch the JPEG's lifted foreground break into bands and its blown sky pull down to a flat grey, while the raw develops clean and the clipped highlight comes back.">
   <TheDigitalNegativeWidget />
 </Widget>
 
@@ -41,20 +41,20 @@ Two costs show up at once. The lifted shadow bands, because eight bits left too 
 
 <Photo
   src="/photos/the-digital-negative/raw-vs-developed-before-after.jpg"
-  alt="A side-by-side of a stone war-memorial statue against sky. The left half is a flat, dull, slightly dark unprocessed raw file; the right half is the same frame developed, with brighter midtones, recovered detail in the shadowed stone, a held sky, and corrected verticals."
+  alt="A side-by-side of a dark bronze winged figure on a light stone pedestal against sky. The left half is a dark, contrasty unprocessed raw file with a deeply saturated blue sky and the bronze in near-silhouette; the right half is the same frame developed, with the bronze opened to full detail, a lighter held sky, and corrected verticals."
   id="17.2"
-  caption="The same single exposure, twice. On the left the raw as it opens with no interpretation: flat, dull, the rendering not yet applied. On the right the negative developed, shadows lifted out of the stone, highlights held in the sky, the leaning verticals corrected. Nothing here was a second photograph. It was all latent in one file, waiting for the develop that raw defers and JPEG spends in the camera."
+  caption="The same single exposure, twice. On the left the raw as it opens with no interpretation: dark and contrasty, the sky a deep saturated blue and the bronze all but a silhouette. On the right the negative developed, the bronze figure opened from silhouette to full detail, the highlights held in the sky, the leaning verticals corrected. Nothing here was a second photograph. It was all latent in one file, waiting for the develop that raw defers and JPEG spends in the camera."
   meta="Nikon D800 raw, before and after development in Lightroom"
   credit="Norbert Nagel / Wikimedia Commons (CC BY-SA 3.0)"
   href="https://commons.wikimedia.org/wiki/File:Comparison_-_RAW_file_and_after_digital_development_in_Lightroom_5.jpg"
 />
 
-Nothing above was magic, and none of it needed a second frame. It was a handful of Basic-panel moves on the one negative: pull the harsh midday highlights down off the stone and the sky, lift the shadows back out of the shaded stone, and set the white and black points so the tones fill the range. The panel below is the whole develop. Every value is a decision the raw left open and the JPEG would have made in the camera.
+Nothing above was magic, and none of it needed a second frame. It was a handful of reversible moves on the one negative, and every one of them was a decision the raw left open and the JPEG would have made in the camera. The panel below shows the kind of develop that gets you there.
 
 <LightroomPanel
   title="Basic"
   id="17.3"
-  caption="The develop that took the flat raw on the left to the finished frame on the right. A warmer as-shot white balance, highlights and whites pulled down to hold the midday sky and the lit stone, shadows and blacks lifted to open the shadowed stone, and a touch of contrast and clarity to put the bite back. On a raw these are all reversible tags; on a JPEG most of them would already be spent."
+  caption="A representative develop of the negative above. The as-shot 5,600 K white balance kept, highlights and whites pulled down to hold the midday sky and the lit stone, shadows and blacks lifted to open the bronze figure, and a touch of contrast and clarity to put the bite back. On a raw these are all reversible tags; on a JPEG most of them would already be spent."
   sliders={[
     { label: "Temp", value: 5600, min: 2000, max: 12000, display: "5,600 K" },
     { label: "Tint", value: 6 },

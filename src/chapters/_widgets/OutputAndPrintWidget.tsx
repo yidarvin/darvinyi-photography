@@ -144,8 +144,9 @@ function proof(rgb: RGB, paper: Paper, intent: Intent, bpc: boolean): RGB {
   } else {
     // relative colorimetric: keep what fits, clip what does not
     if (bpc) {
-      // black point compensation: rescale so shadow separation survives, highlights still clip
-      yOut = Math.min(paper.black + y * span, paper.white);
+      // black point compensation: rescale only the black end so shadow separation survives,
+      // while in-gamut midtones stay put and highlights above paper white still clip
+      yOut = Math.min(paper.black + y * (1 - paper.black), paper.white);
     } else {
       yOut = Math.min(y, paper.white);
       if (yOut < paper.black) yOut = paper.black; // shadows below Dmax crush together

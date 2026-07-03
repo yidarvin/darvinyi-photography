@@ -36,10 +36,10 @@ The other editors phrase the same idea in different words. Photoshop has two too
 
 <AnnotatedPhoto
   src="/photos/black-and-white-conversion/channel-mix-triptych.jpg"
-  alt="The same photograph of a red barn and a grey silo under a deep blue sky shown three times: in color, then as two black-and-white conversions in which the red barn and the blue sky trade places from light to dark, while the grey silo stays the same tone in all three."
+  alt="The same photograph of a red barn and a grey silo under a pale blue sky shown three times: in color, then as two black-and-white conversions. In the red-filter mix the sky and the barn wall land at nearly the same mid-grey; in the blue-filter mix the sky pales and the barn goes darker. The grey silo stays about the same tone in all three."
   id="23.3"
   overlayName="the neutral anchor"
-  caption="One frame, three conversions, and the figure made real. In color the barn is red, the sky deep blue, the silo a plain grey. The red-filter mix drives the sky almost to black and lifts the barn wall bright, the sky-darkening move a real red filter made on film. The blue-filter mix does the reverse, a pale sky and a muddy dark barn. Toggle the overlay and watch the silo through all three: it is close to neutral, so no mix moves it much, and it holds its middle grey while the colored things swap around it. That is the whole lesson of the mix in a single frame."
+  caption="One frame, three conversions, and how much the scene itself decides. In color the barn is a dark red, the sky a pale blue, the silo a plain grey. A red-filter mix darkens the sky and lifts the reds, but this scene starts with a pale sky and a dark barn, so the two only converge on nearly the same mid-grey rather than trading places. The blue-filter mix separates them the other way, paling the sky and sinking the barn into a muddy dark. Toggle the overlay and watch the silo through all three: it is close to neutral, so no mix moves it much, and it holds its middle grey while the colored things shift around it. How far a mix can push two colors apart depends on how far apart their colors started."
   meta="One frame, three conversions: color, a red-filter channel mix, and a blue-filter mix"
   credit="Roger Starnes Sr / Unsplash, converted to black and white"
   href="https://unsplash.com/photos/hd5rzz_GGD0"
@@ -53,7 +53,7 @@ The other editors phrase the same idea in different words. Photoshop has two too
 <LightroomHSL
   channel="Black & White Mix"
   id="23.4"
-  caption="The mix behind the red-filter panel above, eight bands of brightness and nothing else. Reds, oranges, and yellows are lifted to send the barn wall bright; blue is pulled hard down to sink the sky toward black, the sky-darkening red filter rebuilt as a slider. Green stays near neutral for the field. Flip the sign on red and blue and you have the blue-filter mix, the same tones swapped. The near-neutral silo carries no strong color, so no slider reaches it and it holds its grey."
+  caption="The mix behind the red-filter panel above, eight bands of brightness and nothing else. Reds, oranges, and yellows are lifted to open up the barn wall; blue is pulled down to darken the sky, the sky-darkening red filter rebuilt as a slider. How far the sky actually falls depends on the scene, and in the pale sky above it lands at a mid-grey rather than black. Green stays near neutral for the field. Flip the sign on red and blue and you have the blue-filter mix, the same moves reversed. The near-neutral silo carries no strong color, so no slider reaches it and it holds its grey."
   values={[45, 35, 40, 5, -35, -70, -20, 20]}
 />
 
@@ -81,13 +81,13 @@ Grain is the surface the tones sit on, and adding it back is a choice with sever
       <feBlend in="SourceGraphic" in2="soft" mode="overlay" />
     </>
   }
-  caption="Grain is the surface, and here it goes on. Drag across. The clean digital file is perfectly smooth; the after side carries an even film-like grain, most visible exactly where the picture is smoothest, the dark ground and the soft-lit skin, and nearly lost in the busy detail of the hair. That is where grain always lives, which is why you judge it on the smooth passages and set it for the size you will actually print. The same speckle sprinkled over a banded sky is what breaks the steps back into a gradient."
+  caption="Grain is the surface, and here it goes on. Drag across. The clean digital file is perfectly smooth; the after side carries an even film-like grain, most visible exactly where the picture is smoothest, the dark ground and the soft-lit skin, and nearly lost in the busy detail of the hair. That is where grain always lives, which is why you judge it on the smooth passages and set it for the size you will actually print."
   meta="A clean file and the same frame with a film grain laid over it"
   credit="Rachel McDermott / Unsplash"
   href="https://unsplash.com/photos/0fN7Fxv1eWA"
 />
 
-Lightroom builds it from three sliders in the Effects panel. Amount sets how much, Size sets how coarse each speck is, and Roughness sets how even or irregular the speckle looks, from a clean, regular pattern to a rough, organic one. Past a Size of about 25 the tool quietly mixes in a little blue so the grain sits better next to noise reduction.
+Lightroom builds it from three sliders in the Effects panel. Amount sets how much, Size sets how coarse each speck is, and Roughness sets how even or irregular the speckle looks, from a clean, regular pattern to a rough, organic one. Past a Size of about 25 the tool quietly mixes in a little blue, which noise reduction smooths less aggressively than luminance speckle, so the large grain survives as texture instead of being scrubbed to mush.
 
 It helps to know what you are imitating. Film grain is the clumped silver left after development, and its size is set by the emulsion. Faster film needs larger silver-halide crystals to catch enough light, and larger crystals leave coarser, more visible grain, which is why a box of ISO 400 film looks grittier than ISO 100. Kodak measured it: Tri-X 400, the classic reportage stock, carries an RMS granularity of 17, which its datasheet still calls fine, and pushing it two or three stops for a dim room grows the grain along with the contrast. That number is the objective side, the granularity. Graininess is the subjective impression you actually see in the print.
 
@@ -109,7 +109,7 @@ The widget is the finishing bench, the grain and the split tone together, the tw
   src="/photos/black-and-white-conversion/split-tone-pair.jpg"
   alt="A colorful Venetian street scene with a leaning bell tower, shown as two black-and-white versions side by side: one a plain neutral grey, one tinted with cool blue shadows and warm amber highlights."
   id="23.6"
-  caption="The same conversion, straight and then split-toned. On the left is a neutral grey print. On the right the shadows are pushed to a low, cool blue and the highlights to a low, warm amber, the mono version of teal and orange, with a little grain over the top. The tone is kept quiet, so it reads as a toned photograph and not a colored one: warm where the low sun catches the plaster and the tower, cool in the shaded foreground and the sky. That is a decision about mood, made with the same wheels as a color grade."
+  caption="The same conversion, straight and then split-toned. On the left is a neutral grey print. On the right the highlights take a low, warm amber and the shadows a cool blue, with a little grain over the top: warm where the low sun catches the plaster and the tower, cool where the light falls off into the shaded foreground and the deep doorways. The tint is held to a low saturation across most of the frame, though the darkest shadows tip toward a real navy. That is a decision about mood, made with the same wheels as a color grade."
   meta="One mono frame, straight and then split-toned with a touch of grain"
   credit="Ivo Sousa Martins / Unsplash, converted and split-toned"
   href="https://unsplash.com/photos/colorful-buildings-and-a-leaning-tower-in-burano-A1ViroRFvus"
@@ -131,7 +131,7 @@ The widget is the finishing bench, the grain and the split tone together, the tw
       </feComponentTransfer>
     </>
   }
-  caption="Convert, then let a little color back in at the two ends. Drag across. The frame goes to grey, then the shadows take a low, cool blue and the highlights a low, warm amber, kept quiet enough to read as a toned print and not a color one. It is the monochrome cousin of teal and orange, and it maps onto the scene it came from, warm where the low sun struck the ridge and cool in the shaded valleys. Toning was never only cosmetic. Here it is a decision about mood, made on the grey."
+  caption="Convert, then let a little color back in at the two ends. Drag across. The frame goes to grey, then the shadows take a low, cool blue and the highlights a low, warm amber, kept quiet enough to read as a toned print and not a color one. The split maps onto the scene it came from, warm where the low sun struck the ridge and cool in the shaded valleys. Toning was never only cosmetic. Here it is a decision about mood, made on the grey."
   meta="A sunrise ridge converted to grey and split-toned, cool shadows and warm highlights"
   credit="Daniil Silantev / Unsplash"
   href="https://unsplash.com/photos/golden-mountain-peaks-at-sunrise-with-mist-in-valleys-ou_9KZ6BJ-0"
@@ -140,7 +140,7 @@ The widget is the finishing bench, the grain and the split tone together, the tw
 <LightroomPanel
   title="Color Grading"
   id="23.8"
-  caption="The split tone behind the right-hand print, read off the wheels that replaced the old Split Toning panel. A warm amber hue in the highlights and a cool blue in the shadows, both held to a low saturation so the print reads as toned and not colored, with the balance nudged toward the highlights to keep the sunlit plaster warm. The grain that gives the surface is set below, three quiet sliders in the Effects panel."
+  caption="The split tone behind the right-hand print, read off the wheels that replaced the old Split Toning panel. A warm amber hue in the highlights and a cool blue in the shadows, both held to a low saturation, with the balance nudged toward the highlights to keep the sunlit plaster warm. The grain that gives the surface is set below, three quiet sliders in the Effects panel."
   sliders={[
     { label: "Highlight Hue", value: 42, min: 0, max: 360, display: "42°" },
     { label: "Highlight Sat", value: 22, min: 0, max: 100, anchor: "left" },
@@ -170,13 +170,13 @@ One shaping move sits under all three and is easy to forget: the contrast of the
 
 ## Two cameras, and the sensor that throws color away
 
-All three decisions depend on one fact: the color is still in the file. A raw capture keeps every channel the sensor read, so the conversion is a set of instructions applied at development, not a change written into the pixels, and you can redo it forever. That is the standing promise of [the digital negative](/the-digital-negative), and black and white is where it pays off most, because the same negative can become a dozen different monochrome prints and none of them spends the original.
+All three decisions depend on one fact: the color is still in the file. That is the standing promise of [the digital negative](/the-digital-negative), and black and white is where it pays off most, because the same negative can become a dozen different monochrome prints and none of them spends the original.
 
 Both of your bodies keep the color. The Leica Q3 has a normal color sensor, and you can set a monochrome Leica Look so the finder and rear screen show the scene in grey while the DNG quietly records every channel, which lets you previsualize in black and white and still convert from full color later. The Hasselblad X2D II shows no monochrome preview at all, so there the grey stays in your head until you open the 3FR in Phocus or Lightroom. Either way the conversion happens on a color file.
 
-The instructive exception is a camera built to give all of this up. Leica's Monochrom bodies, the Q2 Monochrom, the M11 Monochrom, and the Q3 Monochrom that arrived in late 2025, remove the color filter array from the sensor so every photosite records only brightness. There is no color to remix, so there is no channel mix and no digital filter, only real glass filters over the lens as in the film days, and the black and white is committed the instant you press the shutter. What you get in return is roughly a stop of added sensitivity and visibly more resolution, because the sensor no longer interpolates color across neighboring pixels. It is the film bargain again, made of silicon: commit at capture, and be paid for it. The color bodies take the other side of the deal, keeping the color and keeping the decision open.
+The instructive exception is a camera built to give all of this up. Leica's Monochrom bodies, the Q2 Monochrom, the M11 Monochrom, and the Q3 Monochrom that arrived in late 2025, remove the color filter array from the sensor so every photosite records only brightness. There is no color to remix, so there is no channel mix and no digital filter, only real glass filters over the lens as in the film days, and the black and white is committed the instant you press the shutter. What you get in return is roughly a stop of added sensitivity and visibly more resolution, because the sensor no longer interpolates color across neighboring pixels. The color bodies take the other side of the deal, keeping the color and keeping the decision open. It is the film bargain again, made of silicon: commit at capture, and be paid for it.
 
-Whatever you convert in, the tools converge on the same three moves. Nik Silver Efex Pro, now DxO's, folds them into one panel, with film-stock emulations, a grain engine that re-renders the picture rather than dusting noise on top, a Structure slider for micro-contrast, and control points for local work. DxO FilmPack and Capture One's black-and-white tool do the same job in their own arrangement. Learn the three decisions once, the mix, the grain, and the tone, and each of these is only a different room for making them.
+Back on the color bodies, the decision stays open in whatever editor you open the file in, and the tools converge on the same three moves. Nik Silver Efex Pro, now DxO's, folds them into one panel, with film-stock emulations, a grain engine that re-renders the picture rather than dusting noise on top, a Structure slider for micro-contrast, and control points for local work. DxO FilmPack and Capture One's black-and-white tool do the same job in their own arrangement. Learn the three decisions once, the mix, the grain, and the tone, and each of these is only a different room for making them.
 
 <Callout>
 A black-and-white conversion is a decision, not a button, and the automatic desaturate is the one version that decides nothing, collapsing colors of equal brightness into the same grey. A real conversion is three choices stacked on a color raw. The mix decides which grey each color becomes, the same eight bands as the color mixer reduced to brightness, which is the film era's glass contrast filter rebuilt as free, reversible sliders. Grain decides the surface, imitating the clumped silver of fast film, dithering away banding and disguising noise, sized for the output you will actually deliver. The split tone decides whether color returns at the ends, a cool shadow and a warm highlight in the tradition of selenium and sepia, made with the same wheels as a color grade. All of it rides on the raw file keeping every channel, which is exactly what a true monochrome sensor gives up in exchange for resolution and speed. Keep the color, and the black-and-white print stays a decision you can remake forever.
@@ -197,7 +197,7 @@ Take one converted frame and add grain until it looks right at full size on your
 </ExerciseCard>
 
 <ExerciseCard n="04" title="Split a toned print">
-On a black-and-white frame with clear shadows and highlights, open the Color Grading wheels and put a low, cool blue in the shadows and a low, warm amber in the highlights. Keep the saturation small, so it reads as a toned print and not a color cast. Compare it against the plain grey version, and against the Selenium Leica Look if you shoot the Q3, and decide which the picture wanted. You are choosing a mood, not fixing a problem, which is the whole difference between toning and correcting.
+On a black-and-white frame with clear shadows and highlights, open the Color Grading wheels and put a low, cool blue in the shadows and a low, warm amber in the highlights. Keep the saturation small, a hint of color rather than a wash. Compare it against the plain grey version, and against the Selenium Leica Look if you shoot the Q3, and decide which the picture wanted. You are choosing a mood, not fixing a problem, which is the whole difference between toning and correcting.
 </ExerciseCard>
 
 ## Sources

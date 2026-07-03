@@ -32,7 +32,7 @@ const STEPS: Record<string, Step> = {
   color: { id: "color", label: "color & grade", blurb: "hue, saturation, grade" },
   local: { id: "local", label: "local adjustments", blurb: "masks, dodge & burn" },
   nr: { id: "nr", label: "noise reduction", blurb: "clean the shadows" },
-  sharpen: { id: "sharpen", label: "sharpen & export", blurb: "output, sized to size" },
+  sharpen: { id: "sharpen", label: "sharpen & export", blurb: "output, sized to the export" },
 };
 
 // The dependency chain. Each edge says "before" must come before "after", and why: the
@@ -129,7 +129,7 @@ export function OrderOfOperationsWidget() {
   return (
     <div className="font-sans">
       <p className="mb-3 font-mono text-xs text-comment">
-        {"// order the develop. earlier is higher. red = a base a later step already assumed."}
+        {"// order the develop. earlier is higher. red = a step placed before the base it depends on."}
       </p>
 
       {/* the one move: reorder the steps */}
