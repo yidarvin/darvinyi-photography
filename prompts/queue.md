@@ -39,7 +39,7 @@ calls for.
 | 24 | output-and-print                  | Output and print                    | DONE    |
 | 25 | portrait-in-practice              | Portrait, end to end                | DONE    |
 | 26 | street-and-documentary            | Street and documentary              | DONE    |
-| 27 | landscape-and-architecture        | Landscape and architecture          | PENDING |
+| 27 | landscape-and-architecture        | Landscape and architecture          | DONE    |
 
 <!--
 Four parts: I How a camera works (1-11), II Shooting aesthetically (12-16),
