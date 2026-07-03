@@ -17,6 +17,13 @@ interface BeforeAfterProps {
   afterFilter?: string;
   /** Inline SVG <filter> children (a real curve / channel-mixer edit) for the after side. */
   svgFilter?: ReactNode;
+  /**
+   * CSS clip-path (e.g. a `polygon(...)`) that limits the after side to a region, so a
+   * filtered or graded edit reads as a genuinely local (masked) change rather than a
+   * global one. It composes with the wipe: the after image shows only inside the
+   * intersection of this region and the revealed portion.
+   */
+  afterClip?: string;
   /** Screen-reader description of the frame. Required. */
   alt: string;
   beforeLabel?: string;
@@ -44,6 +51,7 @@ export function BeforeAfter({
   after,
   afterFilter,
   svgFilter,
+  afterClip,
   alt,
   beforeLabel = "before",
   afterLabel = "after",
@@ -129,14 +137,30 @@ export function BeforeAfter({
           </svg>
         )}
         <img src={before} alt={alt} draggable={false} className="block w-full select-none" />
-        <img
-          src={after ?? before}
-          alt=""
-          aria-hidden
-          draggable={false}
-          style={{ ...afterStyle, clipPath: `inset(0 0 0 ${pos}%)` }}
-          className="absolute inset-0 h-full w-full select-none object-cover"
-        />
+        {afterClip ? (
+          <div
+            className="pointer-events-none absolute inset-0"
+            style={{ clipPath: afterClip, WebkitClipPath: afterClip }}
+          >
+            <img
+              src={after ?? before}
+              alt=""
+              aria-hidden
+              draggable={false}
+              style={{ ...afterStyle, clipPath: `inset(0 0 0 ${pos}%)` }}
+              className="h-full w-full select-none object-cover"
+            />
+          </div>
+        ) : (
+          <img
+            src={after ?? before}
+            alt=""
+            aria-hidden
+            draggable={false}
+            style={{ ...afterStyle, clipPath: `inset(0 0 0 ${pos}%)` }}
+            className="absolute inset-0 h-full w-full select-none object-cover"
+          />
+        )}
         <span
           className="pointer-events-none absolute bottom-2 left-2 rounded px-2 py-0.5 font-mono text-[0.7rem] uppercase tracking-wider text-fg"
           style={chipStyle}

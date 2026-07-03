@@ -54,16 +54,25 @@ fixes; no new photo sourcing needed._
 | 15 | color-science-for-photographers | DONE | 4064 | 5 | 4/4 | Fixed 2 "not just" AI-tells (warm/cool depth; WB mood decision). Overlays: 15.3 analogous gradient (gold/orange/pink/violet) + 15.5 tent (warm 255,185,0 / cool bg blue) verified. FIXED 15.2 warm circle (was on blown white sun 235,233,234 -> moved center to orange glow 33,31). FIXED 15.4 triad: all 3 circles were on dark rigging/water; repositioned to confirmed red-orange rail (52,68)=176,54,34 / blue cabin (62,60)=58,113,161 / green hull (81,84)=30,55,39. Prose dense+tight. |
 | 16 | black-and-white-seeing | DONE | 3483 | 4 | 1/1 | 16.2 value-collapse BeforeAfter (2 real images) verified HONEST: mono berries (24-81) merge into similarly-toned leaves (14-105). 16.3 dunes = global saturate:0, caption says whole frame greys = honest (no false local claim). REBUILT 16.4 Adams overlay: old river path overshot into peaks (y50) + snow circle was on cloudy SKY (55,24). Retraced river to bright water (150/146/126); snow circle -> left-peak snowfield (18,43) L118; river=brightest tone (219-238) confirmed. Prose tight. |
 
+**CHECKPOINT: Part II (ch 12-16) committed + pushed to main @ d2b761b.**
+
 ## Part III --- Editing (ch 17-24)
+
+_Priorities: honesty bug 22.3 (global filter vs masked claim; fix via a region clip
+on BeforeAfter's after side), use LightroomCurve in ch20 + ch23 (exists but unused),
+add BeforeAfter+panel to core edits, source/build photos for the 3 ZERO chapters
+(18 contact-sheet, 19 edit-stages, 24 screen-vs-print). Many ZERO-chapter "photos"
+are really BeforeAfter/figures built from one real frame via svgFilter, not single
+licensable images._
 
 | # | chapter | status | words | photos | overlays | notes |
 |---|---------|--------|-------|--------|----------|-------|
-| 17 | the-digital-negative | TODO | 2811 | 1 | 0/0 | editing: add BeforeAfter + panel |
+| 17 | the-digital-negative | DONE | 2811 | 1 | n/a | Already has raw->developed before/after (17.2 composite) + Basic panel (17.3, values match the visible lift-shadows/hold-highlights edit). Tried splitting the composite into a wipe slider but the developed half has DIFFERENT framing (verticals corrected, no streetlamp, statue larger) so a wipe would misalign; static side-by-side is correct here. Prose tight. |
 | 18 | ingest-and-catalog | TODO | 2823 | 0 | 0/0 | ZERO photos; idea: contact-sheet culling grid |
 | 19 | order-of-operations | TODO | 2884 | 0 | 0/0 | ZERO photos; idea: same frame at edit stages |
 | 20 | tone-and-the-curve | TODO | 3371 | 1 | 0/0 | editing: use LightroomCurve (curve IS lesson) |
 | 21 | color-grading | TODO | 3958 | 2 | 0/0 | editing |
-| 22 | local-adjustments-and-masking | TODO | 3785 | 3 | 0/2 | HONESTY BUG: 22.3 global filter vs masked claim |
+| 22 | local-adjustments-and-masking | DONE | 3785 | 3 | 2/2 | HONESTY BUG FIXED: extended BeforeAfter with `afterClip` (CSS clip-path region), applied a sky-region polygon to 22.3 so the burn genuinely stops at the ridgeline. Screenshot-verified: sky darkens on the after side, lit golden hillside HOLDS (caption now true). Updated 22.2 red sky-mask path to the canvas-verified ridgeline (same polygon). FIXED 22.5 dodge region: was on dark HAIR (lum 3-4); moved onto the lit skin strip (centroid 37,45, interior 186-229). Prose tight. |
 | 23 | black-and-white-conversion | TODO | 4189 | 2 | 0/1 | editing: use LightroomCurve |
 | 24 | output-and-print | TODO | 4120 | 0 | 0/0 | ZERO photos; idea: screen-vs-print soft-proof |
 
@@ -104,4 +113,8 @@ the point.
 
 ## Component extensions made this pass
 
-- (none yet)
+- **BeforeAfter `afterClip` prop** (src/components/BeforeAfter.tsx): optional CSS
+  clip-path (e.g. `polygon(...)`) that region-limits the after side, so a filtered/
+  graded edit reads as genuinely local (masked). Composes with the wipe (after shows
+  only inside region ∩ revealed) by wrapping the after `<img>` in a clip-path div.
+  Used to fix the ch22 honesty bug (22.3 sky burn).

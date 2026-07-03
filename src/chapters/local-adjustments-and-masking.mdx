@@ -34,7 +34,7 @@ However you draw them, masks combine with three set operations. **Add** unions t
   href="https://www.pexels.com/photo/a-dark-stormy-sky-over-a-hill-with-grass-and-trees-16300540/"
   labels={[{ x: 30, y: 30, text: "sky mask (the where)" }]}
 >
-  <path d="M 0 0 L 100 0 L 100 62 L 74 62 L 62 64 L 48 68 L 34 74 L 22 76 L 0 76 Z" fill="var(--danger)" fillOpacity={0.32} stroke="var(--danger)" strokeWidth={1.5} vectorEffect="non-scaling-stroke"/>
+  <path d="M 0 0 L 100 0 L 100 62 L 88 64 L 75 66 L 60 69 L 48 68 L 32 71 L 16 72 L 0 76 Z" fill="var(--danger)" fillOpacity={0.32} stroke="var(--danger)" strokeWidth={1.5} vectorEffect="non-scaling-stroke"/>
 </AnnotatedPhoto>
 
 <BeforeAfter
@@ -44,6 +44,7 @@ However you draw them, masks combine with three set operations. **Add** unions t
   beforeLabel="as shot"
   afterLabel="sky burned"
   svgFilter={<feComponentTransfer><feFuncR type="table" tableValues="0 0.06 0.12 0.19 0.27 0.35 0.44 0.53 0.62"/><feFuncG type="table" tableValues="0 0.06 0.12 0.19 0.27 0.35 0.44 0.53 0.62"/><feFuncB type="table" tableValues="0 0.06 0.12 0.19 0.27 0.35 0.44 0.53 0.62"/></feComponentTransfer>}
+  afterClip="polygon(0% 0%, 100% 0%, 100% 62%, 88% 64%, 75% 66%, 60% 69%, 48% 68%, 32% 71%, 16% 72%, 0% 76%)"
   caption="The burn as a live edit. The after side pulls the brightest tones down hardest, the mid greys less, and leaves the dark hills nearly untouched, which is what a linear gradient keyed to the sky does when you drag it down. Because the burn rides on a mask that stops at the ridgeline, the lit hillside is left out of it entirely, so it holds while the sky sinks and the tonal gap between subject and surround widens. This is a burn stated as a curve rather than a stroke: darken the bright region, hold the dark one, and let attention fall where the contrast is highest."
   credit="Andriy Nestruiev / Pexels"
   href="https://www.pexels.com/photo/a-dark-stormy-sky-over-a-hill-with-grass-and-trees-16300540/"
@@ -85,9 +86,9 @@ The lit face in the next frame is this rule with no software at all. A single so
   meta="Low-key portrait, one hard source, the surround left in shadow"
   credit="Luca Vaccaro / Pexels"
   href="https://www.pexels.com/photo/dramatic-low-key-portrait-of-a-young-man-34659019/"
-  labels={[{ x: 40, y: 12, text: "dodge (the where)" }]}
+  labels={[{ x: 38, y: 32, text: "dodge (the where)" }]}
 >
-  <path d="M 30 22 Q 40 18 50 24 Q 54 32 50 42 Q 42 47 34 43 Q 27 34 30 22 Z" fill="var(--danger)" fillOpacity={0.3} stroke="var(--danger)" strokeWidth={1.5} strokeDasharray="3 3" vectorEffect="non-scaling-stroke"/>
+  <path d="M 28 45 Q 29 38 38 37 Q 47 38 48 46 Q 47 53 38 53 Q 29 53 28 45 Z" fill="var(--danger)" fillOpacity={0.3} stroke="var(--danger)" strokeWidth={1.5} strokeDasharray="3 3" vectorEffect="non-scaling-stroke"/>
 </AnnotatedPhoto>
 
 ## Dodge and burn is this move, a century old
