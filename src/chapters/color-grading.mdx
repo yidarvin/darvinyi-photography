@@ -50,23 +50,80 @@ Underneath the profile browser sits the older Calibration panel, a Shadows Tint 
 
 This stage is exactly where the two cameras this book is built around start from different color, by design. Hasselblad calls its system the Natural Colour Solution, a color management pipeline it developed to run from capture through to editing, aimed at genuine, true-to-life color, and it makes a specific promise about skin: it keeps subtle tones smooth between highlights and shadows and works to leave skin tones as unaffected as possible even after adjustments. It is applied when Phocus renders the 3FR raw in Hasselblad's own working space, through color matrices and the Hasselblad Film Curve, not burned into the file. Leica's Q3 renders its 14-bit DNG through Maestro processing and offers Leica Looks, named creative styles like Classic, Contemporary, and Selenium that you browse and load through the Leica FOTOS app. Neither rendering is correct and the other wrong. They are two houses' taste in color, expressed at the profile stage, which is why matching them later is a real task and not a bug.
 
+<BeforeAfter
+  before="/photos/color-grading/profile-facade.jpg"
+  alt="A saturated terracotta-red wall with a green door and potted plants, shown as a wipe between a warm saturated rendering and a flatter, cooler one."
+  id="21.4"
+  beforeLabel="color profile"
+  afterLabel="standard profile"
+  svgFilter={
+    <>
+      <feColorMatrix type="saturate" values="0.78" />
+      <feColorMatrix type="matrix" values="0.95 0 0 0 0.015  0 0.99 0 0 0  0 0 1.08 0 0  0 0 0 1 0" />
+    </>
+  }
+  caption="Before a single slider moves, a profile has already decided how this raw becomes color. Drag across. Both sides are the same capture under two profiles: a warm, saturated color rendering, and a flatter, cooler standard one. Neither is the true color of the wall, because there is no true color to render to, only a baseline someone picked. This is the stage where the Leica and the Hasselblad hand you different color out of the box, and it is a taste, not a correction."
+  meta="One raw facade, rendered by two camera profiles"
+  credit="Annika Rose / Pexels"
+  href="https://www.pexels.com/photo/red-building-wall-with-closed-door-23501002/"
+/>
+
 ## Then the choices: the mixer and the grading wheels
 
 With the profile chosen and the neutral set, the rest of the color panel is deliberate. The color mixer, renamed from the HSL panel, splits the spectrum into eight bands, red, orange, yellow, green, aqua, blue, purple, and magenta, and gives each three controls. Hue shifts the band to a neighboring shade, so a blue sky can be walked from cyan toward purple. Saturation changes that band's vividness. Luminance changes its brightness, which is the lever behind the deep blue sky, since dropping blue luminance darkens the sky without touching anything else. The targeted adjustment tool makes this direct: pick it up, drag on the sky itself, and the editor moves whichever bands live under your cursor. This is surgical color, one region of the wheel at a time, and it is a different instrument from the global Saturation and Vibrance sliders up in the Basic panel. Saturation there moves every color equally. Vibrance is nonlinear, pushing the less saturated colors harder while protecting the ones already vivid, and it is deliberately biased to leave orange, red, and yellow, the skin tones, comparatively alone. That bias is why Vibrance is the portrait photographer's slider and flat Saturation is not.
 
+<BeforeAfter
+  before="/photos/color-grading/blue-boat.jpg"
+  alt="A saturated blue rowboat moored on green water by a wooden dock, shown as a wipe that deepens only the blue boat while the green water stays unchanged."
+  id="21.5"
+  beforeLabel="as shot"
+  afterLabel="blue luminance down"
+  afterClip="polygon(47% 46%, 66% 42%, 68% 50%, 62% 55%, 52% 56%, 47% 51%)"
+  svgFilter={
+    <feComponentTransfer>
+      <feFuncR type="linear" slope="0.48" intercept="0" />
+      <feFuncG type="linear" slope="0.5" intercept="0" />
+      <feFuncB type="linear" slope="0.64" intercept="0" />
+    </feComponentTransfer>
+  }
+  caption="The mixer works one hue band at a time, and its Luminance lever is the one behind a deep blue sky. Drag across. Here it reaches only the blue band, so the boat sinks toward a deep navy while the green water beside it does not shift at all. Aim the same lever at a sky and it darkens the blue without touching the clouds or the land. This is surgical color, one region of the wheel moved and the rest left where it was."
+  meta="The blue band's luminance pulled down, the green untouched"
+  credit="Sami Aksu / Pexels"
+  href="https://www.pexels.com/photo/a-blue-boat-on-a-water-11169356/"
+/>
+
 The grading wheels are the last and most cinematic stage. In 2020 Adobe replaced the two-zone Split Toning panel, which could only tint shadows and highlights, with Color Grading and its three-way wheels for shadows, midtones, and highlights, plus a global wheel over the whole image. On each wheel the handle's angle sets the hue and its distance from the center sets the saturation, so the center is no color at all, and a Luminance slider under each wheel lightens or darkens that tonal range. Two more controls decide how the ranges meet: Blending, which runs 0 to 100 and defaults to 50, sets how much the three zones overlap, and Balance shifts the midpoint that separates them. The archetypal move is teal and orange, and it is pure [color science](/color-science-for-photographers). Push the shadows toward teal and the highlights toward orange. Skin sits in the orange band of the wheel, so warm highlights hold the subject, and teal is orange's complement, so a cool background falls to the opposite side of the wheel and the face separates. It works because it places subject and surround across a diameter, not because teal and orange are magic.
+
+<BeforeAfter
+  before="/photos/color-grading/man-dusk.jpg"
+  alt="A man with warm skin standing on a city avenue at blue hour with red and amber traffic bokeh behind him, shown as a wipe from the neutral capture to a teal-and-orange grade."
+  id="21.6"
+  beforeLabel="neutral"
+  afterLabel="teal + orange"
+  svgFilter={
+    <feComponentTransfer>
+      <feFuncR type="table" tableValues="0 0.12 0.26 0.41 0.56 0.71 0.85 0.95 1" />
+      <feFuncG type="table" tableValues="0.03 0.15 0.28 0.42 0.55 0.68 0.8 0.91 1" />
+      <feFuncB type="table" tableValues="0.1 0.2 0.31 0.42 0.51 0.58 0.64 0.72 0.85" />
+    </feComponentTransfer>
+  }
+  caption="The wheels, live. Drag across. The shadows go to teal and the highlights to a warm orange, and that does one specific thing: the man's warm skin sits in the orange band and holds, while the cool blue-hour street falls to teal on the opposite side. Subject and surround end up across a diameter of the wheel, so the face lifts off the background. That is the whole engine of the look, and the finished frame just below shows where a grade like it lands."
+  meta="A neutral blue-hour frame pushed to teal shadows and orange highlights"
+  credit="Wolf Art / Pexels"
+  href="https://www.pexels.com/photo/urban-portrait-of-man-on-city-street-at-dusk-34562178/"
+/>
 
 <Photo
   src="/photos/color-grading/teal-orange-grade.jpg"
   alt="A young man in a leather jacket walks a dark street at night, his face warmly lit by a streetlamp while the background falls into deep teal."
-  id="21.4"
+  id="21.7"
   caption="A grade, not a correction. The highlights and skin are held warm and the shadows and background pushed to teal, which is orange's complement, so the warm subject sits across the wheel from the cool surround and lifts off it. The tell that this is a choice and not a fix is the shadows: nothing here is trying to be neutral. The world is deliberately not grey. That is the whole difference from the panel above. White balance asks what the light was, and this asks what you want the picture to feel like."
   meta="Night street, warm skin held against teal shadows"
   credit="UMUT / Pexels"
   href="https://www.pexels.com/photo/man-in-leather-jacket-at-night-20782024/"
 />
 
-<LightroomHSL channel="Saturation" id="21.5" values={[8, 26, 14, -18, 40, 38, 0, 0]} caption="The teal-and-orange grade read as the color mixer's Saturation row. Orange, where skin lives, is pushed up so the lit subject holds. Green is pulled down and aqua with blue lifted, walking the cool surround toward teal, orange's complement across the wheel. The grade lands because it places subject and background on opposite diameters, not because these two colors are special." />
+<LightroomHSL channel="Saturation" id="21.8" values={[8, 26, 14, -18, 40, 38, 0, 0]} caption="The teal-and-orange grade read as the color mixer's Saturation row. Orange, where skin lives, is pushed up so the lit subject holds. Green is pulled down and aqua with blue lifted, walking the cool surround toward teal, orange's complement across the wheel. The grade lands because it places subject and background on opposite diameters, not because these two colors are special." />
 
 ## Matching two color sciences
 

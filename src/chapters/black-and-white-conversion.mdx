@@ -7,6 +7,19 @@ Converting to black and white is a decision, and the button most people press ma
 
 Start with what the automatic conversion does, because the whole chapter is a reaction to it. Desaturating keeps a single number for each pixel, the luminance, close to a fixed 0.21 of the red, 0.72 of the green, and 0.07 of the blue. Those weights match how the eye is built, green bright and blue faint, but they are the same for every picture, so the converter never asks what this particular frame needed. A red barn and the green grass beside it can carry almost the same luminance, and when they do, the automatic grey renders them as one tone and the barn dissolves into the field.
 
+<BeforeAfter
+  before="/photos/black-and-white-conversion/poppies-green.jpg"
+  alt="Red poppies scattered through green foliage, shown as a wipe from the color frame to a plain desaturated conversion in which the flowers sink toward the same grey as the leaves."
+  id="23.1"
+  beforeLabel="color"
+  afterLabel="desaturated"
+  svgFilter={<feColorMatrix type="saturate" values="0" />}
+  caption="What the button does, and why it decides nothing. Drag across. In color the red poppies are impossible to miss against the green. Pull the saturation to zero and the two drift toward the same grey, because a red and a green of about equal brightness carry about equal luminance, and luminance is all the automatic conversion keeps. The subject that shouted in color goes quiet. Nothing is wrong with the exposure. The one thing that held the poppies apart, their hue, is exactly what the plain desaturate threw away."
+  meta="Red poppies in green, drifting to one grey under a plain desaturate"
+  credit="Vitalii Onyshchuk / Unsplash"
+  href="https://unsplash.com/photos/red-poppies-bloom-in-a-field-of-green-grass-zOKeXsJZYBU"
+/>
+
 Setting a photo's Treatment to Black & White in Lightroom does something better from the first click. It applies a monochrome profile, usually Adobe Monochrome, and opens the Black & White Mix, the panel that lets you overrule those fixed weights color by color. The automatic mix becomes a starting point, not a verdict, and the three real decisions open up in front of you.
 
 ## The mix: the colored filter, now eight sliders
@@ -15,7 +28,7 @@ The mix answers the first and largest question, which grey each color becomes. I
 
 This is the glass contrast filter of the film era, rebuilt as sliders. [Seeing in mono](/black-and-white-seeing) promised as much: a red filter over the lens lightened reds and darkened cyans because it passed its own color and blocked the opposite, and it cost a stop or two of light and could never be undone. The mix does the same job to the tones, for free, after the fact, and reversibly, because the [raw file](/the-digital-negative) still holds all three channels. The blue slider is the sky-darkening red filter. The whole ladder of yellow, orange, and red filters is now a set of numbers you dial to taste and change your mind about tomorrow.
 
-<Figure id="23.1" caption="The mix is a dial that decides the tonal order, and it can invert it. Four things from one scene, a blue sky, a red barn, a yellow field, and a white cloud, are plotted on three ladders from black at the bottom to white at the top: the default luminance conversion, a warm red-filter mix, and a cool blue-filter mix. Each dot is the grey that color becomes; the line is tinted with the real color so you can follow it. Under the default the sky and the barn sit close together. Under the red mix they fly apart and swap, the sky sinking toward black and the barn leaping toward white, then swap back under the blue mix. The near-neutral cloud barely moves on any of them, because a mix only reorders the colors, not the neutrals. Choosing the mix is choosing which thing is lighter than which.">
+<Figure id="23.2" caption="The mix is a dial that decides the tonal order, and it can invert it. Four things from one scene, a blue sky, a red barn, a yellow field, and a white cloud, are plotted on three ladders from black at the bottom to white at the top: the default luminance conversion, a warm red-filter mix, and a cool blue-filter mix. Each dot is the grey that color becomes; the line is tinted with the real color so you can follow it. Under the default the sky and the barn sit close together. Under the red mix they fly apart and swap, the sky sinking toward black and the barn leaping toward white, then swap back under the blue mix. The near-neutral cloud barely moves on any of them, because a mix only reorders the colors, not the neutrals. Choosing the mix is choosing which thing is lighter than which.">
   <BlackAndWhiteConversionFigure />
 </Figure>
 
@@ -24,7 +37,7 @@ The other editors phrase the same idea in different words. Photoshop has two too
 <AnnotatedPhoto
   src="/photos/black-and-white-conversion/channel-mix-triptych.jpg"
   alt="The same photograph of a red barn and a grey silo under a deep blue sky shown three times: in color, then as two black-and-white conversions in which the red barn and the blue sky trade places from light to dark, while the grey silo stays the same tone in all three."
-  id="23.2"
+  id="23.3"
   overlayName="the neutral anchor"
   caption="One frame, three conversions, and the figure made real. In color the barn is red, the sky deep blue, the silo a plain grey. The red-filter mix drives the sky almost to black and lifts the barn wall bright, the sky-darkening move a real red filter made on film. The blue-filter mix does the reverse, a pale sky and a muddy dark barn. Toggle the overlay and watch the silo through all three: it is close to neutral, so no mix moves it much, and it holds its middle grey while the colored things swap around it. That is the whole lesson of the mix in a single frame."
   meta="One frame, three conversions: color, a red-filter channel mix, and a blue-filter mix"
@@ -39,7 +52,7 @@ The other editors phrase the same idea in different words. Photoshop has two too
 
 <LightroomHSL
   channel="Black & White Mix"
-  id="23.3"
+  id="23.4"
   caption="The mix behind the red-filter panel above, eight bands of brightness and nothing else. Reds, oranges, and yellows are lifted to send the barn wall bright; blue is pulled hard down to sink the sky toward black, the sky-darkening red filter rebuilt as a slider. Green stays near neutral for the field. Flip the sign on red and blue and you have the blue-filter mix, the same tones swapped. The near-neutral silo carries no strong color, so no slider reaches it and it holds its grey."
   values={[45, 35, 40, 5, -35, -70, -20, 20]}
 />
@@ -49,6 +62,30 @@ One caution before you push a slider to its stop. The mix is strong enough to fo
 ## Grain: the surface the tones sit on
 
 Grain is the surface the tones sit on, and adding it back is a choice with several good reasons. The obvious one is the look. Real film scattered its image across countless tiny clumps of metallic silver, and a picture built from those clumps reads as film in a way a perfectly smooth digital file does not. The practical reasons matter more still. A little grain is dither: sprinkled across the banded sky from the last section, it breaks the hard steps back into a smooth-looking gradient, because the eye averages the speckle. It can disguise digital noise, trading the blotchy, colored mess of a pushed high-ISO frame for an even, film-like texture the eye forgives. And a consistent grain laid over a whole series ties the frames into one body of work.
+
+<BeforeAfter
+  before="/photos/black-and-white-conversion/grain-portrait.jpg"
+  alt="A moody black-and-white portrait on a smooth dark background, shown as a wipe from a clean digital file to the same frame with a film-grain texture laid over it."
+  id="23.5"
+  beforeLabel="smooth"
+  afterLabel="grain added"
+  svgFilter={
+    <>
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" seed="11" result="noise" />
+      <feColorMatrix in="noise" type="matrix" values="1 0 0 0 0  1 0 0 0 0  1 0 0 0 0  0 0 0 0 1" result="mono" />
+      <feComponentTransfer in="mono" result="soft">
+        <feFuncR type="linear" slope="0.35" intercept="0.32" />
+        <feFuncG type="linear" slope="0.35" intercept="0.32" />
+        <feFuncB type="linear" slope="0.35" intercept="0.32" />
+      </feComponentTransfer>
+      <feBlend in="SourceGraphic" in2="soft" mode="overlay" />
+    </>
+  }
+  caption="Grain is the surface, and here it goes on. Drag across. The clean digital file is perfectly smooth; the after side carries an even film-like grain, most visible exactly where the picture is smoothest, the dark ground and the soft-lit skin, and nearly lost in the busy detail of the hair. That is where grain always lives, which is why you judge it on the smooth passages and set it for the size you will actually print. The same speckle sprinkled over a banded sky is what breaks the steps back into a gradient."
+  meta="A clean file and the same frame with a film grain laid over it"
+  credit="Rachel McDermott / Unsplash"
+  href="https://unsplash.com/photos/0fN7Fxv1eWA"
+/>
 
 Lightroom builds it from three sliders in the Effects panel. Amount sets how much, Size sets how coarse each speck is, and Roughness sets how even or irregular the speckle looks, from a clean, regular pattern to a rough, organic one. Past a Size of about 25 the tool quietly mixes in a little blue so the grain sits better next to noise reduction.
 
@@ -71,16 +108,38 @@ The widget is the finishing bench, the grain and the split tone together, the tw
 <Photo
   src="/photos/black-and-white-conversion/split-tone-pair.jpg"
   alt="A colorful Venetian street scene with a leaning bell tower, shown as two black-and-white versions side by side: one a plain neutral grey, one tinted with cool blue shadows and warm amber highlights."
-  id="23.4"
+  id="23.6"
   caption="The same conversion, straight and then split-toned. On the left is a neutral grey print. On the right the shadows are pushed to a low, cool blue and the highlights to a low, warm amber, the mono version of teal and orange, with a little grain over the top. The tone is kept quiet, so it reads as a toned photograph and not a colored one: warm where the low sun catches the plaster and the tower, cool in the shaded foreground and the sky. That is a decision about mood, made with the same wheels as a color grade."
   meta="One mono frame, straight and then split-toned with a touch of grain"
   credit="Ivo Sousa Martins / Unsplash, converted and split-toned"
   href="https://unsplash.com/photos/colorful-buildings-and-a-leaning-tower-in-burano-A1ViroRFvus"
 />
 
+<BeforeAfter
+  before="/photos/black-and-white-conversion/split-tone-peaks.jpg"
+  alt="A golden sunrise mountain ridge with cool blue shadows, shown as a wipe from the color frame to a black-and-white conversion split-toned with cool shadows and warm highlights."
+  id="23.7"
+  beforeLabel="color"
+  afterLabel="converted + toned"
+  svgFilter={
+    <>
+      <feColorMatrix type="saturate" values="0" />
+      <feComponentTransfer>
+        <feFuncR type="table" tableValues="0.02 0.13 0.26 0.4 0.54 0.69 0.83 0.93 1" />
+        <feFuncG type="table" tableValues="0 0.12 0.25 0.39 0.53 0.67 0.81 0.92 1" />
+        <feFuncB type="table" tableValues="0.11 0.21 0.31 0.42 0.51 0.58 0.65 0.74 0.88" />
+      </feComponentTransfer>
+    </>
+  }
+  caption="Convert, then let a little color back in at the two ends. Drag across. The frame goes to grey, then the shadows take a low, cool blue and the highlights a low, warm amber, kept quiet enough to read as a toned print and not a color one. It is the monochrome cousin of teal and orange, and it maps onto the scene it came from, warm where the low sun struck the ridge and cool in the shaded valleys. Toning was never only cosmetic. Here it is a decision about mood, made on the grey."
+  meta="A sunrise ridge converted to grey and split-toned, cool shadows and warm highlights"
+  credit="Daniil Silantev / Unsplash"
+  href="https://unsplash.com/photos/golden-mountain-peaks-at-sunrise-with-mist-in-valleys-ou_9KZ6BJ-0"
+/>
+
 <LightroomPanel
   title="Color Grading"
-  id="23.5"
+  id="23.8"
   caption="The split tone behind the right-hand print, read off the wheels that replaced the old Split Toning panel. A warm amber hue in the highlights and a cool blue in the shadows, both held to a low saturation so the print reads as toned and not colored, with the balance nudged toward the highlights to keep the sunlit plaster warm. The grain that gives the surface is set below, three quiet sliders in the Effects panel."
   sliders={[
     { label: "Highlight Hue", value: 42, min: 0, max: 360, display: "42°" },
@@ -105,7 +164,7 @@ One shaping move sits under all three and is easy to forget: the contrast of the
     { x: 255, y: 255 },
   ]}
   channel="luma"
-  id="23.6"
+  id="23.9"
   caption="The contrast the mono print rides on, the darkroom's paper grade drawn as one line. Blacks are pinned at the bottom-left corner and whites at the top-right, and the middle steepens into an S so the greys the mix chose pull apart into a print with bite. Choosing this slope is choosing the paper grade: soft and long for a delicate high-key frame, hard and steep for a graphic one."
 />
 

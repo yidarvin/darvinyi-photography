@@ -91,6 +91,49 @@ The lit face in the next frame is this rule with no software at all. A single so
   <path d="M 28 45 Q 29 38 38 37 Q 47 38 48 46 Q 47 53 38 53 Q 29 53 28 45 Z" fill="var(--danger)" fillOpacity={0.3} stroke="var(--danger)" strokeWidth={1.5} strokeDasharray="3 3" vectorEffect="non-scaling-stroke"/>
 </AnnotatedPhoto>
 
+<BeforeAfter
+  before="/photos/local-adjustments-and-masking/dodge-face.jpg"
+  alt="A woman's face in deep shadow against a bright, blown-out pale background, shown as a wipe where a mask cut to her head lifts the face out of shadow."
+  id="22.6"
+  beforeLabel="as shot"
+  afterLabel="face dodged"
+  afterClip="polygon(38% 34%, 52% 36%, 55% 44%, 51% 50%, 54% 57%, 48% 61%, 40% 61%, 33% 54%, 26% 47%, 25% 40%, 31% 35%)"
+  svgFilter={
+    <feComponentTransfer>
+      <feFuncR type="linear" slope="1.7" intercept="0.03" />
+      <feFuncG type="linear" slope="1.2" intercept="0.02" />
+      <feFuncB type="linear" slope="1.45" intercept="0.02" />
+    </feComponentTransfer>
+  }
+  caption="A masked dodge, and honest about its edge. Drag across. The lift reaches only her face, opening it out of the shadow while the bright surround holds, which is the whole promise of a mask: the adjustment goes here and stops. The boundary you can just see is the mask itself, drawn hard for the demo. In Lightroom a radial gradient feathers exactly this edge to nothing, so the same lift fades in with no seam. The where is what matters, and the where is her face."
+  meta="A masked dodge lifting the shadowed face"
+  credit="Daniwura TCI / Pexels"
+  href="https://www.pexels.com/photo/portrait-of-thoughtful-young-adult-in-soft-light-29050497/"
+/>
+
+<BeforeAfter
+  before="/photos/local-adjustments-and-masking/subject-separation-street.jpg"
+  alt="A man gesturing toward the camera on a busy sunlit street, shown as a wipe where the cluttered background is darkened and desaturated so the man separates from it."
+  id="22.7"
+  beforeLabel="as shot"
+  afterLabel="background sunk"
+  afterClip="polygon(0% 0%, 100% 0%, 100% 47%, 74% 50%, 60% 44%, 50% 40%, 45% 40%, 42% 31%, 33% 30%, 27% 41%, 19% 49%, 11% 56%, 0% 61%)"
+  svgFilter={
+    <>
+      <feColorMatrix type="saturate" values="0.2" />
+      <feComponentTransfer>
+        <feFuncR type="linear" slope="0.55" intercept="0" />
+        <feFuncG type="linear" slope="0.55" intercept="0" />
+        <feFuncB type="linear" slope="0.55" intercept="0" />
+      </feComponentTransfer>
+    </>
+  }
+  caption="Separation by sinking everything else. Drag across. The busy street behind him is darkened and drained of color, all inside a mask that stops at his outline, so nothing on the man himself changes. He was already the darkest, most present thing in the frame; drop the background's brightness and its color and he steps clean off it. This is dodge and burn turned on the whole surround, lowering every competing region so the subject's peak on the saliency map wins by default."
+  meta="The cluttered street darkened and desaturated behind the subject"
+  credit="Anderson Santos / Pexels"
+  href="https://www.pexels.com/photo/man-posing-on-sunlit-street-18303116/"
+/>
+
 ## Dodge and burn is this move, a century old
 
 None of this began with sliders. In the wet darkroom, a print is made by shining the enlarger through the negative onto light-sensitive paper, and the longer a region is exposed the darker it prints. **Dodging** holds back some of that light, usually with a hand or a small card on a wire, so a chosen area receives less exposure and prints lighter. **Burning**, or burning-in, does the opposite, giving one region extra exposure through a hole in a card while the rest is shaded, so that area prints darker. Lighten here, darken there: the same two moves the mask makes, done with light and cardboard.

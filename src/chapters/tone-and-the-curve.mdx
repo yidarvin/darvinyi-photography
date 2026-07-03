@@ -19,11 +19,68 @@ Because the two endpoints are usually pinned at the corners, you cannot steepen 
 
 The Contrast slider is that same S with one handle. RawTherapee describes its contrast control as a curve centered on the average luminance, lifting tones above the midpoint and lowering those below it. That is a rotation of the middle of the curve around a pivot, steeper for more contrast and flatter for less. Knowing that, you can stop treating contrast as a mood knob and start asking the real question the curve forces: which tones do I want to give this separation to, and which ones can afford to lose it.
 
+<BeforeAfter
+  before="/photos/tone-and-the-curve/hazy-cityscape.jpg"
+  alt="A hazy city skyline of glass towers under a pale flat sky, shown as a wipe from the flat as-shot frame to a version with an S-curve steepening the midtones."
+  id="20.2"
+  beforeLabel="flat"
+  afterLabel="S-curve"
+  svgFilter={
+    <feComponentTransfer>
+      <feFuncR type="table" tableValues="0 0.02 0.09 0.26 0.5 0.74 0.91 0.98 1" />
+      <feFuncG type="table" tableValues="0 0.02 0.09 0.26 0.5 0.74 0.91 0.98 1" />
+      <feFuncB type="table" tableValues="0 0.02 0.09 0.26 0.5 0.74 0.91 0.98 1" />
+    </feComponentTransfer>
+  }
+  caption="A flat frame and the contrast it was missing. Drag across. Haze holds every tone in a narrow band around the middle, so the as-shot side has no punch. The after side is an S-curve: the lower midtones pushed down, the upper midtones up, steepening the middle so the towers pull out of the murk. It buys that midtone separation from the ends, which is the contrast budget in a sentence. Steepen the middle and the darkest and lightest tones give up some separation to pay for it."
+  meta="A hazy skyline, flat then given an S-curve"
+  credit="David Kristianto / Unsplash"
+  href="https://unsplash.com/photos/skyscrapers-dominate-the-hazy-cityscape-F0nJDHZ9nG4"
+/>
+
 ## Exposure sets the middle, whites and blacks set the ends
 
 Adobe's Basic panel stacks its six tone sliders in a fixed order, Exposure, Contrast, Highlights, Shadows, Whites, Blacks, and the order is a working sequence, not a menu. Exposure comes first because it sets overall brightness, weighted to the midtones while it shifts the whole range, so it places the bulk of the histogram before you shape anything around it. This is worth separating from a real exposure change at capture. Moving the whole curve up in an editor with the endpoints pinned is a protected brightness move, since black stays black and white stays white. Pushing exposure hard enough shifts every level together and can drive tones off either end into clipping. The slider is closer to the first than the second, but the ends are still yours to lose.
 
 Whites and Blacks are the ends. Whites sets the white point, the input level that becomes pure white and above which highlights clip. Blacks sets the black point at the other corner. Highlights and Shadows are their inner cousins: Highlights reshapes the bright tones below the white point without moving it, and Shadows lifts the dark tones above the black point without moving that. This is why the pairs feel similar and are not the same. Lowering Highlights recovers cloud detail while peak white stays put, and setting Whites decides where cloud stops being cloud and becomes paper. The clean way to place the two endpoints is Adobe's own: hold Alt on Windows or Option on a Mac and drag Whites to the right until the first clipped specks appear on the blacked-out preview, then back off a hair. A colored speck means a single channel has clipped, solid white means all three have. Do the mirror move on Blacks against a white preview. On the image itself the J key toggles both clipping overlays at once, blue where shadows have crushed to black and red where highlights have blown to white.
+
+<BeforeAfter
+  before="/photos/tone-and-the-curve/overcast-lake.jpg"
+  alt="An overcast mountain lake below a rocky twin peak, shown as a wipe from the dim flat capture to a brighter version with the whole range lifted."
+  id="20.3"
+  beforeLabel="as shot"
+  afterLabel="exposure +"
+  svgFilter={
+    <feComponentTransfer>
+      <feFuncR type="table" tableValues="0 0.19 0.35 0.5 0.64 0.76 0.86 0.94 1" />
+      <feFuncG type="table" tableValues="0 0.19 0.35 0.5 0.64 0.76 0.86 0.94 1" />
+      <feFuncB type="table" tableValues="0 0.19 0.35 0.5 0.64 0.76 0.86 0.94 1" />
+    </feComponentTransfer>
+  }
+  caption="Exposure is the first move and the simplest. Drag across. The after side lifts the whole curve, weighted to the midtones, so the dull overcast scene brightens while the ends stay put, black held at the bottom corner and white at the top. That is the protected brightness move: with the endpoints pinned you place the bulk of the histogram where you want it before shaping anything around it. Push it far harder and every level shifts together until the ends clip, but a gentle lift like this only sets the middle."
+  meta="An overcast lake, brightened with the endpoints held"
+  credit="Jordi Costa Tomé / Pexels"
+  href="https://www.pexels.com/photo/serene-mountain-lake-landscape-in-overcast-weather-31469974/"
+/>
+
+<BeforeAfter
+  before="/photos/tone-and-the-curve/hazy-cityscape.jpg"
+  alt="The same hazy city skyline, shown as a wipe from the flat as-shot frame to a version with the black and white points set so the haze clears and the tones snap."
+  id="20.4"
+  beforeLabel="flat"
+  afterLabel="ends set"
+  svgFilter={
+    <feComponentTransfer>
+      <feFuncR type="linear" slope="1.9" intercept="-0.47" />
+      <feFuncG type="linear" slope="1.9" intercept="-0.47" />
+      <feFuncB type="linear" slope="1.9" intercept="-0.47" />
+    </feComponentTransfer>
+  }
+  caption="The same flat frame, a different handle on the same curve. Where the S-curve above bent the middle, this leaves the middle straight and only moves the two ends. Drag across. The black point drags the darkest haze down to a real black and the white point pulls the brightest haze up toward white, so the whole range stretches to fill the scale and the picture snaps to life without an S. This is what Whites and Blacks do, and it is why haze, which is nothing but a range that never reaches either end, clears the instant you place the endpoints."
+  meta="The same hazy skyline, its black and white points placed"
+  credit="David Kristianto / Unsplash"
+  href="https://unsplash.com/photos/skyscrapers-dominate-the-hazy-cityscape-F0nJDHZ9nG4"
+/>
 
 ## The two interfaces are one map
 
@@ -41,10 +98,25 @@ The wall is real and it is hard. When all three channels saturate, the tone is s
 
 The histogram is where you read all of this, with one caution. A pile of pixels against a wall is clipping, tones sent to pure black or pure white with their detail lost. But a wall that is touched is not always a wall that is wrong. Specular highlights, a sun in the frame, the glint on water and metal, are meant to be pure white, and true black shadow is meant to be black. And because the on-screen histogram is display-referred, darktable keeps a separate raw-overexposed warning precisely because a highlight flagged as clipped on screen may still be sitting recoverable in the raw. Trust the raw over the preview, and reach for the ends deliberately.
 
+<AnnotatedPhoto
+  src="/photos/tone-and-the-curve/hallway-window.jpg"
+  alt="A dark vaulted corridor receding to a bright arched window at the far end, the window nearly white and the walls and floor falling into deep shadow."
+  id="20.5"
+  overlayName="the two walls"
+  caption="Where the histogram's two walls sit in a real frame. The bright window is jammed against the right wall of the histogram, its panes close to pure white, so a touch more exposure would clip it to blank paper. The corridor's corners are pressed against the left wall, near pure black, so lifting them far would surface noise before detail. A scene like this uses the whole range at once, which is exactly when you place the ends by hand: hold the window just off the white wall, and open the shadows only as far as the noise floor lets you."
+  meta="A bright window against a dark corridor, both ends of the scale at once"
+  credit="Duc Nguyen / Unsplash"
+  href="https://unsplash.com/photos/a-dark-long-hallway-with-a-bright-window-Y4B8MNuLYfs"
+  labels={[{ x: 50, y: 39, text: "highlights at the white wall" }, { x: 25, y: 24, text: "shadows at the black wall" }]}
+>
+  <rect x="39" y="44" width="19" height="13" fill="none" stroke="var(--accent)" strokeWidth={1.5} vectorEffect="non-scaling-stroke" />
+  <rect x="2" y="14" width="7" height="72" fill="none" stroke="var(--accent)" strokeWidth={1.4} strokeDasharray="4 3" vectorEffect="non-scaling-stroke" />
+</AnnotatedPhoto>
+
 <BeforeAfter
   before="/photos/tone-and-the-curve/window-interior.jpg"
   alt="A dim room with a person silhouetted against a tall, bright window; the interior falls to near-black while the daylight and foliage outside stay bright."
-  id="20.2"
+  id="20.6"
   beforeLabel="as shot"
   afterLabel="recovered"
   svgFilter={
@@ -61,7 +133,7 @@ The histogram is where you read all of this, with one caution. A pile of pixels 
 
 <LightroomPanel
   title="Basic"
-  id="20.3"
+  id="20.7"
   sliders={[
     { label: "Exposure", value: 0.15, min: -5, max: 5 },
     { label: "Contrast", value: -20 },
@@ -82,7 +154,7 @@ The histogram is where you read all of this, with one caution. A pile of pixels 
     { x: 255, y: 240 },
   ]}
   channel="luma"
-  id="20.4"
+  id="20.8"
   caption="The same recovery drawn as the curve itself. The toe lifts off the bottom-left corner to open the dark room, the middle rides above the diagonal to brighten it, and the shoulder rolls down from the top-right so the brightest inputs land below pure white and the foliage holds through the glass. The Basic sliders above and this one line are the same input-to-output map, which is the whole point of the chapter: every tone slider is a handle on this shape."
 />
 

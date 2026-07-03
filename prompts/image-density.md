@@ -31,10 +31,10 @@ commit `7be3e85`. Commit per Part, no push (CLAUDE.md no-push rule honored).
 | 17 | the-digital-negative | workflow | 1 | 1-3 | 1 | keep | |
 | 18 | ingest-and-catalog | workflow | 1 | 1-3 | 1 | keep | |
 | 19 | order-of-operations | workflow | 1 | 1-3 | 1 | keep | |
-| 20 | tone-and-the-curve | editing | 1 | 5+ | | TODO | +4 curve-move BAs + clipping annotation |
-| 21 | color-grading | editing | 2 | 5+ | | TODO | +3 profile / teal-orange / HSL BAs |
-| 22 | local-adjustments-and-masking | editing | 3 | 5+ | | TODO | +2 masked radial dodge + subject separation |
-| 23 | black-and-white-conversion | editing | 2 | 5+ | | TODO | +3 channel-mix / grain / split-tone |
+| 20 | tone-and-the-curve | editing | 1 | 5+ | 5 | DONE | +4: contrast/exposure/endpoint BAs + clipping annotation |
+| 21 | color-grading | editing | 2 | 5+ | 5 | DONE | +3: profile BA, masked mixer BA, live teal-orange BA |
+| 22 | local-adjustments-and-masking | editing | 3 | 5+ | 5 | DONE | +2: masked face dodge + subject separation (both afterClip) |
+| 23 | black-and-white-conversion | editing | 2 | 5+ | 5 | DONE | +3: desaturate-collapse, grain, split-tone BAs |
 | 24 | output-and-print | workflow | 1 | 1-3 | 1 | keep | |
 | 25 | portrait-in-practice | practice | 2 | 5+ | | TODO | +3 near-eye / light-pattern / skin-tone |
 | 26 | street-and-documentary | practice | 3 | 5+ | | TODO | +2 decisive-moment / 28mm-context |
@@ -113,6 +113,34 @@ image teaches, overlays canvas-verified, notes, shot-wishes._
   pos=0: sky driven to near-black, cirrus + white trim stand off it bright, barn holds
   mid tone, green conifer dark. Honest (global conversion, no local claim). Renumbered
   Prague 16.5 -> 16.6. Zero console errors.
+
+### Part III (committed, no push)
+
+- **20 tone-and-the-curve 1 -> 5.** +4 live-svgFilter demos, each a distinct curve
+  move: 20.2 contrast S-curve (hazy cityscape, David Kristianto/Unsplash), 20.3
+  exposure-lift (overcast lake, Jordi Costa Tome/Pexels), 20.4 blacks/whites endpoint
+  (same hazy frame, second handle), 20.5 clipping/tonal-zone AnnotatedPhoto (hallway
+  window, Duc Nguyen/Unsplash; window box + dark-wall strip canvas-verified, lum
+  ~250 vs <=35). Renumbered 20.2->20.6, 20.3->20.7, 20.4->20.8. Screenshot-verified,
+  zero console errors.
+- **21 color-grading 2 -> 5.** +3: 21.4 profile BA (green door / red wall, Annika
+  Rose/Pexels; two renderings), 21.5 mixer luminance BA (blue boat, Sami Aksu/Pexels;
+  afterClip=hull polygon so only the blue deepens, green water untouched -- verified),
+  21.6 live teal-orange grade (man at dusk, Wolf Art/Pexels). Renumbered old Photo
+  21.4->21.7, HSL 21.5->21.8. All screenshot-verified.
+- **22 local-adjustments-and-masking 3 -> 5.** +2 masked BeforeAfter (honesty rule):
+  22.6 face dodge (Daniwura TCI/Pexels; afterClip=head polygon on the natural
+  silhouette, warm brighten to counter a green cast; caption owns the hard mask edge
+  and notes real radial gradients feather it), 22.7 subject separation (Anderson
+  Santos/Pexels; afterClip=background polygon traced around the man, darken+desaturate
+  -- verified the man is untouched). Zero renumber.
+- **23 black-and-white-conversion 2 -> 5.** +3: 23.1 desaturate-collapse (poppies in
+  green, Vitalii Onyshchuk/Unsplash; saturate 0, poppies drift to the foliage grey),
+  23.5 grain BA (moody portrait, Rachel McDermott/Unsplash; live feTurbulence film
+  grain over the smooth areas -- verified visible on the dark ground/skin), 23.7
+  split-tone BA (sunrise ridge, Daniil Silantev/Unsplash; grey + cool shadows/warm
+  highlights, pairs with panel 23.8). Renumbered 6 tail ids -> 23.2-23.9.
+
 
 ## Shot wishes (accumulated)
 
