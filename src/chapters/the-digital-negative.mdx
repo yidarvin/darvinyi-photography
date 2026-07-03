@@ -31,7 +31,7 @@ This is why raw and JPEG are not two quality settings of the same thing. They ar
 
 The most concrete thing the negative holds is levels. An eight-bit JPEG stores 256 levels of brightness per color channel, and that is all it will ever have. A raw file is deeper: your Q3 writes fourteen bits, which is 16,384 levels, and your X2D II writes sixteen, which is 65,536. [ISO, the sensor, and dynamic range](/iso-sensor-and-dynamic-range) made the point that this is not more dynamic range, the sensor's span from highlight to shadow is set by physics, not by bits. What the extra bits buy is finer slicing of that span, and finer slicing is editing room.
 
-Here is why it matters. Any real edit stretches the tones. Lift a shadow, add contrast, correct a color cast, and you are pulling a small range of input values across a wider range of output. Do that to an eight-bit file and you are stretching a handful of levels apart until the gaps between them show, and a smooth sky or a gradient of skin breaks into visible steps. That banding has a name, posterization, and it is the sound of a file running out of levels. A raw file has hundreds of times as many, so the same aggressive move stays smooth. The widget makes the two behave side by side: develop one scene from a deep raw negative and from the eight-bit JPEG the camera would have baked, then push.
+Here is why it matters. Any real edit stretches the tones. Lift a shadow, add contrast, correct a color cast, and you are pulling a small range of input values across a wider range of output. Do that to an eight-bit file and you stretch a handful of levels apart until the gaps between them show, and a smooth sky or a gradient of skin breaks into visible steps. That banding has a name, posterization, and it is the sound of a file running out of levels. A raw file has hundreds of times as many, so the same aggressive move stays smooth. The widget makes the two behave side by side: develop one scene from a deep raw negative and from the eight-bit JPEG the camera would have baked, then push.
 
 <Widget name="latitude_lab" hint="Drag the develop push up. Both files hold the same scene, but only the raw kept the levels: watch the JPEG's lifted foreground break into bands and its blown sky pull down to a flat grey, while the raw develops clean and the clipped highlight comes back.">
   <TheDigitalNegativeWidget />
@@ -47,6 +47,25 @@ Two costs show up at once. The lifted shadow bands, because eight bits left too 
   meta="Nikon D800 raw, before and after development in Lightroom"
   credit="Norbert Nagel / Wikimedia Commons (CC BY-SA 3.0)"
   href="https://commons.wikimedia.org/wiki/File:Comparison_-_RAW_file_and_after_digital_development_in_Lightroom_5.jpg"
+/>
+
+Nothing above was magic, and none of it needed a second frame. It was a handful of Basic-panel moves on the one negative: pull the harsh midday highlights down off the stone and the sky, lift the shadows back out of the shaded stone, and set the white and black points so the tones fill the range. The panel below is the whole develop. Every value is a decision the raw left open and the JPEG would have made in the camera.
+
+<LightroomPanel
+  title="Basic"
+  id="17.3"
+  caption="The develop that took the flat raw on the left to the finished frame on the right. A warmer as-shot white balance, highlights and whites pulled down to hold the midday sky and the lit stone, shadows and blacks lifted to open the shadowed stone, and a touch of contrast and clarity to put the bite back. On a raw these are all reversible tags; on a JPEG most of them would already be spent."
+  sliders={[
+    { label: "Temp", value: 5600, min: 2000, max: 12000, display: "5,600 K" },
+    { label: "Tint", value: 6 },
+    { label: "Exposure", value: 0.15, min: -5, max: 5 },
+    { label: "Contrast", value: 14 },
+    { label: "Highlights", value: -62 },
+    { label: "Shadows", value: 58 },
+    { label: "Whites", value: -18 },
+    { label: "Blacks", value: 22 },
+    { label: "Clarity", value: 12 },
+  ]}
 />
 
 One honest caveat. The dramatic gap is between eight-bit JPEG and any high-bit raw, not between fourteen bits and sixteen. Once you are past the noise floor, sensor noise blurs the finest levels anyway, so twelve, fourteen, and sixteen-bit raws look far more alike than the numbers suggest. Read the bit depth as capacity to push, and know that almost all of the visible benefit is already there the moment you keep the raw instead of the JPEG.

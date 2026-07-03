@@ -19,19 +19,28 @@ Depth of field follows the hole, not the ratio. Hold the framing fixed, so the s
 
 This is why a fast lens earns its bulk. The Q3's 28mm f/1.7 opens a hole about 16mm across, and that physical opening, not the number engraved on the barrel, is what lifts a subject off its background.
 
-<Photo
+<AnnotatedPhoto
   src="/photos/aperture-and-depth-of-field/shallow-bokeh-portrait.jpg"
   alt="A young woman in sharp focus, her face and shoulder crisp, while the trees and greenery behind her melt into a soft, featureless wash."
   id="2.1"
+  overlayName="focus falloff"
   caption="An 85mm lens wide open at f/1.2 opens a hole about 71mm across, and that much glass throws everything behind the subject into a smooth wash. The background keeps no edges to compete with her face, so the eye has nowhere to land but the one sharp plane. That is the physical hole at work, not the f-number."
   meta="Canon EOS-1Ds Mark II - 85mm - f/1.2 - 1/320s - ISO 50"
   credit="Carlos Luis Camacho / Wikimedia Commons (CC BY 2.0)"
   href="https://commons.wikimedia.org/wiki/File:Josefina_with_Bokeh.jpg"
-/>
+  labels={[
+    { x: 36, y: 9, text: "plane of focus" },
+    { x: 76, y: 22, text: "background dissolves" }
+  ]}
+>
+  <line x1="36" y1="18" x2="36" y2="100" stroke="var(--accent)" strokeWidth={1.5} strokeDasharray="4 3" vectorEffect="non-scaling-stroke"/>
+  <path d="M 44 40 Q 60 35 74 33" fill="none" stroke="var(--accent)" strokeWidth={1.4} vectorEffect="non-scaling-stroke"/>
+  <polygon points="74,33 68,33 71,38" fill="var(--accent)"/>
+</AnnotatedPhoto>
 
 ## Why f/1.7 is not f/1.7
 
-Now mount the same lens speed on two different sensors and the ratio stops being portable. A larger sensor takes in a wider angle from any given lens, so to frame the subject the same way you reach for a longer focal length, or you step closer. Either way the magnification climbs. And a longer focal length at the same f-number, by the definition above, opens a wider hole. The bigger format shoots through a bigger opening for the same f-number, so it renders shallower and blurs the background more.
+Now mount the same lens speed on two different sensors and the ratio stops being portable. A larger sensor takes in a wider angle from any given lens, so to frame the subject the same way you reach for a longer focal length, or you step closer. Either way the magnification climbs. And a longer focal length at the same f-number, by the definition above, opens a wider hole. The bigger format shoots through a bigger opening, so it renders shallower and blurs the background more.
 
 There is a clean way to put a number on it. Multiply the f-number by the crop factor, the ratio of the sensor diagonals, and you get the equivalent aperture: the full-frame f-number that would give the same depth of field and gather the same total light. The Hasselblad's 44 by 33 sensor, actually 43.8 by 32.9mm, has a diagonal near 55mm against full frame's 43mm, a crop factor of 0.79. So every f-number on the X2D is worth about a fifth of a stop more depth-of-field separation than the same number on the Q3.
 

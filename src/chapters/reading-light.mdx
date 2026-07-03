@@ -21,29 +21,50 @@ Front light comes from your own position, back by the camera. It fills every hol
 
 Swing that same light to the side and everything the front light hid comes back. Now the light rakes across the face, and every ridge and pore that faces away from it throws a small shadow. Texture appears, and so does the illusion of depth, because one side is bright and the other falls off into dark. Studio photographers have a ladder of names for how far around to swing it. With the key a little off axis and high you get butterfly lighting, a small symmetric shadow under the nose. Push it to roughly thirty to forty-five degrees and the nose shadow loops down to one side without touching the cheek, which is loop lighting, the everyday workhorse. Around forty-five degrees and higher the nose shadow joins the cheek shadow and leaves a small lit triangle on the shadow-side cheek, the pattern named after Rembrandt, who painted it constantly. Swing all the way to ninety degrees and you split the face in half, one side lit, one side dark. Wikipedia's portrait-lighting references place the standard key light between thirty and sixty degrees from the camera for exactly this reason: that arc is where a face gains shape without losing itself to shadow.
 
-<Photo
+<AnnotatedPhoto
   src="/photos/reading-light/rembrandt-side-light-portrait.jpg"
   alt="A head-and-shoulders portrait of a gray-haired man lit strongly from one side, the far side of his face falling into deep shadow with a small lit triangle on the shadowed cheek."
   id="12.2"
+  overlayName="light direction and the Rembrandt triangle"
   caption="Side light, near the Rembrandt pattern. The key sits high and about forty-five degrees off to one side. One cheek is lit, the far cheek drops into shadow, and a small bright triangle survives beneath the far eye where the light clears the nose. The same face that read flat under front light now reads as a solid, three-dimensional head. Shape is a gift of shadow, not of light."
   meta="Studio side light demonstrating Rembrandt lighting"
   credit="Jacopo188 / Wikimedia Commons (CC BY-SA 3.0)"
   href="https://commons.wikimedia.org/wiki/File:Rembrandt_Lighting.JPG"
-/>
+  labels={[
+    { x: 22, y: 7, text: "key light, high and to one side" },
+    { x: 76, y: 36, text: "terminator" },
+    { x: 76, y: 58, text: "Rembrandt triangle" },
+  ]}
+>
+  <line x1="8" y1="6" x2="33" y2="28" stroke="var(--accent)" strokeWidth={1.5} vectorEffect="non-scaling-stroke"/>
+  <polygon points="33,28 27,27 30,21" fill="var(--accent)"/>
+  <path d="M 58 20 Q 52 33 47 45 Q 43 55 31 68" fill="none" stroke="var(--accent)" strokeWidth={1.4} strokeDasharray="4 3" vectorEffect="non-scaling-stroke"/>
+  <path d="M 55 50 L 60 51 L 57 55 Z" fill="none" stroke="var(--accent)" strokeWidth={1.5} vectorEffect="non-scaling-stroke"/>
+</AnnotatedPhoto>
 
 Carry the light all the way behind the subject and it stops lighting the face at all. Instead it draws a bright line down the edges, the rim or hair light, which peels the subject off the background. With nothing filling the front, the subject goes to a silhouette. This is the strongest separation you can get and the most atmospheric, and it is what a low sun behind your subject hands you for free. There is a side rule worth carrying: which cheek the key hits when the head is turned. Light the cheek nearer the camera and the face looks wider, called broad lighting. Light the far cheek and the face slims, called short lighting. Same light, opposite effect on the shape of the face, decided only by which way the subject turns.
 
-<Photo
+<AnnotatedPhoto
   src="/photos/reading-light/golden-hour-backlight-rim.jpg"
   alt="A young woman in a hat and plaid shirt photographed against a low setting sun directly behind her, the sun rimming her hat, hair, and shoulders with warm light and flaring across the frame."
   id="12.3"
+  overlayName="the sun, the rim, and the face in shade"
   caption="Backlight, at golden hour. The sun is behind her, so it never touches the front of her face, which sits in soft open shadow. What it does instead is rim the hat, the hair, and the shoulders with a warm line and separate her cleanly from the dark field behind. Put a subject between you and a low sun and you get this for nothing: separation, glow, and a face gently lit by everything the sky bounces back."
   meta="Golden-hour sun behind the subject, contre-jour with flare"
   credit="Allef Vinicius / Wikimedia Commons (CC0)"
   href="https://commons.wikimedia.org/wiki/File:Golden_sunset_girl_(Unsplash).jpg"
-/>
+  labels={[
+    { x: 70, y: 20, text: "low sun behind her" },
+    { x: 63, y: 68, text: "rim on hair and shoulder" },
+    { x: 30, y: 30, text: "face in open shade" },
+  ]}
+>
+  <circle cx="69" cy="31" r="4" fill="none" stroke="var(--accent)" strokeWidth={1.4} vectorEffect="non-scaling-stroke"/>
+  <path d="M 42 14 Q 55 6 68 14" fill="none" stroke="var(--accent)" strokeWidth={1.6} vectorEffect="non-scaling-stroke"/>
+  <path d="M 57 46 Q 60 55 60 66" fill="none" stroke="var(--accent)" strokeWidth={1.6} vectorEffect="non-scaling-stroke"/>
+</AnnotatedPhoto>
 
-You do not need a studio to practice this. You need one light and the willingness to move it, or to move around it. The widget below does exactly that. It swings a single key light around a subject and shows you the same move two honest ways: from above, so you can see where the light actually stands relative to you and the subject, and from the front, so you can see what the camera then records. Drag it from beside the camera around to directly behind and watch the lit face give way to a lit edge.
+You do not need a studio to practice this. You need one light and the willingness to move it, or to move around it. The widget below does exactly that. It swings a single key light around a subject and shows you the same move two honest ways: from above, so you can see where the light stands relative to you and the subject, and from the front, so you can see what the camera then records. Drag it from beside the camera around to directly behind and watch the lit face give way to a lit edge.
 
 <Widget name="orbit_the_light" hint="Drag the key light around the subject. The plan view shows where it stands; the front view shows what the camera sees. Front light flattens, side light gives shape, backlight separates. You never touch the subject or the exposure. Direction alone is doing all of this.">
   <ReadingLightWidget />
@@ -51,7 +72,7 @@ You do not need a studio to practice this. You need one light and the willingnes
 
 ## Hard or soft is the size of the source
 
-Direction decides where the shadows fall. A second property decides what their edges look like, and it is the one photographers most often get wrong. Light is called hard when shadows have crisp, sharp edges and soft when they fade gradually. It is tempting to think this is about brightness, or about whether you clipped a diffuser onto the light. It is neither. As Cambridge in Colour states flatly, when photographers talk about hard or soft light they are really just talking about the size of the source, specifically its apparent size as seen from the subject. A bright bare bulb is hard. A dim, huge, overcast sky is soft. Wattage has nothing to do with it.
+Direction decides where the shadows fall. A second property decides what their edges look like, and it is the one photographers most often get wrong. Light is called hard when shadows have sharp edges and soft when they fade gradually. It is tempting to think this is about brightness, or about whether you clipped a diffuser onto the light. It is neither. As Cambridge in Colour states flatly, when photographers talk about hard or soft light they are really just talking about the size of the source, specifically its apparent size as seen from the subject. A bright bare bulb is hard. A dim, huge, overcast sky is soft. Wattage has nothing to do with it.
 
 The reason is pure geometry, and it is worth seeing once so you never forget it. A shadow cast by a source that has any real size has two parts. There is a fully dark core, the umbra, where the object blocks the whole source, and a soft fringe at the edge, the penumbra, where the object blocks only part of it. The penumbra is bounded by rays from the two opposite edges of the source grazing the same edge of the object, so its width grows in direct proportion to how large the source looks. A small source spans a narrow angle, the two rays run almost together, and the penumbra is a thin sharp line. A large source spans a wide angle, the rays fan far apart, and the penumbra spreads into a broad, gentle band. At the limit, a true point source casts no penumbra at all, only a razor umbra, which is the hardest edge possible.
 
@@ -61,15 +82,26 @@ The reason is pure geometry, and it is worth seeing once so you never forget it.
 
 This single fact explains the whole outdoors. The sun is enormous, but at ninety-three million miles away it spans only about half a degree of your sky, an angular size so small it behaves almost like a point. So direct sun is hard, and a clear noon casts the sharp, dark, contrasty shadows every snapshot in harsh daylight suffers from. Let a layer of cloud move in and the physics inverts. The cloud does not dim the sun so much as spread it: now the entire sky glows, and your source is no longer a half-degree disc but a hemisphere a hundred and eighty degrees across. An overcast sky is one gigantic softbox, which is why portraits taken under clouds look so gentle. The same logic runs indoors. Move a window or a lamp closer to your subject and, though the light itself is unchanged, it grows in apparent size and softens. A diffuser works the same way and only that way: it softens light by turning a small bright source into a large glowing surface, not by any magic in the fabric.
 
-<Photo
+<AnnotatedPhoto
   src="/photos/reading-light/hard-light-split-shadow.jpg"
   alt="A black-and-white portrait of a young person against a pale wall in harsh direct sun, half the face in bright light and half in deep shadow, with a sharp-edged shadow of the head cast crisply on the wall behind."
   id="12.5"
+  overlayName="light direction, terminator, and the hard-edged cast shadow"
   caption="Hard light. Direct sun, a tiny source in angular terms, throws a shadow with an edge so crisp you can trace it: look at the sharp line where the head's shadow meets the bright wall. The tones jump from near white to near black with almost nothing between, because the penumbra is a hair's width. This is the high-contrast, sharp-shadow signature of a small source."
   meta="Direct sun, hard small source"
   credit="Terence B / Pexels"
   href="https://www.pexels.com/photo/black-and-white-photo-of-a-young-woman-standing-half-in-sunlight-and-half-in-shadow-20123278/"
-/>
+  labels={[
+    { x: 78, y: 6, text: "hard sun from the right" },
+    { x: 20, y: 30, text: "terminator down the center" },
+    { x: 80, y: 52, text: "sharp cast shadow" },
+  ]}
+>
+  <line x1="97" y1="4" x2="76" y2="22" stroke="var(--accent)" strokeWidth={1.5} vectorEffect="non-scaling-stroke"/>
+  <polygon points="76,22 81,19 82,26" fill="var(--accent)"/>
+  <line x1="50" y1="13" x2="49" y2="55" stroke="var(--accent)" strokeWidth={1.4} strokeDasharray="4 3" vectorEffect="non-scaling-stroke"/>
+  <path d="M 66 26 Q 78 40 71 56" fill="none" stroke="var(--accent)" strokeWidth={1.6} vectorEffect="non-scaling-stroke"/>
+</AnnotatedPhoto>
 
 <Photo
   src="/photos/reading-light/soft-light-diffused-grapes.jpg"
@@ -90,6 +122,21 @@ Contrast matters because your sensor can only hold so much of it, a point [ISO, 
 ## The hour hands you the color and the softness
 
 The last property is not on your subject at all. It is in the sky, and it changes all day. When the sun is high at midday it is a hard, small source directly overhead, giving short ugly shadows straight down into the eye sockets and the highest contrast of the day. This is the worst hour for a face and, not coincidentally, the hour tourists take their worst portraits. As the sun drops toward the horizon two things happen at once. Its light now travels a long slanting path through the atmosphere, and that thick path scatters the blue wavelengths away and lets the reds and oranges through, which is Rayleigh scattering, the same effect that reddens a sunset. The light turns warm. And the low angle rakes long, and because it is filtered through more air and often more haze, it softens. This is the golden hour, the window shortly after sunrise and before sunset that photographers plan whole days around: warm, soft, directional, and kind.
+
+<AnnotatedPhoto
+  src="/photos/reading-light/golden-hour-landscape.jpg"
+  alt="A rural landscape near sunset, farm buildings and a bare tree in low haze under a sky graded from deep amber near the horizon to soft orange overhead, the whole scene washed in warm light with foreground fields going to silhouette."
+  id="12.7"
+  overlayName="golden hour"
+  caption="Golden hour, in a landscape. The face photos above showed direction and hardness; this shows the hour. The sun is low and just out of frame, so its light slants through a thick slice of atmosphere that scatters the blue away and leaves the reds and oranges. Nothing here is a warm subject. The whole scene, sky and haze and fields alike, has been stained the same amber, and the low raking angle throws the near ground into silhouette. Read that single wash of color and you can date the frame to the hour without a clock."
+  meta="Low sun near sunset, warm color temperature"
+  credit="Susanne Nilsson / Wikimedia Commons (CC BY-SA 2.0)"
+  href="https://commons.wikimedia.org/wiki/File:Golden_Hour_(16803803052).jpg"
+  labels={[
+    { x: 30, y: 22, text: "warm sky from the low sun" },
+    { x: 22, y: 88, text: "near ground in silhouette" },
+  ]}
+/>
 
 Keep waiting after the sun is gone and you reach the blue hour, when the sun sits a few degrees below the horizon and no direct light reaches you at all. Everything is lit by the deep blue of the sky, cool and even and shadowless, the light of dusk and dawn. These shifts are measured as color temperature, in kelvin, and the scale runs backward from what you would guess: low numbers are warm, high numbers are cool. A candle flame sits near 1900K. Sunrise and the golden hour run warm, from roughly 2000K at the horizon up to about 3500K. Midday sun is around 5000 to 5500K. An overcast sky is cooler at 6500 to 8000K, and open shade, lit only by blue sky with the sun blocked, is cooler still, up toward 7500 to 10000K and visibly blue. You do not have to memorize the numbers. You have to notice that the same street is a different photograph at seven in the morning, at noon, and at seven at night, and that the difference is free and predictable.
 

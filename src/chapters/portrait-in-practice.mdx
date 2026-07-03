@@ -15,7 +15,7 @@ The chapters behind you each handled one link in isolation. Here they run in seq
 
 ## Distance first, then the lens
 
-The most common portrait mistake is made before the shutter opens, by standing too close with too wide a lens. The fix begins with a fact that surprises people: the way a face is proportioned in a photograph, the apparent size of the nose against the ears, is set entirely by how far the camera stands from the subject, not by the focal length. Two frames shot from the same spot share the same perspective no matter which lens is on the camera. A longer lens flatters a face only because it forces you to back away to keep the same framing, and it is the backing away that does the work.
+The most common portrait mistake is made before the shutter opens, by standing too close with too wide a lens. The fix begins with a fact that surprises people: the way a face is proportioned in a photograph, the apparent size of the nose against the ears, is set entirely by how far the camera stands from the subject, not by the focal length. Two frames shot from the same spot share the same perspective no matter which lens is mounted. A longer lens flatters a face only because it forces you to back away to keep the same framing, and it is the backing away that does the work.
 
 Stand close and whatever is nearest the lens swells. On a face that is the nose and the forehead, which balloon against the ears and give the [wide-angle](/lenses-optics-and-perspective) portrait its bulbous, unflattering look. Step back and the features settle into proportion. The effect is measurable: in a controlled study that held the head framing constant across focal lengths, the facial width-to-height ratio climbed from about 1.70 at 50mm to about 1.80 at 85 to 105mm, a very large change, and viewers rated the 105mm faces the most attractive and the 50mm faces the least. This is why the classic portrait focal length on full frame is a short telephoto, roughly 85 through 135mm. An 85mm is the conversational length, close enough to talk to your subject at six to eight feet for a head and shoulders, far enough that the perspective flatters.
 
@@ -27,15 +27,39 @@ Once you are at the right distance with the aperture open, the depth of field on
 
 Landing the plane on a target a few centimeters deep, on a person who breathes and sways, is what [eye-detection autofocus](/focus-and-autofocus) is for. Both cameras do it, and both default to the eye nearest the camera, which is the one you wanted. The Q3 finds it with its hybrid system across 315 fields, the X2D II with 425 phase-detect zones, deep-learning subject tracking, and a LiDAR ranger that measures the distance outright. The old workaround, focusing with the center point and then recomposing, quietly fails at these apertures. When you lock focus and rotate the camera, the flat plane of focus swings back behind the subject by a factor of one over the cosine of the angle, and at f/1.8 that shift can exceed the entire depth of field. Worked out, an 85mm f/1.8 at five feet holds about 1.3 inches of sharpness, and a ten-degree recompose pushes the plane about 0.92 inches back, enough to move the eye out of focus entirely. Let the camera track the eye instead of swinging the frame across it.
 
-<Photo
-  src="/photos/portrait-in-practice/window-light-portrait.jpg"
+<BeforeAfter
+  before="/photos/portrait-in-practice/window-light-portrait.jpg"
   alt="A dark-haired woman leans her temple against a wooden window frame, softly lit from the window at left, her near eye sharp and catching a small reflection while the room behind falls out of focus."
   id="25.2"
-  caption="The chain, holding together in one frame. A window at left is a large soft source that wraps the face and drops a single catchlight in the eye. The plane of focus sits on the near eye, so it is crisp while the far side of the frame dissolves, which is what lifts her off the background. The skin is warm and believable, neither pushed nor pale. No single move here is loud. The picture works because none of them fights another."
+  beforeLabel="raw"
+  afterLabel="developed"
+  svgFilter={<>
+    <feColorMatrix type="matrix" values="1.07 0 0 0 0  0 1.01 0 0 0  0 0 0.9 0 0  0 0 0 1 0"/>
+    <feComponentTransfer>
+      <feFuncR type="table" tableValues="0.06 0.26 0.42 0.56 0.68 0.79 0.88 0.94 1"/>
+      <feFuncG type="table" tableValues="0.05 0.24 0.4 0.54 0.66 0.77 0.86 0.93 1"/>
+      <feFuncB type="table" tableValues="0.05 0.23 0.38 0.52 0.64 0.75 0.85 0.92 1"/>
+    </feComponentTransfer>
+  </>}
+  caption="Drag the handle to run the raw file to the finish. The develop is quiet on purpose: white balance warmed a touch so the skin reads as skin, the shadows lifted so the far side of the face keeps its detail, and a gentle S-curve added contrast without hardening the light. The plane of focus was already on the near eye, and the soft window at left already dropped a single catchlight, so the edit only lands the tone. No single move is loud, which is the whole point."
   meta="Soft window light, shallow depth, focus on the near eye"
   credit="Kaweny Denyele / Pexels"
   href="https://www.pexels.com/photo/young-woman-posing-by-window-with-natural-light-32159617/"
 />
+
+<LightroomPanel title="Basic" id="25.3" caption="The develop behind the slider, read off as panel values. Temperature and Tint warm the skin onto its hue line, Shadows and Blacks lift so the far side of the face holds detail, and a small Contrast with pulled Highlights keeps the S-curve gentle. Vibrance moves before Saturation, exactly as the skin section argues."
+  sliders={[
+    { label: "Temp", value: 12, display: "+12", color: "linear-gradient(90deg,#3b7bd4,#d8a24a)" },
+    { label: "Tint", value: 6, display: "+6", color: "linear-gradient(90deg,#4aad4a,#c14ac1)" },
+    { label: "Exposure", value: 0.15, min: -5, max: 5 },
+    { label: "Contrast", value: 14 },
+    { label: "Highlights", value: -22 },
+    { label: "Shadows", value: 38 },
+    { label: "Whites", value: 8 },
+    { label: "Blacks", value: -6 },
+    { label: "Vibrance", value: 16 },
+    { label: "Saturation", value: 4 },
+  ]} />
 
 ## Put the light where it shapes the face
 
@@ -51,15 +75,25 @@ Outdoors, that second light is usually a flash, and here the daylight frame does
 
 That second move is where your cameras have their edge, and it is the [leaf shutter](/flash-sync-and-the-leaf-advantage) paying off in a portrait. An ordinary focal-plane camera hits a wall at its flash sync speed, around 1/250, so to shoot fill at f/2 in bright sun it must switch to high-speed sync and give up two to three stops of flash power, or screw on a neutral-density filter and dim everything. The Q3 and every XCD lens sync a flash at every mechanical speed, to 1/2000 on the Q3 and 1/4000 on the newest Hasselblad glass, so you keep the wide aperture, keep full flash power, and drop the sky as far as you like. The single most useful thing a leaf shutter does for a portrait is let you balance a face against a bright background at any shutter speed you please.
 
-<Photo
+<AnnotatedPhoto
   src="/photos/portrait-in-practice/twilight-fill-portrait.jpg"
   alt="A red-haired woman in a tan blazer faces the camera at dusk, wind lifting her hair, against a deep blue sky that grades down to a band of orange at the horizon."
-  id="25.3"
-  caption="A subject held a stop or two above a background you let go rich and dark. The face carries a warm, forward light while the twilight sky behind is deep and saturated rather than a pale wash, so the person separates from the place without leaving it. Whether the light on her comes from the last of the sun or a burst of fill, the move is the same, keep the face up and let the background fall, and a fast-syncing leaf shutter is what lets you force that balance at a wide aperture in daylight."
+  id="25.4"
+  overlayName="light on the face"
+  caption="A subject held a stop or two above a background you let go rich and dark. The face carries a warm, forward light while the twilight sky behind is deep and saturated rather than a pale wash, so the person separates from the place without leaving it. Turn the overlay on and the warm key reads as coming from the front and low, off the orange horizon, so the camera-right cheek carries the light and the far cheek falls into gentle shadow. Whether the light comes from the last of the sun or a burst of fill, the move is the same, keep the face up and let the background fall, and a fast-syncing leaf shutter is what lets you force that balance at a wide aperture in daylight."
   meta="Subject held above a rich twilight sky"
   credit="Zeyneb Alishova / Pexels"
   href="https://www.pexels.com/photo/woman-at-dusk-12507501/"
-/>
+  labels={[
+    { x: 72, y: 82, text: "warm key off the horizon" },
+    { x: 46, y: 56, text: "lit cheek" },
+    { x: 21, y: 52, text: "shadow side" },
+  ]}
+>
+  <line x1="66" y1="86" x2="45" y2="52" stroke="var(--accent)" strokeWidth={1.5} vectorEffect="non-scaling-stroke"/>
+  <polygon points="45,52 50,55 49,49" fill="var(--accent)"/>
+  <path d="M 42 30 Q 30 34 27 47 Q 26 60 35 70" fill="none" stroke="var(--accent)" strokeWidth={1.3} strokeDasharray="3 3" vectorEffect="non-scaling-stroke"/>
+</AnnotatedPhoto>
 
 ## Land the skin, then leave it alone
 
@@ -67,7 +101,7 @@ The frame is captured. What is left is the one thing a portrait cannot get wrong
 
 When you do add color, reach for Vibrance and not Saturation, a distinction [color grading](/color-grading) flagged and portraits make urgent. Adobe's own definition is the reason: Vibrance adjusts saturation so that clipping is minimized as colors approach full saturation, moves the less saturated colors more than the already vivid ones, and, in Adobe's words, "prevents skin tones from becoming oversaturated." Saturation adjusts every color equally, and pushed on a face it turns skin into an orange mask, which is the single most common beginner edit. This is also where the book's two color sciences show their hand one last time. Hasselblad's Natural Colour Solution is tuned to keep skin smooth and minimally affected as you work, and Leica's Maestro rendering has its own warmth, so the two bodies hand you skin from slightly different starting points, and the correct-then-choose order is what brings them together.
 
-The last temptation is to keep going, and the discipline is to stop. Real skin has pores and fine lines, and erasing them turns a face to plastic. The two honest tools both preserve texture. Dodging and burning treats a blemish as what it physically is, a small cluster of highlights and shadows, and evens those out by lightening the dark points and darkening the bright ones, which never blurs a pore. Frequency separation splits the picture into a texture layer and a color-and-tone layer so you can even out blotchy color while leaving the texture untouched. The aim, in the words of retouchers who do it for a living, is a picture where the viewer thinks "what a great portrait," not "look at the retouching," and a few remaining imperfections are exactly what keep the skin believable.
+The last temptation is to keep going, and the discipline is to stop. Real skin has pores and fine lines, and erasing them turns a face to plastic. The two honest tools both keep that texture. Dodging and burning treats a blemish as what it physically is, a small cluster of highlights and shadows, and evens those out by lightening the dark points and darkening the bright ones, which never blurs a pore. Frequency separation splits the picture into a texture layer and a color-and-tone layer so you can even out blotchy color while leaving the texture untouched. The aim, in the words of retouchers who do it for a living, is a picture where the viewer thinks "what a great portrait," not "look at the retouching," and a few remaining imperfections are exactly what keep the skin believable.
 
 ## Build the portrait
 

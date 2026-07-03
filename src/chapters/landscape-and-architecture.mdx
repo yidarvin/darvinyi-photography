@@ -25,6 +25,22 @@ The second is focus. A single frame set to the [hyperfocal distance](/street-and
   href="https://www.pexels.com/photo/landscape-of-a-mountain-valley-18430363/"
 />
 
+<LightroomPanel
+  title="Basic"
+  id="27.2"
+  caption="A typical landscape develop for a scene like this. Highlights come down to keep the bright sky and the far hazy peaks from washing out, shadows lift to open the dark near forest, and a little dehaze and texture pull the atmospheric haze off the distant ridges so the layered detail reads. Whites and blacks set the endpoints so the file still uses its full range. These are gentle moves, not rescues, because the exposure was made to hold the highlights in the first place."
+  sliders={[
+    { label: "Exposure", value: 0.1, min: -5, max: 5 },
+    { label: "Contrast", value: 12 },
+    { label: "Highlights", value: -55 },
+    { label: "Shadows", value: 45 },
+    { label: "Whites", value: 15 },
+    { label: "Blacks", value: -12 },
+    { label: "Texture", value: 18 },
+    { label: "Dehaze", value: 14 },
+  ]}
+/>
+
 ## Holding the whole range of light
 
 Landscapes are high-contrast scenes. The sky is often several stops brighter than the land beneath it, and the good light near dawn and dusk makes the gap wider still. Dynamic range is how much of that span a single file can hold, and it is the second thing medium format buys you.
@@ -37,33 +53,61 @@ The working method follows from the [digital negative](/the-digital-negative). E
 
 Architecture adds a demand landscapes rarely make: the lines have to stay honest. A building's vertical edges are parallel to each other, and the eye expects them parallel in the photograph. The moment they lean in toward the top, the picture looks like it is falling over.
 
-<Photo
+<AnnotatedPhoto
   src="/photos/landscape-and-architecture/converging-verticals-toronto-skyscrapers-look-up.jpg"
   alt="Looking straight up at glass skyscrapers whose vertical edges lean inward and converge toward the top of the frame."
-  id="27.2"
-  caption="The problem in its purest form. The camera is tilted steeply up to fit the towers in, so the sensor plane is no longer parallel to their walls and every vertical leans inward. Aimed straight up like this it can read as a deliberate effect. On a single building shot from across the street the same lean just looks like the tower is toppling backward."
+  id="27.3"
+  overlayName="keystone lines"
+  caption="The problem in its purest form. The camera is tilted steeply up to fit the towers in, so the sensor plane is no longer parallel to their walls and every vertical leans inward. The drawn lines trace the towers' true edges: each pair is parallel in the world, yet in the picture they tilt toward one another and would meet off the top of the frame. This is an honest tracing of what the lens recorded, not a correction. Aimed straight up like this it can read as a deliberate effect. On a single building shot from across the street the same lean just looks like the tower is toppling backward."
   meta="Tilt the camera up and the verticals converge"
   credit="Paul Loh / Pexels"
   href="https://www.pexels.com/photo/worm-s-eye-view-architectural-photography-of-high-rise-building-233698/"
-/>
+  labels={[{ x: 40, y: 4, text: "these edges are parallel in the world" }, { x: 84, y: 62, text: "yet they lean in here" }]}
+>
+  <line x1="27" y1="100" x2="41" y2="6" stroke="var(--accent)" strokeWidth={1.5} vectorEffect="non-scaling-stroke" />
+  <line x1="52" y1="100" x2="57" y2="6" stroke="var(--accent)" strokeWidth={1.5} vectorEffect="non-scaling-stroke" />
+  <line x1="56" y1="100" x2="53" y2="6" stroke="var(--accent)" strokeWidth={1.5} vectorEffect="non-scaling-stroke" />
+  <line x1="90" y1="100" x2="77" y2="0" stroke="var(--accent)" strokeWidth={1.5} vectorEffect="non-scaling-stroke" />
+</AnnotatedPhoto>
 
 The lean has one cause, and it is worth stating exactly because the fix follows straight from it. A building's sides stay parallel in the image only while the sensor plane is kept parallel to the building, which means keeping the camera back vertical and the lens pointed level at the horizon. Tilt the camera up to fit a tall building into the frame and the sensor plane is no longer parallel to the wall, so lines that are parallel in the world converge in the picture. Photographers call it keystoning, and the steeper you tilt, the harder they meet.
 
-<Figure id="27.3" caption="Why verticals converge, and the three ways to keep them true. A building's sides are parallel, and they stay parallel in the photograph only while the sensor plane is kept parallel to the building. Keep the camera level (1) and the verticals hold, but the top of a tall building falls outside the frame. Tilt up to fit it (2) and the sensor plane tips back, so the sides converge into the keystone, drawn in red. Keep the camera level and raise the lens, the movement a view camera calls rise and a tilt-shift lens calls shift, or shoot wide and crop (3), and the whole building fits with its verticals still true. The teal sensor-plane line tells the story: vertical in cases 1 and 3, tilted in case 2.">
+<Figure id="27.4" caption="Why verticals converge, and the three ways to keep them true. A building's sides are parallel, and they stay parallel in the photograph only while the sensor plane is kept parallel to the building. Keep the camera level (1) and the verticals hold, but the top of a tall building falls outside the frame. Tilt up to fit it (2) and the sensor plane tips back, so the sides converge into the keystone, drawn in red. Keep the camera level and raise the lens, the movement a view camera calls rise and a tilt-shift lens calls shift, or shoot wide and crop (3), and the whole building fits with its verticals still true. The teal sensor-plane line tells the story: vertical in cases 1 and 3, tilted in case 2.">
   <LandscapeAndArchitectureFigure />
 </Figure>
 
-That leaves three honest ways to fit a tall building without tipping the camera. You can keep it level and simply accept that the top is cut off, which holds the lines true but loses the building. You can raise the lens instead of the camera, the movement a view camera calls rise and a tilt-shift lens calls shift: the lens projects a larger image circle than the sensor needs, so sliding it upward captures the top of the building while the sensor stays vertical and the verticals stay parallel. Or you can keep the camera level, frame wide with room above the roofline, and crop down to the building afterward. Hasselblad makes no shift lens for the X system, and its HTS tilt-shift adapter belongs to the older H system, so on the X2D that last method, or a third-party shift lens, is the practical route. The 100-megapixel file is what makes cropping viable, and it is the reason resolution and geometry turn out to be the same subject.
+That leaves three honest ways to fit a tall building without tipping the camera. You can keep it level and accept that the top is cut off, which holds the lines true but loses the building. You can raise the lens instead of the camera, the movement a view camera calls rise and a tilt-shift lens calls shift: the lens projects a larger image circle than the sensor needs, so sliding it upward captures the top of the building while the sensor stays vertical and the verticals stay parallel. Or you can keep the camera level, frame wide with room above the roofline, and crop down to the building afterward. Hasselblad makes no shift lens for the X system, and its HTS tilt-shift adapter belongs to the older H system, so on the X2D that last method, or a third-party shift lens, is the practical route. The 100-megapixel file is what makes cropping viable, and it is the reason resolution and geometry turn out to be the same subject.
 
-<Photo
+<AnnotatedPhoto
   src="/photos/landscape-and-architecture/verticals-true-minimalist-facade.jpg"
   alt="Two pale building masses against a deep blue sky, their vertical edges dead straight and parallel."
-  id="27.4"
-  caption="The goal. Shot with the camera level and square to the walls, the vertical edges stay exactly parallel and the massing reads as solid and upright. Nothing here needed correcting, because the sensor plane was kept parallel to the building in the first place. That is always the cheapest fix: get the lines right in the camera, and spend no resolution putting them right later."
+  id="27.5"
+  overlayName="true verticals"
+  caption="The goal. Shot with the camera level and square to the walls, the vertical edges stay exactly parallel and the massing reads as solid and upright. The drawn lines are dead plumb, straight up and down, and every corner edge follows them. Nothing here needed correcting, because the sensor plane was kept parallel to the building in the first place. That is always the cheapest fix: get the lines right in the camera, and spend no resolution putting them right later."
   meta="Camera level, sensor plane parallel, lines true"
   credit="Jan van der Wolf / Pexels"
   href="https://www.pexels.com/photo/modern-minimalist-urban-architecture-shot-30956282/"
-/>
+  labels={[{ x: 23, y: 82, text: "plumb" }, { x: 53, y: 66, text: "plumb" }]}
+>
+  <line x1="21" y1="49" x2="21" y2="100" stroke="var(--accent)" strokeWidth={1.5} vectorEffect="non-scaling-stroke" />
+  <line x1="51" y1="35" x2="51" y2="100" stroke="var(--accent)" strokeWidth={1.5} vectorEffect="non-scaling-stroke" />
+</AnnotatedPhoto>
+
+<AnnotatedPhoto
+  src="/photos/landscape-and-architecture/architecture-symmetry-interior.jpg"
+  alt="Interior of a Gothic cathedral nave shot straight down the center aisle, with matching arcades of columns, stained-glass windows, and pews on the left and right, and a painted timber ceiling running to the distant altar."
+  id="27.6"
+  overlayName="axis and plumb"
+  caption="The payoff when the lines are kept true. The camera sits dead on the center of the aisle, level and square to the building, so the nave reads as a mirror: the two arcades of columns, the two runs of stained glass, the two banks of pews all answer each other across a single vertical axis, drawn down the middle. Because the sensor plane was kept parallel to the walls, the tall piers on each side stay dead plumb, straight up and down rather than leaning in. Symmetry only works when the verticals hold. Tip the camera even slightly and the axis skews and the columns start to converge, and the whole balance falls apart."
+  meta="One-point symmetry with the verticals held true"
+  credit="Diliff / Wikimedia Commons (CC BY-SA 3.0)"
+  href="https://commons.wikimedia.org/wiki/File%3ASt_Edmundsbury_Cathedral_Nave_1%2C_Suffolk%2C_UK_-_Diliff.jpg"
+  labels={[{ x: 50, y: 12, text: "symmetry axis" }, { x: 20, y: 30, text: "plumb" }, { x: 80, y: 30, text: "plumb" }]}
+>
+  <line x1="50" y1="0" x2="50" y2="100" stroke="var(--accent)" strokeWidth={1.4} vectorEffect="non-scaling-stroke" />
+  <line x1="18" y1="6" x2="18" y2="100" stroke="var(--accent)" strokeWidth={1.4} vectorEffect="non-scaling-stroke" strokeDasharray="4 4" />
+  <line x1="82" y1="6" x2="82" y2="100" stroke="var(--accent)" strokeWidth={1.4} vectorEffect="non-scaling-stroke" strokeDasharray="4 4" />
+</AnnotatedPhoto>
 
 ## Fixing it after, and what it costs
 

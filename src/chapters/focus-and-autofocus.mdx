@@ -9,23 +9,37 @@ At any one focus setting there is exactly one distance that is critically sharp,
 
 That is why, wide open, focus becomes a game of centimeters. On a fast portrait lens the sharp band can be only a few centimeters deep, thin enough that the near eye is sharp while the far eye has already gone soft. Put the plane on the eye closest to the camera and let the rest fall away.
 
-<Photo
+<AnnotatedPhoto
   src="/photos/focus-and-autofocus/focus-plane-on-the-eyes.jpg"
   alt="A close portrait of a woman, her eyes and lashes crisply sharp while her hair and the background dissolve into smooth blur."
   id="5.1"
-  caption="One thin plane, placed on the eyes. Shot on an 85mm lens wide open at f/1.6, the depth of field here is only a few centimeters deep, so the sharp band lands on the eyes and lashes and everything nearer or farther drops off. This is the plane you choose. The whole job of autofocus is to move the lens until that band sits exactly where you meant it to."
+  overlayName="plane of focus"
+  caption="One thin plane, placed on the eyes. Shot on an 85mm lens wide open at f/1.6, the depth of field is only a few centimeters deep, so the sharp band lands on the eyes and lashes and everything nearer or farther drops off. This is the plane you choose. The whole job of autofocus is to move the lens until that band sits exactly where you meant it to."
   meta="Sony A7 IV - 85mm - f/1.6 - 1/160s - ISO 3200"
   credit="Rudhra Varma / Wikimedia Commons (CC BY-SA 4.0)"
   href="https://commons.wikimedia.org/wiki/File:Payal_Radhakrishna_by_Rudhra_Varma.jpg"
-/>
+  labels={[
+    { x: 50, y: 14, text: "plane of focus: eyes sharp" },
+    { x: 17, y: 8, text: "softens away from the plane" },
+    { x: 45, y: 80, text: "arm and dress fall forward, soft" },
+  ]}
+>
+  <line x1="6" y1="26" x2="94" y2="21" stroke="var(--accent)" strokeWidth={1.5} vectorEffect="non-scaling-stroke"/>
+  <line x1="6" y1="19" x2="94" y2="14" stroke="var(--accent)" strokeWidth={1} strokeDasharray="3 3" vectorEffect="non-scaling-stroke"/>
+  <line x1="6" y1="33" x2="94" y2="28" stroke="var(--accent)" strokeWidth={1} strokeDasharray="3 3" vectorEffect="non-scaling-stroke"/>
+  <circle cx="46" cy="23" r="3.5" fill="none" stroke="var(--accent)" strokeWidth={1.4} vectorEffect="non-scaling-stroke"/>
+  <circle cx="56" cy="22" r="3.5" fill="none" stroke="var(--accent)" strokeWidth={1.4} vectorEffect="non-scaling-stroke"/>
+  <line x1="45" y1="42" x2="45" y2="72" stroke="var(--accent)" strokeWidth={1.4} vectorEffect="non-scaling-stroke"/>
+  <polygon points="45,74 42,67 48,67" fill="var(--accent)"/>
+</AnnotatedPhoto>
 
 ## Two ways to measure focus
 
-A camera cannot see the scene the way you do. To focus it has to turn "is this sharp?" into a number it can chase, and there are two ways to get that number. They behave so differently that knowing which one is running explains most of what autofocus does.
+A camera cannot see the scene the way you do. To focus it has to turn "is this sharp?" into a number it can chase, and there are two ways to get that number. They behave so differently that knowing which is running explains most of what autofocus does.
 
 The older way is contrast detection. Sharp edges have high contrast, the intensity jumping quickly from one pixel to the next, and blur smears that jump into a gradient. So the camera reads the contrast at the focus point and drives the lens to make it as high as it can. The catch, as Cambridge in Colour and the Wikipedia article on autofocus both note, is that a single contrast reading tells the camera nothing about which way to go or how far. A blurry reading looks the same whether the lens is focused too near or too far. So the system has to sample, nudge the lens, sample again, and keep going while the number climbs. It only knows it has found the peak after it steps past and the number drops, which forces it to overshoot and come back. That back and forth is the hunt, and it gets worse in dim light or on low-contrast subjects, where the readings are too faint or too flat to tell apart. Contrast detection is accurate, because it measures sharpness on the actual sensor, but it is slow and it can fail to lock at all.
 
-The faster way is phase detection. It splits the incoming light into two views, gathered from opposite sides of the lens, and compares them. When the lens is focused, the two views line up. When it is off, they land apart, and the crucial part is that the gap carries the whole answer: its size says how far off the focus is, and which view sits on which side says which direction to move. One measurement gives direction and distance, so the lens can move once, the right way, by the right amount, with no hunting. Older DSLRs did this in a dedicated sensor fed by a secondary mirror. Mirrorless cameras build the phase-detecting pixels into the imaging sensor itself, and in Canon's dual-pixel design every pixel is split into two halves that serve both as image and as a phase pair.
+The faster way is phase detection. It splits the incoming light into two views, gathered from opposite sides of the lens, and compares them. When the lens is focused, the two views line up. When it is off, they land apart, and the gap carries the whole answer: its size says how far off the focus is, and which view sits on which side says which direction to move. One measurement gives direction and distance, so the lens can move once, the right way, by the right amount, with no hunting. Older DSLRs did this in a dedicated sensor fed by a secondary mirror. Mirrorless cameras build the phase-detecting pixels into the imaging sensor itself, and in Canon's dual-pixel design every pixel is split into two halves that serve both as image and as a phase pair.
 
 <Figure id="5.2" caption="Two ways to find the same focus. Left, contrast detection climbs a hill it cannot see: it reads how much fine detail the lens is projecting, steps, and reads again, and it cannot know it reached the top until it steps past and the reading falls, so it overshoots and backs up. Right, phase detection splits the light into two views from opposite edges of the lens. When focus is off, the two views land apart on the sensor, and the size of that split gives the distance while the side gives the direction, so the lens moves once. One method gropes for the peak, the other reads the answer.">
   <FocusAndAutofocusFigure />
@@ -39,7 +53,7 @@ The widget lets you run each method on the same out-of-focus subject and watch t
 
 ## Hybrid, and what your cameras do
 
-No serious camera picks just one method now. The common design is hybrid: on-sensor phase detection does the fast, coarse work of getting the lens close in one move, and contrast detection does the fine confirmation at the end, checking the sharpness on the real sensor. Panasonic added a third trick called depth from defocus, which reads the specific way a known lens blurs an out-of-focus subject to estimate how far off it is, so even its contrast-based system can guess direction. The point of hybrid autofocus is to spend phase detection's speed and contrast detection's accuracy on the same shot.
+No serious camera picks just one method now. The common design is hybrid: on-sensor phase detection does the fast, coarse work of getting the lens close in one move, and contrast detection does the fine confirmation at the end, checking the sharpness on the real sensor. Panasonic added a third trick called depth from defocus, which reads the specific way a known lens blurs an out-of-focus subject to estimate how far off it is, so even its contrast-based system can guess direction. Hybrid autofocus spends phase detection's speed and contrast detection's accuracy on the same shot.
 
 Your two cameras sit at interesting ends of this. The Leica Q3 runs a hybrid system its own spec sheet describes as a combination of contrast metering, depth mapping, and phase comparison with autofocus metering points in the sensor, spread across 315 fields. That last clause matters: the Q3 has real on-sensor phase detection, which is why it focuses so much faster than the contrast-only Q2 it replaced.
 

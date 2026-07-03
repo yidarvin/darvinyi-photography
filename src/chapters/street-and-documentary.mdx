@@ -1,7 +1,7 @@
 import { StreetAndDocumentaryFigure } from "./_figures/StreetAndDocumentaryFigure";
 import { StreetAndDocumentaryWidget } from "./_widgets/StreetAndDocumentaryWidget";
 
-A [portrait](/portrait-in-practice) is a chain you control, run at your own pace. A street photograph is the opposite. The picture assembles itself in front of you, holds for a fraction of a second, and you either had the camera ready or you did not. There is no second take, no arranging the light, no asking the subject to hold still. So the craft of street and documentary work is not reaction, which is always a beat too slow, but readiness. You settle everything you can in advance, the exposure, the focus, the frame, so that when the moment arrives the only decision left is when to press. This chapter is about building that readiness, and about the two cameras' very different places in it. The Leica Q3 becomes a reflex, an extension of the eye. The Hasselblad X2D is built for the slower, returning work of a documentary project.
+A [portrait](/portrait-in-practice) is a chain you control, run at your own pace. A street photograph is the opposite. The picture assembles itself in front of you, holds for a fraction of a second, and you either had the camera ready or you did not. There is no second take, no arranging the light, no asking the subject to hold still. So the craft of street and documentary work is not reaction, which is always a beat too slow, but readiness. You settle everything you can in advance, the exposure, the focus, the frame, so that when the moment arrives the only decision left is when to press. This chapter is about building that readiness, and about the two cameras' different places in it. The Leica Q3 becomes a reflex, an extension of the eye. The Hasselblad X2D is built for the slower, returning work of a documentary project.
 
 ## The moment you cannot stage
 
@@ -9,15 +9,29 @@ The idea that organizes everything here is Henri Cartier-Bresson's, and it is wo
 
 The common misreading is that the decisive moment means the peak of the action, the highest jump, the hardest laugh. Cartier-Bresson's own foundation calls that an error. The decisive instant is the one where the forms lock into order, when the walking figure, the shadow, and the doorway line up and the frame composes itself. It is a compositional peak, not a dramatic one, and it is why he refused to crop. He printed the full negative with a black border from the film rim to prove nothing was trimmed, because if the geometry was not already right in the viewfinder, at the instant of pressing, it could not be rescued later. The moment and the frame are decided together, or not at all.
 
-<Photo
+<AnnotatedPhoto
   src="/photos/street-and-documentary/decisive-moment-silhouette.jpg"
   alt="A woman in a dress walks along a bright pavement as a dark silhouette, passing in front of a pale wall where a streetlamp casts a large curling shadow; her stride and the painted stripes on the ground line up."
   id="26.1"
+  overlayName="the geometry"
   caption="The decisive moment is forms falling into order, not the peak of an action. For a fraction of a second the walker's stride, the streetlamp's cast shadow, and the stripes underfoot align, and the frame composes itself. A step earlier or later and the geometry comes apart. Nothing here is staged. It is seen, and caught at the one instant it holds."
   meta="A silhouette caught where the geometry locks together"
   credit="Emir Bozkurt / Pexels"
   href="https://www.pexels.com/photo/silhouette-of-person-walking-past-street-lamp-shadow-32668972/"
-/>
+  labels={[
+    { x: 40, y: 60, text: "cast shadow" },
+    { x: 84, y: 62, text: "walker" },
+    { x: 33, y: 92, text: "stripes underfoot" },
+  ]}
+>
+  <line x1="86" y1="82" x2="70" y2="82" stroke="var(--accent)" strokeWidth={1.5} vectorEffect="non-scaling-stroke" />
+  <polygon points="70,82 74,79.5 74,84.5" fill="var(--accent)" />
+  <line x1="17" y1="90" x2="17" y2="76" stroke="var(--accent)" strokeWidth={1.4} strokeDasharray="3 3" vectorEffect="non-scaling-stroke" />
+  <line x1="52" y1="90" x2="52" y2="76" stroke="var(--accent)" strokeWidth={1.4} strokeDasharray="3 3" vectorEffect="non-scaling-stroke" />
+  <line x1="82" y1="90" x2="82" y2="76" stroke="var(--accent)" strokeWidth={1.4} strokeDasharray="3 3" vectorEffect="non-scaling-stroke" />
+  <ellipse cx="43" cy="55" rx="16" ry="18" stroke="var(--accent)" strokeWidth={1.4} fill="none" vectorEffect="non-scaling-stroke" />
+  <rect x="74" y="57" width="14" height="30" stroke="var(--accent)" strokeWidth={1.5} fill="none" vectorEffect="non-scaling-stroke" />
+</AnnotatedPhoto>
 
 Recognizing that instant is a matter of anticipation, not reflex. By the time you have consciously seen the alignment and told your finger to move, it is gone. The photographers who catch it are reading the scene a moment ahead, pressing on the expectation that the forms are about to meet. That is a skill you build by shooting, but it only has room to work if nothing else is competing for your attention. Which is the whole practical argument of this chapter. Every setting you can decide in advance is attention freed for the one thing you cannot.
 
@@ -33,15 +47,28 @@ The distance you set is the hyperfocal distance, the focus point that stretches 
 
 The cost of the zone is light. A deep zone needs a small aperture, and f/8 in the shade or after dark means a slow shutter or a high ISO. The working method is to set the aperture you want for the zone, let [auto ISO](/metering-and-exposure-decisions) float, and hold a minimum shutter speed fast enough to freeze a walking stride, around 1/250. In daylight this is effortless. At night the zone gets expensive, the ISO climbs, and many photographers give up the technique and shoot wide open on autofocus instead, accepting a thinner plane. The maxim that captures the whole trade is "f/8 and be there," usually credited to Weegee, probably wrongly, and better documented as old advice from _National Geographic_. Whoever said it, it is half the job. The f/8 is the zone. Being there is everything else.
 
-<Photo
+<AnnotatedPhoto
   src="/photos/street-and-documentary/deep-focus-market-street.jpg"
   alt="A busy daylight market street seen straight down its length, stalls and umbrellas lining both sides, vendors and a scooter in the middle distance, and buildings receding to a bright far end, with detail holding from the near stalls to the far shopfronts."
   id="26.3"
+  overlayName="the sharp zone"
   caption="What the zone looks like in a frame. Stopped down and prefocused, the sharpness runs unbroken from the near stalls to the far end of the street. No one person was focused on; the whole depth is simply held. That is the freedom zone focusing buys. With the sharpness already decided, your attention is free for the vendor, the gesture, the scooter, the moment worth the frame."
   meta="Deep depth of field, sharp from the near stalls to the far end"
   credit="The Hien Bui / Pexels"
   href="https://www.pexels.com/photo/a-busy-marketplace-street-15498027/"
-/>
+  labels={[
+    { x: 17, y: 83, text: "near limit sharp" },
+    { x: 63, y: 55, text: "focus plane" },
+    { x: 48, y: 33, text: "far end still sharp" },
+  ]}
+>
+  <line x1="8" y1="90" x2="47" y2="45" stroke="var(--accent)" strokeWidth={1.4} strokeDasharray="4 3" vectorEffect="non-scaling-stroke" />
+  <line x1="92" y1="90" x2="49" y2="45" stroke="var(--accent)" strokeWidth={1.4} strokeDasharray="4 3" vectorEffect="non-scaling-stroke" />
+  <line x1="4" y1="88" x2="30" y2="88" stroke="var(--accent)" strokeWidth={1.6} vectorEffect="non-scaling-stroke" />
+  <line x1="70" y1="88" x2="96" y2="88" stroke="var(--accent)" strokeWidth={1.6} vectorEffect="non-scaling-stroke" />
+  <line x1="42" y1="60" x2="56" y2="60" stroke="var(--accent)" strokeWidth={1.6} vectorEffect="non-scaling-stroke" />
+  <circle cx="48" cy="44" r="1.6" fill="none" stroke="var(--accent)" strokeWidth={1.2} vectorEffect="non-scaling-stroke" />
+</AnnotatedPhoto>
 
 ## One wide lens, and standing close
 
@@ -51,15 +78,27 @@ A wide lens does not distort perspective on its own. As [lenses and perspective]
 
 The one fixed [28mm](/choosing-a-lens) on the Leica Q3 turns this constraint into a habit. With a single focal length you stop deciding what lens to use and start seeing in one frame. You know, before the camera is at your eye, what 28mm will take in from where you stand, so the only compositional choice left is your feet: where to stand, and how close to get. That is the same economy the zone gives you with focus. One less variable in the moment, one more piece of attention for the picture.
 
-<Photo
+<AnnotatedPhoto
   src="/photos/street-and-documentary/wide-environmental-vendor.jpg"
   alt="A hat and clothing vendor sits at the center of his small market stall in the evening, entirely surrounded by hanging hats, caps and garments that fill the frame from edge to edge."
   id="26.4"
+  overlayName="the framing"
   caption="A wide lens used close does not isolate a person, it embeds them. The vendor sits inside his trade, the goods pressing in from every side, the place telling as much of the story as the face. Step back or reach for a longer lens and you lose the room around him. The 28mm keeps you in it, which is exactly why it suits documentary work about people in their world."
   meta="Wide, close, and deep: the subject inside the place"
   credit="AG Z / Pexels"
   href="https://www.pexels.com/photo/man-selling-items-on-street-market-17114782/"
-/>
+  labels={[
+    { x: 51, y: 30, text: "subject at center" },
+    { x: 16, y: 90, text: "goods fill every edge" },
+  ]}
+>
+  <rect x="3" y="4" width="94" height="92" stroke="var(--accent)" strokeWidth={1.3} strokeDasharray="4 3" fill="none" vectorEffect="non-scaling-stroke" />
+  <rect x="44" y="30" width="16" height="45" stroke="var(--accent)" strokeWidth={1.6} fill="none" vectorEffect="non-scaling-stroke" />
+  <line x1="33" y1="10" x2="45" y2="40" stroke="var(--accent)" strokeWidth={1.3} vectorEffect="non-scaling-stroke" />
+  <line x1="72" y1="12" x2="59" y2="42" stroke="var(--accent)" strokeWidth={1.3} vectorEffect="non-scaling-stroke" />
+  <line x1="18" y1="85" x2="43" y2="65" stroke="var(--accent)" strokeWidth={1.3} vectorEffect="non-scaling-stroke" />
+  <line x1="84" y1="85" x2="61" y2="65" stroke="var(--accent)" strokeWidth={1.3} vectorEffect="non-scaling-stroke" />
+</AnnotatedPhoto>
 
 ## The camera as a reflex
 
@@ -89,7 +128,7 @@ The law is the floor, not the standard. Where you photograph decides what is leg
 
 ## Catch the moment
 
-Everything above is in service of the one variable you cannot pre-decide. The widget locks the rest, the exposure, the zone focus, the 28mm frame, exactly as your camera would be, and leaves you only the moment. A figure crosses a gap between two pillars. Scrub time and hunt for the instant the picture composes itself, the walker centered in the frame on an open stride, and press the shutter there. Watch the strip under the slider as you go. The window where the frame works is a narrow spike, not a broad plateau, which is the whole reason the decisive moment has to be anticipated rather than caught by reaction. By the time you see it, you are already late. You press for where the moment is about to be.
+Everything above is in service of the one variable you cannot pre-decide. The widget locks the rest, the exposure, the zone focus, the 28mm frame, exactly as your camera would be, and leaves you only the moment. A figure crosses a gap between two pillars. Scrub time and hunt for the instant the picture composes itself, the walker centered in the frame on an open stride, and press the shutter there. Watch the strip under the slider as you go. The window where the frame works is a spike, not a plateau, which is the whole reason the decisive moment has to be anticipated rather than caught by reaction. By the time you see it, you are already late. You press for where the moment is about to be.
 
 <Widget name="catch_the_moment" hint="Scrub time and hunt for the one instant the picture composes itself: the walker centered in the gap on an open stride. The exposure, the zone focus, and the frame are all locked, so the only live variable is the moment. Watch the score strip: the window is a spike, not a plateau, which is why you anticipate the moment instead of reacting to it.">
   <StreetAndDocumentaryWidget />

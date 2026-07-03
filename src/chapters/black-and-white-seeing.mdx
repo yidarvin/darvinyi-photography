@@ -19,41 +19,59 @@ Two colors of completely different hue can therefore carry the same brightness, 
   <BlackAndWhiteSeeingFigure />
 </Figure>
 
-This is the value collapse, and seeing it coming is the single most useful habit in monochrome. High color contrast is not the same as high tonal contrast. A red flower against green leaves is one of the loudest color relationships there is, opposites on the wheel, and very often it is a nearly silent tonal one, because the red and the green happen to reflect about the same amount of light. In color the subject shouts. Desaturate it and the subject disappears.
+This is the value collapse, and seeing it coming is the single most useful habit in monochrome. High color contrast is not the same as high tonal contrast. A red flower against green leaves is one of the loudest color relationships there is, opposites on the wheel, and very often a nearly silent tonal one, because the red and the green happen to reflect about the same amount of light. In color the subject shouts. Desaturate it and it disappears.
 
-<Photo
-  src="/photos/black-and-white-seeing/holly-berries-color.jpg"
-  alt="A cluster of glossy scarlet holly berries nestled among dark green holly leaves in bright autumn light, with pale golden foliage soft behind them."
+<BeforeAfter
+  before="/photos/black-and-white-seeing/holly-berries-color.jpg"
+  after="/photos/black-and-white-seeing/holly-berries-mono.jpg"
+  alt="Holly berries and leaves shown as a wipe between the color frame and a plain black-and-white conversion of the same frame."
   id="16.2"
-  caption="In color, the berries are impossible to miss. Red and green sit opposite each other on the wheel, so the fruit separates from the leaves by hue alone, and the picture organizes itself around that one relationship."
-  meta="Holly in autumn, a red-against-green subject"
-  credit="AnemoneProjectors / Wikimedia Commons (CC BY-SA 2.0)"
+  beforeLabel="color"
+  afterLabel="desaturated"
+  caption="Drag across the same frame. In color the scarlet berries are impossible to miss: red and green sit opposite each other on the wheel, so the fruit separates from the leaves by hue alone. Desaturate with no other change and the berries fall to almost the same grey as the leaves, because the two reflected almost the same amount of light. The subject was never carried by tone. It was carried by a color contrast that the conversion threw away."
+  meta="Holly in autumn, red against green, then straight to grey"
+  credit="AnemoneProjectors / Wikimedia Commons (CC BY-SA 2.0), right side converted to black and white"
   href="https://commons.wikimedia.org/wiki/File:Holly_(Ilex_aquifolium)_leaves_and_fruits_(8258341164).jpg"
 />
 
-<Photo
-  src="/photos/black-and-white-seeing/holly-berries-mono.jpg"
-  alt="The same holly photograph converted to plain black and white, in which the berries are now nearly the same grey as the surrounding leaves and are hard to pick out."
+Now the opposite case. Where the berries were carried by hue and died in the conversion, this dune is carried by nothing but light and shadow, so it does not care that the color is gone. The sun rakes across it from the side. The face turned toward the light reads bright, the face turned away falls into shadow, and the crest where the two meet draws a single sharp ridge down the frame. Take away every scrap of color and that structure is untouched, because it was tonal all along.
+
+<BeforeAfter
+  before="/photos/black-and-white-seeing/dunes-tonal-form.jpg"
+  alt="A large sand dune at low sun, its lit face bright and its far face in shadow, with a sharp curving ridge between them and eroded mountains behind, shown as a wipe from warm color to grey."
   id="16.3"
-  caption="The identical frame, desaturated with no other change. The red berries and the green leaves reflected almost the same amount of light, so with the hue gone they fall to almost the same grey and the fruit nearly vanishes into the foliage. The subject was never carried by tone. It was carried by a color contrast that the conversion threw away."
-  meta="The same frame, converted straight to grey"
-  credit="AnemoneProjectors / Wikimedia Commons (CC BY-SA 2.0), converted to black and white"
-  href="https://commons.wikimedia.org/wiki/File:Holly_(Ilex_aquifolium)_leaves_and_fruits_(8258341164).jpg"
+  beforeLabel="color"
+  afterLabel="grey"
+  svgFilter={<feColorMatrix type="saturate" values="0" />}
+  caption="Drag across the frame. Unlike the berries, the subject here is the form of the dune, and the form is drawn purely by where the light lands. The sunward face stays bright, the leeward face stays dark, and the ridge between them holds its edge whether the frame is warm and golden or flat grey. Nothing was carried by color, so nothing is lost when color goes. This is the subject you want in black and white: one whose whole identity is already tone."
+  meta="Mesquite Flat dunes, Death Valley, low side light"
+  credit="Tuxyso / Wikimedia Commons (CC BY-SA 3.0)"
+  href="https://commons.wikimedia.org/wiki/File%3ADeath_Valley_Mesquite_Flats_Sand_Dunes_2013.jpg"
 />
 
 ## A filter redraws the tones
 
 If the default translation flattens what you wanted to separate, you change the translation. On film the tool was a colored filter screwed onto the lens, and its rule is worth memorizing: a filter lightens its own color and darkens the complement. Put a red filter on and every red in the scene passes freely and records bright, while everything toward cyan and blue is blocked and records dark. The classic case is the sky. A plain blue sky renders as a flat pale grey, close in tone to the white clouds sitting in it, so the clouds go missing. A red filter drives that sky toward black while the clouds, which pass every color, stay white and leap off it.
 
-<Photo
+<AnnotatedPhoto
   src="/photos/black-and-white-seeing/adams-tetons-snake-river.jpg"
   alt="Ansel Adams's black-and-white photograph of the Teton range under a dark, cloud-filled sky, with the sunlit Snake River winding as a bright ribbon through dark forest in the valley below."
   id="16.4"
+  overlayName="tonal map"
   caption="Ansel Adams, The Tetons and the Snake River, 1942. The sky is driven down almost to black so the storm clouds stand off it in full relief, while the river holds the brightest tone in the frame and the snow separates from the peaks by value alone. Nothing here is color, and nothing needs to be. The picture is built entirely from where each thing falls on the scale from black to white."
   meta="Grand Teton National Park, Wyoming, 1942"
   credit="Ansel Adams / U.S. National Archives (public domain)"
   href="https://commons.wikimedia.org/wiki/File:Adams_The_Tetons_and_the_Snake_River.jpg"
-/>
+  labels={[
+    { x: 74, y: 12, text: "sky pulled toward black" },
+    { x: 55, y: 30, text: "snow holds white" },
+    { x: 40, y: 82, text: "river, brightest tone" },
+  ]}>
+  <path d="M 48 100 Q 34 82 46 74 Q 62 66 66 60 Q 72 54 66 50" fill="none" stroke="var(--accent)" strokeWidth={1.6} vectorEffect="non-scaling-stroke"/>
+  <polygon points="66,50 63,55 69,55" fill="var(--accent)"/>
+  <path d="M 60 4 Q 82 6 94 16" fill="none" stroke="var(--accent)" strokeWidth={1.4} strokeDasharray="4 3" vectorEffect="non-scaling-stroke"/>
+  <circle cx="55" cy="24" r="2.4" fill="none" stroke="var(--accent)" strokeWidth={1.3} vectorEffect="non-scaling-stroke"/>
+</AnnotatedPhoto>
 
 The filters make a ladder of strength. A yellow filter is the gentle everyday choice, darkening a blue sky just enough to give the clouds some shape, and it costs about one stop of light. An orange filter goes further and starts to cut haze. A red filter is the dramatic extreme, worth roughly three stops and turning an ordinary summer sky theatrical. A green filter lightens foliage and is kind to leaves, though unkind to warm skin, which it drives dark. A blue filter does the reverse and is used mostly to add the soft haze of distance. Every one of them costs light, because it works by throwing part of the spectrum away, and that cost is the filter factor you open the exposure up to cover.
 

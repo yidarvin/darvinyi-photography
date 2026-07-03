@@ -29,25 +29,66 @@ Johannes Itten catalogued these schemes at the Bauhaus, and they are worth knowi
 
 The complementary pair that governs photography is warm against cool. It became a full cliché in cinema as teal and orange, and the reasoning is pure color science: human skin, in almost every tone, sits in the orange-to-yellow band of the wheel, and the complement of orange is teal. Push the shadows and the background toward teal, keep the skin warm, and every face leaps off the frame, because you have placed the subject and its surround at opposite ends of the wheel. The same relationship shows up in nature every time the warm light of a low sun meets the cool blue of the sky and sea.
 
-<Photo
+<AnnotatedPhoto
   src="/photos/color-science-for-photographers/complementary-sunset-sea.jpg"
   alt="A coastal sunset where the left half of the sky glows warm orange and gold around the sun while the right half and the sea are deep cool blue and teal, with pale boulders in the foreground."
   id="15.2"
+  overlayName="warm / cool split"
   caption="A complementary frame the weather built. Warm orange light fills the sky around the low sun on the left; the clouds and sea on the right stay cool blue and teal. The two halves sit across the wheel from each other, so each makes the other stronger, and the frame reads as one taut warm-against-cool relationship rather than a list of colors. This is the teal-and-orange look occurring optically, before anyone touches a grade."
   meta="Coastal sunrise, warm sun against a cool sea and sky"
   credit="Lies Thru a Lens / Wikimedia Commons (CC BY 2.0)"
   href="https://commons.wikimedia.org/wiki/File:Red_Sun_Versus_Blue_Sea_(22565812538).jpg"
-/>
+  labels={[
+    { x: 30, y: 24, text: "warm pole" },
+    { x: 80, y: 9, text: "cool pole" },
+  ]}
+>
+  <line x1="52" y1="0" x2="70" y2="100" stroke="var(--accent)" strokeWidth={1.5} strokeDasharray="4 3" vectorEffect="non-scaling-stroke" />
+  <circle cx="38" cy="36" r="12" fill="none" stroke="var(--accent)" strokeWidth={1.4} vectorEffect="non-scaling-stroke" />
+  <circle cx="80" cy="16" r="10" fill="none" stroke="var(--accent)" strokeWidth={1.4} vectorEffect="non-scaling-stroke" />
+</AnnotatedPhoto>
 
-<Photo
+<AnnotatedPhoto
   src="/photos/color-science-for-photographers/analogous-sunset-gradient.jpg"
   alt="A cloudless sunset sky filling the whole frame with a smooth gradient from golden yellow and orange at the bottom, through soft pink, to lavender-violet at the top."
   id="15.3"
+  overlayName="analogous run"
   caption="Analogous harmony, handed over for free. The whole frame is a single sweep of neighboring hues, yellow into orange into pink into violet, each one adjacent to the last with no color standing opposite any other. Because nothing on the wheel contradicts anything else, the picture reads as calm and unified, held together by the family of hues rather than by contrast between them."
   meta="Clear sunset sky, a continuous run of neighboring hues"
   credit="Dave Hoefler / Unsplash"
   href="https://unsplash.com/photos/orange-and-yellow-sky-during-sunset-AJXKxuRrUcg"
-/>
+  labels={[
+    { x: 62, y: 90, text: "yellow" },
+    { x: 62, y: 62, text: "orange" },
+    { x: 62, y: 40, text: "pink" },
+    { x: 62, y: 14, text: "violet" },
+  ]}
+>
+  <line x1="42" y1="94" x2="42" y2="8" stroke="var(--accent)" strokeWidth={1.5} vectorEffect="non-scaling-stroke" />
+  <polygon points="42,6 39,13 45,13" fill="var(--accent)" />
+</AnnotatedPhoto>
+
+A triadic scheme spreads that tension wider. Three hues spaced evenly around the wheel, red, green, and blue, hold the frame in balance because no two of them sit opposite as a single loud pair; each is answered by the other two. A painted harbor is where this turns up in the wild, since working boats are marked in strong, near-primary colors so they can be told apart at a distance.
+
+<AnnotatedPhoto
+  src="/photos/color-science-for-photographers/vivid-color-harmony.jpg"
+  alt="Wooden fishing boats moored bow-in at a harbor, their hulls and wheelhouses painted in saturated red-orange, blue, and green, with more colorful boats packed behind them."
+  id="15.4"
+  overlayName="red / green / blue triad"
+  caption="A triadic relationship the harbor painted for itself. The saturated hulls and trim land on three hues spaced roughly evenly around the wheel, red-orange, blue, and green, so the frame feels charged yet balanced rather than dominated by one loud pair. Because each color is answered by two others, no single hue wins, and the eye reads a lively whole instead of a scatter. It is the same triangle the wheel names, occurring in enamel paint on working boats."
+  meta="Fishing harbor, three near-primary hues in balance"
+  credit="PattayaPatrol / Wikimedia Commons (CC BY-SA 4.0)"
+  href="https://commons.wikimedia.org/wiki/File%3ADFC_2143_Colorful_fishing_boats_moored_together_in_a_busy_harbor_their_reflections_rippling_in_the_water.jpg"
+  labels={[
+    { x: 80, y: 26, text: "red-orange" },
+    { x: 46, y: 82, text: "blue" },
+    { x: 84, y: 90, text: "green" },
+  ]}
+>
+  <circle cx="80" cy="34" r="8" fill="none" stroke="var(--accent)" strokeWidth={1.4} vectorEffect="non-scaling-stroke" />
+  <circle cx="46" cy="76" r="8" fill="none" stroke="var(--accent)" strokeWidth={1.4} vectorEffect="non-scaling-stroke" />
+  <circle cx="86" cy="84" r="7" fill="none" stroke="var(--accent)" strokeWidth={1.4} vectorEffect="non-scaling-stroke" />
+</AnnotatedPhoto>
 
 ## No color is seen alone
 
@@ -57,21 +98,32 @@ The wheel says complements oppose. Set two of them touching and each drives the 
   <ColorScienceForPhotographersWidget />
 </Widget>
 
-The consequence for a photographer is exact: you never place a color, you place a relationship. A background is not a neutral backdrop that happens to be a certain color; it tints everything in front of it. A teal wall behind a face is warming that face whether you meant it or not. Green foliage behind a red jacket is making the jacket shout. When a color feels off in a frame, the fix is often not the subject's color but the color it is sitting against, and moving your feet a step to change the background is frequently the whole edit.
+The consequence for a photographer is exact: you never place a color, you place a relationship. A background is never neutral; it tints everything in front of it. A teal wall behind a face is warming that face whether you meant it or not. Green foliage behind a red jacket is making the jacket shout. When a color feels off in a frame, the fix is often not the subject's color but the color it is sitting against, and moving your feet a step to change the background is frequently the whole edit.
 
 ## Warm, cool, and the choice of white
 
 Warm and cool are not just a contrast, they are a sense of depth. Warm colors appear to come forward and cool colors to fall back, a push and pull painters have relied on for centuries, and it echoes the aerial perspective from [working the frame](/advanced-composition), where distant things go pale and blue. A warm subject against a cool ground gains separation and reads closer, which is the depth cue the teal-and-orange grade is quietly exploiting.
 
-<Photo
+<AnnotatedPhoto
   src="/photos/color-science-for-photographers/warmcool-depth-tent.jpg"
   alt="A small tent glowing warm orange from a light inside, pitched in a dark meadow beneath a deep blue twilight sky, with silhouetted pines and a mountain ridge receding behind it."
-  id="15.4"
+  id="15.5"
+  overlayName="warm advances / cool recedes"
   caption="Warm advances, cool recedes. The lit tent is a small patch of orange in a frame that is otherwise deep blue, and it jumps forward while the cool ridge and sky sink back, so the picture feels deep even though it is a flat sheet. Warm against cool is doing double duty here: it is a complementary contrast and a depth cue at the same time."
   meta="Blue-hour campsite, a warm subject against a cool field"
   credit="Luca Baggio / Unsplash"
   href="https://unsplash.com/photos/GKLIsLZxhj0"
-/>
+  labels={[
+    { x: 56, y: 92, text: "warm advances" },
+    { x: 40, y: 40, text: "cool recedes" },
+  ]}
+>
+  <circle cx="56" cy="73" r="7" fill="none" stroke="var(--accent)" strokeWidth={1.4} vectorEffect="non-scaling-stroke" />
+  <line x1="56" y1="80" x2="56" y2="90" stroke="var(--accent)" strokeWidth={1.5} vectorEffect="non-scaling-stroke" />
+  <polygon points="56,92 53,85 59,85" fill="var(--accent)" />
+  <line x1="45" y1="49" x2="52" y2="43" stroke="var(--accent)" strokeWidth={1.5} vectorEffect="non-scaling-stroke" />
+  <polygon points="43,51 49,49 47,44" fill="var(--accent)" />
+</AnnotatedPhoto>
 
 Warm and cool are also the reason white is a decision rather than a given. Your eye runs a process called color constancy: it works out the color of the light and quietly discounts it, so a white shirt looks white in warm lamplight and in cool shade even though the wavelengths reaching you are wildly different. It does this by chromatic adaptation, scaling the gain of the three cone types independently, which is the von Kries rule from the nineteenth century and precisely what a camera imitates when it sets white balance. This is why the orange cast of a lamplit room disappears after a minute in it, and why, when two people's adaptation disagrees, you get the argument of the dress in 2015: one royal-blue-and-black dress that looked white and gold to anyone whose eye discounted a bluish light and blue and black to anyone who discounted a gold one. Not a single pixel differed between them. The whole disagreement lived in the discounting.
 
@@ -79,12 +131,12 @@ Because both of the cameras this book is built around record raw, none of that a
 
 ## One color, spent well
 
-The strongest color photographs are rarely the most colorful. A frame built on one dominant hue with a single small accent reads as deliberate, while a scatter of saturated colors reads as noise, because when every hue is shouting none of them can be the subject. The most disciplined version is the near-monochrome frame, one hue carried across many values and levels of saturation, which frees shape and light to carry the picture while color holds a single steady mood.
+The strongest color photographs are rarely the most colorful. A frame built on one dominant hue with a single small accent reads as deliberate, while a scatter of saturated colors reads as noise, because when every hue is shouting none of them can be the subject. The most disciplined version is the near-monochrome frame, one hue carried across many values and saturations, which frees shape and light to carry the picture while color holds a single steady mood.
 
 <Photo
   src="/photos/color-science-for-photographers/monochrome-red-portrait.jpg"
   alt="A woman in profile lost in thought, lit entirely by a single red light, so her skin, hair, clothing, and the background are all rendered in shades of one red hue at different brightnesses."
-  id="15.5"
+  id="15.6"
   caption="One hue, doing everything. A single red source floods the whole scene, so there is no second color to compete, only red at many values from the bright rim on her hair to the near-black shadow. Stripped of hue variety, the frame leans on shape, light, and expression, and the one color sets the entire mood. Restraint with color is usually a stronger move than abundance."
   meta="Single-source red light, a near-monochrome color field"
   credit="cottonbro studio / Pexels"

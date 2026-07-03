@@ -7,7 +7,7 @@ A flash needs one thing from the shutter: a single instant when the whole frame 
 
 Most cameras with a lens mount put a focal-plane shutter right in front of the sensor: two curtains that cross the frame one after the other. The first slides open to start the exposure, the second follows to close it. Up to a certain speed the first curtain fully clears the frame before the second starts to move, so for a moment the whole sensor sits open. That moment is what a flash needs. The fastest speed at which it still happens is the sync speed, and it is nothing more than the time the curtain takes to cross the frame, around 1/200 to 1/250 on a full-frame body, 1/320 on a few.
 
-Past that speed the moment is gone. To expose faster the second curtain has to launch before the first has finished, so the two run together with a gap between them, and only that moving slit is ever open. A flash burst is far too short to bridge it. The burst lasts on the order of a thousandth of a second, and less at low power, as short as a thirty-thousandth, while the curtains need several milliseconds to cross. So the flash fires while the slit is partway down the frame and lights only the strip the slit happens to be crossing. The rest of the frame, still behind a curtain, records nothing. You get a hard dark band across the top or the bottom, the unmistakable sign of a flash fired past its sync speed.
+Past that speed the moment is gone. To expose faster the second curtain has to launch before the first has finished, so the two run together with a gap between them, and only that moving slit is ever open. A flash burst is far too short to bridge it. The burst lasts on the order of a thousandth of a second, and less at low power, as short as a thirty-thousandth, while the curtains need several milliseconds to cross. So the flash fires while the slit is partway down the frame and lights only the strip it happens to be crossing. The rest of the frame, still behind a curtain, records nothing. You get a hard dark band across the top or the bottom, the unmistakable sign of a flash fired past its sync speed.
 
 An electronic shutter fails the same way and for the same reason. It uncovers the sensor row by row over the readout time, so there is no instant when every row is collecting light, and a single burst stripes the frame exactly as the slit does. That is why [rolling shutter and readout](/rolling-shutter-and-readout) keeps both cameras' electronic shutters away from flash entirely. The one electronic shutter that escapes this is the global shutter, which starts and stops every pixel together. The Sony a9 III, the first full-frame camera to carry one, syncs a flash all the way to 1/80000. The rule is that clean: open the whole frame at once and the flash works, uncover it progressively and it does not.
 
@@ -21,7 +21,7 @@ Both cameras are built around it. The Q3's shutter lives in its fixed 28mm lens 
 
 Here is the idea that makes fast flash sync worth having. Every photograph made with flash is two exposures stacked on top of each other: one of the ambient light already in the scene, and one of the light the flash adds. They share the frame but they answer to different controls. The aperture sets both, because it is the same opening for both kinds of light. The shutter sets only the ambient. A flash fires and is over in well under a millisecond, so once the frame has been open long enough to catch the whole burst, holding it open longer does nothing to the flash and everything to the ambient. Change the [shutter speed](/shutter-speed-and-motion) and you brighten or darken the light already in the scene while the flash-lit subject does not move.
 
-That one fact is the lever. Set the aperture and the flash power to light your subject, then use the shutter to place the background wherever you want it, bright, neutral, or dark. Bright sun gives you the most room to work. Sunny-16 says a sunlit scene at ISO 100 wants about f/16 at 1/125, which is the same exposure as f/11 at 1/250, f/8 at 1/500, f/5.6 at 1/1000, f/4 at 1/2000. Each faster stop of shutter darkens the sky by a stop without touching the subject. The figure holds one aperture and one flash and walks the shutter across that ladder: the subject stays lit while the sky slides from blown white down toward dark, and the only question left is how fast a shutter your flash will sync at.
+That one fact is the lever. Set the aperture and the flash power to light your subject, then use the shutter to place the background wherever you want it, bright, neutral, or dark. Bright sun gives you the most room to work. Sunny-16 says a sunlit scene at ISO 100 wants about f/16 at 1/125, the same exposure as f/11 at 1/250, f/8 at 1/500, f/5.6 at 1/1000, f/4 at 1/2000. Each faster stop of shutter darkens the sky by a stop without touching the subject. The figure holds one aperture and one flash and walks the shutter across that ladder: the subject stays lit while the sky slides from blown white down toward dark, and the only question left is how fast a shutter your flash will sync at.
 
 <Figure id="9.1" caption="One aperture, one flash, set once to light the subject, walked across a row of shutter speeds. The shutter changes only the ambient, so the sky behind the subject darkens a stop at a time while the flash-lit subject does not change. A focal-plane shutter syncs an ordinary flash only up to about 1/250; past that a single burst lights a band and leaves the rest dark, so the shaded speeds are reachable with flash only on a leaf shutter. That shaded stretch, roughly three stops of extra control over the sky at the same aperture, is the leaf advantage.">
   <FlashSyncAndTheLeafAdvantageFigure />
@@ -31,15 +31,32 @@ That one fact is the lever. Set the aperture and the flash power to light your s
 
 Put the lever and the wall together and the payoff is plain. Say you want a portrait in full sun at f/8 with a deep, saturated sky rather than a pale washed-out one. To hold that sky two stops down you need 1/2000, and you need the flash to light the face at that speed. On the Q3 or an XCD lens you set 1/2000 and fire; the leaf shutter syncs and the flash lands at full power. On a focal-plane camera the flash quits at 1/250, where that same f/8 leaves the sky a stop too bright, and the shutter cannot go faster without the black band. Three stops of sky, the whole run from 1/250 to 1/2000, belong to the leaf shutter alone. A focal-plane camera's only ways around the wall are to stop the lens down and give up the [wide aperture](/aperture-and-depth-of-field), to screw a neutral-density filter over the front and dim everything at once, or to switch to high-speed sync and pay for it in flash power.
 
-<Photo
+<AnnotatedPhoto
   src="/photos/flash-sync-and-the-leaf-advantage/overpower-the-sun-speedlight.jpg"
   alt="A man at arm's length lit by a flash so his face and shirt are bright, against a deep blue afternoon sky with a house and trees behind him rendered dark."
   id="9.2"
+  overlayName="fill vs ambient"
   caption="Overpowering the sun. The flash is the key light on the face and shoulders, so they read bright, while a fast shutter holds the ambient down: the sky stays a saturated blue and the shaded house and trees fall dark. This is the look a leaf shutter delivers at full power at 1/2000, and the look a focal-plane camera can reach only with high-speed sync or a neutral-density filter."
   meta="Overpowering the sun with a speedlight"
   credit="Travis Isaacs / Flickr (CC BY 2.0)"
   href="https://www.flickr.com/photos/tbisaacs/2807377912"
-/>
+  labels={[
+    { x: 47, y: 42, text: "flash-lit subject" },
+    { x: 46, y: 12, text: "ambient sky, held down" },
+    { x: 15, y: 55, text: "shade falls dark" },
+  ]}
+>
+  <path
+    d="M 27 100 L 27 78 Q 27 62 34 58 Q 39 55 40 44 Q 32 40 33 26 Q 35 10 48 9 Q 61 10 63 26 Q 64 40 56 44 Q 57 55 62 58 Q 69 62 69 78 L 69 100"
+    fill="none"
+    stroke="var(--accent)"
+    strokeWidth={1.4}
+    strokeDasharray="3 3"
+    vectorEffect="non-scaling-stroke"
+  />
+  <line x1="0" y1="38" x2="30" y2="38" stroke="var(--accent)" strokeWidth={1.2} strokeDasharray="2 3" vectorEffect="non-scaling-stroke" />
+  <line x1="70" y1="38" x2="100" y2="38" stroke="var(--accent)" strokeWidth={1.2} strokeDasharray="2 3" vectorEffect="non-scaling-stroke" />
+</AnnotatedPhoto>
 
 ## High-speed sync, and its price
 

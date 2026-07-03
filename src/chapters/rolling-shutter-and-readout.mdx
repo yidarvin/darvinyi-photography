@@ -7,7 +7,7 @@ Every electronic shutter has a number that no menu shows you: the readout time, 
 
 Picture the sensor as a stack of rows. In electronic-shutter mode the camera resets the top row to start it collecting light, then a set interval later reads that row out to stop it. That interval is the shutter speed. Then it does the same for the second row, and the third, marching down the frame. Two waves travel down the sensor, a reset wave that begins each row and a readout wave that ends it, and the fixed gap between them is the shutter speed you dialed. Because the waves travel, the bottom row begins and finishes its exposure later than the top row. How much later, first row to last, is the readout time.
 
-The two numbers are independent, and that independence is the whole point. You can shoot at 1/16000 of a second, so each row is open for an eyeblink, and the readout can still take a tenth of a second, because the eyeblink happens at a different moment in every row. A short shutter speed freezes the light each row sees. It does nothing to close the gap between when the top and the bottom of the frame are recorded. Only faster readout closes that gap.
+The two numbers are independent, and that independence is the whole point. You can shoot at 1/16000 of a second, so each row is open for an eyeblink, and the readout can still take a tenth of a second, because the eyeblink happens at a different moment in every row. A short shutter speed freezes the light each row sees. It does nothing to close the gap between when the top and the bottom of the frame are recorded. Only faster readout does that.
 
 How fast is fast depends entirely on the sensor. A conventional full-frame CMOS chip reads out in tens of milliseconds: about 62 on the Sony a7 III, about 51 on the Nikon Z6, about 68 on the a7 IV, which is actually a hair slower than the a7 III it replaced. A stacked sensor, with its readout circuitry moved onto a layer behind the pixels, reads out in a few milliseconds: about 3.7 on the Nikon Z9, about 3.9 on the Sony a1. That is fifteen to seventeen times faster, and it is what makes a stacked sensor's electronic shutter usable for sports. The two cameras in this book sit at the slow end. The X2D II's 100-megapixel medium-format sensor is measured at about 165 milliseconds in 14-bit mode, and roughly twice that, around 360, in 16-bit. Leica does not publish the Q3's figure and no one has measured it, but the Q3 uses the same 60-megapixel sensor as the Leica M11, which reads out in about a tenth of a second, so the Q3 is almost certainly close. These are among the slowest readouts in any current camera, and the rest of this chapter is what that slowness costs.
 
@@ -15,7 +15,7 @@ How fast is fast depends entirely on the sensor. A conventional full-frame CMOS 
 
 Take the simplest case, a subject crossing the frame sideways while you hold the camera still. Because the bottom of the frame is recorded later than the top, the subject has slid a little further along by the time the lower rows are read. A vertical edge, a lamppost or the corner of a building, comes out tilted. Not blurred, tilted, every edge still crisp, the whole shape leaning as if it were cut from soft wax.
 
-The geometry is clean. The tilt from the top of the frame to the bottom equals the subject's speed across the sensor multiplied by the readout time. Double the readout and the lean doubles. Double the subject's speed and the lean doubles. Because each row's delay is proportional to how far down the frame it sits, the sideways displacement grows in a straight line from top to bottom, so a straight edge stays straight, it just slants. This is a pure shear, the transformation that turns a rectangle into a parallelogram. The figure holds the subject speed and the shutter speed fixed and changes only the readout time.
+The geometry is clean. The tilt from the top of the frame to the bottom equals the subject's speed across the sensor multiplied by the readout time. Double either one and the lean doubles. Because each row's delay is proportional to how far down the frame it sits, the sideways displacement grows in a straight line from top to bottom, so a straight edge stays straight, it just slants. This is a pure shear, the transformation that turns a rectangle into a parallelogram. The figure holds the subject speed and the shutter speed fixed and changes only the readout time.
 
 <Figure id="8.1" caption="One railing, one speed, one shutter speed, captured under three readout times. A leaf or global shutter reads the whole frame at once, so the posts stay upright. A stacked sensor reads in a few milliseconds and they lean a little. A non-stacked sensor of the kind in both cameras here takes 100 to 165 milliseconds, so the bottom of the frame is recorded long after the top and the posts lean hard. The lean is a straight shear, and its size is the subject's speed times the readout time.">
   <RollingShutterAndReadoutFigure />
@@ -29,15 +29,28 @@ The lean is the tidy case, a steady motion in one direction. Let the motion chan
 
 Now spin the subject. A propeller or a fan turning during the readout is caught at a different angle in every row, and the straight blades bow into curves. One side of the disc thickens while the other thins, because on one side the blades turn into the sweep and on the other they turn away from it. Spin fast enough, or read slow enough, and the blades stop touching the hub at all and break into free-floating arcs. The photograph below was a rigid three-blade propeller. A phone's electronic shutter read the frame from top to bottom while the propeller spun through more than a full turn, so every row recorded the blades in a different place. Look closely: each edge is sharp. None of the shapes are real.
 
-<Photo
+<AnnotatedPhoto
   src="/photos/rolling-shutter-and-readout/propeller-rolling-shutter.jpg"
   alt="A turboprop aircraft's spinning propeller photographed on a phone's electronic shutter, its blades rendered as detached, curving smears instead of straight radial blades."
   id="8.2"
+  overlayName="readout sweep and blade curve"
   caption="A rigid propeller, torn into curved and disconnected blades by a rolling shutter. The rows were read from top to bottom while the blades swept through more than one rotation, so each row caught them at a different angle. This is not motion blur. Every edge is sharp; the geometry is simply a lie the readout tells."
   meta="Google Pixel 3 · electronic shutter"
   credit="Dicklyon / CC BY-SA 4.0"
   href="https://commons.wikimedia.org/wiki/File:Propellor_with_rolling-shutter_artifact.jpg"
-/>
+  labels={[
+    { x: 8, y: 34, text: "readout sweeps top to bottom" },
+    { x: 33, y: 11, text: "a rigid blade should run straight from the hub" },
+    { x: 20, y: 84, text: "instead it bows into a free-floating arc" },
+  ]}
+>
+  <line x1="9" y1="20" x2="9" y2="82" stroke="var(--accent)" strokeWidth={1.5} strokeDasharray="4 3" vectorEffect="non-scaling-stroke" />
+  <polygon points="9,86 6.5,79 11.5,79" fill="var(--accent)" />
+  <circle cx="47" cy="47" r="1.8" fill="none" stroke="var(--accent)" strokeWidth={1.4} vectorEffect="non-scaling-stroke" />
+  <line x1="47" y1="47" x2="34" y2="9" stroke="var(--accent)" strokeWidth={1.4} strokeDasharray="3 3" vectorEffect="non-scaling-stroke" />
+  <path d="M 47 47 Q 30 34 33 12" fill="none" stroke="var(--accent)" strokeWidth={1.6} vectorEffect="non-scaling-stroke" />
+  <path d="M 47 47 Q 34 72 38 92" fill="none" stroke="var(--accent)" strokeWidth={1.6} vectorEffect="non-scaling-stroke" />
+</AnnotatedPhoto>
 
 The size of the warp comes down to one ratio: how much the object turns during a single readout. A fraction of a turn bows the blades. A whole turn or more shreds them. The widget later in this chapter is built on exactly that ratio.
 
@@ -47,7 +60,7 @@ Motion is not the only thing that can change during a readout. Light can too, an
 
 The ways out follow from the mechanism. Set the shutter speed to a whole multiple of the flicker period and every row collects the same number of full flicker cycles, so the bands even out: 1/100 or 1/50 of a second under 50-hertz mains, 1/120 or 1/60 under 60. That tames the steady 100 and 120-hertz flicker of ordinary lamps. It does nothing for LEDs, whose faster and less regular rates need the camera's high-frequency, or variable, shutter mode, where you nudge the speed in fine fractional steps while watching a live preview until the banding drops out. Faster readout helps a little, spreading fewer and wider bands across the frame. The cleanest fix is to stop reading row by row at all.
 
-A flash is flicker taken to the limit, a single burst a few thousandths of a second long. Fire it during a rolling readout and it lights only the band of rows collecting light at that instant, leaving the rest of the frame dark. This is why an electronic shutter will not sync an ordinary flash, for the same reason a focal-plane shutter will not above its sync speed: there is no moment when the whole sensor is gathering light at once. [Flash sync and the leaf advantage](/flash-sync-and-the-leaf-advantage), the next chapter, turns on this exact point.
+A flash is flicker taken to the limit, a single burst a few thousandths of a second long. Fire it during a rolling readout and it lights only the band of rows collecting light at that instant, leaving the rest of the frame dark. This is why an electronic shutter will not sync an ordinary flash, for the same reason a focal-plane shutter will not above its sync speed: no moment exists when the whole sensor is gathering light at once. [Flash sync and the leaf advantage](/flash-sync-and-the-leaf-advantage), the next chapter, turns on this exact point.
 
 ## What your cameras do about it
 

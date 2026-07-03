@@ -15,15 +15,22 @@ The oldest placement tip is the rule of thirds. The English painter John Thomas 
 
 The reason it works is that it defeats the reflex to center. Dead center is stable and symmetric, and stability reads as calm, but past a point it also reads as inert, with the eye parked and nowhere to go. Nudge the subject off center and you introduce a small imbalance the eye wants to resolve, which is another way of saying you make the picture move. Treat the rule as a habit, not a law. It was doubted from the start: George Field wrote in 1845 that it does not supply a general law but universalises a particular, and that following it blindly yields a uniform and monotonous practice. Cambridge in Colour puts it plainly, that it is just a rough guideline. A close cousin, the golden-ratio phi grid, places its lines a little nearer the center, but the value of either is the same: it makes you ask where the subject should sit instead of centering it by default.
 
-<Photo
+<AnnotatedPhoto
   src="/photos/composition-fundamentals/rule-of-thirds-lighthouse.jpg"
   alt="A small red and yellow lighthouse stands on a low green dike beside a pale sky, placed well off to the right of the frame with a low horizon."
   id="13.1"
-  caption="The rule of thirds in one frame. The lighthouse sits on the right vertical third rather than the middle, and the horizon rides low on a horizontal third instead of halving the picture. The eye lands on the lighthouse and then has the whole sky to wander, and that small, resolvable imbalance is what makes an off-center frame feel alive where a centered one would sit dead."
+  overlayName="rule of thirds"
+  labels={[
+    { x: 66.7, y: 19, text: "right third" },
+    { x: 25, y: 66.7, text: "lower third · horizon" },
+  ]}
+  caption="The rule of thirds in one frame. Toggle the grid: the lighthouse stands on the right vertical third, and the horizon rides the lower horizontal third rather than halving the picture. The eye lands on the tower, then has the whole sky to wander. That small, resolvable imbalance is what makes an off-center frame feel alive where a centered one sits dead."
   meta="Pilsum lighthouse, North Sea coast"
   credit="Carschten / Wikimedia Commons (CC BY-SA 3.0 DE)"
   href="https://commons.wikimedia.org/wiki/File:Pilsumer_Leuchtturm_2010-10_CN-I.jpg"
-/>
+>
+  <ThirdsGrid />
+</AnnotatedPhoto>
 
 ## Lines are a path you lay for the eye
 
@@ -31,43 +38,65 @@ Lines are the artist's way of directing the eye, and the eye follows a strong on
 
 Convergence does a second job. As parallel lines run away from you they appear to meet at a vanishing point, and that apparent meeting is how a flat photograph fakes depth, pulling the eye from the foreground into the distance. It is the same perspective effect that reshapes a scene in [lenses, optics, and perspective](/lenses-optics-and-perspective). The catch is that a line is honest to a fault: it delivers the eye wherever it points. Aim it at your subject and it hands the viewer straight to it. Aim it at an empty corner and it walks the viewer out of the frame.
 
-<Photo
+<AnnotatedPhoto
   src="/photos/composition-fundamentals/leading-lines-straight-road.jpg"
   alt="A straight paved road runs from the foreground directly away into the distance between flat fields and a band of forest, narrowing toward a point near the horizon."
   id="13.2"
-  caption="Leading lines. The two edges of the road are parallel, but as they recede they appear to converge on a single point near the horizon, and the eye is pulled straight down that path into the distance. The same convergence is what makes the flat image read as deep. A line like this takes the eye wherever it points, so it pays to point it at something."
+  overlayName="leading line"
+  labels={[{ x: 46, y: 32, text: "vanishing point" }]}
+  caption="Leading lines. Toggle the overlay: the road's two edges are parallel on the ground, but as they recede they converge on a single point near the horizon and pull the eye straight down the path. That convergence is also what makes the flat image read as deep. A line takes the eye wherever it points, so it pays to point it at something."
   meta="Endre, Gotland"
   credit="Ann-Sophie Qvarnström / Wikimedia Commons (CC BY-SA 4.0)"
   href="https://commons.wikimedia.org/wiki/File:Long_straight_road_in_Endre,_Gotland.jpg"
-/>
+>
+  <polyline points="27,100 66.5,38.5" fill="none" stroke="var(--accent)" strokeWidth={1} vectorEffect="non-scaling-stroke" opacity={0.6} />
+  <polyline points="89,100 69,38.5" fill="none" stroke="var(--accent)" strokeWidth={1} vectorEffect="non-scaling-stroke" opacity={0.6} />
+  <line x1="55" y1="99" x2="67" y2="42.5" stroke="var(--accent)" strokeWidth={1.75} vectorEffect="non-scaling-stroke" />
+  <polygon points="67.5,38 64.7,44 70,44" fill="var(--accent)" />
+  <circle cx="67.5" cy="37.5" r="1.6" fill="none" stroke="var(--accent)" strokeWidth={1.2} vectorEffect="non-scaling-stroke" />
+</AnnotatedPhoto>
 
 ## A frame inside the frame
 
 Look for something in the scene that wraps around your subject: a doorway, a window, an arch, an overhanging branch, a gap in a wall. Shoot through it and you get a frame inside the frame, and it does three things at once. It funnels the eye through the opening to the subject and walls off the surrounding clutter. It adds depth, because the near frame and the far subject sit on obviously different planes. And it lends context or mood, the borrowed meaning of looking through one thing at another. The frame need not be neat or complete. A branch across one corner or an arch cutting the top works as well as a full border, and both man-made openings, windows and doors and mirrors, and natural ones, branches and foliage and cave mouths, serve the same end.
 
-<Photo
+<AnnotatedPhoto
   src="/photos/composition-fundamentals/frame-within-frame-archway.jpg"
   alt="A bright blue sea and a rocky coastline seen through a dark stone archway that surrounds the view on every side."
   id="13.3"
-  caption="A frame within the frame. The dark arch wraps the bright sea view, walls off everything around it, and sets a near plane against a far one so the picture gains depth. The opening funnels the eye through it to the water. A found frame like this borrows its structure from the scene; it does not need to be tidy, only to enclose."
+  overlayName="found frame"
+  labels={[
+    { x: 11, y: 30, text: "near plane" },
+    { x: 50, y: 74, text: "far plane" },
+  ]}
+  caption="A frame within the frame. The dashed line traces the opening: the dark arch is the near plane, the sea and cliff the far one, and setting one against the other is what gives the picture depth. The opening funnels the eye through to the water and walls off everything around it. A found frame borrows its structure from the scene; it need not be tidy, only enclose."
   meta="Porto Venere, Italy"
   credit="Justine Lauzon / Pexels"
   href="https://www.pexels.com/photo/a-view-of-the-ocean-through-an-archway-16987609/"
-/>
+>
+  <path d="M 17 90 L 15 42 Q 15 12 48 9 Q 81 12 81 42 L 79 90" fill="none" stroke="var(--accent)" strokeWidth={1.4} strokeDasharray="3 3" vectorEffect="non-scaling-stroke" opacity={0.9} />
+</AnnotatedPhoto>
 
 ## Empty space is doing work
 
 The room around your subject is not wasted. It is negative space, the counterpart to the positive space of the subject, and the interaction of the two is what makes a composition work rather than either one alone. Give a subject a wide, quiet field and you do two useful things at once. You isolate it, so nothing competes for the eye, and you let it breathe. The clearest instruction that falls out of this is lead room, also called nose room or looking room: leave space in the direction the subject faces or moves. When the eye first scans a photograph it expects to see a little in front of the subject. A car with room ahead of it is going somewhere; a car pinned against the front edge has been stopped. A person looking left belongs on the right of the frame, gazing across the open space, not jammed into the left edge staring out of it. Deny that room and the frame turns uneasy. The cinematographer Neil Oseman compares short-siding a subject to a person who walks into a room and stands facing the wall, close enough to touch it: you feel something is wrong before you can say what.
 
-<Photo
+<AnnotatedPhoto
   src="/photos/composition-fundamentals/negative-space-lone-tree.jpg"
   alt="A single small tree stands alone in a wide expanse of shallow turquoise water that fills almost the entire frame."
   id="13.4"
-  caption="Negative space. The tree holds a sliver of the frame; the rest is quiet water. The emptiness is not wasted. It isolates the subject so nothing competes with it, and gives it somewhere to sit. Empty space carries visual weight of its own, and here the broad calm field on every side is exactly what balances the one small tree."
+  overlayName="positive / negative"
+  labels={[
+    { x: 29.5, y: 11, text: "subject" },
+    { x: 68, y: 55, text: "negative space" },
+  ]}
+  caption="Negative space. The box holds the subject; everything outside it is quiet water and sky. That emptiness is not wasted. It isolates the tree so nothing competes with it and gives it somewhere to sit. Empty space carries visual weight of its own, and here the broad calm field is exactly what balances the one small tree."
   meta="Koh Mak, Thailand"
   credit="Vyacheslav Argenberg / Wikimedia Commons (CC BY 4.0)"
   href="https://commons.wikimedia.org/wiki/File:Koh_Mak_(island),_Thailand,_Solitary_tree_in_lagoon.jpg"
-/>
+>
+  <rect x="21.5" y="16" width="16" height="31" rx="1.5" fill="none" stroke="var(--accent)" strokeWidth={1.2} vectorEffect="non-scaling-stroke" opacity={0.9} />
+</AnnotatedPhoto>
 
 ## Balance is the sum of all of it
 
@@ -78,6 +107,20 @@ Under every one of these devices sits a single principle. Every element in a fra
 </Figure>
 
 That one equation explains the rest. It is why a subject on a third does not tip the picture over: the open space on the long side has weight of its own and sits far from the center, balancing the subject on the short side. Symmetry, the same weight mirrored on both halves, is the easy kind of balance, formal and stable and, past a point, static. Asymmetry, a small strong thing set against a large soft thing, is harder to see and more alive, and it is the balance most photographs are reaching for.
+
+<AnnotatedPhoto
+  src="/photos/composition-fundamentals/symmetry-reflection.jpg"
+  alt="The Taj Mahal seen head on at dawn, its white marble dome and four minarets mirrored left to right, with the whole building reflected again in the long still water channel that runs toward the camera."
+  id="13.6"
+  overlayName="mirror axis"
+  labels={[{ x: 68, y: 20, text: "mirrored halves" }]}
+  caption="Formal symmetry. Toggle the axis: the line runs down the dome finial, the central arch, the fountain jets, and the reflected spire in the pool, and everything to its left is answered by an equal weight on its right. The still water adds a second mirror across the bottom. Weight matches weight on both arms, so the frame sits perfectly calm and stable. That poise is symmetry's gift and its limit, since it holds the eye at the center with nowhere restless to go, the opposite of the livelier asymmetry above."
+  meta="Taj Mahal, Agra, at sunrise"
+  credit="Malpaniashutosh / Wikimedia Commons (CC BY-SA 4.0)"
+  href="https://commons.wikimedia.org/wiki/File%3ATaj_Mahal_at_Sunrise_IMG_6028.jpg"
+>
+  <line x1="50" y1="0" x2="50" y2="100" stroke="var(--accent)" strokeWidth={1.4} vectorEffect="non-scaling-stroke" />
+</AnnotatedPhoto>
 
 You can feel the whole of this with one subject and an empty frame. The widget below drops a single figure onto a thirds grid and lets you place it and turn its gaze. Slide it off the center and the nearest power point lights up as the reading changes. Face it into the open space and the frame settles; face it into the near edge and it goes tense. Nothing about the subject changes. Only where it sits and which way it looks, which is the entire craft.
 

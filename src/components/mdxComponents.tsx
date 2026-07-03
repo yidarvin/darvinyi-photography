@@ -5,6 +5,9 @@ import { Photo } from "./Photo";
 import { Widget } from "./Widget";
 import { ExerciseCard } from "./ExerciseCard";
 import { Callout } from "./Callout";
+import { BeforeAfter } from "./BeforeAfter";
+import { AnnotatedPhoto, ThirdsGrid, PhiGrid, DiagonalGrid } from "./AnnotatedPhoto";
+import { LightroomPanel, LightroomHSL, LightroomCurve } from "./LightroomPanel";
 
 // mdxComponents --- how markdown renders, in one place.
 // Every chapter's prose flows through these via the <MDXProvider> in App.tsx.
@@ -60,4 +63,12 @@ export const mdxComponents: MDXComponents = {
   Widget,
   ExerciseCard,
   Callout,
+  BeforeAfter,
+  AnnotatedPhoto,
+  ThirdsGrid,
+  PhiGrid,
+  DiagonalGrid,
+  LightroomPanel,
+  LightroomHSL,
+  LightroomCurve,
 };

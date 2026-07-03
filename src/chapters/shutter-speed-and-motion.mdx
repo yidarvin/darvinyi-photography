@@ -13,7 +13,7 @@ The marked series is the doubling ladder, fastest to slowest: 1/8000, 1/4000, 1/
 
 Point the lens at something moving and the shutter has one job to beat: the smear that moving thing draws across the sensor while the light is coming in. That smear has a simple size. It is how fast the subject's image travels across the sensor multiplied by how long the shutter stays open. Blur equals image speed times time. The consequence worth carrying is that blur is linear in the shutter time, so a shutter ten times faster gives one tenth the streak.
 
-The subtle half is the image speed, because it is not the subject's real speed. What lands on the sensor is a shrunken copy of the scene, scaled by the lens's magnification, and for anything farther away than the lens is long that magnification is close to the focal length divided by the distance, f over u. So the streak is roughly the focal length, over the distance, times the real speed, times the time. Read the levers off that. A faster subject smears more, in direct proportion. A farther subject smears less, because distance is on the bottom: back away to twice the distance and you halve the blur. And a longer lens smears more, because focal length is on top: a telephoto magnifies the motion by exactly as much as it magnifies the subject. This is why the same shutter speed that freezes a friend across the table turns a cyclist on the road to mush. The cyclist is not just faster, they sweep a far larger angle across your frame each second, and it is that angular rate, speed divided by distance and scaled by the lens, that the shutter has to outrun. A freight train a mile off crosses the frame so slowly it freezes at 1/125; the same train ten feet away would tear across it.
+The subtle half is the image speed, because it is not the subject's real speed. What lands on the sensor is a shrunken copy of the scene, scaled by the lens's magnification, and for anything farther away than the lens is long that magnification is close to the focal length divided by the distance, f over u. So the streak is roughly the focal length, over the distance, times the real speed, times the time. Read the levers off that. A faster subject smears more, in direct proportion. A farther subject smears less, because distance is on the bottom: back away to twice the distance and you halve the blur. And a longer lens smears more, because focal length is on top: a telephoto magnifies the motion by exactly as much as it magnifies the subject. This is why the same shutter speed that freezes a friend across the table turns a cyclist on the road to mush. The cyclist is faster, and closer to the road than the table is far, so they sweep a far larger angle across your frame each second, and it is that angular rate, speed divided by distance and scaled by the lens, that the shutter has to outrun. A freight train a mile off crosses the frame so slowly it freezes at 1/125; the same train ten feet away would tear across it.
 
 Direction is the last term, and it is the one people forget. Only the part of the motion that runs across the frame smears. Motion straight toward the camera or straight away barely moves the image at all, it only changes its size, so it records nearly sharp even at a slow speed. Cambridge in Colour turns this into a working rule: for a subject heading straight at you, you can use a shutter about four times longer than you would for the same subject crossing your view, and about twice as long for one moving at an angle. A runner coming down the lane at you is a far easier freeze than a runner cutting across it.
 
@@ -65,15 +65,27 @@ Everything so far treated blur as the enemy. Turn the dial the other way and the
 
 The most useful slow-shutter trick keeps the subject sharp and streaks the rest. In panning you swing the camera to follow a moving subject through a slow exposure. Think back to the core law: blur is relative motion between the image and the sensor. By matching the camera's swing to the subject's angular rate, you hold the subject on the same patch of sensor for the whole exposure, so it records sharp, while the background, which was still, now races across the frame relative to the moving camera and smears into streaks. The slow shutter is not incidental, it is what gives the background time to blur. A cyclist pans well around 1/30, a runner near the same, a car anywhere from 1/60 for a gentle blur to 1/250 for a faster subject. Keep the autofocus tracking, swing smoothly from the hips, start before the subject arrives and follow through after the shutter closes like a golf swing, and shoot a burst, because the keeper rate is honestly low.
 
-<Photo
+<AnnotatedPhoto
   src="/photos/shutter-speed-and-motion/panning-cyclist.jpg"
   alt="A black-and-white photograph of a cyclist riding along a waterfront, the rider and bicycle sharp while the buildings, water, and cobblestones streak horizontally with motion."
   id="3.4"
+  overlayName="pan direction"
   caption="Panning at 1/30 s. The camera swung to follow the rider, cancelling his motion across the sensor so he stays sharp, while everything the lens swept past, the buildings and the cobbles, streaked into horizontal blur. Panning only works for subjects crossing your view, never for one moving straight at you, because there is no sideways motion to cancel."
   meta="Fujifilm X-E2 - 18mm - f/8 - 1/30s - ISO 250"
   credit="Dragan Brankovic / Wikimedia Commons (CC BY 2.0)"
   href="https://commons.wikimedia.org/wiki/File:No_handed_(panning)_-_Flickr_-_d26b73.jpg"
-/>
+  labels={[
+    { x: 68, y: 40, text: "sharp: camera swung with him" },
+    { x: 24, y: 30, text: "background streaks the pan direction" },
+    { x: 30, y: 95, text: "cobbles smear the same way" },
+  ]}
+>
+  <rect x="55" y="43" width="26" height="46" rx="2" stroke="var(--accent)" strokeWidth={1.5} fill="none" vectorEffect="non-scaling-stroke"/>
+  <line x1="52" y1="24" x2="14" y2="24" stroke="var(--accent)" strokeWidth={1.5} vectorEffect="non-scaling-stroke"/>
+  <polygon points="14,24 18,21.5 18,26.5" fill="var(--accent)"/>
+  <line x1="52" y1="93" x2="14" y2="93" stroke="var(--accent)" strokeWidth={1.5} vectorEffect="non-scaling-stroke"/>
+  <polygon points="14,93 18,90.5 18,95.5" fill="var(--accent)"/>
+</AnnotatedPhoto>
 
 <Callout>
 Both of your cameras hit a ceiling on the fast end. The Q3's mechanical leaf shutter stops at 1/2000, and the Hasselblad's in-lens leaf shutters at 1/4000, so freezing very fast motion with the aperture wide open in bright light means switching to the silent electronic shutter, which runs much faster, or reaching for a neutral density filter. Why the shutter sits in the lens on both bodies, and what that buys you when the flash comes out, are the subjects of [how a shutter uncovers the frame](/how-a-shutter-uncovers-the-frame) and [flash sync and the leaf advantage](/flash-sync-and-the-leaf-advantage) later in this part.

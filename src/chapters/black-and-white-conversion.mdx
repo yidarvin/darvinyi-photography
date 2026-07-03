@@ -21,21 +21,34 @@ This is the glass contrast filter of the film era, rebuilt as sliders. [Seeing i
 
 The other editors phrase the same idea in different words. Photoshop has two tools for it. The older Channel Mixer, with Monochrome checked, builds the grey from percentages of the red, green, and blue channels, defaulting to 40, 40, and 20, and Adobe's own advice is to keep the three totalling about 100 so the picture neither brightens nor crushes its highlights as you rebalance them. The dedicated Black & White adjustment, added in Photoshop CS3 in 2007, is friendlier: six color sliders, Reds, Yellows, Greens, Cyans, Blues, and Magentas, plus an on-image tool you drag right on the sky to darken every blue at once. Capture One does it through the Color Sensitivity sliders in its Black & White tool, negative to darken a color and positive to lighten it. Different panels, one idea. You are choosing, band by band, how color turns into tone.
 
-<Photo
+<AnnotatedPhoto
   src="/photos/black-and-white-conversion/channel-mix-triptych.jpg"
   alt="The same photograph of a red barn and a grey silo under a deep blue sky shown three times: in color, then as two black-and-white conversions in which the red barn and the blue sky trade places from light to dark, while the grey silo stays the same tone in all three."
   id="23.2"
-  caption="One frame, three conversions, and the figure made real. In color the barn is red, the sky deep blue, the silo a plain grey. The red-filter mix drives the sky almost to black and lifts the barn wall bright, the sky-darkening move a real red filter made on film. The blue-filter mix does the reverse, a pale sky and a muddy dark barn. Watch the silo through all three: it is close to neutral, so no mix moves it much, and it holds its middle grey while the colored things swap around it. That is the whole lesson of the mix in a single frame."
+  overlayName="the neutral anchor"
+  caption="One frame, three conversions, and the figure made real. In color the barn is red, the sky deep blue, the silo a plain grey. The red-filter mix drives the sky almost to black and lifts the barn wall bright, the sky-darkening move a real red filter made on film. The blue-filter mix does the reverse, a pale sky and a muddy dark barn. Toggle the overlay and watch the silo through all three: it is close to neutral, so no mix moves it much, and it holds its middle grey while the colored things swap around it. That is the whole lesson of the mix in a single frame."
   meta="One frame, three conversions: color, a red-filter channel mix, and a blue-filter mix"
   credit="Roger Starnes Sr / Unsplash, converted to black and white"
   href="https://unsplash.com/photos/hd5rzz_GGD0"
+  labels={[{ x: 8, y: 15, text: "same grey" }, { x: 41, y: 15, text: "same grey" }, { x: 74, y: 15, text: "same grey" }]}
+>
+  <circle cx="9" cy="24" r="5" stroke="var(--accent)" strokeWidth={1.4} fill="none" vectorEffect="non-scaling-stroke"/>
+  <circle cx="42" cy="24" r="5" stroke="var(--accent)" strokeWidth={1.4} fill="none" vectorEffect="non-scaling-stroke"/>
+  <circle cx="75" cy="24" r="5" stroke="var(--accent)" strokeWidth={1.4} fill="none" vectorEffect="non-scaling-stroke"/>
+</AnnotatedPhoto>
+
+<LightroomHSL
+  channel="Black & White Mix"
+  id="23.3"
+  caption="The mix behind the red-filter panel above, eight bands of brightness and nothing else. Reds, oranges, and yellows are lifted to send the barn wall bright; blue is pulled hard down to sink the sky toward black, the sky-darkening red filter rebuilt as a slider. Green stays near neutral for the field. Flip the sign on red and blue and you have the blue-filter mix, the same tones swapped. The near-neutral silo carries no strong color, so no slider reaches it and it holds its grey."
+  values={[45, 35, 40, 5, -35, -70, -20, 20]}
 />
 
 One caution before you push a slider to its stop. The mix is strong enough to force a separation the scene never had, and a heavy push on a broad, smooth area like a blue sky can pull it so far that the gentle gradient across it breaks into visible steps, the posterization raw editors call banding. That is the cue for the second decision.
 
 ## Grain: the surface the tones sit on
 
-Grain is the surface the tones sit on, and adding it back is a choice with several good reasons. The obvious one is the look. Real film scattered its image across countless tiny clumps of metallic silver, and a picture built from those clumps reads as film in a way a perfectly smooth digital file does not. The practical reasons matter more. A little grain is dither: sprinkled across the banded sky from the last section, it breaks the hard steps back into a smooth-looking gradient, because the eye averages the speckle. It can disguise digital noise, trading the blotchy, colored mess of a pushed high-ISO frame for an even, film-like texture the eye forgives. And a consistent grain laid over a whole series ties the frames into one body of work.
+Grain is the surface the tones sit on, and adding it back is a choice with several good reasons. The obvious one is the look. Real film scattered its image across countless tiny clumps of metallic silver, and a picture built from those clumps reads as film in a way a perfectly smooth digital file does not. The practical reasons matter more still. A little grain is dither: sprinkled across the banded sky from the last section, it breaks the hard steps back into a smooth-looking gradient, because the eye averages the speckle. It can disguise digital noise, trading the blotchy, colored mess of a pushed high-ISO frame for an even, film-like texture the eye forgives. And a consistent grain laid over a whole series ties the frames into one body of work.
 
 Lightroom builds it from three sliders in the Effects panel. Amount sets how much, Size sets how coarse each speck is, and Roughness sets how even or irregular the speckle looks, from a clean, regular pattern to a rough, organic one. Past a Size of about 25 the tool quietly mixes in a little blue so the grain sits better next to noise reduction.
 
@@ -53,16 +66,32 @@ Split toning is the refinement: one color in the shadows and a different color i
   <BlackAndWhiteConversionWidget />
 </Widget>
 
-The widget is the finishing bench, the grain and the split tone together, which are the two moves [seeing in mono](/black-and-white-seeing) set aside for this chapter. The photograph below is the same idea in a real frame. A plain grey conversion on the left, and on the right the shadows cooled and the highlights warmed, with a touch of grain, so the print reads warm where the sun fell and cool where it did not.
+The widget is the finishing bench, the grain and the split tone together, the two moves [seeing in mono](/black-and-white-seeing) set aside for this chapter. The photograph below is the same idea in a real frame: a plain grey conversion on the left, and on the right the shadows cooled and the highlights warmed, with a touch of grain, so the print reads warm where the sun fell and cool where it did not.
 
 <Photo
   src="/photos/black-and-white-conversion/split-tone-pair.jpg"
   alt="A colorful Venetian street scene with a leaning bell tower, shown as two black-and-white versions side by side: one a plain neutral grey, one tinted with cool blue shadows and warm amber highlights."
-  id="23.3"
+  id="23.4"
   caption="The same conversion, straight and then split-toned. On the left is a neutral grey print. On the right the shadows are pushed to a low, cool blue and the highlights to a low, warm amber, the mono version of teal and orange, with a little grain over the top. The tone is kept quiet, so it reads as a toned photograph and not a colored one: warm where the low sun catches the plaster and the tower, cool in the shaded foreground and the sky. That is a decision about mood, made with the same wheels as a color grade."
   meta="One mono frame, straight and then split-toned with a touch of grain"
   credit="Ivo Sousa Martins / Unsplash, converted and split-toned"
   href="https://unsplash.com/photos/colorful-buildings-and-a-leaning-tower-in-burano-A1ViroRFvus"
+/>
+
+<LightroomPanel
+  title="Color Grading"
+  id="23.5"
+  caption="The split tone behind the right-hand print, read off the wheels that replaced the old Split Toning panel. A warm amber hue in the highlights and a cool blue in the shadows, both held to a low saturation so the print reads as toned and not colored, with the balance nudged toward the highlights to keep the sunlit plaster warm. The grain that gives the surface is set below, three quiet sliders in the Effects panel."
+  sliders={[
+    { label: "Highlight Hue", value: 42, min: 0, max: 360, display: "42°" },
+    { label: "Highlight Sat", value: 22, min: 0, max: 100, anchor: "left" },
+    { label: "Shadow Hue", value: 220, min: 0, max: 360, display: "220°" },
+    { label: "Shadow Sat", value: 20, min: 0, max: 100, anchor: "left" },
+    { label: "Balance", value: 15 },
+    { label: "Grain Amount", value: 24, min: 0, max: 100, anchor: "left" },
+    { label: "Grain Size", value: 22, min: 0, max: 100, anchor: "left" },
+    { label: "Grain Roughness", value: 50, min: 0, max: 100, anchor: "left" },
+  ]}
 />
 
 ## Two cameras, and the sensor that throws color away

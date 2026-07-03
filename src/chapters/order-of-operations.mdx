@@ -17,13 +17,29 @@ Two rules fall out of that structure, and between them they cover most of the or
 
 None of this feels dangerous in practice, and it is worth saying why so the rest of the chapter is about judgment and not fear. A modern raw editor is parametric. It never rewrites the negative. It keeps your edits as a list of settings and recomputes the picture from the raw every time, applying them in its own fixed internal order no matter what order you touched the controls. darktable states this outright in its manual: the module order is predefined, and the order in which you switch modules on has no impact on the outcome, a sequence chosen to respect real technical dependencies rather than to match the panel layout. Adobe is quieter about its exact internal sequence, which it has never fully published, but its own guidance tells you that you can make Develop adjustments in any order and only recommends starting at the top of the Basic panel and working down. Move exposure, then white balance, then exposure again, and you land in the same place as someone who worked in textbook order. Your Leica's DNG and your Hasselblad's 3FR go through the same parametric treatment, whether in Lightroom, in Capture One, or in Hasselblad's Phocus before you round-trip a sixteen-bit TIFF onward.
 
-So the order is not there to protect the file. You cannot break a raw by pulling sliders out of sequence. The order is there to protect your time and your judgment. Each step is easier to judge against a settled base, and setting the base last means judging everything above it twice. That is the entire payoff, and it is why order of operations here is a working discipline rather than a rule the software enforces. The convention is not even universal. Capture One stacks its Color tools above Exposure, the reverse of Lightroom's tone-first emphasis, and both are fine, because in both the engine has the last word on the math.
+So the order is not there to protect the file. You cannot break a raw by pulling sliders out of sequence. It is there to protect your time and your judgment. Each step is easier to judge against a settled base, and setting the base last means judging everything above it twice. That is the entire payoff, and it is why order of operations here is a working discipline rather than a rule the software enforces. The convention is not even universal. Capture One stacks its Color tools above Exposure, the reverse of Lightroom's tone-first emphasis, and both are fine, because in both the engine has the last word on the math.
 
 ## Set the base before you build on it
 
 Start with the frame itself. Lens corrections and geometry come first because they physically move the picture. Turning on a lens profile, removing chromatic aberration, then straightening verticals with a perspective or Upright correction warps and rescales the frame, and Adobe's own Julieanne Kost notes that choosing an Upright mode resets any crop and manual perspective you had already dialed in. Correct the frame, commit the crop, and only then do you have a stable rectangle to compose within. Crop first and the geometry that follows can pull in content you cut or push out content you meant to keep. This is also why the lens matters upstream of the edit, and why [lens corrections](/lenses-optics-and-perspective) belong to the file long before you reach for a mask.
 
-With the frame fixed, set the color foundation. [White balance](/color-science-for-photographers) comes early for a plain reason: it defines neutral, and getting it right, as Cambridge in Colour puts it, often makes the single biggest improvement to a photo's color. Every saturation and grading choice after it is judged against that neutral, so a white balance set late means the color work you already did was compensating for a cast instead of refining the picture. Exposure comes next, and before contrast, because exposure places the overall tonal scale and its endpoints, while a contrast curve is an S drawn around a midpoint. Fix the endpoints first or you are drawing [the curve](/tone-and-the-curve) against a baseline that keeps sliding.
+With the frame fixed, set the color foundation. [White balance](/color-science-for-photographers) comes early for a plain reason: it defines neutral, and getting it right, as Cambridge in Colour puts it, often makes the single biggest improvement to a photo's color. Every saturation and grading choice after it is judged against that neutral, so a white balance set late means the color work you already did was compensating for a cast instead of refining the picture. Exposure comes next, before contrast, because exposure places the overall tonal scale and its endpoints, while a contrast curve is an S drawn around a midpoint. Fix the endpoints first or you are drawing [the curve](/tone-and-the-curve) against a baseline that keeps sliding.
+
+<LightroomPanel
+  title="Basic"
+  id="19.2"
+  sliders={[
+    { label: "Temp", value: 5500, min: 2000, max: 12000, display: "5,500 K", anchor: "left" },
+    { label: "Tint", value: 6 },
+    { label: "Exposure", value: 0.3, min: -5, max: 5 },
+    { label: "Contrast", value: 15 },
+    { label: "Highlights", value: -45 },
+    { label: "Shadows", value: 38 },
+    { label: "Whites", value: 10 },
+    { label: "Blacks", value: -6 },
+  ]}
+  caption="The Basic panel is the stack in miniature. Read it top to bottom and it already runs in dependency order: white balance first, because it sets what neutral means, then Exposure to place the tonal scale and its endpoints, then Contrast and the four recovery sliders that shape tone around the base those two just set. Adobe's one piece of order advice is exactly this, start at the top and work down, because every slider below assumes the ones above are decided."
+/>
 
 Then, and only then, go local. A mask refines the global result and is tuned against it, so it assumes the global look is done. Set your global exposure after you have masked and every mask is now aimed at the wrong brightness and has to be retuned. Reach for [local edits](/local-adjustments-and-masking) to fix a global problem and, as one Lightroom teacher puts it, you end up patching global problems with local edits and building complexity that is hard to repeat and harder to troubleshoot. Global before local pays off in retuning you never have to do: settle the whole frame once, and each mask gets tuned a single time.
 
@@ -32,6 +48,18 @@ Then, and only then, go local. A mask refines the global result and is tuned aga
 The finish, noise reduction and sharpening, sits at the bottom of the stack for a reason close to physics. The two are near opposites. Sharpening raises local contrast to make edges crisper, which also makes noise louder. Noise reduction smooths noise, which also softens real detail. Run them the wrong way round and they sabotage each other. Sharpen a [noisy file](/iso-sensor-and-dynamic-range) first and you have amplified the grain into something that reads like detail, so the noise reduction that follows smears the real detail trying to remove it. Denoise first, then sharpen. And because contrast and tonal pushes make noise worse as well, the whole detail pass belongs after tone and color are set, working on data that already reflects the final look. Where exactly noise reduction sits within that finish is debated, some editors denoise a little earlier and some later, but the two invariants hold everywhere: denoise before you sharpen, and leave detail until after tone and color.
 
 Sharpening in particular is not one step but three, in the model Bruce Fraser laid out and most editors still follow. A light capture pass undoes the softening every sensor and lens introduce. An optional creative pass adds bite to chosen areas. An output pass is tuned to the final file. Output sharpening comes dead last because it depends on things that are not settled until the end, the exact pixel dimensions and the medium. As Cambridge in Colour notes, sharpening is size, resolution, and medium dependent, and resampling a picture down to under about half its size strips the sharpening halos back out, so any sharpening you did before the final resize is thrown away. Crop and resize to [the output](/output-and-print), sharpen for that output, then export. Sharpen earlier and you are sharpening a picture that will not exist at that size.
+
+<LightroomPanel
+  title="Detail"
+  id="19.3"
+  sliders={[
+    { label: "Sharpening", value: 40, min: 0, max: 150, anchor: "left" },
+    { label: "Radius", value: 1.0, min: 0.5, max: 3, anchor: "left" },
+    { label: "Noise Reduction", value: 25, min: 0, max: 100, anchor: "left" },
+    { label: "Color NR", value: 25, min: 0, max: 100, anchor: "left" },
+  ]}
+  caption="The Detail panel, the bottom of the stack. These four are the finish, run only after tone and color are set on data that already reflects the final look. Inside the panel the invariant still holds: denoise before you judge sharpening, because sharpening raises the same grain noise reduction is there to smooth. This is the capture pass, a light default undoing sensor and lens softening; the output pass waits for the final resize."
+/>
 
 That is the whole stack. The widget below lets you shuffle it. It opens on a realistic out-of-order edit, the eye-catching moves first and the housekeeping last, and names every dependency that order breaks. Sort the steps until none are broken.
 

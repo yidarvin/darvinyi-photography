@@ -1,7 +1,7 @@
 import { LocalAdjustmentsAndMaskingFigure } from "./_figures/LocalAdjustmentsAndMaskingFigure";
 import { LocalAdjustmentsAndMaskingWidget } from "./_widgets/LocalAdjustmentsAndMaskingWidget";
 
-Every edit so far has moved the whole frame at once. Exposure, the [curve](/tone-and-the-curve), white balance, the [grade](/color-grading): each one takes hold of every pixel together. But a photograph is a hierarchy of attention, and the eye is not democratic about it. It goes first to the brightest, highest-contrast part of the frame and works down from there. Local adjustments are how you edit that hierarchy directly, and they all reduce to one idea. A local edit is two separate choices multiplied together: a mask, which is the *where*, and an adjustment, which is the *what*. The mask decides which pixels the sliders are allowed to touch. The sliders decide what happens inside it. Brighten the subject, darken everything around it, and the eye follows to the subject. That move is dodging and burning, a darkroom craft about a century old, and the only thing that has really changed is that the computer now does the tracing, so your attention goes to the decision instead of the cutting.
+Every edit so far has moved the whole frame at once. Exposure, the [curve](/tone-and-the-curve), white balance, the [grade](/color-grading): each one takes hold of every pixel together. But a photograph is a hierarchy of attention, and the eye is not democratic about it. It goes first to the brightest, highest-contrast part of the frame and works down from there. Local adjustments are how you edit that hierarchy directly, and they all reduce to one idea. A local edit is two separate choices multiplied together: a mask, which is the *where*, and an adjustment, which is the *what*. The mask decides which pixels the sliders are allowed to touch. The sliders decide what happens inside it. Brighten the subject, darken everything around it, and the eye follows to the subject. That move is dodging and burning, a darkroom craft about a century old, and the only thing that has changed is that the computer now does the tracing, so your attention goes to the decision instead of the cutting.
 
 ## A local edit is a mask times an adjustment
 
@@ -23,14 +23,45 @@ The third kind selects by content rather than by place. A **range mask** builds 
 
 However you draw them, masks combine with three set operations. **Add** unions two selections, **Subtract** removes one from another, and **Intersect** keeps only their overlap. A single mask can hold several components at once, so a real selection is often a small sentence: select the subject, subtract a brush over his shirt, and you have a mask of just his skin and face; select the sky, intersect it with a luminance range, and you have only the bright part of the sky. The AI did not change what a mask is. It changed how long it takes to make a hard one, which frees you to think about the edit instead of the outline.
 
-<Photo
+<AnnotatedPhoto
   src="/photos/local-adjustments-and-masking/burned-sky-landscape.jpg"
   alt="A single shaft of sunlight lands on one golden hillside while heavy storm clouds and the flanking hills fall dark."
   id="22.2"
-  caption="Light did here what a mask does in software. A break in the cloud drops one patch of sun on a single slope, and the rest of the hills and the whole sky stay dark, so the eye goes straight to the lit grass and nowhere else. To build this from a flat raw you would burn the sky with a luminance range or a linear gradient, then dodge the one hillside with a brush or a radial gradient. The scene is a finished dodge and burn made of weather: one bright region inside a darkened surround, and attention has only one place to go."
+  overlayName="sky mask"
+  caption="Light did here what a mask does in software. A break in the cloud drops one patch of sun on a single slope, and the rest of the hills and the whole sky stay dark, so the eye goes straight to the lit grass and nowhere else. The red overlay marks the where for the sky burn: a mask that reaches everything above the ridgeline and stops at it. To build this from a flat raw you would burn that region with a luminance range or a linear gradient, then dodge the one hillside with a brush or a radial gradient. The scene is a finished dodge and burn made of weather, one bright region inside a darkened surround, and attention has only one place to go."
   meta="A shaft of sun on one hillside under a burned-down storm sky"
   credit="Andriy Nestruiev / Pexels"
   href="https://www.pexels.com/photo/a-dark-stormy-sky-over-a-hill-with-grass-and-trees-16300540/"
+  labels={[{ x: 30, y: 30, text: "sky mask (the where)" }]}
+>
+  <path d="M 0 0 L 100 0 L 100 62 L 74 62 L 62 64 L 48 68 L 34 74 L 22 76 L 0 76 Z" fill="var(--danger)" fillOpacity={0.32} stroke="var(--danger)" strokeWidth={1.5} vectorEffect="non-scaling-stroke"/>
+</AnnotatedPhoto>
+
+<BeforeAfter
+  before="/photos/local-adjustments-and-masking/burned-sky-landscape.jpg"
+  alt="The same storm-sky landscape with a graded burn pulling the bright sky down."
+  id="22.3"
+  beforeLabel="as shot"
+  afterLabel="sky burned"
+  svgFilter={<feComponentTransfer><feFuncR type="table" tableValues="0 0.06 0.12 0.19 0.27 0.35 0.44 0.53 0.62"/><feFuncG type="table" tableValues="0 0.06 0.12 0.19 0.27 0.35 0.44 0.53 0.62"/><feFuncB type="table" tableValues="0 0.06 0.12 0.19 0.27 0.35 0.44 0.53 0.62"/></feComponentTransfer>}
+  caption="The burn as a live edit. The after side pulls the brightest tones down hardest, the mid greys less, and leaves the dark hills nearly untouched, which is what a linear gradient keyed to the sky does when you drag it down. Because the burn rides on a mask that stops at the ridgeline, the lit hillside is left out of it entirely, so it holds while the sky sinks and the tonal gap between subject and surround widens. This is a burn stated as a curve rather than a stroke: darken the bright region, hold the dark one, and let attention fall where the contrast is highest."
+  credit="Andriy Nestruiev / Pexels"
+  href="https://www.pexels.com/photo/a-dark-stormy-sky-over-a-hill-with-grass-and-trees-16300540/"
+/>
+
+<LightroomPanel
+  title="Linear Gradient · Sky"
+  id="22.4"
+  caption="The exact develop values behind the sky burn. Exposure and Highlights carry the darkening, Whites pulls the brightest cloud edges in so nothing clips back up, and a touch of Dehaze and Contrast puts weight back into the storm. These sliders live on the mask, so they reach only the region drawn in red above and nothing below the ridgeline."
+  sliders={[
+    { label: "Exposure", value: -0.85, min: -5, max: 5 },
+    { label: "Contrast", value: 14 },
+    { label: "Highlights", value: -58 },
+    { label: "Shadows", value: 8 },
+    { label: "Whites", value: -32 },
+    { label: "Blacks", value: -6 },
+    { label: "Dehaze", value: 16 },
+  ]}
 />
 
 ## The what, and why brightening aims the eye
@@ -45,15 +76,19 @@ For a photographer this collapses into a rule of thumb worth trusting: the eye g
 
 The lit face in the next frame is this rule with no software at all. A single source rakes across the man's forehead and cheek and falls off fast, so his face is the one bright, high-contrast region in an otherwise black frame. Your eye had no choice. When you dodge a subject and burn a background in the edit, you are reaching for this same tonal separation after the fact, doing with a mask what a hard light did here in the room. It is the reverse direction of [reading light](/reading-light): instead of finding the light that shapes the subject, you shape the light that is already in the file.
 
-<Photo
+<AnnotatedPhoto
   src="/photos/local-adjustments-and-masking/low-key-portrait.jpg"
   alt="A young man lit by a single hard source that catches his forehead and one cheek, the rest of him and the backdrop dropping into near-black."
-  id="22.3"
-  caption="A natural dodge and burn. One hard source lights the forehead, the nose, and a cheek, and everything else, the far side of the face, the sweater, the backdrop, falls to near-black. Because the lit skin is the only bright, high-contrast area in the frame, attention has nowhere else to settle. This is the tonal separation a local edit rebuilds on purpose: lift the subject, sink the surround, and the eye is led rather than left to wander."
+  id="22.5"
+  overlayName="dodged subject"
+  caption="A natural dodge and burn. One hard source lights the forehead, the nose, and a cheek, and everything else, the far side of the face, the sweater, the backdrop, falls to near-black. The red region marks the where a radial gradient or a brush would cover to dodge this lit skin, the one part of the frame you would lift while the surround stays where it fell. Because that skin is the only bright, high-contrast area, attention has nowhere else to settle. This is the tonal separation a local edit rebuilds on purpose: lift the subject, sink the surround, and the eye is led rather than left to wander."
   meta="Low-key portrait, one hard source, the surround left in shadow"
   credit="Luca Vaccaro / Pexels"
   href="https://www.pexels.com/photo/dramatic-low-key-portrait-of-a-young-man-34659019/"
-/>
+  labels={[{ x: 40, y: 12, text: "dodge (the where)" }]}
+>
+  <path d="M 30 22 Q 40 18 50 24 Q 54 32 50 42 Q 42 47 34 43 Q 27 34 30 22 Z" fill="var(--danger)" fillOpacity={0.3} stroke="var(--danger)" strokeWidth={1.5} strokeDasharray="3 3" vectorEffect="non-scaling-stroke"/>
+</AnnotatedPhoto>
 
 ## Dodge and burn is this move, a century old
 

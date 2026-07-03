@@ -1,7 +1,7 @@
 import { LensesOpticsAndPerspectiveFigure } from "./_figures/LensesOpticsAndPerspectiveFigure";
 import { LensesOpticsAndPerspectiveWidget } from "./_widgets/LensesOpticsAndPerspectiveWidget";
 
-A lens gets credit for things it does not do. People say a wide lens stretches a face and a long lens squeezes a mountain, as if the glass reached into the scene and rearranged it. It did not. A lens does two jobs. It chooses how much of the world falls on the sensor, its angle of view, and it renders that view with a sharpness that is poor wide open, best a few stops down, and poor again at the bottom. Everything else laid at the lens's feet, above all perspective, the way near and far sizes relate, comes from where you stand. This chapter pulls apart the three things a "lens look" quietly bundles: your distance to the subject, the slice of the scene the focal length keeps, and the aperture where the glass renders best. Separate them and each turns into a control you can use on purpose.
+A lens gets credit for things it does not do. People say a wide lens stretches a face and a long lens squeezes a mountain, as if the glass reached into the scene and rearranged it. It did not. A lens does two jobs. It chooses how much of the world falls on the sensor, its angle of view, and it renders that view with a sharpness that is poor wide open, best a few stops down, and poor again at the bottom. Everything else laid at the lens's feet, above all perspective, the way near and far sizes relate, comes from where you stand. This chapter pulls apart the three things a "lens look" quietly bundles: your distance to the subject, the slice of the scene the focal length keeps, and the aperture where the glass renders best. Separate them and each becomes a control you can use on purpose.
 
 ## The focal length picks a slice
 
@@ -13,17 +13,29 @@ Because the angle depends on the sensor as much as the lens, the same lens frame
 
 Here is the part the lens gets wrong credit for. Perspective, how large a near thing looks against a far thing, is set by one quantity, and it is not focal length. It is your distance to the subject. Stand close and the near object is far nearer than the background, so it fills a much larger angle and looms; the ratio of the far distance to the near distance is large, and perspective runs steep. Step back and that ratio falls toward one. From far enough away the subject and the background are almost the same distance from you, their sizes settle toward their true proportions, and the scene flattens. The references are blunt about it. Wikipedia's entry on perspective distortion states that linear perspective changes are caused by distance, not by the lens; Cambridge in Colour puts it that perspective only changes with your location relative to the subject.
 
-So the looming nose of a wide-angle portrait and the stacked ridgelines of a telephoto landscape are effects of distance, not of glass. They travel with focal length only because you reach for a wide lens when you are working close and a long lens when you are shooting far. Choosing the lens chooses the distance, the distance sets the perspective, and the lens takes the bow. The proof is a crop. Stand in one place, shoot the scene with a wide lens and then a long one without moving your feet, and crop the wide frame down to the long lens's field of view. The two match. Nothing about the near-to-far proportions differs, because you never moved. Only the pixel count does.
+So the looming nose of a wide-angle portrait and the stacked ridgelines of a telephoto landscape are effects of distance, not of glass. They travel with focal length only because you reach for a wide lens when you work close and a long lens when you shoot far. Choosing the lens chooses the distance, the distance sets the perspective, and the lens takes the bow. The proof is a crop. Stand in one place, shoot the scene with a wide lens and then a long one without moving your feet, and crop the wide frame down to the long lens's field of view. The two match. Nothing about the near-to-far proportions differs, because you never moved. Only the pixel count does.
 
-<Photo
+<AnnotatedPhoto
   src="/photos/lenses-optics-and-perspective/wide-angle-expansion-dog.jpg"
   alt="A dog photographed from a few centimeters away with an ultra-wide phone lens, its nose ballooning toward the camera while its body and the room behind fall away small."
   id="10.1"
-  caption="The wide-and-close end. The lens sat centimeters from the nose, so the nose was a fraction of the distance to the ears and a tiny fraction of the distance to the wall. That lopsided ratio is what balloons the nose and throws the background far off. A wide lens did not distort the dog; standing this close did, and the wide lens was only what let the whole animal still fit the frame."
+  overlayName="distance ladder"
+  caption="The wide-and-close end. The lens sat centimeters from the nose, so the nose was a fraction of the distance to the eyes and a tiny fraction of the distance to the wall. That lopsided ratio is what balloons the nose and throws the background far off. A wide lens did not distort the dog; standing this close did, and the wide lens only let the whole animal still fit the frame."
   meta="Phone ultra-wide (0.5x), lens very close to the subject"
   credit="Jsw618 / Wikimedia Commons (CC0)"
   href="https://commons.wikimedia.org/wiki/File:Dog_pictured_from_very_close_with_a_0.5x_lens.jpg"
-/>
+  labels={[
+    { x: 50, y: 74, text: "nose: nearest, so it looms" },
+    { x: 50, y: 32, text: "eyes: a few times farther" },
+    { x: 50, y: 8, text: "blinds: many times farther, so tiny" },
+  ]}
+>
+  <line x1="50" y1="97" x2="50" y2="6" stroke="var(--accent)" strokeWidth={1.4} strokeDasharray="3 3" vectorEffect="non-scaling-stroke" />
+  <line x1="46" y1="90" x2="54" y2="90" stroke="var(--accent)" strokeWidth={1.4} vectorEffect="non-scaling-stroke" />
+  <line x1="46" y1="42" x2="54" y2="42" stroke="var(--accent)" strokeWidth={1.4} vectorEffect="non-scaling-stroke" />
+  <line x1="46" y1="18" x2="54" y2="18" stroke="var(--accent)" strokeWidth={1.4} vectorEffect="non-scaling-stroke" />
+  <polygon points="50,6 48,11 52,11" fill="var(--accent)" />
+</AnnotatedPhoto>
 
 <Photo
   src="/photos/lenses-optics-and-perspective/telephoto-compression-palouse-hills.jpg"
@@ -37,13 +49,13 @@ So the looming nose of a wide-angle portrait and the stacked ridgelines of a tel
 
 ## Cropping picks the slice later
 
-If focal length only chooses a slice, you can choose that slice after the shutter, by cropping. The Q3 builds this in. Its 35, 50, 75, and 90mm framelines are not extra lenses; they are crops of the one 28mm frame. Select 90mm and the camera keeps the central 27 degrees and discards the rest, and the file falls from 60 megapixels to about 6. The perspective does not shift by a hair, because you did not move, and the depth of field stays that of the wide 28mm lens. You are spending pixels for reach, and the trade is honest as long as you have pixels to spend: the full 60-megapixel raw is written every time, uncropped, so nothing is thrown away. The 100-megapixel X2D leaves even more room to crop into. Cropping changes the framing. It never changes the perspective, which is why a crop can stand in for a longer lens but never for a step backward.
+If focal length only chooses a slice, you can choose that slice after the shutter, by cropping. The Q3 builds this in. Its 35, 50, 75, and 90mm framelines are not extra lenses; they are crops of the one 28mm frame. Select 90mm and the camera keeps the central 27 degrees and discards the rest, and the file falls from 60 megapixels to about 6. The perspective does not shift by a hair, because you did not move, and the depth of field stays that of the wide 28mm lens. You are spending pixels for reach, and the trade is honest as long as you have pixels to spend: the full 60-megapixel raw is written every time, uncropped, so nothing is lost. The 100-megapixel X2D leaves even more room to crop into. Cropping changes the framing. It never changes the perspective, which is why a crop can stand in for a longer lens but never for a step backward.
 
 ## Soft wide open, sharp in the middle
 
 The lens's second job is to render the slice, and no lens renders it perfectly. A flawless lens would bend every ray to a single point. Real glass cannot. Wide open, the rays through the edge of the big opening focus a little short of the rays through the center, and the point smears. These are the aberrations, spherical aberration, coma, and astigmatism, and they are worst at the margins of the aperture. So a lens is softest wide open, right where you opened it for the light or the shallow depth. Close it a stop or two and the diaphragm masks those unruly edge rays, leaving the well-behaved center, and sharpness climbs quickly.
 
-Stopping down cannot pay forever, because a second flaw waits at the small end. Squeeze the opening small enough and light bends around its rim, spreading every point into a tiny disc, the Airy disc, whose width grows straight with the f-number. At f/8 a point of green light spreads to about eleven thousandths of a millimeter, and by f/16 it has doubled. Once that disc outgrows the detail the sensor can resolve, the whole frame goes soft, evenly, everywhere. The two flaws pull in opposite directions, and sharpness peaks where they cross. That peak is the sweet spot, usually two to three stops down from wide open, around f/5.6 to f/8 on full frame.
+Stopping down cannot pay forever, because a second flaw waits at the small end. Squeeze the opening small enough and light bends around its rim, spreading every point into a tiny disc, the Airy disc, whose width grows straight with the f-number. At f/8 a point of green light spreads to about eleven thousandths of a millimeter, and by f/16 it has doubled. Once that disc outgrows the detail the sensor can resolve, the whole frame goes soft, evenly. The two flaws pull in opposite directions, and sharpness peaks where they cross. That peak is the sweet spot, usually two to three stops down from wide open, around f/5.6 to f/8 on full frame.
 
 <Figure id="10.3" caption="Two flaws pulling opposite ways. Wide open, aberrations at the edge of the big opening keep the frame soft, and stopping down cuts them, so the aberration ceiling (the upper dashed line) rises to the right. Stop down far enough and diffraction spreads every point into a growing Airy disc, so the diffraction ceiling (the lower dashed line) falls to the right. Real sharpness is capped by whichever flaw is worse, so it follows the lower of the two and peaks where they cross: the sweet spot, about two to three stops down. On the 60- and 100-megapixel sensors in this book, the fine pixels pull the diffraction wall inward, so softening from stopping down shows by roughly f/8.">
   <LensesOpticsAndPerspectiveFigure />

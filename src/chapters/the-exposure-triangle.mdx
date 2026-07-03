@@ -35,15 +35,25 @@ If equivalent exposures were interchangeable you would pick any one and move on.
 - **Shutter buys motion.** A fast shutter freezes a hand or a bird in the air. A slow one lets anything that moves smear into a streak, which can be a mistake or the entire point.
 - **ISO buys cleanliness.** A sensor's base ISO gives its cleanest file and its widest tonal range. Raising the ISO drags the picture out of the dark, and pays for it in noise. The Q3's base is ISO 100; the medium-format X2D II sits a stop lower at ISO 50.
 
-<Photo
+<AnnotatedPhoto
   src="/photos/the-exposure-triangle/light-trails.jpg"
   alt="A freeway at dusk photographed as a long exposure, with the headlights and taillights of moving cars drawn into continuous red and white streaks while the road and overpass stay sharp."
   id="1.2"
-  caption="The shutter's side effect, made visible. A two-second exposure smears the moving cars into light trails, and to keep two seconds of dusk from blowing out, the aperture is closed all the way to f/13. That pairing, slow shutter answered by a small aperture, is a triangle decision you can read straight off the frame."
+  overlayName="motion and vanishing point"
+  caption="The shutter's side effect, made visible. A two-second exposure smears the moving cars into light trails, and to keep two seconds of dusk from blowing out, the aperture is closed all the way to f/13. That pairing, slow shutter answered by a small aperture, is a triangle decision you can read straight off the frame. Toggle the overlay: every streak runs along the road toward the vanishing point, so the length of each trail is the shutter time drawn in light."
   meta="Canon EOS 5D Mark II - 24mm - f/13 - 2s - ISO 400"
   credit="Travis Isaacs / Wikimedia Commons (CC BY 2.0)"
   href="https://commons.wikimedia.org/wiki/File:Commute_-_Flickr_-_Travis_Isaacs.jpg"
-/>
+  labels={[{ x: 50, y: 57, text: "vanishing point" }, { x: 78, y: 22, text: "2s of travel" }]}
+>
+  <circle cx="48" cy="63" r="2" fill="none" stroke="var(--accent)" strokeWidth={1.2} vectorEffect="non-scaling-stroke"/>
+  <line x1="48" y1="63" x2="80" y2="24" stroke="var(--accent)" strokeWidth={1.4} vectorEffect="non-scaling-stroke"/>
+  <polygon points="80,24 76,26 79,29" fill="var(--accent)"/>
+  <line x1="48" y1="63" x2="4" y2="38" stroke="var(--accent)" strokeWidth={1.4} vectorEffect="non-scaling-stroke"/>
+  <polygon points="4,38 9,38 8,42" fill="var(--accent)"/>
+  <line x1="48" y1="63" x2="30" y2="99" stroke="var(--accent)" strokeWidth={1.4} strokeDasharray="3 3" vectorEffect="non-scaling-stroke"/>
+  <line x1="48" y1="63" x2="66" y2="99" stroke="var(--accent)" strokeWidth={1.4} strokeDasharray="3 3" vectorEffect="non-scaling-stroke"/>
+</AnnotatedPhoto>
 
 This is why experienced photographers rarely reach for correct exposure first. They decide which side effect the picture needs, set that dial for it, and solve the rest of the triangle around it. A portrait wants a wide aperture, so aperture leads. Moving water wants a slow shutter, so shutter leads. A dim room with a moving subject forces the ISO up, and you take the noise because the alternative is no picture at all.
 

@@ -41,13 +41,36 @@ The wall is real and it is hard. When all three channels saturate, the tone is s
 
 The histogram is where you read all of this, with one caution. A pile of pixels against a wall is clipping, tones sent to pure black or pure white with their detail lost. But a wall that is touched is not always a wall that is wrong. Specular highlights, a sun in the frame, the glint on water and metal, are meant to be pure white, and true black shadow is meant to be black. And because the on-screen histogram is display-referred, darktable keeps a separate raw-overexposed warning precisely because a highlight flagged as clipped on screen may still be sitting recoverable in the raw. Trust the raw over the preview, and reach for the ends deliberately.
 
-<Photo
-  src="/photos/tone-and-the-curve/window-interior.jpg"
+<BeforeAfter
+  before="/photos/tone-and-the-curve/window-interior.jpg"
   alt="A dim room with a person silhouetted against a tall, bright window; the interior falls to near-black while the daylight and foliage outside stay bright."
   id="20.2"
-  caption="A frame that lives at both ends at once. The window and the daylight behind it sit hard against the top of the range, the figure and most of the room against the bottom, so the histogram touches both walls. The detail you can still pull back, the leaves through the glass and the shape of the room, lives just inside each wall. What has gone fully white in the brightest panes, or fully black in the darkest corner, is already gone."
+  beforeLabel="as shot"
+  afterLabel="recovered"
+  svgFilter={
+    <feComponentTransfer>
+      <feFuncR type="table" tableValues="0.04 0.22 0.37 0.5 0.61 0.7 0.78 0.85 0.9 0.94" />
+      <feFuncG type="table" tableValues="0.04 0.22 0.37 0.5 0.61 0.7 0.78 0.85 0.9 0.94" />
+      <feFuncB type="table" tableValues="0.04 0.22 0.37 0.5 0.61 0.7 0.78 0.85 0.9 0.94" />
+    </feComponentTransfer>
+  }
+  caption="A frame that lives at both ends at once, and the recovery a raw file allows. Drag the divider. The as-shot side keeps the room in deep shadow and the window bright; the recovered side lifts the toe to open the room and rolls the shoulder off to hold the foliage through the glass. The leaves and the shape of the room were still in the file. What went fully white in the brightest panes, or fully black in the darkest corner, does not come back."
   credit="Alexander Mass / Unsplash"
   href="https://unsplash.com/photos/a-woman-standing-in-front-of-a-window-in-a-dark-room-EW1OZS-nhJI"
+/>
+
+<LightroomPanel
+  title="Basic"
+  id="20.3"
+  sliders={[
+    { label: "Exposure", value: 0.15, min: -5, max: 5 },
+    { label: "Contrast", value: -20 },
+    { label: "Highlights", value: -58 },
+    { label: "Shadows", value: 74 },
+    { label: "Whites", value: -18 },
+    { label: "Blacks", value: 22 },
+  ]}
+  caption="The same recovery written as Basic-panel sliders. Exposure barely moves; the work is at the ends. Shadows and Blacks go up to open the room, Highlights and Whites come down to hold the window, and Contrast eases because opening both ends flattens the middle. Every one of these is a bend in the one curve above."
 />
 
 ## Where the edit happens, and what your two cameras bring

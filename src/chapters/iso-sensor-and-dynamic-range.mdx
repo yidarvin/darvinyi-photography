@@ -9,7 +9,7 @@ Start with what ISO does and does not do. When you raise it, the camera amplifie
 
 Base ISO is where that push is gentlest. It is the sensor's native setting, the one where a photosite fills all the way to the top before the output reads white, and it gives the cleanest file and the widest range. On the Leica Q3 base is ISO 100. The medium-format Hasselblad X2D II sits a stop lower at ISO 50. Every setting above base is the same capture amplified harder.
 
-This makes the ISO dial really a question about the other two. A brighter shadow can come from turning up the gain, or from giving the sensor more light in the first place, by opening the aperture, slowing the shutter, or adding a lamp. The two roads reach the same brightness and part ways on quality, and telling them apart is the rest of this chapter.
+This makes the ISO dial really a question about the other two. A brighter shadow can come from turning up the gain, or from giving the sensor more light, by opening the aperture, slowing the shutter, or adding a lamp. The two roads reach the same brightness and part ways on quality, and telling them apart is the rest of this chapter.
 
 ## Where the noise comes from
 
@@ -19,15 +19,23 @@ The second source is read noise, the small electronic hiss the sensor and its ci
 
 Put the two together and the lesson is blunt: a clean file is bought with light, not with ISO. More photons mean a higher signal-to-noise ratio, and nothing else does. This is also the deep reason a bigger sensor looks cleaner. At the same aperture and shutter it gathers light over a larger area, so it collects more total photons for the same picture. The Hasselblad's larger 44 by 33mm sensor is worth about two-thirds of a stop of extra light at a matched exposure, by the same crop-factor accounting from [aperture and depth of field](/aperture-and-depth-of-field) read for light instead of for depth, and its base ISO 50 sits a stop below the Q3's 100, leaving still more room to collect light before anything gets amplified. That is medium format's quiet advantage.
 
-<Photo
+<AnnotatedPhoto
   src="/photos/iso-sensor-and-dynamic-range/high-iso-grain-turtle.jpg"
   alt="A close view of a mounted turtle on a pale museum wall, the smooth wall and the shadowed shell both dusted with fine speckled grain."
   id="4.1"
+  overlayName="where the grain lives"
   caption="High ISO, seen up close. This museum frame was shot at ISO 6400 in dim indoor light, and at this magnification the price is visible: the smooth wall is dusted with luminance and color speckle, and the shell's shadows crawl with it. The grain lives where few photons landed, which is why it reads worst in the flat wall and the dark shell rather than in anything bright. Noise is a pixel-level thing, so it fades when an image is shrunk for the web and returns the moment you look at the file up close."
   meta="Fujifilm X-T1 - 27.7mm - f/11 - 1/20s - ISO 6400"
   credit="Benoit Brummer (Trougnouf) / Wikimedia Commons (CC BY 4.0)"
   href="https://commons.wikimedia.org/wiki/File:NIND_MuseeL-turtle_ISO6400.jpg"
-/>
+  labels={[
+    { x: 20, y: 26, text: "flat wall: speckle" },
+    { x: 74, y: 76, text: "dark shell: grain crawls" },
+  ]}
+>
+  <rect x="4" y="34" width="30" height="34" rx="2" fill="none" stroke="var(--accent)" strokeWidth={1.5} strokeDasharray="3 3" vectorEffect="non-scaling-stroke" />
+  <rect x="60" y="60" width="34" height="34" rx="2" fill="none" stroke="var(--accent)" strokeWidth={1.5} strokeDasharray="3 3" vectorEffect="non-scaling-stroke" />
+</AnnotatedPhoto>
 
 ## Two ways to a brighter shadow
 
@@ -47,15 +55,23 @@ Every sensor works between two hard limits. At the top, a photosite holds only s
 
 Two honest numbers describe that range, and they disagree, so it is worth knowing which one you are being sold. The engineering dynamic range counts all the way down to where the signal merely equals the noise. It is the bigger number, and it is the one on the box: Leica quotes up to fourteen stops for the Q3, and Hasselblad quotes 15.3 stops for the X2D II. The photographic dynamic range counts only down to a shadow clean enough to actually use, a far stricter floor, and normalizes for print size the way Bill Claff's measurements do. It is the smaller and more useful number. By that measure Jim Kasson and Claff both put the X2D II near 12.5 stops at base ISO, not 15. Neither figure is a lie. They stop counting at different places, and the gap between them is the band of shadow that is technically recorded but too noisy to keep.
 
-<Photo
+<AnnotatedPhoto
   src="/photos/iso-sensor-and-dynamic-range/base-iso-high-dr-sunrise.jpg"
   alt="A river at sunrise, with pink-lit clouds and a bright sky above and shadowed stilt houses, palms, and foreground foliage along the banks, all holding detail."
   id="4.3"
+  overlayName="highlight held, shadow held"
   caption="The whole range in one frame, at base ISO. Shot at ISO 100, this sunrise holds the bright pink cloud and the pale sky without blowing them to white, and at the same time keeps the shadowed stilt houses, palms, and the foliage along the near bank out of the black. That reach from lit sky to dark bank is dynamic range doing its job, and it is widest exactly here, at the bottom of the ISO dial where nothing is amplified yet."
   meta="Canon EOS 5D Mark IV - 24mm - f/9 - 0.4s - ISO 100"
   credit="Basile Morin / Wikimedia Commons (CC BY-SA 4.0)"
   href="https://commons.wikimedia.org/wiki/File:Dwellings_and_pirogues_on_the_Mekong_bank_of_Don_Det_Laos_at_sunrise_with_pink_clouds.jpg"
-/>
+  labels={[
+    { x: 74, y: 12, text: "highlight held: pink cloud, no clip" },
+    { x: 29, y: 68, text: "shadow held: stilt houses, out of the black" },
+  ]}
+>
+  <path d="M 58 8 Q 76 4 94 14 Q 90 30 74 30 Q 60 26 58 8 Z" fill="none" stroke="var(--accent)" strokeWidth={1.4} strokeDasharray="3 3" vectorEffect="non-scaling-stroke" />
+  <rect x="16" y="54" width="26" height="12" rx="1.5" fill="none" stroke="var(--accent)" strokeWidth={1.4} strokeDasharray="3 3" vectorEffect="non-scaling-stroke" />
+</AnnotatedPhoto>
 
 ## Why base ISO holds the most
 

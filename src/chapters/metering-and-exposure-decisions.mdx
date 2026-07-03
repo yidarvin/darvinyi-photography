@@ -9,7 +9,7 @@ Every meter built into a camera is a reflected-light meter. It reads the light c
 
 Middle gray is the tone halfway between black and white, close to 18 percent reflectance. It is the value printed on a Kodak gray card and the one Ansel Adams called Zone V, the anchor of his zone system. It sits at the middle not because it reflects half the light, which would be 50 percent, but because our eyes respond to light along a curve, and about 18 percent is where a gray looks evenly balanced between the two ends. The meter's whole job is to expose so that whatever it reads lands on that middle tone.
 
-There is a refinement worth knowing, because it explains a lifelong source of confusion. Real meters are not calibrated to a literal 18 percent. The exposure standard sets a calibration constant, and the value most cameras use, shared by Canon, Nikon, and the Sekonic handheld meters, works out to a mid-tone nearer 12 to 13 percent reflectance, about half a stop darker than the 18 percent card everyone is taught. Kodak quietly accounted for the gap on its own gray card, whose instructions tell you to open up half a stop after metering off it. None of this changes the working truth. The meter aims every scene at one fixed middle tone, and knowing which tone is less important than knowing there is only one.
+There is a refinement worth knowing, because it explains a lifelong source of confusion. Real meters are not calibrated to a literal 18 percent. The exposure standard sets a calibration constant, and the value most cameras use, shared by Canon, Nikon, and the Sekonic handheld meters, works out to a mid-tone nearer 12 to 13 percent reflectance, about half a stop darker than the 18 percent card everyone is taught. Kodak quietly accounted for the gap on its own gray card, whose instructions tell you to open up half a stop after metering off it. None of this changes the working truth. The meter aims every scene at one fixed middle tone, and knowing which tone matters less than knowing there is only one.
 
 The alternative exists, and naming it sharpens what reflected metering is. A handheld incident meter is held at the subject with a white dome over its cell, pointed back toward the camera, and it measures the light falling on the scene rather than the light coming off it. Because it never sees the subject's surface, the subject's own tone cannot fool it: a face reads the same whether it stands against snow or against a black wall. That tone independence is why studio and portrait photographers reach for one. Your cameras, like all cameras, meter only the reflected way, so the fooling is built in and the fix is yours to supply.
 
@@ -47,7 +47,7 @@ The widget puts the dial in your hand. Pick a scene the meter gets wrong and it 
 
 ## The histogram is the honest witness
 
-The meter's number is a prediction made from an assumption. The histogram is a measurement of what the sensor actually recorded, which makes it the one readout you can trust over the meter. It is a simple graph: tones run from pure black on the left to pure white on the right, and the height at each point is how many pixels landed on that tone. There is no ideal shape to chase. A histogram should look like the scene, bunched left for a dark subject, bunched right for a bright one, and the only thing it is really warning you about lives at the two edges.
+The meter's number is a prediction made from an assumption. The histogram is a measurement of what the sensor actually recorded, which makes it the one readout you can trust over the meter. It is a simple graph: tones run from pure black on the left to pure white on the right, and the height at each point is how many pixels landed on that tone. There is no ideal shape to chase. A histogram should look like the scene, bunched left for a dark subject, bunched right for a bright one, and the only thing it really warns you about lives at the two edges.
 
 When tones pile up hard against an edge, they are clipping. Against the right edge, highlights have blown to featureless white, and in a raw file those are gone for good, because a photosite that filled to the top recorded no detail above it to recover. Against the left edge, shadows have crushed to black. Shadows hold a little more latitude than highlights, so a raw file can lift them some, but the lift comes out of the noise floor you met in [ISO, the sensor, and dynamic range](/iso-sensor-and-dynamic-range), and it costs grain. Between the edges you have freedom. At the edges you have loss, and the whole point of watching the histogram is to keep the tones you care about away from the wrong one.
 
@@ -55,15 +55,27 @@ Most cameras also flash the blown areas on the review image, the warning photogr
 
 You do not have to wait for the review, because a mirrorless finder shows the histogram live. The Q3 offers a live histogram, a zebra overexposure warning, and a preview that reflects the actual brightness among its capture assistants; the X2D II shows a live histogram in its Live View. So the real working loop is short. Let multi-field metering propose, glance at the live histogram, and turn the compensation dial until the tones sit where you want them, all before the frame is taken.
 
-<Photo
+<AnnotatedPhoto
   src="/photos/metering-and-exposure-decisions/snow-held-bright.jpg"
   alt="A sunlit winter landscape at Kasprowy Wierch in the Tatra Mountains: a broad field of clean white snow and snow-covered ridges under a pale sky, the snow rendered bright rather than gray."
   id="6.2"
-  caption="Snow, kept where it belongs. A frame this full of bright snow is exactly what fools a reflected meter, which left to its assumption would darken the whole scene until the snow read as a dull middle gray. Exposed instead to hold the snow white, the tones pile toward the right of the histogram without spilling off the edge, which is bright snow recorded as bright snow with its texture intact. The correction is a stop or two of positive compensation, the same move the figure above draws."
+  overlayName="what the meter sees"
+  caption="Snow, kept where it belongs. A frame this full of bright snow is exactly what fools a reflected meter, which left to its assumption would darken the whole scene until the snow read as a dull middle gray. Exposed instead to hold the snow white, the tones pile toward the right of the histogram without spilling off the edge, which is bright snow recorded as bright snow with its texture intact. The correction is a stop or two of positive compensation, the same move the figure above draws. The overlay marks the sunlit snow the meter wants to drag down to gray, and the arrow is the direction the compensation dial had to push it back."
   meta="Sony A7R II - 62mm - f/10 - 1/200s - ISO 100"
   credit="Radek Kucharski / Wikimedia Commons (CC BY 4.0)"
   href="https://commons.wikimedia.org/wiki/File:Winter_in_Tatry_Mountains_-_Poland.jpg"
-/>
+  labels={[
+    { x: 50, y: 34, text: "sunlit snow: far brighter than gray" },
+    { x: 20, y: 78, text: "shadowed slope" },
+    { x: 74, y: 88, text: "held white, +1 to +2 EV" },
+  ]}
+>
+  <rect x="30" y="24" width="46" height="30" rx="2" stroke="var(--accent)" strokeWidth={1.4} strokeDasharray="3 3" fill="none" vectorEffect="non-scaling-stroke"/>
+  <rect x="34" y="60" width="42" height="30" rx="2" stroke="var(--accent)" strokeWidth={1.4} strokeDasharray="3 3" fill="none" vectorEffect="non-scaling-stroke"/>
+  <line x1="53" y1="54" x2="53" y2="60" stroke="var(--accent)" strokeWidth={1.4} strokeDasharray="2 2" vectorEffect="non-scaling-stroke"/>
+  <line x1="82" y1="82" x2="82" y2="66" stroke="var(--accent)" strokeWidth={1.6} vectorEffect="non-scaling-stroke"/>
+  <polygon points="82,63 79.6,69 84.4,69" fill="var(--accent)"/>
+</AnnotatedPhoto>
 
 ## The meter proposes, you decide
 

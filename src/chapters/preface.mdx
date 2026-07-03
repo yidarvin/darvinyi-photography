@@ -2,13 +2,21 @@ import { BookMap } from "./_figures/BookMap";
 
 A deliberate photograph is one where nothing important happened by accident. The light was chosen, or waited for. The frame was built, not grabbed. The exposure was a decision with reasons behind it, and the file was developed toward something you had already seen in your head. This book is about closing the gap between the picture you meant to make and the one that came back.
 
-<Photo
+<AnnotatedPhoto
   src="/photos/preface/leica-q3.jpg"
   alt="A black Leica Q3 resting on a table, its fixed 28mm Summilux lens facing forward with the aperture ring and macro scale visible."
-  caption="The Leica Q3 and its fixed 28mm f/1.7 Summilux. The aperture ring, the macro scale, and the leaf shutter built into the lens are all things Part I takes apart."
+  overlayName="the machine"
+  labels={[
+    { x: 40, y: 74, text: "28mm f/1.7 Summilux" },
+    { x: 74, y: 15, text: "macro + distance scale" },
+  ]}
+  caption="The Leica Q3 and its fixed 28mm f/1.7 Summilux. Toggle the labels: the aperture ring, the macro and distance scale, and the leaf shutter built into the lens are all things Part I takes apart."
   credit="Peachyeung316 / Wikimedia Commons (CC BY-SA 4.0)"
   href="https://commons.wikimedia.org/wiki/File:Leica_Q3.jpg"
-/>
+>
+  <line x1="42" y1="70" x2="44" y2="63" stroke="var(--accent)" strokeWidth={1} vectorEffect="non-scaling-stroke" opacity={0.8} />
+  <line x1="72" y1="18" x2="63" y2="29" stroke="var(--accent)" strokeWidth={1} vectorEffect="non-scaling-stroke" opacity={0.8} />
+</AnnotatedPhoto>
 
 It is written around two cameras, because advice you cannot try on a real machine is easy to nod at and hard to use. The Leica Q3 is a fixed 28mm you carry everywhere. The Hasselblad X2D II 100C is a 100-megapixel medium-format body you set up for. They disagree in useful ways: full frame against medium format, one 28mm against a bag of XCD lenses, fourteen-bit files against sixteen. Where a principle matters, you will meet it twice, once on each camera, and the disagreement between them is where the lesson lives.
 
@@ -28,7 +36,7 @@ The four parts move in the order a picture does. Part I is the machine: exposure
 
 ## How to read it
 
-Read Part I in order, because each dial builds on the one before it. After that, wander. The composition chapters do not need the color chapters, and the editing chapters stand on their own once you can read a histogram. Chapters cross-link where one genuinely needs another, and the home page shows the whole book at once, including the chapters not yet written, so you always know where you are.
+Read Part I in order, because each dial builds on the one before it. After that, wander. The composition chapters do not need the color chapters, and the editing chapters stand on their own once you can read a histogram. Chapters cross-link where one genuinely needs another, and the home page shows the whole book at once, so you always know where you are.
 
 <Callout>
 The gear is a teaching device, not a requirement. The Q3 and the X2D make the tradeoffs concrete, but a stop of light is a stop of light on any camera. If you shoot something else, read the gear notes as worked examples and the principles carry over unchanged.
