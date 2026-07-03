@@ -38,7 +38,7 @@ calls for.
 | 23 | black-and-white-conversion        | Black-and-white conversion          | DONE    |
 | 24 | output-and-print                  | Output and print                    | DONE    |
 | 25 | portrait-in-practice              | Portrait, end to end                | DONE    |
-| 26 | street-and-documentary            | Street and documentary              | PENDING |
+| 26 | street-and-documentary            | Street and documentary              | DONE    |
 | 27 | landscape-and-architecture        | Landscape and architecture          | PENDING |
 
 <!--
