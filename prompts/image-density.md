@@ -1,0 +1,125 @@
+# Image density pass
+
+Third pass over "The Deliberate Photograph". Goal: bring the 12 photography /
+aesthetics / editing / practice chapters to 5+ teaching image objects (Photo +
+AnnotatedPhoto + BeforeAfter), each teaching a distinct point; keep the 15
+mechanism / workflow chapters diagram-first (1 to 3, no padding). Started from
+commit `7be3e85`. Commit per Part, no push (CLAUDE.md no-push rule honored).
+
+## Legend / rules
+
+- **type**: mechanism / workflow (diagram-first, 1 to 3) vs photo / editing /
+  practice (5+, learned by looking).
+- Comparisons use `<BeforeAfter>` (live `svgFilter` / `afterFilter`, never
+  pixel-baked; `afterClip` for any local/masked claim). Everything else uses
+  `<AnnotatedPhoto>` with the lesson drawn on the frame, every overlay
+  canvas-verified in the browser (not eyeballed).
+- Every image Read-viewed and license-verified before wiring. Credit + href
+  verbatim. No em dashes / AI tells. ids sequential and unique per chapter.
+
+## Counts (registry order): now -> after
+
+| # | chapter | type | now | target | after | status | notes |
+|---|---------|------|-----|--------|-------|--------|-------|
+| 0 | preface | frontmatter | 1 | n/a | 1 | keep | |
+| 1-11 | Part I mechanism (11 ch) | mechanism | 1-3 | 1-3 | = | keep | diagram-first, no padding |
+| 12 | reading-light | photo | 6 | 5+ | 6 | met (prior) | untouched |
+| 13 | composition-fundamentals | photo | 5 | 5+ | 5 | met (prior) | untouched |
+| 14 | advanced-composition | photo | 4 | 5+ | 5 | DONE | +1 rhythm colonnade (14.2) |
+| 15 | color-science-for-photographers | photo | 5 | 5+ | 5 | met (prior) | untouched |
+| 16 | black-and-white-seeing | photo | 4 | 5+ | 5 | DONE | +1 red-filter BeforeAfter (16.5) |
+| 17 | the-digital-negative | workflow | 1 | 1-3 | 1 | keep | |
+| 18 | ingest-and-catalog | workflow | 1 | 1-3 | 1 | keep | |
+| 19 | order-of-operations | workflow | 1 | 1-3 | 1 | keep | |
+| 20 | tone-and-the-curve | editing | 1 | 5+ | | TODO | +4 curve-move BAs + clipping annotation |
+| 21 | color-grading | editing | 2 | 5+ | | TODO | +3 profile / teal-orange / HSL BAs |
+| 22 | local-adjustments-and-masking | editing | 3 | 5+ | | TODO | +2 masked radial dodge + subject separation |
+| 23 | black-and-white-conversion | editing | 2 | 5+ | | TODO | +3 channel-mix / grain / split-tone |
+| 24 | output-and-print | workflow | 1 | 1-3 | 1 | keep | |
+| 25 | portrait-in-practice | practice | 2 | 5+ | | TODO | +3 near-eye / light-pattern / skin-tone |
+| 26 | street-and-documentary | practice | 3 | 5+ | | TODO | +2 decisive-moment / 28mm-context |
+| 27 | landscape-and-architecture | practice | 4 | 5+ | | TODO | +1 high-DR light range |
+
+## Concrete plan (insertion points + ids)
+
+Locked before editing so a compaction loses nothing. Renumber later ids on insert.
+
+**14 advanced-composition (4 -> 5).** +1 rhythm/repetition (similarity) AnnotatedPhoto
+in "The mind insists on order" as a second grouping example (keeps the four-device
+Callout intact). New 14.2; renumber spiral 14.2->14.3, fig 14.3->14.4, wave
+14.4->14.5, ridges 14.5->14.6. Overlay: mark the repeating beat / grouped units.
+
+**16 black-and-white-seeing (4 -> 5).** +1 AnnotatedPhoto in "See the grey before the
+shutter" drawing Zone placements (a dark-with-detail, a middle grey, a textured white)
+on a full-range mono frame. New 16.5; renumber Prague 16.5->16.6. (Alt: a low-key
+companion to 16.5; decide by sourced frame.)
+
+**20 tone-and-the-curve (1 -> 5).** +4 BeforeAfter/annotated, each a distinct curve
+move: 20.2 contrast S-curve BA ("Contrast is a budget"); 20.3 exposure-lift BA and
+20.4 blacks/whites endpoint BA ("Exposure sets the middle..."); 20.5 clipping/zone
+AnnotatedPhoto on a high-contrast frame ("Recovering the ends"). Existing window BA
+20.2->20.5? no: renumber window BA 20.2->20.6, panel 20.3->20.7, curve 20.4->20.8.
+All live svgFilter, honest global tone (no false local claim). Uses 2-3 flat frames +
+1 high-contrast frame.
+
+**21 color-grading (2 -> 5).** +3: profile BA in "The profile is where color starts"
+(one raw, two profile renderings); an HSL-target BA in "the choices" (a global-by-hue
+move, e.g. blue-sky luminance down, described as global); a third BA (grade demo or
+vibrance-vs-saturation). New profile BA = 21.4; renumber teal-orange Photo 21.4->21.5,
+HSL 21.5->21.6, then mixer BAs after. Leica-vs-Hasselblad matched pair -> shot-wish.
+
+**22 local-adjustments-and-masking (3 -> 5).** +2 BeforeAfter WITH afterClip (honesty
+rule): 22.6 masked radial dodge on a face (afterClip = face region); 22.7 subject
+separation (afterClip = background). Both appended in "The what, and why brightening
+aims the eye" after 22.5. Zero renumber.
+
+**23 black-and-white-conversion (2 -> 5).** +3: grain AnnotatedPhoto in the imageless
+"Grain" section; a split-tone BeforeAfter (neutral->cool-shadow/warm-highlight) paired
+with panel 23.5; a channel-choice/desaturate BA on a fresh frame (non-redundant with
+triptych 23.2 and berries 16.2). ids assigned in reading order; renumber as needed.
+
+**25 portrait-in-practice (2 -> 5).** +3, filling imageless sections: near-eye
+AnnotatedPhoto (eye-AF point + thin plane) in "The near eye..."; light-pattern
+AnnotatedPhoto (Rembrandt/loop terminator + catchlight) in "Put the light..."
+(the documented shot-wish gap); skin-tone BeforeAfter in "Land the skin". Renumber
+old 25.4 (light-on-face) as later id.
+
+**26 street-and-documentary (3 -> 5).** +2 AnnotatedPhoto in the imageless "Fishing,
+not hunting": 26.5 "fish the stage" (a subject entering a pre-composed light/graphic
+frame) and 26.6 layered depth (Webb-style fg/mid/bg planes marked). Zero renumber.
+
+**27 landscape-and-architecture (4 -> 5).** +1 BeforeAfter in the imageless "Holding
+the whole range of light": as-shot (sky protected, dark foreground) -> shadows lifted,
+via live svgFilter. New 27.3; renumber keystone 27.3->27.4, fig 27.4->27.5, verticals
+27.5->27.6, symmetry 27.6->27.7.
+
+## Per-chapter log
+
+_One row per touched chapter as it is built: images before -> after, what each new
+image teaches, overlays canvas-verified, notes, shot-wishes._
+
+### Part II (committed, no push)
+
+- **14 advanced-composition 4 -> 5.** Added AnnotatedPhoto 14.2 (Alex Robertson /
+  Unsplash, Seville colonnade, Unsplash License, attribution API-verified): rhythm /
+  repetition as a grouping cue (similarity + good continuation). Overlay = 4 ticks on
+  the flanking columns, canvas-verified bright column shafts at x=8/16/80/88, y=60
+  (lum 204/205/187/227). Renumbered old 14.2-14.5 -> 14.3-14.6. Zero console errors.
+  Considered corridor + figure-ground candidates; corridor pillars too dark/irregular
+  to annotate cleanly, figure-ground overlapped ch13 negative space.
+- **16 black-and-white-seeing 4 -> 5.** Added BeforeAfter 16.5 (Sydney Sang / Pexels,
+  red barn + deep blue sky, Pexels License, attribution API-verified): color -> live
+  red-filter mono via feColorMatrix (R 1.3, G 0.1, B -0.4). Screenshot-verified at
+  pos=0: sky driven to near-black, cirrus + white trim stand off it bright, barn holds
+  mid tone, green conifer dark. Honest (global conversion, no local claim). Renumbered
+  Prague 16.5 -> 16.6. Zero console errors.
+
+## Shot wishes (accumulated)
+
+_Frames the author could shoot on the Q3 / X2D II where no licensable photo teaches
+the point._
+
+## Staging manifest
+
+_Sourced candidates staged under scratchpad/img-density-staging/<slug>/ awaiting
+Read-verification + wire-in._
