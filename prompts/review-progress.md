@@ -70,10 +70,10 @@ licensable images._
 | 17 | the-digital-negative | DONE | 2811 | 1 | n/a | Already has raw->developed before/after (17.2 composite) + Basic panel (17.3, values match the visible lift-shadows/hold-highlights edit). Tried splitting the composite into a wipe slider but the developed half has DIFFERENT framing (verticals corrected, no streetlamp, statue larger) so a wipe would misalign; static side-by-side is correct here. Prose tight. |
 | 18 | ingest-and-catalog | TODO | 2823 | 0 | 0/0 | ZERO photos; idea: contact-sheet culling grid |
 | 19 | order-of-operations | TODO | 2884 | 0 | 0/0 | ZERO photos; idea: same frame at edit stages |
-| 20 | tone-and-the-curve | TODO | 3371 | 1 | 0/0 | editing: use LightroomCurve (curve IS lesson) |
+| 20 | tone-and-the-curve | DONE | 3371 | 1 | n/a | ADDED LightroomCurve 20.4 (finally uses the component) drawing the exact recovery curve behind the 20.2 BeforeAfter svgFilter: lifted toe (0->12), mids above diagonal (128->165), rolled shoulder (255->240) - matches the tableValues. 20.2 is a global tone-curve recovery, caption makes no false local claim = honest. 20.3 panel values match. Renders, no errors. Prose tight. |
 | 21 | color-grading | TODO | 3958 | 2 | 0/0 | editing |
 | 22 | local-adjustments-and-masking | DONE | 3785 | 3 | 2/2 | HONESTY BUG FIXED: extended BeforeAfter with `afterClip` (CSS clip-path region), applied a sky-region polygon to 22.3 so the burn genuinely stops at the ridgeline. Screenshot-verified: sky darkens on the after side, lit golden hillside HOLDS (caption now true). Updated 22.2 red sky-mask path to the canvas-verified ridgeline (same polygon). FIXED 22.5 dodge region: was on dark HAIR (lum 3-4); moved onto the lit skin strip (centroid 37,45, interior 186-229). Prose tight. |
-| 23 | black-and-white-conversion | TODO | 4189 | 2 | 0/1 | editing: use LightroomCurve |
+| 23 | black-and-white-conversion | DONE | 4189->4280 | 2 | 1/1 | ADDED LightroomCurve 23.6 (print-contrast S-curve, cross-refs ch20) - fills the under-covered contrast gap + uses the component per spec (+~90 words). FIXED 23.2 triptych "same grey" circles: were on the bright metal DOME (207/229/240); moved to the grey silo BODY where the two mixes give an IDENTICAL grey (74/74) = clean "neutral holds" proof, matching the "middle grey" caption. Renders, no errors. |
 | 24 | output-and-print | TODO | 4120 | 0 | 0/0 | ZERO photos; idea: screen-vs-print soft-proof |
 
 ## Part IV --- In practice (ch 25-27)

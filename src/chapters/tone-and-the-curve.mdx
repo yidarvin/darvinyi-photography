@@ -73,6 +73,19 @@ The histogram is where you read all of this, with one caution. A pile of pixels 
   caption="The same recovery written as Basic-panel sliders. Exposure barely moves; the work is at the ends. Shadows and Blacks go up to open the room, Highlights and Whites come down to hold the window, and Contrast eases because opening both ends flattens the middle. Every one of these is a bend in the one curve above."
 />
 
+<LightroomCurve
+  points={[
+    { x: 0, y: 12 },
+    { x: 64, y: 100 },
+    { x: 128, y: 165 },
+    { x: 205, y: 222 },
+    { x: 255, y: 240 },
+  ]}
+  channel="luma"
+  id="20.4"
+  caption="The same recovery drawn as the curve itself. The toe lifts off the bottom-left corner to open the dark room, the middle rides above the diagonal to brighten it, and the shoulder rolls down from the top-right so the brightest inputs land below pure white and the foliage holds through the glass. The Basic sliders above and this one line are the same input-to-output map, which is the whole point of the chapter: every tone slider is a handle on this shape."
+/>
+
 ## Where the edit happens, and what your two cameras bring
 
 A curve does not behave the same in every space. Lightroom stores the raw in a linear working space but shows you the histogram and applies your curve through an sRGB-style tone response, so the values you edit are perceptual rather than linear. That is why the shadows and midtones are spread across the width of the curve grid instead of jammed into the far left, where they would sit if the axis were linear, and it is what makes a gentle curve feel gentle. Capture One draws the distinction in its own tools: an RGB curve changes brightness but also pushes saturation and can shift hue on a steep S, while its Luma curve changes tonal density alone and leaves color where it was. Capture One also splits the ends across its High Dynamic Range tool, with Highlight and Shadow reaching into the midtones and White and Black working only the extremes, and keeps the black and white points in its Levels tool. Hasselblad's Phocus renders the 3FR through the Natural Colour Solution and offers Highlight Recovery and Shadow Fill that reclaim real clipped data conservatively rather than inventing it.

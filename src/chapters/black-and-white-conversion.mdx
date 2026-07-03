@@ -30,11 +30,11 @@ The other editors phrase the same idea in different words. Photoshop has two too
   meta="One frame, three conversions: color, a red-filter channel mix, and a blue-filter mix"
   credit="Roger Starnes Sr / Unsplash, converted to black and white"
   href="https://unsplash.com/photos/hd5rzz_GGD0"
-  labels={[{ x: 8, y: 15, text: "same grey" }, { x: 41, y: 15, text: "same grey" }, { x: 74, y: 15, text: "same grey" }]}
+  labels={[{ x: 9, y: 32, text: "same grey" }, { x: 42, y: 32, text: "same grey" }, { x: 75, y: 32, text: "same grey" }]}
 >
-  <circle cx="9" cy="24" r="5" stroke="var(--accent)" strokeWidth={1.4} fill="none" vectorEffect="non-scaling-stroke"/>
-  <circle cx="42" cy="24" r="5" stroke="var(--accent)" strokeWidth={1.4} fill="none" vectorEffect="non-scaling-stroke"/>
-  <circle cx="75" cy="24" r="5" stroke="var(--accent)" strokeWidth={1.4} fill="none" vectorEffect="non-scaling-stroke"/>
+  <circle cx="9" cy="45" r="4" stroke="var(--accent)" strokeWidth={1.4} fill="none" vectorEffect="non-scaling-stroke"/>
+  <circle cx="42" cy="45" r="4" stroke="var(--accent)" strokeWidth={1.4} fill="none" vectorEffect="non-scaling-stroke"/>
+  <circle cx="75" cy="45" r="4" stroke="var(--accent)" strokeWidth={1.4} fill="none" vectorEffect="non-scaling-stroke"/>
 </AnnotatedPhoto>
 
 <LightroomHSL
@@ -92,6 +92,21 @@ The widget is the finishing bench, the grain and the split tone together, the tw
     { label: "Grain Size", value: 22, min: 0, max: 100, anchor: "left" },
     { label: "Grain Roughness", value: 50, min: 0, max: 100, anchor: "left" },
   ]}
+/>
+
+One shaping move sits under all three and is easy to forget: the contrast of the print itself. The mix set which grey each color became, but how hard those greys separate is the slope of the tone curve, the same S from [tone and the curve](/tone-and-the-curve). A black-and-white print usually wants more of it than the flat file gives, so a common last move is to deepen the blacks, lift the whites, and steepen the midtones until the picture reads with weight.
+
+<LightroomCurve
+  points={[
+    { x: 0, y: 0 },
+    { x: 64, y: 40 },
+    { x: 128, y: 128 },
+    { x: 194, y: 214 },
+    { x: 255, y: 255 },
+  ]}
+  channel="luma"
+  id="23.6"
+  caption="The contrast the mono print rides on, the darkroom's paper grade drawn as one line. Blacks are pinned at the bottom-left corner and whites at the top-right, and the middle steepens into an S so the greys the mix chose pull apart into a print with bite. Choosing this slope is choosing the paper grade: soft and long for a delicate high-key frame, hard and steep for a graphic one."
 />
 
 ## Two cameras, and the sensor that throws color away
